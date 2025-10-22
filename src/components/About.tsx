@@ -32,9 +32,9 @@ export default function About() {
   return (
     <section 
       id="benefits" 
-      className="py-32 md:py-40 bg-gray-50"
+      className="py-16 sm:py-20 md:py-28 lg:py-36 xl:py-40 bg-gray-50"
     >
-      <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-24">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         
         {/* Section Header */}
         <motion.div
@@ -42,9 +42,9 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-24"
+          className="text-center mb-12 sm:mb-16 md:mb-20 lg:mb-24"
         >
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 tracking-tight px-4">
             Qué Lograrás Con{' '}
             <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
               Nosotros
@@ -53,7 +53,7 @@ export default function About() {
         </motion.div>
 
         {/* Benefits Grid */}
-        <div className="grid md:grid-cols-3 gap-16 mb-32">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-12 lg:gap-16">
           {benefits.map((benefit, index) => {
             const IconComponent = benefit.icon;
             return (
@@ -65,11 +65,11 @@ export default function About() {
                 viewport={{ once: true }}
                 className="text-center group"
               >
-                <div className={`inline-flex p-8 rounded-3xl bg-gradient-to-br ${benefit.color} text-white mb-6 group-hover:scale-110 transition-transform duration-300 shadow-xl`}>
-                  <IconComponent className="w-12 h-12" />
+                <div className={`inline-flex p-6 sm:p-7 md:p-8 rounded-2xl sm:rounded-3xl bg-gradient-to-br ${benefit.color} text-white mb-4 sm:mb-5 md:mb-6 group-hover:scale-110 transition-transform duration-300 shadow-xl`}>
+                  <IconComponent className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
-                <p className="text-lg text-gray-600 leading-relaxed">{benefit.description}</p>
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 px-2">{benefit.title}</h3>
+                <p className="text-base sm:text-lg text-gray-600 leading-relaxed px-2">{benefit.description}</p>
               </motion.div>
             );
           })}
