@@ -66,7 +66,7 @@ export default function CaseStudies() {
   return (
     <section
       id="resultados"
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-blue-50/30 overflow-hidden py-20 sm:py-32"
+      className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-blue-50/30 overflow-hidden py-24 sm:py-32 lg:py-40"
     >
       {/* Background decoration */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
@@ -76,42 +76,42 @@ export default function CaseStudies() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
-        className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12"
       >
-        {/* Section content */}
-        <div className="max-w-4xl mx-auto text-center">
+        {/* Section content - Perfectly centered */}
+        <div className="max-w-6xl mx-auto text-center">
           <motion.h2
             variants={fadeInUp}
-            className="text-4xl sm:text-5xl md:text-6xl font-extralight tracking-tight text-gray-900 mb-8 leading-[1.1] flex items-center justify-center gap-3 text-center"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extralight tracking-tight text-gray-900 mb-8 sm:mb-10 leading-[1.1] flex flex-col items-center justify-center gap-4"
           >
-            <span className="text-5xl sm:text-6xl">🌎</span>
+            <span className="text-5xl sm:text-6xl md:text-7xl">🌎</span>
             <span>Empresas que confían en la innovación</span>
           </motion.h2>
-          
+
           <motion.div
             variants={fadeInUp}
-            className="space-y-6 text-lg sm:text-xl md:text-2xl font-light text-gray-600 leading-relaxed text-center"
+            className="space-y-8 text-xl sm:text-2xl md:text-3xl font-light text-gray-600 leading-relaxed mb-12 sm:mb-16 max-w-5xl mx-auto"
           >
-            <p className="text-center">
-              En Costa Rica y Chile,  decenas empresas están transformando su crecimiento con soluciones digitales inteligentes.
+            <p>
+              En Costa Rica y Chile, decenas empresas están transformando su crecimiento con soluciones digitales inteligentes.
             </p>
-            <p className="text-center">
+            <p>
               Desde PYMEs en San José hasta startups en Santiago, ayudamos a marcas a optimizar procesos, escalar ventas y crear experiencias que conectan.
             </p>
           </motion.div>
 
-          {/* CTA */}
+          {/* CTA - BIGGER */}
           <motion.div
             variants={fadeInUp}
-            className="flex justify-center mt-12"
+            className="flex justify-center"
           >
             <motion.a
               href="https://calendly.com/anwar-softwaredev"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
-              className="inline-block px-8 py-4 sm:px-10 sm:py-5 bg-blue-600 text-white text-lg sm:text-xl font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-600/20 hover:shadow-xl hover:shadow-blue-600/30"
+              className="inline-block px-10 py-5 bg-blue-600 text-white text-lg sm:text-xl font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-600/25 hover:shadow-2xl hover:shadow-blue-600/40"
             >
               Sé parte del cambio
             </motion.a>

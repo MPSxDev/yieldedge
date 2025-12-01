@@ -62,32 +62,32 @@ export default function Footer() {
       {/* Subtle background pattern */}
       <div className="absolute inset-0 bg-gradient-to-b from-blue-50/30 to-white pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Main footer content */}
-        <div className="py-12 lg:py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="py-16 sm:py-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
             {/* Brand section */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="col-span-1 md:col-span-2 lg:col-span-1"
+              className="col-span-1 sm:col-span-2 lg:col-span-1 text-center lg:text-left"
             >
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-500 rounded-lg flex items-center justify-center shadow-md">
-                  <span className="text-white font-bold text-lg">Y</span>
+              <div className="flex items-center gap-3 mb-5 justify-center lg:justify-start">
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-500 rounded-xl flex items-center justify-center shadow-lg">
+                  <span className="text-white font-bold text-xl">Y</span>
                 </div>
-                <h2 className="text-xl font-bold text-gray-900">Yieldge</h2>
+                <h2 className="text-2xl font-semibold text-gray-900">Yieldge</h2>
               </div>
-              <p className="text-gray-600 text-sm leading-relaxed mb-6 max-w-xs">
+              <p className="text-gray-600 text-base leading-relaxed mb-8 max-w-xs mx-auto lg:mx-0">
                 Transformamos la tecnología en resultados medibles. Optimización,
                 integración y escalabilidad para empresas que quieren crecer.
               </p>
-              
+
               {/* Social media links */}
               <nav aria-label="Redes sociales">
-                <ul className="flex gap-3">
+                <ul className="flex gap-4 justify-center lg:justify-start">
                   {socialLinks.map((social) => (
                     <li key={social.label}>
                       <SocialIcon {...social} />
@@ -103,12 +103,13 @@ export default function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-center lg:text-left"
             >
-              <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
+              <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-6">
                 Navegación
               </h3>
               <nav aria-label="Enlaces rápidos">
-                <ul className="space-y-3">
+                <ul className="space-y-4">
                   {quickLinks.map((link) => (
                     <FooterLink key={link.text} {...link} onClick={handleLinkClick} />
                   ))}
@@ -122,12 +123,13 @@ export default function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-center lg:text-left"
             >
-              <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
+              <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-6">
                 Empresa
               </h3>
               <nav aria-label="Enlaces de empresa">
-                <ul className="space-y-3">
+                <ul className="space-y-4">
                   {companyLinks.map((link) => (
                     <FooterLink key={link.text} {...link} onClick={handleLinkClick} />
                   ))}
@@ -141,20 +143,21 @@ export default function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
+              className="col-span-1 sm:col-span-2 lg:col-span-1 text-center lg:text-left"
             >
-              <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
+              <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-6">
                 Contacto
               </h3>
-              <p className="text-gray-600 text-sm mb-4">
+              <p className="text-gray-600 text-base mb-6 max-w-xs mx-auto lg:mx-0">
                 ¿Listo para optimizar tu infraestructura?
               </p>
               <motion.a
                 href="https://calendly.com/anwar-softwaredev"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-block w-full sm:w-auto px-8 py-4 sm:px-10 sm:py-5 bg-blue-600 text-white text-lg sm:text-xl font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-600/20 hover:shadow-xl hover:shadow-blue-600/30 text-center"
+                className="inline-block w-full sm:w-auto px-7 py-3.5 bg-blue-600 text-white text-base font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-600/25 hover:shadow-xl hover:shadow-blue-600/35 text-center"
               >
                 Agenda una consulta
               </motion.a>
@@ -163,16 +166,16 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-gray-200 py-6">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="border-t border-gray-200 py-10">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-8">
             {/* Copyright */}
-            <p className="text-sm text-gray-500 text-center sm:text-left">
+            <p className="text-base text-gray-500 text-center order-2 sm:order-1">
               © {currentYear} Yieldge. Todos los derechos reservados.
             </p>
 
             {/* Legal links */}
-            <nav aria-label="Enlaces legales">
-              <ul className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm">
+            <nav aria-label="Enlaces legales" className="order-3 sm:order-2">
+              <ul className="flex flex-wrap justify-center gap-8 text-base">
                 {legalLinks.map((link) => (
                   <li key={link.text}>
                     <a
@@ -191,10 +194,10 @@ export default function Footer() {
               onClick={scrollToTop}
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="p-2 rounded-full bg-blue-50 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+              className="p-3 rounded-full bg-blue-50 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-sm hover:shadow-lg order-1 sm:order-3"
               aria-label="Volver arriba"
             >
-              <ArrowUp className="w-5 h-5" />
+              <ArrowUp className="w-6 h-6" />
             </motion.button>
           </div>
         </div>
@@ -211,7 +214,7 @@ function SocialIcon({ icon, href, label }: SocialLink) {
       rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
       whileHover={{ scale: 1.1, y: -2 }}
       whileTap={{ scale: 0.95 }}
-      className="w-10 h-10 rounded-full bg-gray-100 text-gray-600 hover:bg-blue-600 hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm hover:shadow-md"
+      className="w-11 h-11 rounded-full bg-gray-100 text-gray-600 hover:bg-blue-600 hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm hover:shadow-lg"
       aria-label={label}
     >
       {icon}
@@ -225,11 +228,11 @@ interface FooterLinkProps extends NavLink {
 
 function FooterLink({ text, href, onClick }: FooterLinkProps) {
   return (
-    <li>
+    <li className="flex justify-center lg:justify-start">
       <a
         href={href}
         onClick={(e) => onClick(e, href)}
-        className="text-sm text-gray-600 hover:text-blue-600 transition-colors duration-200 inline-flex items-center group"
+        className="text-base text-gray-600 hover:text-blue-600 transition-colors duration-200 inline-flex items-center group"
       >
         <span className="group-hover:translate-x-1 transition-transform duration-200">
           {text}

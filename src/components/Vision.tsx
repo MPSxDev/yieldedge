@@ -54,7 +54,7 @@ export default function Vision() {
   return (
     <section
       id="sobre-nosotros"
-      className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden py-20 sm:py-32"
+      className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden py-24 sm:py-32 lg:py-40"
     >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-blue-50/30 via-white to-white pointer-events-none" />
@@ -65,13 +65,13 @@ export default function Vision() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12"
       >
-        {/* Section header */}
-        <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
+        {/* Section header - BIGGER */}
+        <div className="max-w-5xl mx-auto text-center mb-20 sm:mb-24">
           <motion.h2
             variants={fadeInUp}
-            className="text-4xl sm:text-5xl md:text-6xl font-extralight tracking-tight text-gray-900 mb-6 leading-[1.1]"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extralight tracking-tight text-gray-900 mb-8 sm:mb-10 leading-[1.1]"
           >
             Nuestra{' '}
             <span className="font-light bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
@@ -80,7 +80,7 @@ export default function Vision() {
           </motion.h2>
           <motion.p
             variants={fadeInUp}
-            className="text-lg sm:text-xl font-light text-gray-600 leading-relaxed"
+            className="text-xl sm:text-2xl md:text-3xl font-light text-gray-600 leading-relaxed"
           >
             En Yieldge, creemos que la tecnología debe ser un motor de
             crecimiento, no una barrera. Por eso construimos sistemas que no
@@ -89,27 +89,27 @@ export default function Vision() {
           </motion.p>
         </div>
 
-        {/* Values grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Values grid - Uniform cards, centered content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 mb-20 sm:mb-24">
           {values.map((value, index) => (
             <motion.div
               key={index}
               variants={fadeInUp}
               className="group relative"
             >
-              <div className="bg-white rounded-2xl p-8 border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/5 h-full">
-                {/* Icon */}
-                <div className="mb-6">
-                  <div className="w-14 h-14 rounded-2xl bg-blue-50 group-hover:bg-blue-100 flex items-center justify-center transition-colors">
-                    <value.icon className="w-7 h-7 text-blue-600" />
+              <div className="bg-white rounded-3xl p-10 sm:p-12 border border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/5 h-full flex flex-col items-center text-center">
+                {/* Icon - Centered and uniform */}
+                <div className="mb-8">
+                  <div className="w-16 h-16 sm:w-18 sm:h-18 rounded-2xl bg-blue-50 group-hover:bg-blue-100 flex items-center justify-center transition-colors">
+                    <value.icon className="w-8 h-8 sm:w-9 sm:h-9 text-blue-600" />
                   </div>
                 </div>
 
-                {/* Content */}
-                <h3 className="text-2xl font-medium text-gray-900 mb-4">
+                {/* Content - Centered */}
+                <h3 className="text-2xl sm:text-3xl font-medium text-gray-900 mb-5">
                   {value.title}
                 </h3>
-                <p className="text-base font-light text-gray-600 leading-relaxed">
+                <p className="text-lg sm:text-xl font-light text-gray-600 leading-relaxed max-w-md">
                   {value.description}
                 </p>
               </div>
@@ -117,21 +117,21 @@ export default function Vision() {
           ))}
         </div>
 
-        {/* CTA */}
+        {/* CTA - Centered */}
         <motion.div
           variants={fadeInUp}
-          className="text-center mt-16"
+          className="max-w-3xl mx-auto text-center"
         >
-          <p className="text-gray-600 mb-6 text-lg font-light">
+          <p className="text-gray-600 mb-8 text-xl sm:text-2xl font-light">
             Trabajemos juntos para hacer realidad tu visión
           </p>
           <motion.a
             href="https://calendly.com/anwar-softwaredev"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.02 }}
+            whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
-            className="inline-block px-8 py-4 sm:px-10 sm:py-5 bg-blue-600 text-white text-lg sm:text-xl font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-600/20 hover:shadow-xl hover:shadow-blue-600/30"
+            className="inline-block px-10 py-5 bg-blue-600 text-white text-lg sm:text-xl font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-600/25 hover:shadow-2xl hover:shadow-blue-600/40"
           >
             Comienza hoy
           </motion.a>
