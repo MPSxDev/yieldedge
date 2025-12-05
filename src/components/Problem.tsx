@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import Image from 'next/image';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -37,12 +38,32 @@ export default function ProblemSection() {
     <section
       ref={sectionRef}
       className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-blue-50/30 overflow-hidden"
-      id="servicios"
+      id="problema"
     >
-      {/* Subtle background glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+      {/* Subtle background glow - centered */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none -z-10" />
 
-      {/* Main content - Perfectly centered */}
+      {/* Background decorative images - do not affect layout */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden -z-10">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 0.15, scale: 1 }}
+          transition={{ duration: 1.2 }}
+          className="absolute top-20 right-10 w-64 h-64 rounded-3xl overflow-hidden hidden lg:block"
+        >
+          <Image src="/assets/img7.jpg" alt="Growth" fill className="object-cover" />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 0.15, scale: 1 }}
+          transition={{ duration: 1.2, delay: 0.2 }}
+          className="absolute bottom-20 left-10 w-56 h-56 rounded-3xl overflow-hidden hidden lg:block"
+        >
+          <Image src="/assets/img8.jpg" alt="Performance" fill className="object-cover" />
+        </motion.div>
+      </div>
+
+      {/* Main container - perfectly centered with equal padding on both sides */}
       <motion.div
         style={{ opacity, scale }}
         variants={staggerContainer}

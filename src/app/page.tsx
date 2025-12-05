@@ -2,21 +2,23 @@
 
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import Problem from '@/components/Problem';
+import Services from '@/components/Services';
+import WhyChooseUs from '@/components/WhyChooseUs';
 import Process from '@/components/Process';
 import CaseStudies from '@/components/CaseStudies';
-import Vision from '@/components/Vision';
+import FinalCTA from '@/components/FinalCTA';
 import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <div>
+    <div className="min-h-screen bg-white">
       <Navbar />
       <Hero />
-      <Problem />
+      <Services />
+      <WhyChooseUs />
       <Process />
       <CaseStudies />
-      <Vision />
+      <FinalCTA />
       <Footer />
     </div>
   );

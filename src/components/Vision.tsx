@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Target, Users, Lightbulb, Shield } from 'lucide-react';
+import Image from 'next/image';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -57,9 +58,30 @@ export default function Vision() {
       className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden py-24 sm:py-32 lg:py-40"
     >
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-50/30 via-white to-white pointer-events-none" />
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-50/30 via-white to-white pointer-events-none -z-10" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-3xl pointer-events-none -z-10" />
 
+      {/* Decorative background images - do not affect layout flow */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden -z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 0.12, y: 0 }}
+          transition={{ duration: 1.5 }}
+          className="absolute top-10 right-20 w-72 h-72 rounded-3xl overflow-hidden hidden xl:block"
+        >
+          <Image src="/assets/img13.jpg" alt="Vision" fill className="object-cover" />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 0.12, y: 0 }}
+          transition={{ duration: 1.5, delay: 0.2 }}
+          className="absolute bottom-20 left-20 w-64 h-64 rounded-3xl overflow-hidden hidden xl:block"
+        >
+          <Image src="/assets/img1.jpg" alt="Innovation" fill className="object-cover" />
+        </motion.div>
+      </div>
+
+      {/* Main container - perfectly centered with symmetrical padding */}
       <motion.div
         variants={staggerContainer}
         initial="hidden"

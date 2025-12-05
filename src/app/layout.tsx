@@ -2,8 +2,23 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Yieldge - Smart AI tools for fast automation & growth",
-  description: "Automate workflows, streamline processes, and drive growth with intelligent solutions built for the future",
+  title: "Yieldge - Technology that Performs",
+  description: "Transformamos negocios con sitios web modernos, automatización IA y sistemas escalables que generan resultados medibles.",
+  icons: {
+    icon: '/brand/logo-isotipo.png',
+    apple: '/brand/logo-isotipo.png',
+  },
+  openGraph: {
+    title: "Yieldge - Technology that Performs",
+    description: "Sitios web modernos, automatización IA y sistemas escalables para impulsar tu crecimiento",
+    images: ['/brand/logo-main.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Yieldge - Technology that Performs",
+    description: "Sitios web modernos, automatización IA y sistemas escalables para impulsar tu crecimiento",
+    images: ['/brand/logo-main.png'],
+  },
 };
 
 export default function RootLayout({
@@ -12,9 +27,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">
-        {children}
+    <html lang="en" className="scroll-smooth">
+      <body className="antialiased min-h-screen">
+        <div className="w-full overflow-x-hidden">
+          {children}
+        </div>
       </body>
     </html>
   );
