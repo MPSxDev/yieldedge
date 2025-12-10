@@ -32,23 +32,21 @@ export default function FinalCTA() {
             <div className="p-10 sm:p-12 lg:p-16 flex flex-col justify-center">
               <motion.div variants={fadeInUp}>
                 <p className="text-blue-100 font-semibold mb-4 text-sm uppercase tracking-wide">
-                  Comienza hoy
+                  Special Offer
                 </p>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                  Transforma tu negocio con tecnología que rinde
+                  Free 30-Minute Real-Estate AI Readiness Consultation
                 </h2>
                 <p className="text-lg sm:text-xl text-blue-50 leading-relaxed mb-8">
-                  Agenda una llamada estratégica gratuita de 30 minutos. Sin
-                  compromiso. Analizamos tu situación actual y definimos un plan
-                  de acción concreto.
+                  No strings attached. We&apos;ll analyze your current operations, identify automation opportunities, and show you exactly how our solutions can help you close more deals and save time.
                 </p>
 
                 {/* Benefits */}
                 <ul className="space-y-3 mb-10">
                   {[
-                    'Estrategia personalizada para tu negocio',
-                    'ROI proyectado y plan de implementación',
-                    'Respuestas a todas tus preguntas técnicas',
+                    'Personalized strategy for your real-estate business',
+                    'ROI projection and implementation roadmap',
+                    'Answers to all your technical questions',
                   ].map((benefit, index) => (
                     <li key={index} className="flex items-center text-white">
                       <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 mr-3">
@@ -68,22 +66,24 @@ export default function FinalCTA() {
                   whileTap={{ scale: 0.98 }}
                   className="inline-flex items-center gap-3 px-8 py-5 bg-white text-blue-600 text-lg font-bold rounded-full hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl group"
                 >
-                  Agenda tu llamada gratuita
+                  Get Your Free Audit
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </motion.a>
 
                 <p className="mt-6 text-sm text-blue-100">
-                  📅 Disponibilidad inmediata • 💬 Sin compromiso • ⚡ Resultados claros
+                  📅 Immediate availability • 💬 No commitment • ⚡ Clear results
                 </p>
               </motion.div>
             </div>
 
             {/* Image */}
-            <div className="relative min-h-[400px] lg:min-h-[600px]">
+            <div className="relative min-h-[400px] lg:min-h-[600px] bg-blue-700">
               <Image
                 src="/assets/img3.jpg"
                 alt="Let's work together"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                quality={90}
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-l from-transparent to-blue-600/20" />

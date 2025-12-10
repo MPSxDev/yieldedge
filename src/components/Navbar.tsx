@@ -9,9 +9,10 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: 'Servicios', href: '#servicios' },
-    { label: 'Proceso', href: '#proceso' },
-    { label: 'Resultados', href: '#resultados' },
+    { label: 'Solutions', href: '#servicios' },
+    { label: 'How It Works', href: '#how-it-works' },
+    { label: 'Case Studies', href: '#case-studies' },
+    { label: 'FAQ', href: '#faq' },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -75,7 +76,7 @@ export default function Navbar() {
               whileTap={{ scale: 0.98 }}
               className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 text-sm shadow-md hover:shadow-lg"
             >
-              Agenda tu llamada
+              Get Free Audit
             </motion.a>
           </div>
 
@@ -118,7 +119,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="block w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 text-center shadow-md"
             >
-              Agenda tu llamada
+              Get Free Audit
             </a>
           </div>
         </motion.div>

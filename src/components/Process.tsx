@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Target, Code, Rocket, ArrowRight } from 'lucide-react';
+import { ClipboardCheck, FileCode, Rocket, HeadphonesIcon, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import Container from '@/components/ui/Container';
 
@@ -24,38 +24,47 @@ const staggerContainer = {
 
 const steps = [
   {
-    icon: Target,
+    icon: ClipboardCheck,
     number: '01',
-    title: 'Descubrimiento',
+    title: 'Free Audit & Needs Assessment',
     description:
-      'Analizamos tus objetivos, público y competencia. Definimos KPIs claros y una estrategia de implementación.',
+      'We analyze your current workflow, pain points, and goals. Understand what\'s slowing you down and where automation can make the biggest impact.',
     image: '/assets/img9.jpg',
-    deliverables: ['Roadmap del proyecto', 'Arquitectura técnica', 'Timeline de entregas'],
+    deliverables: ['Current state analysis', 'Opportunity assessment', 'ROI projection'],
   },
   {
-    icon: Code,
+    icon: FileCode,
     number: '02',
-    title: 'Desarrollo',
+    title: 'Custom Implementation Plan',
     description:
-      'Construimos con las mejores prácticas. Iteraciones rápidas, comunicación constante y demos regulares.',
+      'We design a tailored solution that fits your business. No cookie-cutter templates — every system is built for your specific needs.',
     image: '/assets/img10.jpg',
-    deliverables: ['Código limpio y documentado', 'Tests automatizados', 'Deploy en staging'],
+    deliverables: ['Technical architecture', 'Implementation roadmap', 'Clear timeline & milestones'],
   },
   {
     icon: Rocket,
     number: '03',
-    title: 'Lanzamiento',
+    title: 'Deployment & Integration',
     description:
-      'Implementación sin fricción. Monitoreo activo, optimización continua y soporte dedicado post-lanzamiento.',
+      'Seamless integration with your existing tools and processes. We handle the technical complexity while you stay focused on your clients.',
     image: '/assets/img11.jpg',
-    deliverables: ['Deploy en producción', 'Monitoreo 24/7', 'Soporte y mejoras'],
+    deliverables: ['Production deployment', 'Team training', 'System documentation'],
+  },
+  {
+    icon: HeadphonesIcon,
+    number: '04',
+    title: 'Ongoing Support & Scaling',
+    description:
+      'Continuous monitoring, optimization, and support. As your business grows, we ensure your systems scale with you.',
+    image: '/assets/img9.jpg',
+    deliverables: ['24/7 monitoring', 'Regular updates', 'Priority support'],
   },
 ];
 
 export default function Process() {
   return (
     <section
-      id="proceso"
+      id="how-it-works"
       className="relative bg-white py-24 sm:py-32 overflow-hidden"
     >
       <Container className="relative z-10">
@@ -71,21 +80,20 @@ export default function Process() {
             variants={fadeInUp}
             className="text-blue-600 font-semibold mb-4 text-sm uppercase tracking-wide"
           >
-            Cómo trabajamos
+            How It Works
           </motion.p>
           <motion.h2
             variants={fadeInUp}
             className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6"
           >
-            Un proceso{' '}
-            <span className="text-blue-600">simple y efectivo</span>
+            From audit to{' '}
+            <span className="text-blue-600">automation in 4 steps</span>
           </motion.h2>
           <motion.p
             variants={fadeInUp}
             className="text-xl text-gray-600 leading-relaxed"
           >
-            Transformamos tus ideas en productos digitales con un enfoque
-            estructurado y transparente.
+            Our proven process ensures smooth implementation and measurable results — from initial assessment to ongoing growth.
           </motion.p>
         </div>
 
@@ -109,11 +117,13 @@ export default function Process() {
               >
                 {/* Image */}
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-xl group">
+                  <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-xl group bg-gradient-to-br from-blue-50 to-gray-100">
                     <Image
                       src={step.image}
                       alt={step.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      quality={90}
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-transparent" />
@@ -147,7 +157,7 @@ export default function Process() {
                   {/* Deliverables */}
                   <div className="mb-8">
                     <p className="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-4">
-                      Entregables
+                      Deliverables
                     </p>
                     <ul className="space-y-3">
                       {step.deliverables.map((item, idx) => (
@@ -170,7 +180,7 @@ export default function Process() {
           className="mt-20 text-center"
         >
           <p className="text-gray-600 mb-6 text-lg">
-            ¿Listo para comenzar tu transformación digital?
+            Ready to streamline your real-estate business?
           </p>
           <motion.a
             href="https://calendly.com/anwar-softwaredev"
@@ -180,7 +190,7 @@ export default function Process() {
             whileTap={{ scale: 0.98 }}
             className="inline-flex items-center gap-3 px-8 py-5 bg-blue-600 text-white text-lg font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-600/30 hover:shadow-xl hover:shadow-blue-600/40"
           >
-            Agenda tu llamada
+            Get Your Free Audit
             <ArrowRight className="w-5 h-5" />
           </motion.a>
         </motion.div>

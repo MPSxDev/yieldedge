@@ -25,23 +25,23 @@ const staggerContainer = {
 const values = [
   {
     icon: Target,
-    title: 'Orientado a resultados',
-    description: 'Cada línea de código está diseñada para generar impacto medible en tu negocio.',
+    title: 'Real-Estate Expertise',
+    description: 'We understand the unique challenges of agents, brokers, property managers, and investors.',
   },
   {
     icon: Zap,
-    title: 'Rápido y eficiente',
-    description: 'Entregas ágiles sin comprometer la calidad. Tu proyecto en producción más rápido.',
+    title: 'Proven Results',
+    description: 'Our clients cut admin time, increase lead-to-sale conversion, and reduce overhead costs significantly.',
   },
   {
     icon: Lightbulb,
-    title: 'Innovación práctica',
-    description: 'Tecnología de vanguardia aplicada a problemas reales con ROI comprobado.',
+    title: 'Custom Solutions',
+    description: 'Every implementation is tailored to your specific workflow, property types, and business goals.',
   },
   {
     icon: Shield,
-    title: 'Calidad garantizada',
-    description: 'Código limpio, arquitecturas sólidas y soporte continuo post-lanzamiento.',
+    title: 'Reliable & Secure',
+    description: 'Enterprise-grade security and reliability. Your data and your clients\' information stay protected.',
   },
 ];
 
@@ -64,17 +64,14 @@ export default function WhyChooseUs() {
             variants={fadeInUp}
             className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6 leading-tight"
           >
-            No es un problema de tecnología.
-            <br />
-            <span className="text-blue-600">Es un problema de rendimiento.</span>
+            Why Choose{' '}
+            <span className="text-blue-600">Yieldge?</span>
           </motion.h2>
           <motion.p
             variants={fadeInUp}
             className="text-xl sm:text-2xl text-gray-600 leading-relaxed"
           >
-            En Yieldge, transformamos cada inversión en tecnología en una
-            herramienta de crecimiento medible. No solo funciona —{' '}
-            <span className="text-gray-900 font-semibold">rinde</span>.
+            Experienced tech team with proven results in real-estate. We&apos;ve helped clients cut admin time, increase conversions, and reduce costs — so you can focus on growing your business.
           </motion.p>
         </div>
 
@@ -85,11 +82,13 @@ export default function WhyChooseUs() {
             variants={fadeInUp}
             className="relative"
           >
-            <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-blue-50 to-gray-100">
               <Image
                 src="/assets/img7.jpg"
                 alt="Growth and performance"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                quality={90}
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-transparent" />
@@ -97,20 +96,20 @@ export default function WhyChooseUs() {
           </motion.div>
 
           {/* Values Grid */}
-          <div className="grid sm:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
             {values.map((value, index) => (
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                className="bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300"
+                className="bg-white rounded-3xl p-8 md:p-10 shadow-lg border border-gray-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-4">
-                  <value.icon className="w-6 h-6 text-blue-600" />
+                <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mb-6">
+                  <value.icon className="w-7 h-7 text-blue-600" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {value.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-gray-600 leading-relaxed">
                   {value.description}
                 </p>
               </motion.div>
@@ -118,20 +117,6 @@ export default function WhyChooseUs() {
           </div>
         </div>
 
-        {/* Bottom Statement */}
-        <motion.div
-          variants={fadeInUp}
-          className="max-w-3xl mx-auto text-center"
-        >
-          <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
-            Soy un{' '}
-            <span className="text-gray-900 font-semibold">ingeniero de software</span>{' '}
-            enfocado en construir sistemas digitales que generan{' '}
-            <span className="text-gray-900 font-semibold">crecimiento empresarial real</span>
-            . Cada proyecto está diseñado para impulsar ingresos, reducir costos
-            y escalar con tu negocio.
-          </p>
-        </motion.div>
         </motion.div>
       </Container>
     </section>

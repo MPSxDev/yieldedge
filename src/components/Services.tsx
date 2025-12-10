@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Globe, Bot, Database, ArrowRight } from 'lucide-react';
+import { Users, FileText, TrendingUp, Home, Globe, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import Container from '@/components/ui/Container';
 
@@ -24,28 +24,44 @@ const staggerContainer = {
 
 const services = [
   {
-    icon: Globe,
-    title: 'Desarrollo Web de Alto Impacto',
+    icon: Users,
+    title: 'Automated Lead Generation & Qualification',
     description:
-      'Sitios web modernos diseñados para convertir. Rápidos, mobile-first y optimizados para generar ventas y reservas.',
-    features: ['Conversión optimizada', 'Mobile-first', 'SEO integrado', 'Sistemas de reservas'],
+      'Capture and qualify leads 24/7 so you only talk to real prospects. Stop wasting time on unqualified inquiries.',
+    features: ['24/7 lead capture', 'AI-powered qualification', 'Instant follow-ups', 'CRM integration'],
     image: '/assets/img4.jpg',
   },
   {
-    icon: Bot,
-    title: 'Automatización con IA',
+    icon: FileText,
+    title: 'Document & Data Handling Automation',
     description:
-      'Asistentes IA que trabajan 24/7. Automatiza reservas, soporte y seguimientos con privacidad total.',
-    features: ['Recepcionista IA', 'Recordatorios auto', 'IA local privada', 'Soporte 24/7'],
+      'Contracts, valuations, leases, and portfolios — organized, searchable, and analyzed automatically.',
+    features: ['Contract automation', 'Document storage', 'Data extraction', 'Searchable archives'],
     image: '/assets/img5.jpg',
   },
   {
-    icon: Database,
-    title: 'Sistemas Escalables',
+    icon: TrendingUp,
+    title: 'Market Analytics & Valuation Insights',
     description:
-      'Dashboards y sistemas que crecen con tu negocio. Análisis, reportes y flujos que ahorran tiempo.',
-    features: ['Dashboards custom', 'CRM integrado', 'Reportes en tiempo real', 'APIs escalables'],
+      'Get predictive pricing and investment guidance based on real data. Make smarter decisions faster.',
+    features: ['Predictive pricing', 'Market trends', 'Investment analysis', 'ROI forecasting'],
     image: '/assets/img6.jpg',
+  },
+  {
+    icon: Home,
+    title: 'Property & Tenant Management',
+    description:
+      'Rent collection, maintenance scheduling, tenant communications, lease renewals — automated reliably.',
+    features: ['Automated rent collection', 'Maintenance tracking', 'Tenant portal', 'Lease management'],
+    image: '/assets/img4.jpg',
+  },
+  {
+    icon: Globe,
+    title: 'Scalable Web & Cloud Infrastructure',
+    description:
+      'Secure, reliable, and customized for real-estate businesses ready to grow without technical headaches.',
+    features: ['Cloud hosting', 'Data security', 'Scalable architecture', 'Custom integrations'],
+    image: '/assets/img5.jpg',
   },
 ];
 
@@ -72,41 +88,41 @@ export default function Services() {
             variants={fadeInUp}
             className="text-blue-600 font-semibold mb-4 text-sm uppercase tracking-wide"
           >
-            Nuestros servicios
+            Our Solutions
           </motion.p>
           <motion.h2
             variants={fadeInUp}
             className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6"
           >
-            Soluciones que impulsan{' '}
-            <span className="text-blue-600">resultados</span>
+            Spend less time on admin,{' '}
+            <span className="text-blue-600">more time closing deals</span>
           </motion.h2>
           <motion.p
             variants={fadeInUp}
             className="text-xl text-gray-600 leading-relaxed"
           >
-            Ayudamos a negocios en EE.UU. y LATAM con tecnología que aumenta
-            ingresos y optimiza operaciones.
+            We help real-estate professionals automate the busywork so you can focus on what matters: closing deals, managing properties, and growing your portfolio.
           </motion.p>
         </div>
 
-        {/* Bento Grid - Asymmetric Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* First Service - Takes full left column */}
-          {(() => {
-            const service = services[0];
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
               <motion.div
+                key={index}
                 variants={fadeInUp}
-                className="lg:row-span-2 group relative bg-white rounded-3xl overflow-hidden border border-gray-200 hover:border-blue-300 hover:shadow-2xl transition-all duration-500"
+                className="group relative bg-white rounded-3xl overflow-hidden border border-gray-200 hover:border-blue-300 hover:shadow-2xl transition-all duration-500"
               >
                 {/* Image */}
-                <div className="relative w-full h-80 overflow-hidden">
+                <div className="relative w-full h-64 overflow-hidden bg-gradient-to-br from-blue-50 to-gray-100">
                   <Image
                     src={service.image}
                     alt={service.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    quality={90}
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
@@ -121,17 +137,17 @@ export default function Services() {
 
                 {/* Content */}
                 <div className="p-8">
-                  <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     {service.title}
                   </h3>
-                  <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-gray-600 mb-6 leading-relaxed">
                     {service.description}
                   </p>
 
                   {/* Features */}
                   <ul className="space-y-3 mb-6">
                     {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-gray-700">
+                      <li key={idx} className="flex items-center text-gray-700 text-sm">
                         <div className="w-1.5 h-1.5 rounded-full bg-blue-600 mr-3" />
                         {feature}
                       </li>
@@ -145,107 +161,13 @@ export default function Services() {
                     whileHover={{ x: 4 }}
                     className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all"
                   >
-                    Más información
+                    Learn More
                     <ArrowRight className="w-5 h-5" />
                   </motion.a>
                 </div>
               </motion.div>
             );
-          })()}
-
-          {/* Second Service - Top right */}
-          {(() => {
-            const service = services[1];
-            const IconComponent = service.icon;
-            return (
-              <motion.div
-                variants={fadeInUp}
-                className="group relative bg-white rounded-3xl overflow-hidden border border-gray-200 hover:border-blue-300 hover:shadow-2xl transition-all duration-500"
-              >
-                <div className="grid sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-6 p-8">
-                  {/* Content */}
-                  <div className="flex flex-col justify-center">
-                    <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mb-6">
-                      <IconComponent className="w-7 h-7 text-blue-600" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4 leading-relaxed">
-                      {service.description}
-                    </p>
-                    <motion.a
-                      href="https://calendly.com/anwar-softwaredev"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ x: 4 }}
-                      className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all"
-                    >
-                      Explorar
-                      <ArrowRight className="w-4 h-4" />
-                    </motion.a>
-                  </div>
-
-                  {/* Image */}
-                  <div className="relative w-full h-64 sm:h-full rounded-2xl overflow-hidden">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })()}
-
-          {/* Third Service - Bottom right */}
-          {(() => {
-            const service = services[2];
-            const IconComponent = service.icon;
-            return (
-              <motion.div
-                variants={fadeInUp}
-                className="group relative bg-white rounded-3xl overflow-hidden border border-gray-200 hover:border-blue-300 hover:shadow-2xl transition-all duration-500"
-              >
-                <div className="grid sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-6 p-8">
-                  {/* Content */}
-                  <div className="flex flex-col justify-center">
-                    <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mb-6">
-                      <IconComponent className="w-7 h-7 text-blue-600" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4 leading-relaxed">
-                      {service.description}
-                    </p>
-                    <motion.a
-                      href="https://calendly.com/anwar-softwaredev"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ x: 4 }}
-                      className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all"
-                    >
-                      Explorar
-                      <ArrowRight className="w-4 h-4" />
-                    </motion.a>
-                  </div>
-
-                  {/* Image */}
-                  <div className="relative w-full h-64 sm:h-full rounded-2xl overflow-hidden">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })()}
+          })}
         </div>
         </motion.div>
       </Container>
