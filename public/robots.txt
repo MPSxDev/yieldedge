@@ -1,0 +1,20 @@
+# https://www.robotstxt.org/robotstxt.html
+# Note: Update the Sitemap URL below with your actual domain
+User-agent: *
+Allow: /
+
+# Sitemap
+# Update this URL with your production domain
+Sitemap: https://yieldge.com/sitemap.xml
+
+# Disallow admin and private areas (if any)
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Allow important resources
+Allow: /assets/
+Allow: /brand/
+Allow: /*.js$
+Allow: /*.css$
+

@@ -60,7 +60,7 @@ interface FAQItemProps {
   index: number;
 }
 
-function FAQItem({ faq, index }: FAQItemProps) {
+function FAQItem({ faq }: FAQItemProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -104,11 +104,29 @@ function FAQItem({ faq, index }: FAQItemProps) {
 }
 
 export default function FAQ() {
+  // FAQ Structured Data for SEO
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
     <section
       id="faq"
       className="relative bg-white py-24 sm:py-32 overflow-hidden"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Container className="relative z-10">
         <motion.div
           variants={staggerContainer}

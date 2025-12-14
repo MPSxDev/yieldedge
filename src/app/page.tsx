@@ -40,14 +40,14 @@ export default function Home() {
       <Hero />
       
       {/* Main content sections with spacing */}
-      <div className="space-y-20 sm:space-y-24 lg:space-y-32">
+      <main className="space-y-20 sm:space-y-24 lg:space-y-32">
         <Services />
         <WhyChooseUs />
         <Process />
         <CaseStudies />
         <FAQ />
         <FinalCTA />
-      </div>
+      </main>
       
       <Footer />
     </div>
