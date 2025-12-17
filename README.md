@@ -115,7 +115,7 @@ yieldedge/
 
 ### Hero
 - Eye-catching headline and value proposition
-- Dual CTA buttons (Free Audit & How It Works)
+- Dual CTA buttons (Initial Review & How It Works)
 - High-quality imagery
 
 ### Services

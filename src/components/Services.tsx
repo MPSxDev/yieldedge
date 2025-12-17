@@ -1,9 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Users, FileText, TrendingUp, Home, Globe, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import Container from '@/components/ui/Container';
+import { ServicesContent, homepageContent } from '@/lib/content';
+import { iconMap } from '@/lib/iconMap';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -22,50 +24,11 @@ const staggerContainer = {
   },
 };
 
-const services = [
-  {
-    icon: Users,
-    title: 'Automated Lead Generation & Qualification',
-    description:
-      'Capture and qualify leads 24/7 so you only talk to real prospects. Stop wasting time on unqualified inquiries.',
-    features: ['24/7 lead capture', 'AI-powered qualification', 'Instant follow-ups', 'CRM integration'],
-    image: '/assets/img4.jpg',
-  },
-  {
-    icon: FileText,
-    title: 'Document & Data Handling Automation',
-    description:
-      'Contracts, valuations, leases, and portfolios — organized, searchable, and analyzed automatically.',
-    features: ['Contract automation', 'Document storage', 'Data extraction', 'Searchable archives'],
-    image: '/assets/img5.jpg',
-  },
-  {
-    icon: TrendingUp,
-    title: 'Market Analytics & Valuation Insights',
-    description:
-      'Get predictive pricing and investment guidance based on real data. Make smarter decisions faster.',
-    features: ['Predictive pricing', 'Market trends', 'Investment analysis', 'ROI forecasting'],
-    image: '/assets/img6.jpg',
-  },
-  {
-    icon: Home,
-    title: 'Property & Tenant Management',
-    description:
-      'Rent collection, maintenance scheduling, tenant communications, lease renewals — automated reliably.',
-    features: ['Automated rent collection', 'Maintenance tracking', 'Tenant portal', 'Lease management'],
-    image: '/assets/img4.jpg',
-  },
-  {
-    icon: Globe,
-    title: 'Scalable Web & Cloud Infrastructure',
-    description:
-      'Secure, reliable, and customized for real-estate businesses ready to grow without technical headaches.',
-    features: ['Cloud hosting', 'Data security', 'Scalable architecture', 'Custom integrations'],
-    image: '/assets/img5.jpg',
-  },
-];
+interface ServicesProps {
+  content?: ServicesContent;
+}
 
-export default function Services() {
+export default function Services({ content = homepageContent.services }: ServicesProps) {
   return (
     <section
       id="servicios"
@@ -88,27 +51,27 @@ export default function Services() {
             variants={fadeInUp}
             className="text-blue-600 font-semibold mb-4 text-sm uppercase tracking-wide"
           >
-            Our Solutions
+            {content.sectionLabel}
           </motion.p>
           <motion.h2
             variants={fadeInUp}
             className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6"
           >
-            Spend less time on admin,{' '}
-            <span className="text-blue-600">more time closing deals</span>
+            {content.title}{' '}
+            <span className="text-blue-600">{content.titleHighlight}</span>
           </motion.h2>
           <motion.p
             variants={fadeInUp}
             className="text-xl text-gray-600 leading-relaxed"
           >
-            We help real-estate professionals automate the busywork so you can focus on what matters: closing deals, managing properties, and growing your portfolio.
+            {content.description}
           </motion.p>
         </div>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => {
-            const IconComponent = service.icon;
+          {content.services.map((service, index) => {
+            const IconComponent = iconMap[service.icon] || Globe;
             return (
               <motion.div
                 key={index}

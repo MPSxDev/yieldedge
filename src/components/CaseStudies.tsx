@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Container from '@/components/ui/Container';
+import { CaseStudiesContent, homepageContent } from '@/lib/content';
+import { iconMap } from '@/lib/iconMap';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -22,57 +24,19 @@ const staggerContainer = {
   },
 };
 
-const stats = [
-  { value: '40%', label: 'Admin time reduction', icon: '⏱️' },
-  { value: '35%', label: 'Lead conversion increase', icon: '📈' },
-  { value: '50%', label: 'Lower overhead costs', icon: '💰' },
-  { value: '24/7', label: 'Lead capture & support', icon: '🤖' },
-];
-
-const caseStudies = [
-  {
-    title: 'Boutique Real-Estate Agency',
-    category: 'Lead Generation',
-    location: 'Miami, FL',
-    description:
-      "A mid-sized agency struggling with manual lead follow-ups and unqualified inquiries. We implemented AI-powered lead qualification and automated nurture sequences.",
-    achievements: [
-      'Reduced time spent on unqualified leads by 60%',
-      'Increased conversion rate from inquiry to showing by 42%',
-      'Automated 80% of initial lead communications',
-    ],
-    image: '/assets/img12.jpg',
-  },
-  {
-    title: 'Property Management Firm',
-    category: 'Operations Automation',
-    location: 'Austin, TX',
-    description:
-      "Managing 200+ rental units with spreadsheets and manual processes. We built a custom tenant management system with automated rent collection and maintenance tracking.",
-    achievements: [
-      'Cut administrative overhead by 45%',
-      'Reduced late rent payments by 70% through automated reminders',
-      'Improved tenant satisfaction scores by 38%',
-    ],
-    image: '/assets/img12.jpg',
-  },
-  {
-    title: 'Real-Estate Investment Group',
-    category: 'Analytics & Insights',
-    location: 'Phoenix, AZ',
-    description:
-      "Investors needed better data to evaluate potential acquisitions. We implemented market analytics and predictive pricing tools to inform their investment strategy.",
-    achievements: [
-      'Improved deal evaluation speed by 65%',
-      'Identified 3 high-ROI opportunities in first month',
-      'Reduced analysis time from days to hours',
-    ],
-    image: '/assets/img12.jpg',
-  },
-];
+interface CaseStudiesProps {
+  content?: CaseStudiesContent;
+}
 
 interface CaseStudyCardProps {
-  caseStudy: typeof caseStudies[0];
+  caseStudy: {
+    title: string;
+    category: string;
+    location: string;
+    description: string;
+    achievements: string[];
+    image: string;
+  };
   index: number;
 }
 
@@ -93,14 +57,14 @@ function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
   return (
     <motion.div
       variants={fadeInUp}
-      className="w-full"
+      className="w-full h-full flex"
     >
       <div
         role="button"
         tabIndex={0}
         onClick={handleToggle}
         onKeyDown={handleKeyDown}
-        className="bg-white rounded-3xl border-2 border-gray-200 hover:border-blue-400 transition-all duration-300 overflow-hidden cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        className="bg-white rounded-3xl border-2 border-gray-200 hover:border-blue-400 transition-all duration-300 overflow-hidden cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex flex-col w-full"
       >
         {/* Always visible: Image and Title only */}
         <div className="relative w-full aspect-video overflow-hidden">
@@ -121,8 +85,8 @@ function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
           </div>
         </div>
 
-        <div className="p-6 sm:p-8">
-          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">
+        <div className="p-6 sm:p-8 flex flex-col flex-grow">
+          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 min-h-[3.5rem] flex items-center">
             {caseStudy.title}
           </h3>
 
@@ -174,7 +138,7 @@ function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
   );
 }
 
-export default function CaseStudies() {
+export default function CaseStudies({ content = homepageContent.caseStudies }: CaseStudiesProps) {
   return (
     <section
       id="case-studies"
@@ -190,23 +154,23 @@ export default function CaseStudies() {
           {/* Header */}
           <motion.div variants={fadeInUp} className="text-center mb-16 sm:mb-20">
             <p className="text-blue-600 font-semibold mb-4 text-sm uppercase tracking-wide">
-              Success Stories
+              {content.sectionLabel}
             </p>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6">
-              Real Results for{' '}
-              <span className="text-blue-600">Real-Estate Pros</span>
+              {content.title}{' '}
+              <span className="text-blue-600">{content.titleHighlight}</span>
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              See how we&apos;ve helped real-estate professionals save time, increase conversions, and grow their business with smart automation.
+              {content.description}
             </p>
           </motion.div>
 
           {/* Case Studies Grid */}
           <motion.div
             variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-20"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-20 auto-rows-fr"
           >
-            {caseStudies.map((caseStudy, index) => (
+            {content.caseStudies.map((caseStudy, index) => (
               <CaseStudyCard key={index} caseStudy={caseStudy} index={index} />
             ))}
           </motion.div>
@@ -216,19 +180,26 @@ export default function CaseStudies() {
           variants={staggerContainer}
             className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mt-20"
         >
-          {stats.map((stat, index) => (
-            <motion.div
-              key={index}
-              variants={fadeInUp}
-              className="bg-white rounded-3xl p-8 md:p-10 text-center shadow-lg border border-gray-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300"
-            >
-              <div className="text-5xl mb-4">{stat.icon}</div>
-              <p className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
-                {stat.value}
-              </p>
-              <p className="text-sm text-gray-600 font-medium">{stat.label}</p>
-            </motion.div>
-          ))}
+          {content.stats.map((stat, index) => {
+            const IconComponent = iconMap[stat.icon] || iconMap.Timer;
+            return (
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                className="bg-white rounded-3xl p-8 md:p-10 text-center shadow-lg border border-gray-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300"
+              >
+                <div className="flex justify-center mb-4">
+                  <div className="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center">
+                    <IconComponent className="w-8 h-8 text-blue-600" />
+                  </div>
+                </div>
+                <p className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
+                  {stat.value}
+                </p>
+                <p className="text-sm text-gray-600 font-medium">{stat.label}</p>
+              </motion.div>
+            );
+          })}
         </motion.div>
         </motion.div>
       </Container>

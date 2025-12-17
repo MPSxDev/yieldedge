@@ -76,7 +76,7 @@ export default function Navbar() {
               whileTap={{ scale: 0.98 }}
               className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 text-sm shadow-md hover:shadow-lg"
             >
-              Get Free Audit
+              Get Initial Review
             </motion.a>
           </div>
 
@@ -119,7 +119,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="block w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 text-center shadow-md"
             >
-              Get Free Audit
+              Get Initial Review
             </a>
           </div>
         </motion.div>

@@ -1,0 +1,44 @@
+// Icon mapping helper for converting string icon names to Lucide React components
+import {
+  Users,
+  FileText,
+  TrendingUp,
+  Home,
+  Globe,
+  MessageCircle,
+  BarChart,
+  Bot,
+  Target,
+  Zap,
+  Lightbulb,
+  Shield,
+  ClipboardCheck,
+  FileCode,
+  Rocket,
+  HeadphonesIcon,
+  Timer,
+  DollarSign,
+} from 'lucide-react';
+import { LucideIcon } from 'lucide-react';
+
+export const iconMap: Record<string, LucideIcon> = {
+  Users,
+  FileText,
+  TrendingUp,
+  Home,
+  Globe,
+  MessageCircle,
+  BarChart,
+  Bot,
+  Target,
+  Zap,
+  Lightbulb,
+  Shield,
+  ClipboardCheck,
+  FileCode,
+  Rocket,
+  HeadphonesIcon,
+  Timer,
+  DollarSign,
+};
+

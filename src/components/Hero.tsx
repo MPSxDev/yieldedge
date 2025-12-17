@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import Container from '@/components/ui/Container';
+import { HeroContent, homepageContent } from '@/lib/content';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -22,7 +23,11 @@ const staggerContainer = {
   },
 };
 
-export default function Hero() {
+interface HeroProps {
+  content?: HeroContent;
+}
+
+export default function Hero({ content = homepageContent.hero }: HeroProps) {
   return (
     <section
       id="hero"
@@ -45,7 +50,7 @@ export default function Hero() {
             {/* Badge */}
             <motion.div variants={fadeInUp} className="mb-8">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-sm font-medium">
-                Real-Estate Technology Partner
+                {content.badge}
               </span>
             </motion.div>
 
@@ -54,8 +59,8 @@ export default function Hero() {
               variants={fadeInUp}
               className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-gray-900 mb-6 leading-[1.05]"
             >
-              Unlock Real-Estate Profits with{' '}
-              <span className="text-blue-600">Smart Web, Cloud & AI</span>
+              {content.headline}{' '}
+              <span className="text-blue-600">{content.headlineHighlight}</span>
             </motion.h1>
 
             {/* Subtitle */}
@@ -63,7 +68,7 @@ export default function Hero() {
               variants={fadeInUp}
               className="text-xl sm:text-2xl text-gray-600 mb-10 leading-relaxed max-w-xl"
             >
-              Generate qualified leads, streamline property management, and make data-driven investment decisions — all in one platform.
+              {content.subheadline}
             </motion.p>
 
             {/* CTAs */}
@@ -79,7 +84,7 @@ export default function Hero() {
                 whileTap={{ scale: 0.98 }}
                 className="group inline-flex items-center justify-center gap-3 px-8 py-5 bg-blue-600 text-white text-lg font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-600/30 hover:shadow-xl hover:shadow-blue-600/40"
               >
-                Get Your Free Audit
+                {content.primaryCTA}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </motion.a>
 
@@ -89,7 +94,7 @@ export default function Hero() {
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center justify-center px-8 py-5 bg-white text-gray-900 text-lg font-medium rounded-full border-2 border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-all duration-300"
               >
-                See How It Works
+                {content.secondaryCTA}
               </motion.a>
             </motion.div>
           </motion.div>
@@ -103,8 +108,8 @@ export default function Hero() {
           >
             <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="/assets/img1.jpg"
-                alt="Modern technology workspace"
+                src={content.heroImage}
+                alt={content.heroImageAlt}
                 fill
                 className="object-cover"
                 priority
