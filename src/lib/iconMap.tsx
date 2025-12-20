@@ -18,6 +18,11 @@ import {
   HeadphonesIcon,
   Timer,
   DollarSign,
+  Code,
+  Wrench,
+  Search,
+  Clock,
+  Star,
 } from 'lucide-react';
 import { LucideIcon } from 'lucide-react';
 
@@ -40,5 +45,12 @@ export const iconMap: Record<string, LucideIcon> = {
   HeadphonesIcon,
   Timer,
   DollarSign,
+  Code,
+  Wrench,
+  Search,
+  Clock,
+  Star,
 };
+
+
 

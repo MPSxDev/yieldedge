@@ -31,7 +31,7 @@ export default function FinalCTA({ content = homepageContent.finalCTA }: FinalCT
           whileInView="visible"
           viewport={{ once: true, amount: 0.1, margin: '0px 0px -100px 0px' }}
         >
-        <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-3xl overflow-hidden shadow-2xl">
+        <div className="bg-gradient-to-br rounded-3xl overflow-hidden shadow-2xl" style={{ background: 'linear-gradient(135deg, hsl(25, 95%, 53%) 0%, hsl(25, 90%, 48%) 100%)' }}>
           <div className="grid lg:grid-cols-2">
             {/* Content */}
             <div className="p-10 sm:p-12 lg:p-16 flex flex-col justify-center">
@@ -58,18 +58,34 @@ export default function FinalCTA({ content = homepageContent.finalCTA }: FinalCT
                   ))}
                 </ul>
 
-                {/* CTA Button */}
-                <motion.a
-                  href="https://calendly.com/anwar-softwaredev"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="inline-flex items-center gap-3 px-8 py-5 bg-white text-blue-600 text-lg font-bold rounded-full hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl group"
-                >
-                  {content.ctaText}
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </motion.a>
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 mb-6">
+                  <motion.a
+                    href="https://calendly.com/anwar-softwaredev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="inline-flex items-center justify-center gap-3 px-8 py-5 text-white text-lg font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl group"
+                    style={{ backgroundColor: 'hsl(25, 95%, 53%)' }}
+                  >
+                    {content.ctaText}
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </motion.a>
+                  {content.ctaSubtext && (
+                    <motion.a
+                      href="https://calendly.com/anwar-softwaredev"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="inline-flex items-center justify-center px-8 py-5 text-lg font-semibold rounded-full border-2 transition-all duration-300"
+                      style={{ borderColor: 'hsl(173, 80%, 40%)', color: 'hsl(173, 80%, 40%)', backgroundColor: 'transparent' }}
+                    >
+                      {content.ctaSubtext}
+                    </motion.a>
+                  )}
+                </div>
 
                 <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-blue-100">
                   <div className="flex items-center gap-2">

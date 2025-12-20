@@ -91,6 +91,19 @@ export default function Services({ content = homepageContent.services }: Service
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 
+                  {/* Badge */}
+                  {service.badge && (
+                    <div className="absolute top-4 left-4 z-10">
+                      <span className={`px-3 py-1.5 text-xs font-bold rounded-full ${
+                        service.badge === 'MOST POPULAR' 
+                          ? 'bg-orange-500 text-white' 
+                          : 'bg-teal-500 text-white'
+                      }`}>
+                        {service.badge}
+                      </span>
+                    </div>
+                  )}
+
                   {/* Icon overlay */}
                   <div className="absolute top-6 left-6">
                     <div className="w-14 h-14 rounded-2xl bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-lg">

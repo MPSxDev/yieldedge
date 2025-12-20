@@ -18,6 +18,7 @@ export interface Service {
   description: string;
   features: string[];
   image: string;
+  badge?: string; // Optional badge (e.g., "MOST POPULAR", "BEST VALUE")
 }
 
 export interface ServicesContent {
@@ -555,4 +556,225 @@ export const yieldedgeContent: PageContent = {
     imageAlt: 'Let\'s work together',
   },
 };
+
+// VibeRescue page content (Dark theme, AI project rescue focused)
+export const viberescueContent: PageContent = {
+  hero: {
+    badge: 'LIMITED SPOTS: Only 7 Rescue Slots Left This Week',
+    headline: 'Your Vibe-Coded Project',
+    headlineHighlight: 'Deserves to Ship',
+    subheadline: 'Stuck on that AI-built project? App crashed and burning? We\'re the tech rescue team that turns your vibe-coded chaos into production-ready success.',
+    primaryCTA: 'Emergency Rescue - Get Help Now',
+    secondaryCTA: 'Book Free Consultation',
+    heroImage: '/assets/img1.jpg',
+    heroImageAlt: 'VibeRescue - Tech Rescue Team',
+  },
+  services: {
+    sectionLabel: 'Our Services',
+    title: 'From Chaos to',
+    titleHighlight: 'Shipping',
+    description: 'Whether your AI-built project needs a quick fix or a complete overhaul, we\'ve got you covered with battle-tested expertise.',
+    services: [
+      {
+        icon: 'Zap',
+        title: 'Emergency Crash Support',
+        description: 'Your vibe-coded app just died? We respond within 2 hours to diagnose and fix critical issues. 24/7 availability.',
+        features: ['2-hour response time', 'Root cause analysis', 'Same-day fixes'],
+        image: '/assets/img4.jpg',
+        badge: 'MOST POPULAR',
+      },
+      {
+        icon: 'Code',
+        title: 'Project Rescue & Completion',
+        description: 'Started with AI but hit a wall? We take your unfinished project and make it production-ready.',
+        features: ['Code audit & cleanup', 'Feature completion', 'Deployment setup'],
+        image: '/assets/img5.jpg',
+      },
+      {
+        icon: 'Wrench',
+        title: 'Technical Debt Cleanup',
+        description: 'AI-generated spaghetti code? We refactor, optimize, and make your codebase maintainable.',
+        features: ['Code refactoring', 'Performance optimization', 'Best practices'],
+        image: '/assets/img6.jpg',
+      },
+      {
+        icon: 'Rocket',
+        title: 'Launch & Scale Support',
+        description: 'Ready to go live? We handle deployment, monitoring, and scaling your vibe-coded MVP.',
+        features: ['Production deployment', 'CI/CD setup', 'Monitoring & scaling'],
+        image: '/assets/img4.jpg',
+        badge: 'BEST VALUE',
+      },
+    ],
+  },
+  whyChooseUs: {
+    title: 'Trusted by Builders',
+    titleHighlight: 'Like You',
+    description: 'Real results from developers who\'ve been where you are. We don\'t just fix code — we rescue projects and restore confidence.',
+    image: '/assets/img7.jpg',
+    imageAlt: 'Success stories',
+    values: [
+      {
+        icon: 'Zap',
+        title: 'Response in 2 Hours',
+        description: 'When your project is down, every minute counts. We respond within 2 hours, 24/7.',
+      },
+      {
+        icon: 'Shield',
+        title: '100% Success Rate',
+        description: 'Every project we take on gets rescued. No exceptions. No excuses.',
+      },
+      {
+        icon: 'Star',
+        title: '50+ Projects Rescued',
+        description: 'We\'ve saved dozens of AI-built projects from the brink. Your project is next.',
+      },
+      {
+        icon: 'Clock',
+        title: '24/7 Availability',
+        description: 'Emergencies don\'t wait for business hours. Neither do we.',
+      },
+    ],
+  },
+  process: {
+    sectionLabel: 'How It Works',
+    title: 'Simple. Fast.',
+    titleHighlight: 'Effective.',
+    description: 'From broken to shipped in as little as 48 hours. Here\'s our battle-tested process.',
+    steps: [
+      {
+        icon: 'MessageCircle',
+        number: '01',
+        title: 'Tell Us What\'s Broken',
+        description: 'Share your project details, what\'s not working, and your deadline. We respond within 2 hours.',
+        image: '/assets/img9.jpg',
+        deliverables: ['Project assessment', 'Issue identification', 'Response within 2 hours'],
+      },
+      {
+        icon: 'Search',
+        number: '02',
+        title: 'Free Diagnosis',
+        description: 'We analyze your codebase, identify issues, and provide a clear action plan with transparent pricing.',
+        image: '/assets/img10.jpg',
+        deliverables: ['Code analysis', 'Issue report', 'Action plan & pricing'],
+      },
+      {
+        icon: 'Wrench',
+        number: '03',
+        title: 'We Fix & Build',
+        description: 'Our senior devs jump in, fix the issues, complete missing features, and optimize your code.',
+        image: '/assets/img11.jpg',
+        deliverables: ['Bug fixes', 'Feature completion', 'Code optimization'],
+      },
+      {
+        icon: 'Rocket',
+        number: '04',
+        title: 'Ship with Confidence',
+        description: 'We deploy, test, and hand over a production-ready project. Plus 7 days of free support.',
+        image: '/assets/img9.jpg',
+        deliverables: ['Production deployment', 'Testing & QA', '7 days free support'],
+      },
+    ],
+    ctaText: 'Get Emergency Help Now',
+  },
+  caseStudies: {
+    sectionLabel: 'Testimonials',
+    title: 'Trusted by Builders',
+    titleHighlight: 'Like You',
+    description: 'Real developers. Real projects. Real rescues.',
+    caseStudies: [
+      {
+        title: 'Sarah K.',
+        category: 'Startup Founder',
+        location: 'Lovable Project Rescue',
+        description: 'I spent weeks trying to fix my Lovable project. These guys had it working in 3 hours. Absolute lifesavers!',
+        achievements: [
+          'Fixed in 3 hours',
+          'Production-ready',
+          '5-star rating',
+        ],
+        image: '/assets/img12.jpg',
+      },
+      {
+        title: 'Marcus T.',
+        category: 'Product Manager',
+        location: 'AI App Optimization',
+        description: 'My AI-generated app was a mess of errors. They not only fixed it but made it 10x faster. Worth every penny.',
+        achievements: [
+          '10x performance boost',
+          'All errors resolved',
+          '5-star rating',
+        ],
+        image: '/assets/img12.jpg',
+      },
+      {
+        title: 'Jennifer L.',
+        category: 'E-commerce Owner',
+        location: 'Emergency Launch Support',
+        description: 'The emergency support saved my launch. They jumped on a call at midnight and had my site back up in an hour.',
+        achievements: [
+          '1-hour response',
+          'Launch saved',
+          '5-star rating',
+        ],
+        image: '/assets/img12.jpg',
+      },
+    ],
+    stats: [
+      { icon: 'Users', value: '50+', label: 'Projects Rescued' },
+      { icon: 'Timer', value: '2hrs', label: 'Avg. Response Time' },
+      { icon: 'Shield', value: '100%', label: 'Success Rate' },
+      { icon: 'Clock', value: '24/7', label: 'Availability' },
+    ],
+  },
+  faq: {
+    sectionLabel: 'FAQ',
+    title: 'Questions?',
+    titleHighlight: 'We\'ve got answers',
+    description: 'Common questions about our project rescue services',
+    faqs: [
+      {
+        question: 'How fast can you respond to an emergency?',
+        answer: 'We respond within 2 hours, 24/7. For critical issues, we can often start working immediately. Your project\'s urgency is our priority.',
+      },
+      {
+        question: 'What if my project is completely broken?',
+        answer: 'That\'s exactly what we do. We specialize in rescuing projects that seem beyond repair. Our 100% success rate means we\'ve never failed to rescue a project we\'ve taken on.',
+      },
+      {
+        question: 'Do you work with AI-generated code?',
+        answer: 'Yes! We specialize in fixing and optimizing AI-generated code. We understand the unique challenges of vibe-coded projects and know how to make them production-ready.',
+      },
+      {
+        question: 'What\'s included in the rescue service?',
+        answer: 'Full diagnosis, bug fixes, code optimization, feature completion (if needed), deployment, testing, and 7 days of free support. We handle everything from broken to shipped.',
+      },
+      {
+        question: 'How much does it cost?',
+        answer: 'Pricing depends on project scope and urgency. We provide transparent pricing after our free diagnosis. Most rescues range from $2,000-$10,000, with emergency support available 24/7.',
+      },
+      {
+        question: 'What if you can\'t fix it?',
+        answer: 'We have a 100% success rate. If we take on your project, we will fix it. That\'s our guarantee. We don\'t take on projects we can\'t rescue.',
+      },
+    ],
+    ctaText: 'Get Emergency Help Now',
+  },
+  finalCTA: {
+    sectionLabel: 'Limited Offer',
+    title: 'Don\'t Let Your Project Die',
+    description: 'Only 3 Emergency Slots Left This Week. Get your vibe-coded project rescued and shipped before it\'s too late.',
+    benefits: [
+      'Response in 2 hours, 24/7',
+      '50+ projects successfully rescued',
+      '100% success rate guarantee',
+    ],
+    ctaText: 'Get Emergency Help Now',
+    ctaSubtext: 'Book Free 15-Min Call',
+    image: '/assets/img3.jpg',
+    imageAlt: 'Emergency rescue',
+  },
+};
+
+
 

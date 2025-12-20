@@ -11,6 +11,13 @@
   --cyan: #06b6d4;
   --gradient-primary: linear-gradient(135deg, #0ea5e9 0%, #1e40af 50%, #1e3a8a 100%);
   --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #0ea5e9 100%);
+  
+  /* VibeRescue Dark Theme Colors */
+  --viberescue-bg: hsl(224, 71%, 4%);
+  --viberescue-teal: hsl(173, 80%, 40%);
+  --viberescue-orange: hsl(25, 95%, 53%);
+  --viberescue-text: hsl(0, 0%, 95%);
+  --viberescue-text-muted: hsl(0, 0%, 70%);
 
   /* Premium Typography System - Apple/Linear/Vercel Inspired */
   --font-size-h1: clamp(3.5rem, 8vw, 4.5rem);    /* 56-72px */
@@ -141,6 +148,36 @@ body {
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
+}
+
+/* VibeRescue Glow Animations */
+.glow-primary {
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.5), 0 0 40px rgba(6, 182, 212, 0.3);
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.glow-urgent {
+  box-shadow: 0 0 20px rgba(251, 146, 60, 0.5), 0 0 40px rgba(251, 146, 60, 0.3);
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.5), 0 0 40px rgba(6, 182, 212, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.7), 0 0 60px rgba(6, 182, 212, 0.5);
+  }
+}
+
+/* Countdown Pulse Animation */
+.countdown-pulse {
+  animation: countdown-pulse 1s ease-in-out infinite;
+}
+
+@keyframes countdown-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }
 
 /* Smooth transitions for interactive elements */
@@ -298,4 +335,73 @@ img, video {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+/* VibeRescue Theme - White Background */
+[data-theme="viberescue"] .text-blue-600 {
+  color: hsl(173, 80%, 40%) !important;
+}
+
+[data-theme="viberescue"] .bg-blue-600 {
+  background-color: hsl(25, 95%, 53%) !important;
+}
+
+[data-theme="viberescue"] .border-2.border-gray-200,
+[data-theme="viberescue"] a.border-2 {
+  border-color: hsl(173, 80%, 40%) !important;
+  background-color: transparent !important;
+  color: hsl(173, 80%, 40%) !important;
+}
+
+[data-theme="viberescue"] a.border-2:hover {
+  border-color: hsl(173, 80%, 50%) !important;
+  background-color: transparent !important;
+  color: hsl(173, 80%, 50%) !important;
+}
+
+[data-theme="viberescue"] .text-teal-400 {
+  color: hsl(173, 80%, 40%) !important;
+}
+
+[data-theme="viberescue"] .bg-orange-500 {
+  background-color: hsl(25, 95%, 53%) !important;
+}
+
+[data-theme="viberescue"] .bg-teal-500 {
+  background-color: hsl(173, 80%, 40%) !important;
+}
+
+[data-theme="viberescue"] #servicios .grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+@media (max-width: 768px) {
+  [data-theme="viberescue"] #servicios .grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+}
+
+/* VibeRescue Hero CTA Styling */
+#hero .bg-blue-600 {
+  background-color: hsl(25, 95%, 53%) !important;
+}
+
+#hero .bg-blue-600:hover {
+  background-color: hsl(25, 95%, 48%) !important;
+}
+
+#hero .shadow-blue-600\/30 {
+  box-shadow: 0 10px 15px -3px rgba(251, 146, 60, 0.3), 0 4px 6px -2px rgba(251, 146, 60, 0.3) !important;
+}
+
+#hero .border-2.border-gray-200 {
+  border-color: hsl(173, 80%, 40%) !important;
+  background-color: transparent !important;
+  color: hsl(173, 80%, 40%) !important;
+}
+
+#hero .border-2.border-gray-200:hover {
+  border-color: hsl(173, 80%, 50%) !important;
+  background-color: transparent !important;
+  color: hsl(173, 80%, 50%) !important;
 }
