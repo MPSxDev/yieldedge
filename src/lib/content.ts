@@ -607,6 +607,232 @@ export const yieldedgeContent: PageContent = {
   },
 };
 
+// Real Estate page content (Real Estate focused)
+export const realEstateContent: PageContent = {
+  hero: {
+    slides: [
+      {
+        heading: 'Real-Estate Technology Partner',
+        subheading: 'Unlock Real-Estate Profits with Smart Web, Cloud & AI',
+        description: 'Generate qualified leads, streamline property management, and make data-driven investment decisions — all in one platform.',
+        ctaText: 'Get Your Initial Review',
+        ctaLink: '/get-in-touch',
+        backgroundImage: '/assets/img1.jpg',
+      },
+    ],
+  },
+  services: {
+    sectionLabel: 'Our Solutions',
+    title: 'Spend less time on admin,',
+    titleHighlight: 'more time closing deals',
+    description: 'We help real-estate professionals automate the busywork so you can focus on what matters: closing deals, managing properties, and growing your portfolio.',
+    services: [
+      {
+        icon: 'Users',
+        title: 'Automated Lead Generation & Qualification',
+        description: 'Capture and qualify leads 24/7 so you only talk to real prospects. Stop wasting time on unqualified inquiries.',
+        features: ['24/7 lead capture', 'AI-powered qualification', 'Instant follow-ups', 'CRM integration'],
+        image: '/assets/img4.jpg',
+      },
+      {
+        icon: 'FileText',
+        title: 'Document & Data Handling Automation',
+        description: 'Contracts, valuations, leases, and portfolios — organized, searchable, and analyzed automatically.',
+        features: ['Contract automation', 'Document storage', 'Data extraction', 'Searchable archives'],
+        image: '/assets/img5.jpg',
+      },
+      {
+        icon: 'TrendingUp',
+        title: 'Market Analytics & Valuation Insights',
+        description: 'Get predictive pricing and investment guidance based on real data. Make smarter decisions faster.',
+        features: ['Predictive pricing', 'Market trends', 'Investment analysis', 'ROI forecasting'],
+        image: '/assets/img6.jpg',
+      },
+      {
+        icon: 'Home',
+        title: 'Property & Tenant Management',
+        description: 'Rent collection, maintenance scheduling, tenant communications, lease renewals — automated reliably.',
+        features: ['Automated rent collection', 'Maintenance tracking', 'Tenant portal', 'Lease management'],
+        image: '/assets/img4.jpg',
+      },
+      {
+        icon: 'Globe',
+        title: 'Scalable Web & Cloud Infrastructure',
+        description: 'Secure, reliable, and customized for real-estate businesses ready to grow without technical headaches.',
+        features: ['Cloud hosting', 'Data security', 'Scalable architecture', 'Custom integrations'],
+        image: '/assets/img5.jpg',
+      },
+    ],
+  },
+  whyChooseUs: {
+    title: 'Why Choose',
+    titleHighlight: 'Yieldge?',
+    description: 'Experienced tech team with proven results in real-estate. We\'ve helped clients cut admin time, increase conversions, and reduce costs — so you can focus on growing your business.',
+    image: '/assets/img7.jpg',
+    imageAlt: 'Growth and performance',
+    values: [
+      {
+        icon: 'Target',
+        title: 'Real-Estate Expertise',
+        description: 'We understand the unique challenges of agents, brokers, property managers, and investors.',
+      },
+      {
+        icon: 'Zap',
+        title: 'Proven Results',
+        description: 'Our clients cut admin time, increase lead-to-sale conversion, and reduce overhead costs significantly.',
+      },
+      {
+        icon: 'Lightbulb',
+        title: 'Custom Solutions',
+        description: 'Every implementation is tailored to your specific workflow, property types, and business goals.',
+      },
+      {
+        icon: 'Shield',
+        title: 'Reliable & Secure',
+        description: 'Enterprise-grade security and reliability. Your data and your clients\' information stay protected.',
+      },
+    ],
+  },
+  process: {
+    sectionLabel: 'How It Works',
+    title: 'From audit to',
+    titleHighlight: 'automation in 4 steps',
+    description: 'Our proven process ensures smooth implementation and measurable results — from initial assessment to ongoing growth.',
+    steps: [
+      {
+        icon: 'ClipboardCheck',
+        number: '01',
+        title: 'Initial Review & Needs Assessment',
+        description: 'We analyze your current workflow, pain points, and goals. Understand what\'s slowing you down and where automation can make the biggest impact.',
+        image: '/assets/img9.jpg',
+        deliverables: ['Current state analysis', 'Opportunity assessment', 'ROI projection'],
+      },
+      {
+        icon: 'FileCode',
+        number: '02',
+        title: 'Custom Implementation Plan',
+        description: 'We design a tailored solution that fits your business. No cookie-cutter templates — every system is built for your specific needs.',
+        image: '/assets/img10.jpg',
+        deliverables: ['Technical architecture', 'Implementation roadmap', 'Clear timeline & milestones'],
+      },
+      {
+        icon: 'Rocket',
+        number: '03',
+        title: 'Website Launch & Lead Flow Setup',
+        description: 'Seamless integration with your existing tools and processes. We handle the technical complexity while you stay focused on your clients.',
+        image: '/assets/img11.jpg',
+        deliverables: ['Production deployment', 'Team training', 'System documentation'],
+      },
+      {
+        icon: 'HeadphonesIcon',
+        number: '04',
+        title: 'Ongoing Support & Scaling',
+        description: 'Continuous monitoring, optimization, and support. As your business grows, we ensure your systems scale with you.',
+        image: '/assets/img9.jpg',
+        deliverables: ['24/7 monitoring', 'Regular updates', 'Priority support'],
+      },
+    ],
+    ctaText: 'Get Your Initial Review',
+  },
+  caseStudies: {
+    sectionLabel: 'Success Stories',
+    title: 'Real Results for',
+    titleHighlight: 'Real-Estate Pros',
+    description: 'See how we\'ve helped real-estate professionals save time, increase conversions, and grow their business with smart automation.',
+    caseStudies: [
+      {
+        title: 'Boutique Real-Estate Agency',
+        category: 'Lead Generation',
+        location: 'Miami, FL',
+        description: 'A mid-sized agency struggling with manual lead follow-ups and unqualified inquiries. We implemented AI-powered lead qualification and automated nurture sequences.',
+        achievements: [
+          'Reduced time spent on unqualified leads by 60%',
+          'Increased conversion rate from inquiry to showing by 42%',
+          'Automated 80% of initial lead communications',
+        ],
+        image: '/assets/img12.jpg',
+      },
+      {
+        title: 'Property Management Firm',
+        category: 'Operations Automation',
+        location: 'Austin, TX',
+        description: 'Managing 200+ rental units with spreadsheets and manual processes. We built a custom tenant management system with automated rent collection and maintenance tracking.',
+        achievements: [
+          'Cut administrative overhead by 45%',
+          'Reduced late rent payments by 70% through automated reminders',
+          'Improved tenant satisfaction scores by 38%',
+        ],
+        image: '/assets/img12.jpg',
+      },
+      {
+        title: 'Real-Estate Investment Group',
+        category: 'Analytics & Insights',
+        location: 'Phoenix, AZ',
+        description: 'Investors needed better data to evaluate potential acquisitions. We implemented market analytics and predictive pricing tools to inform their investment strategy.',
+        achievements: [
+          'Improved deal evaluation speed by 65%',
+          'Identified 3 high-ROI opportunities in first month',
+          'Reduced analysis time from days to hours',
+        ],
+        image: '/assets/img12.jpg',
+      },
+    ],
+    stats: [
+      { icon: 'Timer', value: '40%', label: 'Admin time reduction' },
+      { icon: 'TrendingUp', value: '35%', label: 'Lead conversion increase' },
+      { icon: 'DollarSign', value: '50%', label: 'Lower overhead costs' },
+      { icon: 'Bot', value: '24/7', label: 'Lead capture & support' },
+    ],
+  },
+  faq: {
+    sectionLabel: 'FAQ',
+    title: 'Questions?',
+    titleHighlight: 'We\'ve got answers',
+    description: 'Common questions about our real-estate automation solutions',
+    faqs: [
+      {
+        question: 'Does AI replace human expertise in real-estate?',
+        answer: 'No. Our AI solutions enhance your expertise, not replace it. We automate repetitive tasks like lead qualification, document processing, and follow-ups — freeing you to focus on building relationships and closing deals. The human touch remains essential in real-estate.',
+      },
+      {
+        question: 'Is my data safe and private?',
+        answer: 'Absolutely. We implement enterprise-grade security measures including encrypted data storage, secure cloud infrastructure, and strict access controls. Your client information and business data are protected with industry-leading security standards. We never share or sell your data.',
+      },
+      {
+        question: 'How long does implementation take?',
+        answer: 'It depends on the scope of your project. Simple automation solutions can be deployed in 2-4 weeks. More comprehensive systems typically take 6-12 weeks. We work in phases, so you\'ll start seeing value early in the process, not just at the end.',
+      },
+      {
+        question: 'What\'s the cost?',
+        answer: 'Investment varies based on your specific needs and business size. Schedule a free consultation and we\'ll provide a detailed proposal with clear pricing. Most clients see ROI within 6-12 months through time savings, increased conversions, and reduced overhead costs.',
+      },
+      {
+        question: 'Do I need technical staff to use your systems?',
+        answer: 'No technical expertise required. We design user-friendly interfaces and provide comprehensive training for your team. We also offer ongoing support to ensure smooth operation. If issues arise, our support team is available to help.',
+      },
+      {
+        question: 'Can your solutions integrate with my existing tools?',
+        answer: 'Yes. We specialize in integrating with popular real-estate platforms, CRMs (like Zillow, Realtor.com, HubSpot), property management systems, and other tools you already use. Our solutions are built to enhance your current workflow, not disrupt it.',
+      },
+    ],
+    ctaText: 'Schedule a free consultation',
+  },
+  finalCTA: {
+    sectionLabel: 'Comienza hoy',
+    title: 'Transforma tu negocio con tecnología que rinde',
+    description: 'Agenda una llamada estratégica gratuita de 30 minutos. Sin compromiso. Analizamos tu situación actual y definimos un plan de acción concreto.',
+    benefits: [
+      'Estrategia personalizada para tu negocio',
+      'ROI proyectado y plan de implementación',
+      'Respuestas a todas tus preguntas técnicas',
+    ],
+    ctaText: 'Agenda tu llamada gratuita',
+    ctaSubtext: '📅 Disponibilidad inmediata • 💬 Sin compromiso • ⚡ Resultados claros',
+    image: '/assets/img3.jpg',
+    imageAlt: 'Transforma tu negocio',
+  },
+};
+
 // VibeRescue page content (Dark theme, AI project rescue focused)
 export const viberescueContent: PageContent = {
   hero: {

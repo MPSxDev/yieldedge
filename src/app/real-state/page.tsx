@@ -3,6 +3,7 @@
 import dynamic from 'next/dynamic';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import { realEstateContent } from '@/lib/content';
 
 // Lazy load below-the-fold components
 const Services = dynamic(() => import('@/components/Services'), {
@@ -37,16 +38,16 @@ export default function RealState() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <Hero />
+      <Hero content={realEstateContent.hero} />
       
       {/* Main content sections with spacing */}
       <main className="space-y-20 sm:space-y-24 lg:space-y-32">
-        <Services />
-        <WhyChooseUs />
-        <Process />
-        <CaseStudies />
-        <FAQ />
-        <FinalCTA />
+        <Services content={realEstateContent.services} />
+        <WhyChooseUs content={realEstateContent.whyChooseUs} />
+        <Process content={realEstateContent.process} />
+        <CaseStudies content={realEstateContent.caseStudies} />
+        <FAQ content={realEstateContent.faq} />
+        <FinalCTA content={realEstateContent.finalCTA} />
       </main>
       
       <Footer />
