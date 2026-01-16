@@ -31,7 +31,7 @@ export default function FinalCTA({ content = homepageContent.finalCTA }: FinalCT
           whileInView="visible"
           viewport={{ once: true, amount: 0.1, margin: '0px 0px -100px 0px' }}
         >
-        <div className="bg-gradient-to-br rounded-3xl overflow-hidden shadow-2xl" style={{ background: 'linear-gradient(135deg, hsl(25, 95%, 53%) 0%, hsl(25, 90%, 48%) 100%)' }}>
+        <div className="bg-gradient-to-br rounded-3xl overflow-hidden shadow-2xl" style={{ background: 'linear-gradient(135deg, hsl(217, 91%, 60%) 0%, hsl(221, 83%, 53%) 100%)' }}>
           <div className="grid lg:grid-cols-2">
             {/* Content */}
             <div className="p-10 sm:p-12 lg:p-16 flex flex-col justify-center">
@@ -66,8 +66,7 @@ export default function FinalCTA({ content = homepageContent.finalCTA }: FinalCT
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="inline-flex items-center justify-center gap-3 px-8 py-5 text-white text-lg font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl group"
-                    style={{ backgroundColor: 'hsl(25, 95%, 53%)' }}
+                    className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-white text-blue-600 text-lg font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:bg-blue-50 group"
                   >
                     {content.ctaText}
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
