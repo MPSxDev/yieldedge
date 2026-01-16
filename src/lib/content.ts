@@ -1,6 +1,9 @@
 // Content configuration for homepage and yieldedge page
 // Homepage uses default values, yieldedge page overrides with general business copy
 
+// Hero variant types for A/B testing
+export type HeroVariant = 'default' | 'fomo' | 'spanish-latam' | 'social-proof' | 'problem-agitation';
+
 export interface HeroSlide {
   heading: string;
   subheading: string;
@@ -10,8 +13,79 @@ export interface HeroSlide {
   backgroundImage?: string;
 }
 
+// Extended HeroSlide with variant-specific fields
+export interface EnhancedHeroSlide extends HeroSlide {
+  variant?: HeroVariant;
+  lang?: 'en' | 'es';
+
+  // FOMO elements
+  urgencyBadge?: string;
+  socialProofCount?: string;
+
+  // Social proof elements
+  testimonialQuote?: string;
+  testimonialAuthor?: string;
+  testimonialRole?: string;
+  testimonialCompany?: string;
+  metrics?: Array<{ value: string; label: string }>;
+  logoBar?: string[];
+
+  // Problem-agitation elements
+  painPoints?: string[];
+  agitationText?: string;
+  promiseText?: string;
+
+  // Secondary CTA
+  secondaryCta?: { text: string; link: string };
+}
+
 export interface HeroContent {
   slides: HeroSlide[];
+}
+
+// Enhanced hero content with variant support
+export interface EnhancedHeroContent {
+  slides: EnhancedHeroSlide[];
+  defaultVariant?: HeroVariant;
+}
+
+// Value Stack interfaces (Hormozi-style)
+export interface ValueStackItem {
+  icon: string;
+  title: string;
+  description: string;
+  perceivedValue?: string;
+  highlight?: boolean;
+}
+
+export interface ValueStackBonus {
+  icon: string;
+  title: string;
+  description: string;
+  value: string;
+}
+
+export interface ValueStackGuarantee {
+  icon: string;
+  title: string;
+  description: string;
+  duration?: string;
+}
+
+export interface ValueStackContent {
+  sectionLabel: string;
+  title: string;
+  titleHighlight: string;
+  subtitle: string;
+  items: ValueStackItem[];
+  bonuses: ValueStackBonus[];
+  totalPerceivedValue: string;
+  actualPrice: string;
+  savings: string;
+  guarantee: ValueStackGuarantee;
+  ctaText: string;
+  ctaSubtext?: string;
+  ctaLink: string;
 }
 
 export interface Service {
@@ -1692,4 +1766,269 @@ export const professionalServicesContent: PageContent = {
   },
 };
 
+// ============================================
+// HERO VARIANTS CONTENT (A/B Testing)
+// ============================================
 
+// Default Hero (current)
+export const defaultHeroSlide: EnhancedHeroSlide = {
+  variant: 'default',
+  lang: 'en',
+  heading: 'PROVEN EXCELLENCE',
+  subheading: 'More than 15 years of innovation',
+  description: 'With over 15+ years serving the global technology landscape, Yieldge has established itself as a trusted partner in digital transformation. We\'ve empowered countless organizations to streamline operations and achieve measurable results.',
+  ctaText: 'DISCOVER YIELDGE',
+  ctaLink: '/get-in-touch',
+  backgroundImage: '/assets/img2.jpg',
+};
+
+// FOMO Crusher Hero
+export const fomoHeroSlide: EnhancedHeroSlide = {
+  variant: 'fomo',
+  lang: 'en',
+  heading: 'JOIN 127+ FOUNDERS WHO ALREADY AUTOMATED THEIR GROWTH',
+  subheading: 'Stop Watching Your Competitors Scale While You\'re Stuck',
+  description: 'Every day you wait, your competition is automating their lead flow. The founders who moved fast are now booking 3x more calls with half the effort.',
+  ctaText: 'Claim Your Spot Now',
+  ctaLink: '/get-in-touch',
+  backgroundImage: '/assets/img1.jpg',
+  urgencyBadge: 'Only 3 spots left this week',
+  socialProofCount: '127+ founders already using this system',
+  secondaryCta: {
+    text: 'See How It Works',
+    link: '#process',
+  },
+};
+
+// Spanish LATAM Hero
+export const spanishHeroSlide: EnhancedHeroSlide = {
+  variant: 'spanish-latam',
+  lang: 'es',
+  heading: 'TECNOLOGÍA QUE GENERA RESULTADOS',
+  subheading: 'Transforma Tu Negocio con Sistemas que Trabajan 24/7',
+  description: 'Ayudamos a emprendedores y empresas de LATAM a automatizar su captación de clientes, cerrar más ventas, y escalar sin contratar más personal. Tecnología de primer nivel, a tu alcance.',
+  ctaText: 'Agenda Tu Llamada Gratis',
+  ctaLink: '/get-in-touch',
+  backgroundImage: '/assets/img1.jpg',
+  secondaryCta: {
+    text: 'Ver Cómo Funciona',
+    link: '#process',
+  },
+};
+
+// Social Proof Hero
+export const socialProofHeroSlide: EnhancedHeroSlide = {
+  variant: 'social-proof',
+  lang: 'en',
+  heading: 'TRUSTED BY INDUSTRY LEADERS',
+  subheading: 'The System Behind 50+ Successful Launches',
+  description: 'Join the founders who\'ve transformed their businesses with our proven automation systems. Real results, real testimonials, real growth.',
+  ctaText: 'Start Your Transformation',
+  ctaLink: '/get-in-touch',
+  backgroundImage: '/assets/img2.jpg',
+  testimonialQuote: 'They turned our chaos into a machine. We went from struggling to scale to having a waitlist.',
+  testimonialAuthor: 'Sarah K.',
+  testimonialRole: 'Startup Founder',
+  testimonialCompany: 'TechFlow Inc.',
+  metrics: [
+    { value: '50+', label: 'Projects Delivered' },
+    { value: '100%', label: 'Success Rate' },
+    { value: '24/7', label: 'Automated Support' },
+  ],
+  secondaryCta: {
+    text: 'See Case Studies',
+    link: '#case-studies',
+  },
+};
+
+// Problem-Agitation Hero
+export const problemAgitationHeroSlide: EnhancedHeroSlide = {
+  variant: 'problem-agitation',
+  lang: 'en',
+  heading: 'TIRED OF LOSING LEADS TO SLOW FOLLOW-UP?',
+  subheading: 'Your Competitors Are Closing While You\'re Still Replying',
+  description: '',
+  ctaText: 'Fix This Now',
+  ctaLink: '/get-in-touch',
+  backgroundImage: '/assets/img1.jpg',
+  painPoints: [
+    'Leads go cold because you can\'t respond fast enough',
+    'You\'re buried in admin work instead of closing deals',
+    'Manual follow-ups are eating your evenings and weekends',
+    'Your competitors are outpacing you with automation',
+  ],
+  agitationText: 'Every hour you delay, 3 more leads slip through the cracks. Your inbox fills up, your pipeline dries out, and that dream of scaling feels further away.',
+  promiseText: 'What if your leads were qualified, nurtured, and booked automatically — while you focused on what you do best?',
+  secondaryCta: {
+    text: 'Learn How',
+    link: '#services',
+  },
+};
+
+// Combined hero variants for easy access
+export const heroVariants: Record<HeroVariant, EnhancedHeroSlide> = {
+  'default': defaultHeroSlide,
+  'fomo': fomoHeroSlide,
+  'spanish-latam': spanishHeroSlide,
+  'social-proof': socialProofHeroSlide,
+  'problem-agitation': problemAgitationHeroSlide,
+};
+
+// ============================================
+// VALUE STACK CONTENT (Hormozi-style)
+// ============================================
+
+export const valueStackContent: ValueStackContent = {
+  sectionLabel: 'What You Get',
+  title: 'Everything You Need to',
+  titleHighlight: 'Scale Your Business',
+  subtitle: 'A complete system designed to generate leads, close deals, and grow your revenue — automatically.',
+
+  items: [
+    {
+      icon: 'Globe',
+      title: 'High-Converting Website',
+      description: 'Mobile-optimized, SEO-ready landing page that turns visitors into leads.',
+      perceivedValue: '$3,000 value',
+      highlight: true,
+    },
+    {
+      icon: 'Users',
+      title: 'Lead Capture System',
+      description: 'Smart forms that qualify leads and sync directly to your CRM.',
+      perceivedValue: '$1,500 value',
+    },
+    {
+      icon: 'MessageCircle',
+      title: 'Automated Follow-Up Sequences',
+      description: 'Email, SMS, and WhatsApp campaigns that nurture leads 24/7.',
+      perceivedValue: '$2,000 value',
+    },
+    {
+      icon: 'BarChart',
+      title: 'Analytics Dashboard',
+      description: 'Real-time metrics showing leads, conversions, and ROI.',
+      perceivedValue: '$1,000 value',
+    },
+    {
+      icon: 'Bot',
+      title: 'AI Chat Support',
+      description: 'Intelligent bot that handles FAQs and books appointments.',
+      perceivedValue: '$2,500 value',
+    },
+    {
+      icon: 'HeadphonesIcon',
+      title: '30-Day Support & Training',
+      description: 'Dedicated onboarding and technical support.',
+      perceivedValue: '$2,000 value',
+    },
+  ],
+
+  bonuses: [
+    {
+      icon: 'FileText',
+      title: 'Copy & Conversion Templates',
+      description: 'Proven email and landing page templates.',
+      value: 'FREE ($500 value)',
+    },
+    {
+      icon: 'Zap',
+      title: 'Priority Integration Support',
+      description: 'White-glove setup for your existing tools.',
+      value: 'FREE ($1,000 value)',
+    },
+  ],
+
+  totalPerceivedValue: '$13,500+',
+  actualPrice: 'Starting at $2,997',
+  savings: 'Save over 75%',
+
+  guarantee: {
+    icon: 'Shield',
+    title: '30-Day Money-Back Guarantee',
+    description: 'If you don\'t see measurable results within 30 days, we\'ll refund your investment. No questions asked.',
+    duration: '30 days',
+  },
+
+  ctaText: 'Get Started Today',
+  ctaSubtext: 'Limited spots available this month',
+  ctaLink: '/get-in-touch',
+};
+
+// Spanish Value Stack
+export const valueStackContentES: ValueStackContent = {
+  sectionLabel: 'Lo Que Obtienes',
+  title: 'Todo Lo Que Necesitas Para',
+  titleHighlight: 'Escalar Tu Negocio',
+  subtitle: 'Un sistema completo diseñado para generar leads, cerrar ventas y hacer crecer tus ingresos — automáticamente.',
+
+  items: [
+    {
+      icon: 'Globe',
+      title: 'Sitio Web de Alta Conversión',
+      description: 'Landing page optimizada para móviles y SEO que convierte visitantes en leads.',
+      perceivedValue: 'Valor $3,000',
+      highlight: true,
+    },
+    {
+      icon: 'Users',
+      title: 'Sistema de Captura de Leads',
+      description: 'Formularios inteligentes que califican leads y sincronizan con tu CRM.',
+      perceivedValue: 'Valor $1,500',
+    },
+    {
+      icon: 'MessageCircle',
+      title: 'Secuencias de Seguimiento Automatizadas',
+      description: 'Campañas por email, SMS y WhatsApp que nutren leads 24/7.',
+      perceivedValue: 'Valor $2,000',
+    },
+    {
+      icon: 'BarChart',
+      title: 'Panel de Analíticas',
+      description: 'Métricas en tiempo real mostrando leads, conversiones y ROI.',
+      perceivedValue: 'Valor $1,000',
+    },
+    {
+      icon: 'Bot',
+      title: 'Soporte con IA',
+      description: 'Bot inteligente que responde FAQs y agenda citas.',
+      perceivedValue: 'Valor $2,500',
+    },
+    {
+      icon: 'HeadphonesIcon',
+      title: '30 Días de Soporte y Capacitación',
+      description: 'Onboarding dedicado y soporte técnico.',
+      perceivedValue: 'Valor $2,000',
+    },
+  ],
+
+  bonuses: [
+    {
+      icon: 'FileText',
+      title: 'Plantillas de Copy y Conversión',
+      description: 'Templates probados para emails y landing pages.',
+      value: 'GRATIS (Valor $500)',
+    },
+    {
+      icon: 'Zap',
+      title: 'Soporte Prioritario de Integración',
+      description: 'Configuración personalizada para tus herramientas existentes.',
+      value: 'GRATIS (Valor $1,000)',
+    },
+  ],
+
+  totalPerceivedValue: '$13,500+',
+  actualPrice: 'Desde $2,997',
+  savings: 'Ahorra más del 75%',
+
+  guarantee: {
+    icon: 'Shield',
+    title: 'Garantía de Devolución de 30 Días',
+    description: 'Si no ves resultados medibles en 30 días, te devolvemos tu inversión. Sin preguntas.',
+    duration: '30 días',
+  },
+
+  ctaText: 'Comenzar Hoy',
+  ctaSubtext: 'Cupos limitados este mes',
+  ctaLink: '/get-in-touch',
+};
