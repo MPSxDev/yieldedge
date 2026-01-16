@@ -4,10 +4,10 @@
 
 | Route | URL |
 |-------|-----|
-| Home | https://www.yieldedge.com/ |
-| Beauty | https://www.yieldedge.com/beauty |
-| Construction | https://www.yieldedge.com/construction |
-| Professional Services | https://www.yieldedge.com/professional-services |
-| Real State | https://www.yieldedge.com/real-state |
-| Viberescue | https://www.yieldedge.com/viberescue |
-| Yieldedge | https://www.yieldedge.com/yieldedge |
+| Home | https://www.yieldge.com/ |
+| Beauty | https://www.yieldge.com/beauty |
+| Construction | https://www.yieldge.com/construction |
+| Professional Services | https://www.yieldge.com/professional-services |
+| Real State | https://www.yieldge.com/real-state |
+| Viberescue | https://www.yieldge.com/viberescue |
+| Yieldedge | https://www.yieldge.com/yieldedge |
