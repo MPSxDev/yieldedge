@@ -32,8 +32,6 @@ export default function Footer() {
   ];
 
   const companyLinks = [
-    { text: 'About Yieldge', href: '/company#about' },
-    { text: 'Leadership Team', href: '/company#leadership' },
     { text: 'Diversity and Inclusion', href: '/company#diversity' },
     { text: 'Careers', href: '/careers' },
     { text: 'Get in Touch', href: '/get-in-touch' },
@@ -141,7 +139,7 @@ export default function Footer() {
               Contact
             </h3>
             <p className="text-gray-600 mb-6 leading-relaxed text-sm">
-              Ready to streamline your real-estate business?
+              Ready to streamline your business?
             </p>
             <motion.a
               href="https://calendly.com/anwar-softwaredev"

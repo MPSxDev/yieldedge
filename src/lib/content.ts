@@ -199,7 +199,7 @@ export const homepageContent: PageContent = {
   hero: {
     slides: [
       {
-        heading: 'PROVEN EXCELLENCE',
+        heading: 'Digital Excellence',
         subheading: 'More than 15 years of innovation',
         description: 'With over 15+ years serving the global technology landscape, Yieldge has established itself as a trusted partner in digital transformation. We\'ve empowered countless organizations to streamline operations and achieve measurable results. Our dedicated professionals bring unmatched expertise and passion to every engagement. Partner with us to unlock your organization\'s full potential and drive lasting innovation!',
         ctaText: 'DISCOVER YIELDGE',
@@ -296,7 +296,7 @@ export const homepageContent: PageContent = {
       },
       {
         icon: 'Zap',
-        title: 'Proven Excellence',
+        title: 'Digital Excellence',
         description: 'We\'ve empowered countless organizations to streamline operations and achieve measurable results across the Americas.',
       },
       {
@@ -1996,7 +1996,7 @@ export const professionalServicesContent: PageContent = {
 export const defaultHeroSlide: EnhancedHeroSlide = {
   variant: 'default',
   lang: 'en',
-  heading: 'PROVEN EXCELLENCE',
+  heading: 'Digital Excellence',
   subheading: 'More than 15 years of innovation',
   description: 'With over 15+ years serving the global technology landscape, Yieldge has established itself as a trusted partner in digital transformation. We\'ve empowered countless organizations to streamline operations and achieve measurable results.',
   ctaText: 'DISCOVER YIELDGE',

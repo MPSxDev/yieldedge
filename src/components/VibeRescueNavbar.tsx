@@ -7,12 +7,7 @@ import { Menu, X, Zap } from 'lucide-react';
 export default function VibeRescueNavbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navLinks = [
-    { label: 'Services', href: '#servicios' },
-    { label: 'How It Works', href: '#how-it-works' },
-    { label: 'Pricing', href: '#pricing' },
-    { label: 'Contact', href: '#contact' },
-  ];
+  const navLinks: { label: string; href: string }[] = [];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
