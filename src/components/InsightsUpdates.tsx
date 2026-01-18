@@ -43,9 +43,9 @@ export default function InsightsUpdates() {
   };
 
   return (
-    <section className="relative bg-white py-24 sm:py-32 overflow-hidden">
+    <section className="relative bg-white py-16 sm:py-24 lg:py-32 overflow-hidden">
       <Container className="relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-start">
           {/* Insights Column */}
           <motion.div
             initial="hidden"
@@ -55,13 +55,13 @@ export default function InsightsUpdates() {
           >
             <motion.h2
               variants={fadeInUp}
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-6 leading-tight"
+              className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight text-gray-900 mb-4 sm:mb-6 leading-tight"
             >
               Insights
             </motion.h2>
             <motion.p
               variants={fadeInUp}
-              className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-8"
+              className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 sm:mb-8"
             >
               The technology landscape evolves rapidly, bringing both challenges and unprecedented opportunities. In our insights section, Yieldge&apos;s thought leaders share expert perspectives and actionable strategies for navigating digital transformation. Explore how our insights can help drive your business forward.
             </motion.p>
@@ -70,7 +70,7 @@ export default function InsightsUpdates() {
                 href="/solutions"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-3 px-8 py-5 bg-[#1F5CFF] text-white text-lg font-semibold rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-lg shadow-[#1F5CFF]/30 hover:shadow-xl hover:shadow-[#1F5CFF]/40"
+                className="inline-flex items-center gap-2 sm:gap-3 px-6 py-3.5 sm:px-8 sm:py-5 bg-[#1F5CFF] text-white text-base sm:text-lg font-semibold rounded-xl sm:rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-lg shadow-[#1F5CFF]/30 hover:shadow-xl hover:shadow-[#1F5CFF]/40 w-full sm:w-auto justify-center"
               >
                 Explore Solutions
                 <ArrowRight className="w-5 h-5" />
@@ -87,36 +87,36 @@ export default function InsightsUpdates() {
           >
             <motion.h2
               variants={fadeInUp}
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-6 leading-tight"
+              className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight text-gray-900 mb-4 sm:mb-6 leading-tight"
             >
               Stay Updated
             </motion.h2>
             <motion.p
               variants={fadeInUp}
-              className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-8"
+              className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 sm:mb-8"
             >
               Stay ahead of the curve with technological innovation! Join our mailing list to receive exclusive insights, industry updates, and the latest from Yieldge delivered directly to your inbox.
             </motion.p>
-            
+
             <motion.form
               variants={fadeInUp}
               onSubmit={handleSubmit}
-              className="space-y-4"
+              className="space-y-3 sm:space-y-4"
             >
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email address"
-                  className="flex-1 px-6 py-5 rounded-full border-2 border-gray-200 focus:border-[#1F5CFF] focus:outline-none text-lg transition-all duration-300"
+                  className="flex-1 px-5 py-3.5 sm:px-6 sm:py-5 rounded-xl sm:rounded-full border-2 border-gray-200 focus:border-[#1F5CFF] focus:outline-none text-base sm:text-lg transition-all duration-300"
                   required
                 />
                 <motion.button
                   type="submit"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="px-8 py-5 bg-[#1F5CFF] text-white text-lg font-semibold rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-lg shadow-[#1F5CFF]/30 hover:shadow-xl hover:shadow-[#1F5CFF]/40 whitespace-nowrap"
+                  className="px-6 py-3.5 sm:px-8 sm:py-5 bg-[#1F5CFF] text-white text-base sm:text-lg font-semibold rounded-xl sm:rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-lg shadow-[#1F5CFF]/30 hover:shadow-xl hover:shadow-[#1F5CFF]/40 whitespace-nowrap"
                 >
                   Subscribe
                 </motion.button>
@@ -127,10 +127,10 @@ export default function InsightsUpdates() {
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="flex items-center gap-2 p-4 bg-green-50 border border-green-200 rounded-xl text-green-700"
+                  className="flex items-center gap-2 p-3 sm:p-4 bg-green-50 border border-green-200 rounded-xl text-green-700 text-sm sm:text-base"
                 >
-                  <Check className="w-5 h-5" />
-                  <span>✓ Successfully subscribed! Check your email for confirmation.</span>
+                  <Check className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                  <span>Successfully subscribed! Check your email for confirmation.</span>
                 </motion.div>
               )}
 
@@ -138,9 +138,9 @@ export default function InsightsUpdates() {
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="flex items-center gap-2 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700"
+                  className="flex items-center gap-2 p-3 sm:p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm sm:text-base"
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
                   <span>Something went wrong. Please try again.</span>
                 </motion.div>
               )}

@@ -41,16 +41,17 @@ function FAQItem({ faq }: FAQItemProps) {
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-6 flex items-start justify-between gap-4 text-left hover:bg-gray-50/50 transition-colors px-6 rounded-lg"
+        aria-expanded={isOpen}
+        className="w-full py-4 sm:py-6 flex items-start justify-between gap-3 sm:gap-4 text-left hover:bg-gray-50/50 active:bg-gray-100/50 transition-colors px-4 sm:px-6 rounded-lg"
       >
-        <span className="text-lg sm:text-xl font-semibold text-gray-900 flex-1">
+        <span className="text-base sm:text-lg lg:text-xl font-semibold text-gray-900 flex-1">
           {faq.question}
         </span>
-        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#dbe6ff] flex items-center justify-center">
+        <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#dbe6ff] flex items-center justify-center mt-0.5">
           {isOpen ? (
-            <Minus className="w-5 h-5 text-[#1F5CFF]" />
+            <Minus className="w-4 h-4 sm:w-5 sm:h-5 text-[#1F5CFF]" />
           ) : (
-            <Plus className="w-5 h-5 text-[#1F5CFF]" />
+            <Plus className="w-4 h-4 sm:w-5 sm:h-5 text-[#1F5CFF]" />
           )}
         </div>
       </button>
@@ -64,7 +65,7 @@ function FAQItem({ faq }: FAQItemProps) {
             transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
             className="overflow-hidden"
           >
-            <p className="px-6 pb-6 text-gray-600 leading-relaxed">
+            <p className="px-4 sm:px-6 pb-4 sm:pb-6 text-sm sm:text-base text-gray-600 leading-relaxed">
               {faq.answer}
             </p>
           </motion.div>
@@ -96,7 +97,7 @@ export default function FAQ({ content = homepageContent.faq }: FAQProps) {
   return (
     <section
       id="faq"
-      className="relative bg-white py-24 sm:py-32 overflow-hidden"
+      className="relative bg-white py-16 sm:py-24 lg:py-32 overflow-hidden"
     >
       <script
         type="application/ld+json"
@@ -110,30 +111,30 @@ export default function FAQ({ content = homepageContent.faq }: FAQProps) {
           viewport={{ once: true, amount: 0.2 }}
         >
           {/* Header */}
-          <div className="max-w-3xl mx-auto text-center mb-16">
+          <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-16 px-2">
             <motion.p
               variants={fadeInUp}
-              className="text-[#1F5CFF] font-semibold mb-4 text-sm uppercase tracking-wide"
+              className="text-[#1F5CFF] font-semibold mb-3 sm:mb-4 text-xs sm:text-sm uppercase tracking-wide"
             >
               {content.sectionLabel}
             </motion.p>
             <motion.h2
               variants={fadeInUp}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-4 sm:mb-6"
             >
               {content.title}{' '}
               <span className="text-[#1F5CFF]">{content.titleHighlight}</span>
             </motion.h2>
             <motion.p
               variants={fadeInUp}
-              className="text-xl text-gray-600 leading-relaxed"
+              className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed"
             >
               {content.description}
             </motion.p>
           </div>
 
           {/* FAQ List */}
-          <div className="max-w-4xl mx-auto bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-lg">
+          <div className="max-w-4xl mx-auto bg-white rounded-2xl sm:rounded-3xl border border-gray-200 overflow-hidden shadow-lg">
             {content.faqs.map((faq, index) => (
               <FAQItem key={index} faq={faq} index={index} />
             ))}
@@ -142,9 +143,9 @@ export default function FAQ({ content = homepageContent.faq }: FAQProps) {
           {/* Bottom CTA */}
           <motion.div
             variants={fadeInUp}
-            className="text-center mt-12"
+            className="text-center mt-8 sm:mt-12"
           >
-            <p className="text-gray-600 mb-4">
+            <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">
               Still have questions?
             </p>
             <motion.a
@@ -153,7 +154,7 @@ export default function FAQ({ content = homepageContent.faq }: FAQProps) {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-2 text-[#1F5CFF] font-semibold hover:text-[#1a4edb] transition-colors"
+              className="inline-flex items-center gap-2 text-[#1F5CFF] font-semibold hover:text-[#1a4edb] transition-colors text-sm sm:text-base"
             >
               {content.ctaText}
             </motion.a>

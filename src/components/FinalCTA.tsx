@@ -21,7 +21,7 @@ interface FinalCTAProps {
 
 export default function FinalCTA({ content = homepageContent.finalCTA }: FinalCTAProps) {
   return (
-    <section className="relative bg-white py-24 sm:py-32 overflow-hidden">
+    <section className="relative bg-white py-12 sm:py-20 lg:py-32 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#eff4ff] via-white to-[#eff4ff]/30" />
 
@@ -31,71 +31,71 @@ export default function FinalCTA({ content = homepageContent.finalCTA }: FinalCT
           whileInView="visible"
           viewport={{ once: true, amount: 0.1, margin: '0px 0px -100px 0px' }}
         >
-        <div className="bg-gradient-to-br rounded-3xl overflow-hidden shadow-2xl" style={{ background: 'linear-gradient(135deg, hsl(217, 91%, 60%) 0%, hsl(221, 83%, 53%) 100%)' }}>
-          <div className="grid lg:grid-cols-2">
-            {/* Content */}
-            <div className="p-10 sm:p-12 lg:p-16 flex flex-col justify-center">
-              <motion.div variants={fadeInUp}>
-                <p className="text-[#dbe6ff] font-semibold mb-4 text-sm uppercase tracking-wide">
-                  {content.sectionLabel}
-                </p>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                  {content.title}
-                </h2>
-                <p className="text-lg sm:text-xl text-[#eff4ff] leading-relaxed mb-8">
-                  {content.description}
-                </p>
+          <div className="bg-gradient-to-br rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl" style={{ background: 'linear-gradient(135deg, hsl(217, 91%, 60%) 0%, hsl(221, 83%, 53%) 100%)' }}>
+            <div className="grid lg:grid-cols-2">
+              {/* Content */}
+              <div className="p-6 sm:p-10 lg:p-12 xl:p-16 flex flex-col justify-center order-2 lg:order-1">
+                <motion.div variants={fadeInUp}>
+                  <p className="text-[#dbe6ff] font-semibold mb-3 sm:mb-4 text-xs sm:text-sm uppercase tracking-wide">
+                    {content.sectionLabel}
+                  </p>
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+                    {content.title}
+                  </h2>
+                  <p className="text-base sm:text-lg lg:text-xl text-[#eff4ff] leading-relaxed mb-6 sm:mb-8">
+                    {content.description}
+                  </p>
 
-                {/* Benefits */}
-                <ul className="space-y-3 mb-10">
-                  {content.benefits.map((benefit, index) => (
-                    <li key={index} className="flex items-center text-white">
-                      <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 mr-3">
-                        <div className="w-2 h-2 rounded-full bg-white" />
-                      </div>
-                      {benefit}
-                    </li>
-                  ))}
-                </ul>
+                  {/* Benefits */}
+                  <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-10">
+                    {content.benefits.map((benefit, index) => (
+                      <li key={index} className="flex items-center text-white text-sm sm:text-base">
+                        <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 mr-2 sm:mr-3">
+                          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white" />
+                        </div>
+                        {benefit}
+                      </li>
+                    ))}
+                  </ul>
 
-                {/* CTA Button */}
-                <div className="mb-6">
-                  <motion.a
-                    href="https://calendly.com/anwar-softwaredev"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-white text-[#1F5CFF] text-lg font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:bg-[#eff4ff] group"
-                  >
-                    {content.ctaText}
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </motion.a>
-                </div>
-
-                {content.ctaSubtext && (
-                  <div className="mt-6 text-sm text-[#dbe6ff]">
-                    <p>{content.ctaSubtext}</p>
+                  {/* CTA Button */}
+                  <div className="mb-4 sm:mb-6">
+                    <motion.a
+                      href="https://calendly.com/anwar-softwaredev"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="inline-flex items-center justify-center gap-2 sm:gap-3 px-6 py-3.5 sm:px-8 sm:py-5 bg-white text-[#1F5CFF] text-base sm:text-lg font-bold rounded-xl sm:rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:bg-[#eff4ff] group w-full sm:w-auto"
+                    >
+                      {content.ctaText}
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </motion.a>
                   </div>
-                )}
-              </motion.div>
-            </div>
 
-            {/* Image */}
-            <div className="relative min-h-[400px] lg:min-h-[600px] bg-[#1a4edb]">
-              <Image
-                src={content.image}
-                alt={content.imageAlt}
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                quality={90}
-                loading="lazy"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#1F5CFF]/20" />
+                  {content.ctaSubtext && (
+                    <div className="mt-4 sm:mt-6 text-xs sm:text-sm text-[#dbe6ff]">
+                      <p>{content.ctaSubtext}</p>
+                    </div>
+                  )}
+                </motion.div>
+              </div>
+
+              {/* Image */}
+              <div className="relative min-h-[240px] sm:min-h-[320px] lg:min-h-[500px] xl:min-h-[600px] bg-[#1a4edb] order-1 lg:order-2">
+                <Image
+                  src={content.image}
+                  alt={content.imageAlt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={90}
+                  loading="lazy"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-l from-transparent to-[#1F5CFF]/20" />
+              </div>
             </div>
           </div>
-        </div>
         </motion.div>
       </Container>
     </section>
