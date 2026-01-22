@@ -29,6 +29,7 @@ interface WhyChooseUsProps {
 
 export default function WhyChooseUs({ content = homepageContent.whyChooseUs }: WhyChooseUsProps) {
   const hasNewLayout = content.topImage && content.bottomImage;
+  const isStacked = content.layout === 'stacked';
 
   return (
     <section
@@ -116,6 +117,49 @@ export default function WhyChooseUs({ content = homepageContent.whyChooseUs }: W
                   <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
                 </div>
               </motion.div>
+            </>
+          ) : isStacked ? (
+            /* Stacked Layout: Image on top, Cards below */
+            <>
+              {/* Top Image */}
+              <motion.div variants={fadeInUp} className="mb-10 sm:mb-14">
+                <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl bg-gradient-to-br from-[#eff4ff] to-gray-100">
+                  <Image
+                    src={content.image}
+                    alt={content.imageAlt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+                    quality={85}
+                    loading="lazy"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+                </div>
+              </motion.div>
+
+              {/* Cards Grid - 2x2 */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                {content.values.map((value, index) => {
+                  const IconComponent = iconMap[value.icon] || iconMap.Shield;
+                  return (
+                    <motion.div
+                      key={index}
+                      variants={fadeInUp}
+                      className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-gray-200 hover:border-[#1F5CFF] hover:shadow-xl transition-all duration-300 motion-safe:hover:-translate-y-1 flex flex-col h-full"
+                    >
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#eff4ff] flex items-center justify-center mb-5">
+                        <IconComponent className="w-6 h-6 sm:w-7 sm:h-7 text-[#1F5CFF]" />
+                      </div>
+                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
+                        {value.title}
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed text-base">
+                        {value.description}
+                      </p>
+                    </motion.div>
+                  );
+                })}
+              </div>
             </>
           ) : (
             /* Legacy Layout: Side-by-side Image + Cards */

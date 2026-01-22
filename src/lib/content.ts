@@ -116,6 +116,7 @@ export interface WhyChooseUsContent {
   topImageAlt?: string;
   bottomImage?: string;
   bottomImageAlt?: string;
+  layout?: 'side-by-side' | 'stacked';
   values: Array<{
     icon: string;
     title: string;
@@ -1841,6 +1842,7 @@ export const professionalServicesContent: PageContent = {
     description: 'We specialize in websites for professional services firms. Our clients convert more consultations, reduce administrative overhead, and grow their practice — with systems built for trust.',
     image: '/assets/prof/krakenimages-376KN_ISplE-unsplash.jpg',
     imageAlt: 'Professional success',
+    layout: 'stacked',
     values: [
       {
         icon: 'Target',

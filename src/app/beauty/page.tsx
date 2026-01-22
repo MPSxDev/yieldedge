@@ -10,10 +10,6 @@ const Services = dynamic(() => import('@/components/Services'), {
   loading: () => <div className="min-h-screen" />,
 });
 
-const WhyChooseUs = dynamic(() => import('@/components/WhyChooseUs'), {
-  loading: () => <div className="min-h-screen" />,
-});
-
 const Process = dynamic(() => import('@/components/Process'), {
   loading: () => <div className="min-h-screen" />,
 });
@@ -43,7 +39,6 @@ export default function BeautyPage() {
       {/* Main content sections with spacing */}
       <main className="space-y-20 sm:space-y-24 lg:space-y-32">
         <Services content={beautyContent.services} />
-        <WhyChooseUs content={beautyContent.whyChooseUs} />
         <Process content={beautyContent.process} />
         <CaseStudies content={beautyContent.caseStudies} />
         <FAQ content={beautyContent.faq} />
