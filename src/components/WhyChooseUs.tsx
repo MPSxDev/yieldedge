@@ -34,7 +34,7 @@ export default function WhyChooseUs({ content = homepageContent.whyChooseUs }: W
   return (
     <section
       id="porque-elegirnos"
-      className="relative bg-gradient-to-b from-white to-[#eff4ff]/30 py-16 sm:py-24 lg:py-32 overflow-hidden"
+      className="relative bg-gradient-to-b from-white to-[#eff4ff]/30 py-12 sm:py-16 lg:py-20 overflow-hidden"
     >
       <Container className="relative z-10">
         <motion.div
@@ -163,13 +163,13 @@ export default function WhyChooseUs({ content = homepageContent.whyChooseUs }: W
             </>
           ) : (
             /* Legacy Layout: Side-by-side Image + Cards */
-            <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center">
-              {/* Image Side */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+              {/* Image Column */}
               <motion.div
                 variants={fadeInUp}
-                className="relative"
+                className="relative lg:min-h-[520px]"
               >
-                <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl bg-gradient-to-br from-[#eff4ff] to-gray-100">
+                <div className="relative w-full h-full min-h-[300px] sm:min-h-[400px] lg:min-h-full rounded-xl overflow-hidden shadow-md bg-gradient-to-br from-[#eff4ff] to-gray-100">
                   <Image
                     src={content.image}
                     alt={content.imageAlt}
@@ -179,27 +179,27 @@ export default function WhyChooseUs({ content = homepageContent.whyChooseUs }: W
                     loading="lazy"
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#1F5CFF]/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-[#1F5CFF]/10 to-transparent" />
                 </div>
               </motion.div>
 
-              {/* Values Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 lg:gap-6">
+              {/* Cards Column - 2x2 Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {content.values.map((value, index) => {
                   const IconComponent = iconMap[value.icon] || iconMap.Shield;
                   return (
                     <motion.div
                       key={index}
                       variants={fadeInUp}
-                      className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 shadow-lg border border-gray-200 hover:border-[#1F5CFF] hover:shadow-xl transition-all duration-300 motion-safe:hover:-translate-y-1"
+                      className="bg-white rounded-xl p-6 shadow-sm border border-neutral-200/60 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col"
                     >
-                      <div className="w-11 h-11 sm:w-12 lg:w-14 sm:h-12 lg:h-14 rounded-xl sm:rounded-2xl bg-[#eff4ff] flex items-center justify-center mb-4 sm:mb-5 lg:mb-6">
-                        <IconComponent className="w-5 h-5 sm:w-6 lg:w-7 sm:h-6 lg:h-7 text-[#1F5CFF]" />
+                      <div className="w-12 h-12 rounded-xl bg-[#eff4ff] flex items-center justify-center mb-4">
+                        <IconComponent className="w-6 h-6 text-[#1F5CFF]" />
                       </div>
-                      <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
+                      <h3 className="text-2xl font-semibold leading-tight text-gray-900 mb-3">
                         {value.title}
                       </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+                      <p className="text-sm text-neutral-600 leading-relaxed">
                         {value.description}
                       </p>
                     </motion.div>

@@ -77,8 +77,7 @@ export default function CareersPageContent({ verticalName }: CareersPageContentP
             className="max-w-2xl mx-auto text-center"
           >
             <p className="text-xl text-gray-700">
-              We currently don&apos;t have any open positions
-              {verticalName ? ` in our ${verticalName} division` : ''}.
+              We currently don&apos;t have any open positions.
             </p>
             <p className="text-gray-500 mt-4">
               Check back soon or follow us on social media for updates.
