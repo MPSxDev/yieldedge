@@ -1,0 +1,427 @@
+{
+  "metadata": {
+    "title": "Yieldge | Soluciones Tecnológicas y Desarrollo Offshore",
+    "titleTemplate": "%s | Yieldge",
+    "description": "Proveedor líder de soluciones tecnológicas con más de 15 años de experiencia. Ofrecemos desarrollo de software, servicios de seguridad, consultoría tecnológica y equipos offshore en las Américas.",
+    "keywords": "desarrollo offshore, soluciones tecnológicas, ingeniería de software, servicios de seguridad, aumento de personal, soluciones en la nube, consultoría tecnológica, automatización QA, desarrollo de apps móviles, desarrollo web, análisis e insights, desarrollo de software a medida, desarrollo nearshore, transformación digital"
+  },
+  "nav": {
+    "solutions": "Soluciones",
+    "company": "Empresa",
+    "careers": "Carreras",
+    "getInTouch": "Contáctanos",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "emergencyHelp": "Ayuda de Emergencia"
+  },
+  "footer": {
+    "description": "Socio tecnológico especializado en servicios web, infraestructura en la nube y automatización con IA para la industria inmobiliaria.",
+    "solutions": "Soluciones",
+    "contact": "Contacto",
+    "legal": "Legal",
+    "readyToStreamline": "¿Listo para optimizar tu negocio?",
+    "scheduleConsultation": "Agenda una Consulta",
+    "email": "Correo",
+    "phone": "Teléfono",
+    "location": "Ubicación",
+    "copyright": "© {year} Yieldge. Todos los derechos reservados.",
+    "backToTop": "Volver arriba",
+    "privacyPolicy": "Política de Privacidad",
+    "termsAndConditions": "Términos y Condiciones"
+  },
+  "solutionsLinks": {
+    "qaAutomation": "QA y Automatización de Pruebas",
+    "security": "Servicios de Seguridad",
+    "consulting": "Consultoría Tecnológica",
+    "mobileWeb": "Apps Móviles y Web",
+    "staffAugmentation": "Aumento de Personal",
+    "analytics": "Análisis e Insights",
+    "cloud": "Soluciones en la Nube",
+    "offshore": "Desarrollo Offshore",
+    "tailoredSoftware": "Software a Medida"
+  },
+  "hero": {
+    "previousSlide": "Diapositiva anterior",
+    "nextSlide": "Siguiente diapositiva",
+    "goToSlide": "Ir a diapositiva {number}",
+    "discoverYieldge": "DESCUBRE YIELDGE",
+    "learnMore": "Conocer Más",
+    "bookConsultation": "Agenda tu Consulta"
+  },
+  "services": {
+    "sectionLabel": "Nuestras Soluciones",
+    "title": "Nuestras",
+    "titleHighlight": "Soluciones",
+    "description": "Yieldge ofrece soluciones tecnológicas de vanguardia diseñadas para acelerar el crecimiento de tu negocio y la excelencia operativa. Nuestros expertos certificados aprovechan metodologías y herramientas avanzadas para crear resultados transformadores.",
+    "learnMore": "Más Información",
+    "qaAutomation": {
+      "title": "QA y Automatización de Pruebas",
+      "subtitle": "Entrega más rápido con confianza a través de aseguramiento de calidad automatizado integrado en tu pipeline de entrega.",
+      "description": "Aseguramos que tu software funcione perfectamente antes de llegar a los usuarios. Nuestros servicios de QA y automatización de pruebas reducen errores, mejoran la estabilidad y protegen tus plazos de lanzamiento.",
+      "features": ["Suites de pruebas automatizadas (unitarias, integración, E2E)", "Pruebas manuales y exploratorias", "Pruebas de rendimiento y carga", "Integración de pruebas CI/CD"]
+    },
+    "security": {
+      "title": "Servicios de Seguridad",
+      "subtitle": "Protege tus sistemas, datos y reputación con ciberseguridad de nivel empresarial.",
+      "description": "Ayudamos a las organizaciones a identificar vulnerabilidades, prevenir ataques y mantener el cumplimiento en un panorama digital cada vez más hostil.",
+      "features": ["Evaluaciones de ciberseguridad y hardening", "Detección y prevención de amenazas", "Auditorías de seguridad y análisis de riesgos", "Soporte de cumplimiento (SOC, ISO, mejores prácticas)"]
+    },
+    "consulting": {
+      "title": "Consultoría Tecnológica",
+      "subtitle": "Convierte las decisiones tecnológicas en ventajas comerciales a largo plazo.",
+      "description": "Trabajamos junto a tu equipo de liderazgo para diseñar arquitecturas escalables, modernizar sistemas y alinear la tecnología con los objetivos del negocio.",
+      "features": ["Planificación tecnológica estratégica", "Iniciativas de transformación digital", "Diseño de sistemas y arquitectura", "Mejores prácticas de ingeniería"]
+    },
+    "mobileWeb": {
+      "title": "Apps Móviles y Web",
+      "subtitle": "Desarrollo de aplicaciones móviles y web personalizadas para experiencias de usuario excepcionales.",
+      "description": "Desarrollo de aplicaciones móviles y web personalizadas para experiencias de usuario excepcionales.",
+      "features": ["Apps móviles", "Desarrollo web", "Experiencia de usuario", "Diseño responsivo"]
+    },
+    "staffAugmentation": {
+      "title": "Aumento de Personal",
+      "subtitle": "Accede a talento técnico de primer nivel para escalar tu equipo de manera rápida y eficiente.",
+      "description": "Accede a talento técnico de primer nivel para escalar tu equipo de manera rápida y eficiente.",
+      "features": ["Talento técnico", "Escalamiento de equipos", "Recursos expertos", "Compromiso flexible"]
+    },
+    "analytics": {
+      "title": "Análisis e Insights",
+      "subtitle": "Insights basados en datos y soluciones de análisis para impulsar decisiones comerciales informadas.",
+      "description": "Insights basados en datos y soluciones de análisis para impulsar decisiones comerciales informadas.",
+      "features": ["Inteligencia de negocios", "Análisis de datos", "Reportes", "Insights"]
+    },
+    "cloud": {
+      "title": "Soluciones en la Nube",
+      "subtitle": "Infraestructura en la nube escalable y servicios de migración para negocios modernos.",
+      "description": "Infraestructura en la nube escalable y servicios de migración para negocios modernos.",
+      "features": ["Migración a la nube", "Infraestructura", "Escalabilidad", "DevOps"]
+    },
+    "offshore": {
+      "title": "Desarrollo Offshore",
+      "subtitle": "Equipos de desarrollo de software nearshore que entregan calidad y valor.",
+      "description": "Equipos de desarrollo de software nearshore que entregan calidad y valor.",
+      "features": ["Equipos nearshore", "Entrega de calidad", "Costo-efectivo", "Desarrolladores expertos"]
+    },
+    "tailoredSoftware": {
+      "title": "Software a Medida",
+      "subtitle": "Soluciones de software personalizadas diseñadas específicamente para las necesidades únicas de tu negocio.",
+      "description": "Soluciones de software personalizadas diseñadas específicamente para las necesidades únicas de tu negocio.",
+      "features": ["Desarrollo personalizado", "Específico para negocios", "Soluciones escalables", "Ciclo de vida completo"]
+    }
+  },
+  "whyChooseUs": {
+    "title": "¿Por qué elegir",
+    "titleHighlight": "Yieldge?",
+    "description": "Con más de 15 años sirviendo al panorama tecnológico global, Yieldge se ha establecido como un socio de confianza en la transformación digital. Hemos empoderado a innumerables organizaciones para optimizar operaciones y lograr resultados medibles.",
+    "values": {
+      "experience": {
+        "title": "15+ Años de Experiencia",
+        "description": "Entendemos los desafíos únicos que enfrentan las empresas y aportamos décadas de experiencia comprobada a cada compromiso."
+      },
+      "results": {
+        "title": "Enfoque en Resultados",
+        "description": "Nuestras soluciones están diseñadas para entregar ROI medible y mejoras operativas tangibles."
+      },
+      "innovation": {
+        "title": "Innovación Constante",
+        "description": "Nos mantenemos a la vanguardia de las tendencias tecnológicas para ofrecerte las soluciones más avanzadas."
+      },
+      "collaboration": {
+        "title": "Colaboración Cercana",
+        "description": "Trabajamos estrechamente con tu equipo para asegurar que nuestras soluciones se alineen perfectamente con tus objetivos."
+      }
+    }
+  },
+  "process": {
+    "sectionLabel": "Nuestro Proceso",
+    "title": "Cómo",
+    "titleHighlight": "Trabajamos",
+    "description": "Nuestro proceso probado asegura resultados exitosos para cada proyecto. Desde el descubrimiento inicial hasta el soporte continuo, estamos contigo en cada paso.",
+    "deliverables": "Entregables",
+    "ctaText": "¿Listo para optimizar tu negocio?",
+    "steps": {
+      "discovery": {
+        "title": "Descubrimiento",
+        "description": "Analizamos tus necesidades, objetivos y desafíos para crear una estrategia personalizada.",
+        "deliverables": ["Análisis de requisitos", "Evaluación técnica", "Hoja de ruta del proyecto"]
+      },
+      "planning": {
+        "title": "Planificación",
+        "description": "Diseñamos la arquitectura y planificamos la implementación con plazos claros.",
+        "deliverables": ["Diseño de arquitectura", "Plan de proyecto", "Estimaciones de recursos"]
+      },
+      "development": {
+        "title": "Desarrollo",
+        "description": "Construimos tu solución usando metodologías ágiles y mejores prácticas.",
+        "deliverables": ["Sprints de desarrollo", "Revisiones de código", "Demostraciones incrementales"]
+      },
+      "delivery": {
+        "title": "Entrega",
+        "description": "Desplegamos, probamos y entregamos tu solución con soporte continuo.",
+        "deliverables": ["Despliegue", "Pruebas de aceptación", "Documentación"]
+      }
+    }
+  },
+  "caseStudies": {
+    "sectionLabel": "Casos de Éxito",
+    "title": "Nuestros",
+    "titleHighlight": "Casos de Éxito",
+    "description": "Descubre cómo hemos ayudado a empresas como la tuya a alcanzar sus objetivos tecnológicos.",
+    "tapToView": "Toca para ver detalles",
+    "results": "Resultados"
+  },
+  "faq": {
+    "sectionLabel": "Preguntas Frecuentes",
+    "title": "Preguntas",
+    "titleHighlight": "Frecuentes",
+    "description": "Encuentra respuestas a las preguntas más comunes sobre nuestros servicios.",
+    "stillHaveQuestions": "¿Aún tienes preguntas?",
+    "ctaText": "Contáctanos",
+    "items": {
+      "howLong": {
+        "question": "¿Cuánto tiempo toma típicamente un proyecto?",
+        "answer": "La duración del proyecto varía según el alcance y la complejidad. Proyectos pequeños pueden tomar 2-4 semanas, mientras que soluciones empresariales más grandes pueden tardar 3-6 meses. Proporcionamos plazos detallados durante nuestra fase de descubrimiento."
+      },
+      "industries": {
+        "question": "¿Con qué industrias trabajan?",
+        "answer": "Servimos a una amplia gama de industrias incluyendo bienes raíces, construcción, servicios profesionales, belleza y bienestar, y más. Nuestra experiencia nos permite adaptar soluciones a las necesidades específicas de cada industria."
+      },
+      "support": {
+        "question": "¿Ofrecen soporte y mantenimiento continuo?",
+        "answer": "Sí, ofrecemos paquetes de soporte y mantenimiento completos para asegurar que tu solución siga funcionando de manera óptima. Esto incluye actualizaciones, corrección de errores, monitoreo y soporte técnico."
+      },
+      "getStarted": {
+        "question": "¿Cómo empezamos?",
+        "answer": "Simplemente agenda una consulta a través de nuestro sitio web. Discutiremos tus necesidades, responderemos tus preguntas y crearemos un plan de proyecto personalizado."
+      },
+      "pricing": {
+        "question": "¿Cuál es su modelo de precios?",
+        "answer": "Ofrecemos modelos de precios flexibles incluyendo precio fijo para proyectos con alcance definido, tarifas por hora para compromiso continuo, y precios basados en equipos dedicados. Recomendaremos el mejor modelo para tus necesidades."
+      }
+    }
+  },
+  "finalCTA": {
+    "sectionLabel": "¿Listo para Comenzar?",
+    "title": "Transforma tu Negocio Hoy",
+    "description": "Agenda una consulta gratuita con nuestro equipo de expertos y descubre cómo podemos ayudarte a alcanzar tus objetivos tecnológicos.",
+    "benefits": ["Consulta gratuita sin compromiso", "Soluciones personalizadas para tu negocio", "Equipo de expertos dedicado"],
+    "ctaText": "Agenda tu Consulta",
+    "ctaSubtext": "Sin compromiso - Solo posibilidades"
+  },
+  "company": {
+    "aboutUs": "Sobre Nosotros",
+    "buildingFuture": "Construyendo el Futuro de la Tecnología",
+    "division": "División {vertical}",
+    "aboutYieldge": "Sobre Yieldge",
+    "experience": "15+ Años de Experiencia",
+    "leadershipTeam": "Equipo de Liderazgo",
+    "leadershipDescription": "Nuestro equipo de liderazgo aporta décadas de experiencia combinada en tecnología, negocios e innovación.",
+    "roles": {
+      "vision": "Guiando nuestra visión y dirección estratégica",
+      "innovation": "Impulsando la innovación y la excelencia técnica",
+      "quality": "Asegurando una calidad y entrega excepcionales"
+    },
+    "developmentProgram": "Programa de Desarrollo",
+    "programDescription": "Invertimos en el crecimiento de nuestro equipo a través de programas de capacitación y desarrollo continuos.",
+    "training": {
+      "technical": "Capacitación Técnica",
+      "technicalDesc": "Aprendizaje continuo en las últimas tecnologías y mejores prácticas",
+      "certification": "Soporte de Certificación",
+      "certificationDesc": "Patrocinamos certificaciones de la industria para el crecimiento profesional",
+      "career": "Crecimiento Profesional",
+      "careerDesc": "Caminos claros de carrera y oportunidades de mentoría"
+    }
+  },
+  "careers": {
+    "joinTeam": "Únete a Nuestro Equipo",
+    "careersAt": "Carreras en Yieldge {vertical}",
+    "noPositions": "Actualmente no tenemos posiciones abiertas.",
+    "checkBack": "Vuelve pronto o síguenos en redes sociales para actualizaciones."
+  },
+  "contact": {
+    "contactUs": "Contáctanos",
+    "startConversation": "Iniciemos una Conversación",
+    "readyToTransform": "¿Listo para transformar tu negocio con tecnología? Estamos aquí para ayudarte a lograr tus objetivos.",
+    "scheduleCall": "Agenda una Llamada",
+    "consultationDescription": "Reserva una consulta gratuita de 30 minutos con uno de nuestros expertos.",
+    "bookMeeting": "Reservar Reunión",
+    "contactInfo": "Información de Contacto",
+    "availableUponRequest": "Disponible bajo solicitud",
+    "remoteFirst": "Remoto primero, sirviendo a clientes globalmente"
+  },
+  "common": {
+    "learnMore": "Más Información",
+    "getStarted": "Comenzar",
+    "contactUs": "Contáctanos",
+    "scheduleCall": "Agenda una Llamada",
+    "viewAll": "Ver Todo",
+    "readMore": "Leer Más",
+    "submit": "Enviar",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito"
+  },
+  "insights": {
+    "title": "Insights",
+    "description": "Mantente al día con las últimas tendencias y mejores prácticas en tecnología.",
+    "exploreSolutions": "Explorar Soluciones",
+    "stayUpdated": "Mantente Actualizado",
+    "newsletterDescription": "Suscríbete a nuestro newsletter para recibir las últimas noticias y actualizaciones."
+  },
+  "vision": {
+    "title": "Nuestra Visión",
+    "description": "Ser el socio tecnológico preferido para empresas que buscan excelencia digital y resultados medibles.",
+    "values": {
+      "results": {
+        "title": "Enfoque en Resultados",
+        "description": "Cada solución está diseñada para entregar valor real y medible"
+      },
+      "innovation": {
+        "title": "Innovación Constante",
+        "description": "Adoptamos las últimas tecnologías para mantenerte a la vanguardia"
+      },
+      "collaboration": {
+        "title": "Colaboración Cercana",
+        "description": "Trabajamos como una extensión de tu equipo"
+      },
+      "quality": {
+        "title": "Calidad Garantizada",
+        "description": "Estándares rigurosos en cada línea de código"
+      }
+    },
+    "cta": "Trabajemos juntos para transformar tu visión en realidad",
+    "ctaButton": "Comienza Hoy"
+  },
+  "problem": {
+    "headline": "Tu tecnología debería impulsar resultados, no frenarlos",
+    "subtitle": "Cuando los sistemas no funcionan como deberían, cada día cuenta",
+    "ctaButton": "Hablemos de tu Proyecto"
+  },
+  "valueStack": {
+    "mostPopular": "Más Popular"
+  },
+  "socialProof": {
+    "yearsExperience": "Años de Experiencia",
+    "projectsDelivered": "Proyectos Entregados",
+    "clientSatisfaction": "Satisfacción del Cliente",
+    "teamMembers": "Miembros del Equipo"
+  },
+  "verticals": {
+    "realEstate": "Bienes Raíces",
+    "construction": "Construcción",
+    "commercialRealEstate": "Bienes Raíces Comerciales",
+    "professionalServices": "Servicios Profesionales",
+    "beauty": "Belleza",
+    "viberescue": "VibeRescue"
+  },
+  "privacyPolicy": {
+    "title": "Política de Privacidad",
+    "lastUpdated": "Última actualización: Febrero 2025",
+    "introduction": "En Yieldge, nos comprometemos a proteger tu privacidad y a manejar tus datos personales con transparencia y responsabilidad. Esta política describe cómo recopilamos, usamos y protegemos tu información cuando utilizas nuestros servicios.",
+    "sections": {
+      "informationCollect": {
+        "title": "Información que Recopilamos",
+        "description": "Podemos recopilar los siguientes tipos de información:",
+        "items": {
+          "contact": "Información de contacto: nombre, correo electrónico, número de teléfono y dirección",
+          "usage": "Información de uso: cómo interactúas con nuestro sitio web y servicios",
+          "technical": "Información técnica: dirección IP, tipo de navegador, sistema operativo y datos del dispositivo",
+          "cookies": "Información de cookies: preferencias y configuraciones del sitio"
+        }
+      },
+      "howWeUse": {
+        "title": "Cómo Usamos tu Información",
+        "description": "Utilizamos la información recopilada para:",
+        "items": {
+          "services": "Proporcionar y mejorar nuestros servicios",
+          "communication": "Comunicarnos contigo sobre nuestros productos y servicios",
+          "improvement": "Analizar y mejorar la experiencia del usuario",
+          "legal": "Cumplir con obligaciones legales y regulatorias"
+        }
+      },
+      "dataProtection": {
+        "title": "Protección de Datos",
+        "description": "Implementamos medidas de seguridad técnicas y organizativas apropiadas para proteger tu información personal contra acceso no autorizado, pérdida, destrucción o alteración. Esto incluye el uso de encriptación, firewalls y controles de acceso."
+      },
+      "yourRights": {
+        "title": "Tus Derechos",
+        "description": "Tienes los siguientes derechos respecto a tus datos personales:",
+        "items": {
+          "access": "Derecho de acceso: solicitar una copia de tus datos personales",
+          "rectification": "Derecho de rectificación: corregir datos inexactos o incompletos",
+          "deletion": "Derecho de supresión: solicitar la eliminación de tus datos",
+          "objection": "Derecho de oposición: oponerte al procesamiento de tus datos"
+        }
+      },
+      "cookies": {
+        "title": "Cookies",
+        "description": "Utilizamos cookies y tecnologías similares para mejorar tu experiencia en nuestro sitio web. Puedes configurar tu navegador para rechazar cookies, aunque esto puede afectar la funcionalidad del sitio."
+      },
+      "thirdParty": {
+        "title": "Servicios de Terceros",
+        "description": "Podemos compartir información con proveedores de servicios de confianza que nos ayudan a operar nuestro negocio. Estos proveedores están obligados a proteger tu información y solo pueden usarla para los fines específicos que les hemos indicado."
+      },
+      "changes": {
+        "title": "Cambios a esta Política",
+        "description": "Podemos actualizar esta política de privacidad periódicamente. Te notificaremos sobre cambios significativos publicando la nueva política en esta página con una fecha de actualización revisada."
+      },
+      "contact": {
+        "title": "Contacto",
+        "description": "Si tienes preguntas sobre esta política de privacidad o sobre cómo manejamos tu información, puedes contactarnos en:"
+      }
+    }
+  },
+  "terms": {
+    "title": "Términos y Condiciones",
+    "lastUpdated": "Última actualización: Febrero 2025",
+    "introduction": "Bienvenido a Yieldge. Al acceder y utilizar nuestro sitio web y servicios, aceptas estar sujeto a estos términos y condiciones. Por favor, léelos cuidadosamente antes de utilizar nuestros servicios.",
+    "sections": {
+      "acceptance": {
+        "title": "Aceptación de los Términos",
+        "description": "Al acceder o utilizar los servicios de Yieldge, confirmas que has leído, entendido y aceptas estar vinculado por estos términos. Si no estás de acuerdo con alguna parte de estos términos, no debes utilizar nuestros servicios."
+      },
+      "services": {
+        "title": "Descripción de los Servicios",
+        "description": "Yieldge proporciona soluciones tecnológicas, desarrollo de software, consultoría y servicios relacionados. Nos reservamos el derecho de modificar, suspender o descontinuar cualquier aspecto de nuestros servicios en cualquier momento."
+      },
+      "userObligations": {
+        "title": "Obligaciones del Usuario",
+        "description": "Al utilizar nuestros servicios, te comprometes a:",
+        "items": {
+          "accurate": "Proporcionar información precisa y actualizada",
+          "lawful": "Usar nuestros servicios solo para fines legales",
+          "noHarm": "No intentar dañar o interrumpir nuestros sistemas o servicios",
+          "confidentiality": "Mantener la confidencialidad de cualquier información propietaria compartida"
+        }
+      },
+      "intellectualProperty": {
+        "title": "Propiedad Intelectual",
+        "description": "Todo el contenido, marcas comerciales, logos y propiedad intelectual en nuestro sitio web y servicios son propiedad de Yieldge o sus licenciantes. No puedes usar, copiar o distribuir ningún contenido sin nuestro consentimiento previo por escrito."
+      },
+      "liability": {
+        "title": "Limitación de Responsabilidad",
+        "description": "Yieldge no será responsable por daños indirectos, incidentales, especiales, consecuentes o punitivos, incluyendo pérdida de beneficios, datos u otras pérdidas intangibles, resultantes de tu uso o incapacidad de usar nuestros servicios."
+      },
+      "indemnification": {
+        "title": "Indemnización",
+        "description": "Aceptas indemnizar y mantener indemne a Yieldge, sus directores, empleados y agentes de cualquier reclamación, daño, pérdida o gasto, incluyendo honorarios legales razonables, que surjan de tu uso de nuestros servicios o violación de estos términos."
+      },
+      "termination": {
+        "title": "Terminación",
+        "description": "Podemos terminar o suspender tu acceso a nuestros servicios inmediatamente, sin previo aviso, por cualquier motivo, incluyendo si incumples estos términos. Tras la terminación, tu derecho a usar los servicios cesará inmediatamente."
+      },
+      "governingLaw": {
+        "title": "Ley Aplicable",
+        "description": "Estos términos se regirán e interpretarán de acuerdo con las leyes aplicables, sin tener en cuenta sus disposiciones sobre conflictos de leyes."
+      },
+      "changes": {
+        "title": "Cambios a los Términos",
+        "description": "Nos reservamos el derecho de modificar estos términos en cualquier momento. Los cambios entrarán en vigor inmediatamente después de su publicación en el sitio web. Tu uso continuado de los servicios después de cualquier cambio constituye tu aceptación de los nuevos términos."
+      },
+      "contact": {
+        "title": "Contacto",
+        "description": "Si tienes preguntas sobre estos términos y condiciones, puedes contactarnos en:"
+      }
+    }
+  }
+}

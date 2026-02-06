@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import Container from '@/components/ui/Container';
 
 const fadeInUp = {
@@ -21,18 +22,12 @@ const staggerContainer = {
 };
 
 interface CareersPageContentProps {
-  /**
-   * Optional vertical name to display in the title.
-   * If provided, displays "Careers at Yieldge - {verticalName}"
-   */
   verticalName?: string;
 }
 
-/**
- * Reusable careers page content component.
- * Used by both the global /careers page and vertical-specific careers pages.
- */
 export default function CareersPageContent({ verticalName }: CareersPageContentProps) {
+  const t = useTranslations('careers');
+
   return (
     <>
       {/* Hero Section */}
@@ -48,17 +43,16 @@ export default function CareersPageContent({ verticalName }: CareersPageContentP
               variants={fadeInUp}
               className="text-[#1F5CFF] font-semibold mb-4 text-sm uppercase tracking-wide"
             >
-              Join Our Team
+              {t('joinTeam')}
             </motion.p>
             <motion.h1
               variants={fadeInUp}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6"
             >
-              Careers at{' '}
-              <span className="text-[#1F5CFF]">Yieldge</span>
+              {t('careersAt', { vertical: verticalName || '' })}
               {verticalName && (
                 <span className="block text-2xl sm:text-3xl lg:text-4xl text-gray-600 mt-2 font-normal">
-                  {verticalName} Division
+                  {verticalName}
                 </span>
               )}
             </motion.h1>
@@ -77,10 +71,10 @@ export default function CareersPageContent({ verticalName }: CareersPageContentP
             className="max-w-2xl mx-auto text-center"
           >
             <p className="text-xl text-gray-700">
-              We currently don&apos;t have any open positions.
+              {t('noPositions')}
             </p>
             <p className="text-gray-500 mt-4">
-              Check back soon or follow us on social media for updates.
+              {t('checkBack')}
             </p>
           </motion.div>
         </Container>

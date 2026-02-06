@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Container from '@/components/ui/Container';
@@ -24,6 +25,9 @@ const staggerContainer = {
 };
 
 export default function GetInTouchPage() {
+  const t = useTranslations('contact');
+  const tFooter = useTranslations('footer');
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -41,21 +45,19 @@ export default function GetInTouchPage() {
               variants={fadeInUp}
               className="text-[#1F5CFF] font-semibold mb-4 text-sm uppercase tracking-wide"
             >
-              Contact Us
+              {t('contactUs')}
             </motion.p>
             <motion.h1
               variants={fadeInUp}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6"
             >
-              Let&apos;s Start a{' '}
-              <span className="text-[#1F5CFF]">Conversation</span>
+              {t('startConversation')}
             </motion.h1>
             <motion.p
               variants={fadeInUp}
               className="text-xl text-gray-600 leading-relaxed"
             >
-              Ready to transform your business with technology? We&apos;re here to help.
-              Schedule a call or reach out directly.
+              {t('readyToTransform')}
             </motion.p>
           </motion.div>
         </Container>
@@ -74,11 +76,10 @@ export default function GetInTouchPage() {
             {/* Schedule a Call */}
             <motion.div variants={fadeInUp}>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Schedule a Call
+                {t('scheduleCall')}
               </h2>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Book a free consultation with our team to discuss your project requirements,
-                challenges, and how we can help you achieve your goals.
+                {t('consultationDescription')}
               </p>
               <motion.a
                 href="https://calendly.com/anwar-softwaredev"
@@ -88,7 +89,7 @@ export default function GetInTouchPage() {
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center gap-3 px-8 py-4 bg-[#1F5CFF] text-white text-lg font-semibold rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-lg"
               >
-                Book a Meeting
+                {t('bookMeeting')}
                 <ArrowRight className="w-5 h-5" />
               </motion.a>
             </motion.div>
@@ -96,7 +97,7 @@ export default function GetInTouchPage() {
             {/* Contact Info */}
             <motion.div variants={fadeInUp}>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Contact Information
+                {t('contactInfo')}
               </h2>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
@@ -104,7 +105,7 @@ export default function GetInTouchPage() {
                     <Mail className="w-6 h-6 text-[#1F5CFF]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
+                    <h3 className="font-semibold text-gray-900 mb-1">{tFooter('email')}</h3>
                     <a href="mailto:contact@yieldge.com" className="text-[#1F5CFF] hover:underline">
                       contact@yieldge.com
                     </a>
@@ -115,8 +116,8 @@ export default function GetInTouchPage() {
                     <Phone className="w-6 h-6 text-[#1F5CFF]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-                    <p className="text-gray-600">Available upon request</p>
+                    <h3 className="font-semibold text-gray-900 mb-1">{tFooter('phone')}</h3>
+                    <p className="text-gray-600">{t('availableUponRequest')}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -124,8 +125,8 @@ export default function GetInTouchPage() {
                     <MapPin className="w-6 h-6 text-[#1F5CFF]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Location</h3>
-                    <p className="text-gray-600">Remote-first, serving clients globally</p>
+                    <h3 className="font-semibold text-gray-900 mb-1">{tFooter('location')}</h3>
+                    <p className="text-gray-600">{t('remoteFirst')}</p>
                   </div>
                 </div>
               </div>

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import Container from '@/components/ui/Container';
 import { ServicesContent, homepageContent } from '@/lib/content';
 import { iconMap } from '@/lib/iconMap';
@@ -29,6 +30,9 @@ interface ServicesProps {
 }
 
 export default function Services({ content = homepageContent.services }: ServicesProps) {
+  const t = useTranslations('services');
+  const tCommon = useTranslations('common');
+
   return (
     <section
       id="servicios"
@@ -51,20 +55,20 @@ export default function Services({ content = homepageContent.services }: Service
               variants={fadeInUp}
               className="text-[#1F5CFF] font-semibold mb-3 sm:mb-4 text-xs sm:text-sm uppercase tracking-wide"
             >
-              {content.sectionLabel}
+              {t('sectionLabel')}
             </motion.p>
             <motion.h2
               variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-4 sm:mb-6"
             >
-              {content.title}{' '}
-              <span className="text-[#1F5CFF]">{content.titleHighlight}</span>
+              {t('title')}{' '}
+              <span className="text-[#1F5CFF]">{t('titleHighlight')}</span>
             </motion.h2>
             <motion.p
               variants={fadeInUp}
               className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed"
             >
-              {content.description}
+              {t('description')}
             </motion.p>
           </div>
 
@@ -143,7 +147,7 @@ export default function Services({ content = homepageContent.services }: Service
                       whileHover={{ x: 4 }}
                       className="inline-flex items-center gap-2 text-[#1F5CFF] font-semibold hover:gap-3 transition-all text-sm sm:text-base"
                     >
-                      Learn More
+                      {tCommon('learnMore')}
                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                     </motion.a>
                   </div>

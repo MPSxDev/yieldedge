@@ -2,15 +2,48 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
-import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
-import { logoHref, solutionsHref, companyHref, careersHref } from '@/lib/navHref';
+import { useTranslations } from 'next-intl';
+import { Link, usePathname } from '@/i18n/navigation';
+import LanguageSwitcher from './LanguageSwitcher';
+
+// Helper function to get the vertical prefix from the current pathname
+function getVerticalPrefix(pathname: string): string {
+  const verticals = ['real-estate', 'construction', 'cr', 'professional-services', 'beauty', 'viberescue'];
+  for (const vertical of verticals) {
+    if (pathname.startsWith(`/${vertical}`)) {
+      return `/${vertical}`;
+    }
+  }
+  return '';
+}
+
+// Route-aware navigation helper functions
+function logoHref(pathname: string): string {
+  const prefix = getVerticalPrefix(pathname);
+  return prefix || '/';
+}
+
+function solutionsHref(pathname: string): string {
+  const prefix = getVerticalPrefix(pathname);
+  return prefix ? `${prefix}/solutions` : '/solutions';
+}
+
+function companyHref(pathname: string): string {
+  const prefix = getVerticalPrefix(pathname);
+  return prefix ? `${prefix}/company` : '/company';
+}
+
+function careersHref(pathname: string): string {
+  const prefix = getVerticalPrefix(pathname);
+  return prefix ? `${prefix}/careers` : '/careers';
+}
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const t = useTranslations('nav');
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -26,9 +59,9 @@ export default function Navbar() {
 
   // Build nav links with dynamic hrefs based on current route context
   const navLinks = [
-    { label: 'Solutions', href: solutionsHref(pathname) },
-    { label: 'Company', href: companyHref(pathname) },
-    { label: 'Careers', href: careersHref(pathname) },
+    { label: t('solutions'), href: solutionsHref(pathname) },
+    { label: t('company'), href: companyHref(pathname) },
+    { label: t('careers'), href: careersHref(pathname) },
   ];
 
   return (
@@ -42,9 +75,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16 sm:h-20">
           {/* Logo - route-aware: links to vertical root when inside a vertical */}
           <Link href={logoHref(pathname)} className="flex items-center cursor-pointer">
-            <motion.div
-              className="h-8 sm:h-10 w-auto relative flex-shrink-0"
-            >
+            <motion.div className="h-8 sm:h-10 w-auto relative flex-shrink-0">
               <Image
                 src="/brand/logo-main.png"
                 alt="Yieldge - Technology that Performs"
@@ -57,7 +88,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
@@ -68,6 +99,9 @@ export default function Navbar() {
               </Link>
             ))}
 
+            {/* Language Switcher */}
+            <LanguageSwitcher variant="compact" />
+
             {/* CTA Button */}
             <motion.a
               href="https://calendly.com/anwar-softwaredev"
@@ -77,29 +111,32 @@ export default function Navbar() {
               whileTap={{ scale: 0.98 }}
               className="px-6 py-3 bg-[#1F5CFF] text-white font-semibold rounded-full hover:bg-[#1a4edb] transition-all duration-300 text-sm shadow-md hover:shadow-lg"
             >
-              Get in Touch
+              {t('getInTouch')}
             </motion.a>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 -mr-2 rounded-xl hover:bg-gray-100 active:bg-gray-200 transition-colors"
-            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={mobileMenuOpen}
-          >
-            <motion.div
-              initial={false}
-              animate={{ rotate: mobileMenuOpen ? 90 : 0 }}
-              transition={{ duration: 0.2 }}
+          <div className="lg:hidden flex items-center gap-3">
+            <LanguageSwitcher variant="compact" />
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 -mr-2 rounded-xl hover:bg-gray-100 active:bg-gray-200 transition-colors"
+              aria-label={mobileMenuOpen ? t('closeMenu') : t('openMenu')}
+              aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? (
-                <X className="w-6 h-6 text-gray-700" />
-              ) : (
-                <Menu className="w-6 h-6 text-gray-700" />
-              )}
-            </motion.div>
-          </button>
+              <motion.div
+                initial={false}
+                animate={{ rotate: mobileMenuOpen ? 90 : 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                {mobileMenuOpen ? (
+                  <X className="w-6 h-6 text-gray-700" />
+                ) : (
+                  <Menu className="w-6 h-6 text-gray-700" />
+                )}
+              </motion.div>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -153,7 +190,7 @@ export default function Navbar() {
                   transition={{ delay: 0.3 }}
                   className="block w-full px-6 py-4 bg-[#1F5CFF] text-white font-semibold rounded-xl hover:bg-[#1a4edb] active:scale-[0.98] transition-all duration-300 text-center shadow-lg mt-4 text-lg"
                 >
-                  Get in Touch
+                  {t('getInTouch')}
                 </motion.a>
               </div>
             </motion.div>

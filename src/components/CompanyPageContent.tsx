@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Users, Target, Award, Briefcase } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import Container from '@/components/ui/Container';
 
 const fadeInUp = {
@@ -22,18 +23,18 @@ const staggerContainer = {
 };
 
 interface CompanyPageContentProps {
-  /**
-   * Optional vertical name to display in the title.
-   * If provided, displays "About Yieldge - {verticalName}"
-   */
   verticalName?: string;
 }
 
-/**
- * Reusable company page content component.
- * Used by both the global /company page and vertical-specific company pages.
- */
 export default function CompanyPageContent({ verticalName }: CompanyPageContentProps) {
+  const t = useTranslations('company');
+
+  const leadershipItems = [
+    { name: 'Executive Team', icon: Users, descKey: 'vision' as const },
+    { name: 'Technical Leaders', icon: Target, descKey: 'innovation' as const },
+    { name: 'Client Partners', icon: Award, descKey: 'quality' as const },
+  ];
+
   return (
     <>
       {/* Hero Section */}
@@ -49,17 +50,16 @@ export default function CompanyPageContent({ verticalName }: CompanyPageContentP
               variants={fadeInUp}
               className="text-[#1F5CFF] font-semibold mb-4 text-sm uppercase tracking-wide"
             >
-              About Us
+              {t('aboutUs')}
             </motion.p>
             <motion.h1
               variants={fadeInUp}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6"
             >
-              Building the Future of{' '}
-              <span className="text-[#1F5CFF]">Technology</span>
+              {t('buildingFuture')}
               {verticalName && (
                 <span className="block text-2xl sm:text-3xl lg:text-4xl text-gray-600 mt-2 font-normal">
-                  {verticalName} Division
+                  {t('division', { vertical: verticalName })}
                 </span>
               )}
             </motion.h1>
@@ -67,8 +67,7 @@ export default function CompanyPageContent({ verticalName }: CompanyPageContentP
               variants={fadeInUp}
               className="text-xl text-gray-600 leading-relaxed"
             >
-              We are a team of passionate technologists dedicated to helping businesses
-              thrive in the digital age through innovative solutions and strategic partnerships.
+              {t('leadershipDescription')}
             </motion.p>
           </motion.div>
         </Container>
@@ -86,22 +85,11 @@ export default function CompanyPageContent({ verticalName }: CompanyPageContentP
           >
             <motion.div variants={fadeInUp}>
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                About Yieldge
+                {t('aboutYieldge')}
                 {verticalName && <span className="text-[#1F5CFF]"> {verticalName}</span>}
               </h2>
               <p className="text-gray-600 mb-4 leading-relaxed">
-                With over 15 years of experience in the technology industry, Yieldge has
-                established itself as a trusted partner for businesses seeking digital
-                transformation and operational excellence.
-              </p>
-              <p className="text-gray-600 mb-4 leading-relaxed">
-                Our team of certified experts brings unmatched expertise and passion to
-                every engagement, helping organizations streamline operations and achieve
-                measurable results.
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                From modernizing legacy systems to implementing scalable cloud architectures,
-                we provide end-to-end solutions tailored to your strategic objectives.
+                {t('leadershipDescription')}
               </p>
             </motion.div>
             <motion.div
@@ -110,7 +98,7 @@ export default function CompanyPageContent({ verticalName }: CompanyPageContentP
             >
               <div className="bg-[#eff4ff] rounded-2xl p-8 text-center">
                 <div className="text-5xl font-bold text-[#1F5CFF] mb-2">15+</div>
-                <div className="text-gray-600">Years Experience</div>
+                <div className="text-gray-600">{t('experience')}</div>
               </div>
             </motion.div>
           </motion.div>
@@ -128,18 +116,14 @@ export default function CompanyPageContent({ verticalName }: CompanyPageContentP
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                Leadership Team
+                {t('leadershipTeam')}
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Our leadership brings decades of combined experience in technology and business strategy.
+                {t('leadershipDescription')}
               </p>
             </motion.div>
             <div className="grid md:grid-cols-3 gap-8">
-              {[
-                { name: 'Executive Team', icon: Users, description: 'Guiding our vision and strategic direction' },
-                { name: 'Technical Leaders', icon: Target, description: 'Driving innovation and technical excellence' },
-                { name: 'Client Partners', icon: Award, description: 'Ensuring exceptional client outcomes' },
-              ].map((item, index) => (
+              {leadershipItems.map((item, index) => (
                 <motion.div
                   key={index}
                   variants={fadeInUp}
@@ -149,7 +133,7 @@ export default function CompanyPageContent({ verticalName }: CompanyPageContentP
                     <item.icon className="w-8 h-8 text-[#1F5CFF]" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{item.name}</h3>
-                  <p className="text-gray-600">{item.description}</p>
+                  <p className="text-gray-600">{t(`roles.${item.descKey}`)}</p>
                 </motion.div>
               ))}
             </div>
@@ -172,25 +156,23 @@ export default function CompanyPageContent({ verticalName }: CompanyPageContentP
                 <Briefcase className="w-10 h-10 text-[#1F5CFF]" />
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                Development Program
+                {t('developmentProgram')}
               </h2>
               <p className="text-xl text-gray-600 mb-8">
-                We invest in our people through continuous learning and professional development
-                opportunities, helping our team members grow their careers while delivering
-                exceptional value to our clients.
+                {t('programDescription')}
               </p>
               <div className="grid sm:grid-cols-3 gap-6 text-left">
                 <div className="bg-[#eff4ff] rounded-xl p-6">
-                  <h3 className="font-bold text-gray-900 mb-2">Technical Training</h3>
-                  <p className="text-gray-600 text-sm">Continuous upskilling in cutting-edge technologies</p>
+                  <h3 className="font-bold text-gray-900 mb-2">{t('training.technical')}</h3>
+                  <p className="text-gray-600 text-sm">{t('training.technicalDesc')}</p>
                 </div>
                 <div className="bg-[#eff4ff] rounded-xl p-6">
-                  <h3 className="font-bold text-gray-900 mb-2">Certification Support</h3>
-                  <p className="text-gray-600 text-sm">Industry certifications and professional credentials</p>
+                  <h3 className="font-bold text-gray-900 mb-2">{t('training.certification')}</h3>
+                  <p className="text-gray-600 text-sm">{t('training.certificationDesc')}</p>
                 </div>
                 <div className="bg-[#eff4ff] rounded-xl p-6">
-                  <h3 className="font-bold text-gray-900 mb-2">Career Growth</h3>
-                  <p className="text-gray-600 text-sm">Clear pathways for advancement and leadership</p>
+                  <h3 className="font-bold text-gray-900 mb-2">{t('training.career')}</h3>
+                  <p className="text-gray-600 text-sm">{t('training.careerDesc')}</p>
                 </div>
               </div>
             </motion.div>
