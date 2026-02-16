@@ -13,8 +13,8 @@ export const localeNames: Record<Locale, string> = {
   en: 'English',
 };
 
-// Short locale codes for the language switcher
+// Short locale codes for the language switcher (using flag emojis)
 export const localeShortNames: Record<Locale, string> = {
-  es: 'ES',
-  en: 'EN',
+  es: '🇨🇷',
+  en: '🇺🇸',
 };
