@@ -1,9 +1,9 @@
 'use client';
 
-import { useState, useTransition } from 'react';
+import { useState } from 'react';
 import { useLocale } from 'next-intl';
-import { useRouter, usePathname } from '@/i18n/navigation';
-import { locales, localeShortNames, type Locale } from '@/i18n/config';
+import { usePathname } from '@/i18n/navigation';
+import { locales, localeShortNames, defaultLocale, type Locale } from '@/i18n/config';
 import { motion } from 'framer-motion';
 
 interface LanguageSwitcherProps {
@@ -16,23 +16,29 @@ export default function LanguageSwitcher({
   variant = 'default',
 }: LanguageSwitcherProps) {
   const locale = useLocale() as Locale;
-  const router = useRouter();
   const pathname = usePathname();
-  const [isPending, startTransition] = useTransition();
   const [isNavigating, setIsNavigating] = useState(false);
 
   const switchLocale = (newLocale: Locale) => {
-    if (newLocale !== locale && !isPending && !isNavigating) {
+    if (newLocale !== locale && !isNavigating) {
       setIsNavigating(true);
-      startTransition(() => {
-        router.replace(pathname, { locale: newLocale });
-        // Reset after a short delay to allow navigation to complete
-        setTimeout(() => setIsNavigating(false), 500);
-      });
+
+      // Build the new URL manually to avoid React state conflicts
+      let newPath: string;
+      if (newLocale === defaultLocale) {
+        // Default locale (es) - no prefix needed
+        newPath = pathname;
+      } else {
+        // Non-default locale (en) - add prefix
+        newPath = `/${newLocale}${pathname}`;
+      }
+
+      // Use window.location for a clean navigation without React conflicts
+      window.location.href = newPath;
     }
   };
 
-  const isLoading = isPending || isNavigating;
+  const isLoading = isNavigating;
 
   // Minimal variant - just text links
   if (variant === 'minimal') {
