@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import { crCompanyContent } from '@/lib/content';
 import { iconMap } from '@/lib/iconMap';
@@ -30,37 +31,56 @@ export default function CRCompanyPageContent() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 bg-gradient-to-br from-[#eff4ff] via-white to-white">
         <Container>
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
-            className="max-w-4xl"
-          >
-            <motion.p
-              variants={fadeInUp}
-              className="text-[#1F5CFF] font-semibold mb-4 text-sm uppercase tracking-wide"
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={staggerContainer}
+              className="max-w-4xl"
             >
-              {content.hero.label}
-            </motion.p>
-            <motion.h1
-              variants={fadeInUp}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-4"
-            >
-              {content.hero.title}
-            </motion.h1>
-            <motion.p
-              variants={fadeInUp}
-              className="text-2xl sm:text-3xl text-[#1F5CFF] font-medium mb-6"
-            >
-              {content.hero.subtitle}
-            </motion.p>
-            <motion.p
-              variants={fadeInUp}
-              className="text-xl text-gray-600 leading-relaxed"
-            >
-              {content.hero.description}
-            </motion.p>
-          </motion.div>
+              <motion.p
+                variants={fadeInUp}
+                className="text-[#1F5CFF] font-semibold mb-4 text-sm uppercase tracking-wide"
+              >
+                {content.hero.label}
+              </motion.p>
+              <motion.h1
+                variants={fadeInUp}
+                className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-4"
+              >
+                {content.hero.title}
+              </motion.h1>
+              <motion.p
+                variants={fadeInUp}
+                className="text-2xl sm:text-3xl text-[#1F5CFF] font-medium mb-6"
+              >
+                {content.hero.subtitle}
+              </motion.p>
+              <motion.p
+                variants={fadeInUp}
+                className="text-xl text-gray-600 leading-relaxed"
+              >
+                {content.hero.description}
+              </motion.p>
+            </motion.div>
+            {content.hero.image && (
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 0.3 }}
+                className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl"
+              >
+                <Image
+                  src={content.hero.image}
+                  alt={content.hero.title}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#1F5CFF]/10 to-transparent" />
+              </motion.div>
+            )}
+          </div>
         </Container>
       </section>
 

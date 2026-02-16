@@ -684,7 +684,7 @@ export const crContent: PageContent = {
         description: 'Ayudamos a PYMEs en Costa Rica a verse profesionales online, captar más clientes y cerrar más ventas — sin complicaciones técnicas.',
         ctaText: 'Hablemos por WhatsApp',
         ctaLink: 'https://wa.me/50688888888?text=Hola%2C%20quiero%20información%20sobre%20sus%20servicios',
-        backgroundImage: '/assets/img1.jpg',
+        backgroundImage: '/assets/prof/krakenimages-376KN_ISplE-unsplash.jpg',
       },
     ],
   },
@@ -699,14 +699,14 @@ export const crContent: PageContent = {
         title: 'Presencia Web Profesional',
         description: 'Sitios web y landing pages que transmiten confianza y convierten visitantes en clientes. Rápidos, seguros y optimizados para celular.',
         features: ['Diseño profesional', 'Optimizado para celular', 'Carga rápida', 'Aparecé en Google'],
-        image: '/assets/img4.jpg',
+        image: '/assets/prof/amy-hirschi-izxMVv2Z9dw-unsplash.jpg',
       },
       {
         icon: 'Users',
         title: 'Captura de Clientes + WhatsApp',
         description: 'Formularios inteligentes que captan clientes potenciales y los envían directo a tu WhatsApp. Nunca pierdas una oportunidad.',
         features: ['Formularios que convierten', 'Notificación por WhatsApp', 'Organización de contactos', 'Sin perder mensajes'],
-        image: '/assets/img5.jpg',
+        image: '/assets/office/vitaly-gariev-2OnT7IKfLyw-unsplash.jpg',
       },
       {
         icon: 'MessageCircle',
@@ -720,14 +720,14 @@ export const crContent: PageContent = {
         title: 'Aparecé en Google (SEO Local)',
         description: 'Optimización para que tu negocio aparezca cuando busquen tus servicios en Costa Rica. Más visibilidad = más clientes.',
         features: ['Google My Business', 'SEO para Costa Rica', 'Palabras clave locales', 'Más visitas orgánicas'],
-        image: '/assets/img4.jpg',
+        image: '/assets/odonto/ozkan-guner-9Gw9XCuazuY-unsplash.jpg',
       },
       {
         icon: 'BarChart',
         title: 'Reportes Claros de Resultados',
         description: 'Dashboards simples que muestran cuántos clientes llegaron, de dónde vinieron y cuánto vendiste. Sin complicaciones.',
         features: ['Métricas claras', 'Origen de clientes', 'Seguimiento de ventas', 'Reportes mensuales'],
-        image: '/assets/img5.jpg',
+        image: '/assets/prof/divaris-shirichena-dgPNu73ihYE-unsplash.jpg',
       },
     ],
   },
@@ -735,7 +735,7 @@ export const crContent: PageContent = {
     title: '¿Por Qué Trabajar',
     titleHighlight: 'Con Nosotros?',
     description: 'No somos una fábrica de páginas web. Trabajamos de la mano con negocios que quieren crecer de forma ordenada.',
-    image: '/assets/img7.jpg',
+    image: '/assets/prof/tyler-franta-iusJ25iYu1c-unsplash.jpg',
     imageAlt: 'Equipo Yieldge Costa Rica',
     values: [
       {
@@ -887,7 +887,7 @@ export const crContent: PageContent = {
     ],
     ctaText: 'Hablemos por WhatsApp',
     ctaSubtext: 'Respondemos en menos de 1 hora • Sin compromiso • Diagnóstico gratis',
-    image: '/assets/img3.jpg',
+    image: '/assets/odonto/ozkan-guner-AduzI0N9iRI-unsplash.jpg',
     imageAlt: 'Equipo Yieldge Costa Rica',
   },
 };
@@ -899,6 +899,7 @@ export interface CRCompanyContent {
     title: string;
     subtitle: string;
     description: string;
+    image?: string;
   };
   about: {
     title: string;
@@ -975,6 +976,7 @@ export const crCompanyContent: CRCompanyContent = {
     title: 'Tu Aliado Digital en Costa Rica',
     subtitle: 'No somos una fábrica de páginas web',
     description: 'Somos un equipo pequeño que trabaja de la mano con negocios que quieren crecer de forma ordenada. Entendemos el mercado tico y sabemos qué funciona aquí.',
+    image: '/assets/prof/hunters-race-MYbhN8KaaEc-unsplash.jpg',
   },
   about: {
     title: 'Sobre Yieldge Costa Rica',
@@ -1036,7 +1038,7 @@ export const crSolutionsContent: CRSolutionsContent = {
         'Aparecé en Google cuando busquen tus servicios',
       ],
       forWho: 'Ideal para: clínicas, restaurantes, bufetes, salones, talleres, tiendas',
-      image: '/assets/img4.jpg',
+      image: '/assets/prof/gabrielle-henderson-HJckKnwCXxQ-unsplash.jpg',
     },
     {
       icon: 'MessageCircle',
@@ -1049,7 +1051,7 @@ export const crSolutionsContent: CRSolutionsContent = {
         'Organización de conversaciones por cliente',
       ],
       forWho: 'Ideal para: negocios que reciben muchas consultas por WhatsApp',
-      image: '/assets/img5.jpg',
+      image: '/assets/office/vitaly-gariev-4SpsVc22_6g-unsplash.jpg',
     },
     {
       icon: 'Search',
@@ -1062,7 +1064,7 @@ export const crSolutionsContent: CRSolutionsContent = {
         'Reportes mensuales de posicionamiento',
       ],
       forWho: 'Ideal para: negocios que quieren más clientes desde Google',
-      image: '/assets/img6.jpg',
+      image: '/assets/odonto/nate-johnston-fNSPSQAH1mQ-unsplash.jpg',
     },
     {
       icon: 'Calendar',
@@ -1075,7 +1077,7 @@ export const crSolutionsContent: CRSolutionsContent = {
         'Sincronización con tu agenda',
       ],
       forWho: 'Ideal para: clínicas, salones de belleza, consultorios, coaches',
-      image: '/assets/img4.jpg',
+      image: '/assets/odonto/laurent-yasiel-607-cXjrge4-unsplash.jpg',
     },
     {
       icon: 'ShoppingCart',
@@ -1088,7 +1090,7 @@ export const crSolutionsContent: CRSolutionsContent = {
         'Gestión de inventario básica',
       ],
       forWho: 'Ideal para: tiendas, emprendedores, negocios con productos físicos',
-      image: '/assets/img5.jpg',
+      image: '/assets/prof/giammarco-boscaro-zeH-ljawHtg-unsplash.jpg',
     },
   ],
   cta: {
