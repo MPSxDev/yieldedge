@@ -83,13 +83,18 @@ export default function CRCompanyPageContent() {
                 {content.mission.donation.title}
               </h2>
               
-              {/* First Paragraph */}
-              <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed mb-12 max-w-3xl mx-auto">
-                {content.mission.donation.firstParagraph}
-              </p>
+              {/* Paragraphs Together */}
+              <div className="space-y-4 mb-12 max-w-3xl mx-auto">
+                <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed">
+                  {content.mission.donation.firstParagraph}
+                </p>
+                <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed">
+                  {content.mission.donation.secondParagraph}
+                </p>
+              </div>
 
               {/* Images Carousel - One at a time */}
-              <div className="mb-12 max-w-4xl mx-auto">
+              <div className="mb-12 max-w-3xl mx-auto">
                 <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-xl bg-gray-50">
                   <AnimatePresence mode="wait">
                     <motion.div
@@ -148,11 +153,6 @@ export default function CRCompanyPageContent() {
                   )}
                 </div>
               </div>
-
-              {/* Second Paragraph */}
-              <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed mb-12 max-w-3xl mx-auto">
-                {content.mission.donation.secondParagraph}
-              </p>
 
               {/* Einstein Quote */}
               <div className="mb-12 p-6 sm:p-8 bg-[#eff4ff] rounded-2xl border-l-4 border-[#1F5CFF] max-w-3xl mx-auto">
@@ -292,15 +292,15 @@ export default function CRCompanyPageContent() {
                   <motion.div
                     key={index}
                     variants={fadeInUp}
-                    className="bg-white rounded-2xl p-6 border-2 border-gray-200 hover:border-[#1F5CFF] hover:shadow-lg transition-all"
+                    className="bg-white rounded-2xl p-6 sm:p-8 border-2 border-gray-200 hover:border-[#1F5CFF] hover:shadow-lg transition-all flex flex-col"
                   >
-                    <div className="w-14 h-14 bg-[#dbe6ff] rounded-2xl flex items-center justify-center mb-4">
+                    <div className="w-14 h-14 bg-[#dbe6ff] rounded-2xl flex items-center justify-center mb-4 flex-shrink-0">
                       <IconComponent className="w-7 h-7 text-[#1F5CFF]" />
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 min-h-[3rem] leading-tight">
                       {value.title}
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed flex-grow">
                       {value.description}
                     </p>
                   </motion.div>
