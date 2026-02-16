@@ -42,7 +42,7 @@ export default function CRPage() {
 
       {/* Main content sections with spacing */}
       <main className="space-y-20 sm:space-y-24 lg:space-y-32">
-        <Services content={crContent.services} />
+        <Services content={crContent.services} useContentDirectly={true} />
         <WhyChooseUs content={crContent.whyChooseUs} />
         <Process content={crContent.process} />
         <CaseStudies content={crContent.caseStudies} />
