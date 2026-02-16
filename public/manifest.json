@@ -1,0 +1,27 @@
+{
+  "name": "Yieldge - Technology Solutions & Offshore Development",
+  "short_name": "Yieldge",
+  "description": "Leading provider of technology solutions with 15+ years of expertise. Delivering software development, security services, technology consulting and offshore teams across the Americas.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/brand/favicon-light.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/brand/favicon-light.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "technology"],
+  "lang": "es",
+  "dir": "ltr"
+}

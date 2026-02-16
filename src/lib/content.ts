@@ -1136,7 +1136,7 @@ export const crSolutionsContent: CRSolutionsContent = {
 export const crCareersContent: CRCareersContent = {
   hero: {
     label: 'Trabajá Con Nosotros',
-    title: 'Carreras en Yieldge Costa Rica',
+    title: 'Trabajá con Yieldge Costa Rica',
     description: 'Buscamos personas que quieran crecer, aprender y aportar valor real a negocios.',
   },
   culture: {

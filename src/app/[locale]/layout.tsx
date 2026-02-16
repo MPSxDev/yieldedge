@@ -35,18 +35,27 @@ export async function generateMetadata({
     authors: [{ name: "Yieldge" }],
     creator: "Yieldge",
     publisher: "Yieldge",
+    applicationName: "Yieldge",
+    referrer: "origin-when-cross-origin",
     formatDetection: {
       email: false,
       address: false,
       telephone: false,
     },
     icons: {
-      apple: "/brand/favicon-light.png",
+      icon: [
+        { url: "/brand/favicon-light.png", type: "image/png" },
+        { url: "/brand/favicon-dark.png", type: "image/png", media: "(prefers-color-scheme: dark)" },
+      ],
+      apple: [
+        { url: "/brand/favicon-light.png", sizes: "180x180", type: "image/png" },
+      ],
     },
+    manifest: "/manifest.json",
     openGraph: {
       type: "website",
       locale: locale === "es" ? "es_ES" : "en_US",
-      url: siteUrl,
+      url: locale === "es" ? siteUrl : `${siteUrl}/en`,
       siteName: "Yieldge",
       title: t.title,
       description: t.description,
@@ -56,35 +65,48 @@ export async function generateMetadata({
           width: 1200,
           height: 630,
           alt: "Yieldge - Technology that Performs",
+          type: "image/jpeg",
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
+      site: "@yieldge",
+      creator: "@yieldge",
       title: t.title,
       description: t.description,
-      images: ["/assets/featured.jpg"],
-      creator: "@yieldge",
+      images: {
+        url: "/assets/featured.jpg",
+        alt: "Yieldge - Technology that Performs",
+      },
     },
     robots: {
       index: true,
       follow: true,
+      nocache: false,
       googleBot: {
         index: true,
         follow: true,
+        noimageindex: false,
         "max-video-preview": -1,
         "max-image-preview": "large",
         "max-snippet": -1,
       },
     },
     alternates: {
-      canonical: siteUrl,
+      canonical: locale === "es" ? siteUrl : `${siteUrl}/en`,
       languages: {
-        es: `${siteUrl}`,
+        es: siteUrl,
         en: `${siteUrl}/en`,
+        "x-default": siteUrl,
       },
     },
     category: "technology",
+    classification: "Business Services",
+    other: {
+      "google-site-verification": "your-google-verification-code", // Add your verification code
+      "msvalidate.01": "your-bing-verification-code", // Add your Bing verification code
+    },
   };
 }
 
