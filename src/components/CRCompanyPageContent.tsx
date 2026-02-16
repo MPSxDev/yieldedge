@@ -101,7 +101,7 @@ export default function CRCompanyPageContent() {
               {/* Einstein Quote */}
               <div className="mb-12 p-6 sm:p-8 bg-[#eff4ff] rounded-2xl border-l-4 border-[#1F5CFF] max-w-3xl mx-auto">
                 <p className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-900 italic mb-3">
-                  "{content.mission.donation.quote.text}"
+                  &ldquo;{content.mission.donation.quote.text}&rdquo;
                 </p>
                 <p className="text-base sm:text-lg text-gray-500">
                   — {content.mission.donation.quote.author}
