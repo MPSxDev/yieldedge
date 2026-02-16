@@ -1,6 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import { crCompanyContent } from '@/lib/content';
@@ -25,6 +27,17 @@ const staggerContainer = {
 
 export default function CRCompanyPageContent() {
   const content = crCompanyContent;
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % content.mission.donation.images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => 
+      prev === 0 ? content.mission.donation.images.length - 1 : prev - 1
+    );
+  };
 
   return (
     <>
@@ -75,22 +88,65 @@ export default function CRCompanyPageContent() {
                 {content.mission.donation.firstParagraph}
               </p>
 
-              {/* Images - Centered and Larger */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 max-w-5xl mx-auto">
-                {content.mission.donation.images.map((img, index) => (
-                  <motion.div
-                    key={index}
-                    variants={fadeInUp}
-                    className="relative aspect-square rounded-2xl overflow-hidden shadow-xl"
-                  >
-                    <Image
-                      src={img}
-                      alt={`Donación ${index + 1}`}
-                      fill
-                      className="object-cover"
-                    />
-                  </motion.div>
-                ))}
+              {/* Images Carousel - One at a time */}
+              <div className="mb-12 max-w-4xl mx-auto">
+                <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-xl bg-gray-50">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={currentImageIndex}
+                      initial={{ opacity: 0, x: 50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -50 }}
+                      transition={{ duration: 0.5 }}
+                      className="absolute inset-0"
+                    >
+                      <Image
+                        src={content.mission.donation.images[currentImageIndex]}
+                        alt={`Donación ${currentImageIndex + 1}`}
+                        fill
+                        className="object-contain p-4"
+                      />
+                    </motion.div>
+                  </AnimatePresence>
+
+                  {/* Navigation Arrows */}
+                  {content.mission.donation.images.length > 1 && (
+                    <>
+                      <button
+                        onClick={prevImage}
+                        className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center transition-all hover:scale-110 z-10"
+                        aria-label="Imagen anterior"
+                      >
+                        <ChevronLeft className="w-6 h-6 text-[#1F5CFF]" />
+                      </button>
+                      <button
+                        onClick={nextImage}
+                        className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center transition-all hover:scale-110 z-10"
+                        aria-label="Siguiente imagen"
+                      >
+                        <ChevronRight className="w-6 h-6 text-[#1F5CFF]" />
+                      </button>
+                    </>
+                  )}
+
+                  {/* Dots Indicator */}
+                  {content.mission.donation.images.length > 1 && (
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                      {content.mission.donation.images.map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setCurrentImageIndex(index)}
+                          className={`w-2.5 h-2.5 rounded-full transition-all ${
+                            index === currentImageIndex
+                              ? 'bg-[#1F5CFF] w-8'
+                              : 'bg-white/60 hover:bg-white/80'
+                          }`}
+                          aria-label={`Ir a imagen ${index + 1}`}
+                        />
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
 
               {/* Second Paragraph */}
@@ -236,7 +292,7 @@ export default function CRCompanyPageContent() {
                   <motion.div
                     key={index}
                     variants={fadeInUp}
-                    className="bg-white rounded-2xl p-6 border border-gray-200 hover:border-[#1F5CFF] hover:shadow-lg transition-all"
+                    className="bg-white rounded-2xl p-6 border-2 border-gray-200 hover:border-[#1F5CFF] hover:shadow-lg transition-all"
                   >
                     <div className="w-14 h-14 bg-[#dbe6ff] rounded-2xl flex items-center justify-center mb-4">
                       <IconComponent className="w-7 h-7 text-[#1F5CFF]" />
