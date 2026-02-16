@@ -76,7 +76,7 @@ export default function CRCompanyPageContent() {
               </p>
 
               {/* Images - Centered and Larger */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-12 max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 max-w-5xl mx-auto">
                 {content.mission.donation.images.map((img, index) => (
                   <motion.div
                     key={index}

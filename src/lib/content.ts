@@ -999,8 +999,9 @@ export const crCompanyContent: CRCompanyContent = {
         author: 'Albert Einstein',
       },
       images: [
-        '/assets/charity/happykids.jpeg',
-        '/assets/charity/vikram-aditya-9Awu92Opbco-unsplash.jpg',
+        '/assets/charity/1cha.jpeg',
+        '/assets/charity/2char.jpeg',
+        '/assets/charity/3cha.jpeg',
       ],
     },
   },
