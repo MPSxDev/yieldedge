@@ -285,7 +285,7 @@ export default function CRCompanyPageContent() {
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
               {content.values.items.map((value, index) => {
                 const IconComponent = iconMap[value.icon] || iconMap.Globe;
                 return (
@@ -297,7 +297,7 @@ export default function CRCompanyPageContent() {
                     <div className="w-14 h-14 bg-[#dbe6ff] rounded-2xl flex items-center justify-center mb-4 flex-shrink-0">
                       <IconComponent className="w-7 h-7 text-[#1F5CFF]" />
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 min-h-[3rem] leading-tight">
+                    <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900 mb-3 min-h-[3rem] leading-tight break-words hyphens-auto">
                       {value.title}
                     </h3>
                     <p className="text-gray-600 text-sm sm:text-base leading-relaxed flex-grow">
