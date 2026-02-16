@@ -95,6 +95,7 @@ export default function CRCompanyPageContent() {
 
               {/* Images Carousel - One at a time */}
               <div className="mb-12 max-w-3xl mx-auto">
+                {/* Image Container */}
                 <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-xl bg-gray-50">
                   <AnimatePresence mode="wait">
                     <motion.div
@@ -113,45 +114,44 @@ export default function CRCompanyPageContent() {
                       />
                     </motion.div>
                   </AnimatePresence>
+                </div>
 
-                  {/* Navigation Arrows */}
-                  {content.mission.donation.images.length > 1 && (
-                    <>
-                      <button
-                        onClick={prevImage}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center transition-all hover:scale-110 z-10"
-                        aria-label="Imagen anterior"
-                      >
-                        <ChevronLeft className="w-6 h-6 text-[#1F5CFF]" />
-                      </button>
-                      <button
-                        onClick={nextImage}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center transition-all hover:scale-110 z-10"
-                        aria-label="Siguiente imagen"
-                      >
-                        <ChevronRight className="w-6 h-6 text-[#1F5CFF]" />
-                      </button>
-                    </>
-                  )}
+                {/* Navigation Controls - Below the image */}
+                {content.mission.donation.images.length > 1 && (
+                  <div className="flex items-center justify-center gap-4 mt-4">
+                    <button
+                      onClick={prevImage}
+                      className="w-10 h-10 rounded-full bg-white border-2 border-gray-200 hover:border-[#1F5CFF] shadow-md flex items-center justify-center transition-all hover:scale-110"
+                      aria-label="Imagen anterior"
+                    >
+                      <ChevronLeft className="w-5 h-5 text-[#1F5CFF]" />
+                    </button>
 
-                  {/* Dots Indicator */}
-                  {content.mission.donation.images.length > 1 && (
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                    {/* Dots Indicator */}
+                    <div className="flex gap-2">
                       {content.mission.donation.images.map((_, index) => (
                         <button
                           key={index}
                           onClick={() => setCurrentImageIndex(index)}
-                          className={`w-2.5 h-2.5 rounded-full transition-all ${
+                          className={`h-2.5 rounded-full transition-all ${
                             index === currentImageIndex
                               ? 'bg-[#1F5CFF] w-8'
-                              : 'bg-white/60 hover:bg-white/80'
+                              : 'bg-gray-300 hover:bg-gray-400 w-2.5'
                           }`}
                           aria-label={`Ir a imagen ${index + 1}`}
                         />
                       ))}
                     </div>
-                  )}
-                </div>
+
+                    <button
+                      onClick={nextImage}
+                      className="w-10 h-10 rounded-full bg-white border-2 border-gray-200 hover:border-[#1F5CFF] shadow-md flex items-center justify-center transition-all hover:scale-110"
+                      aria-label="Siguiente imagen"
+                    >
+                      <ChevronRight className="w-5 h-5 text-[#1F5CFF]" />
+                    </button>
+                  </div>
+                )}
               </div>
             </motion.div>
           </motion.div>
