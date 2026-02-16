@@ -23,14 +23,28 @@ export default function LanguageSwitcher({
     if (newLocale !== locale && !isNavigating) {
       setIsNavigating(true);
 
-      // Build the new URL manually to avoid React state conflicts
+      // Get current path and remove any existing locale prefix
+      let currentPath = window.location.pathname;
+
+      // Remove locale prefix if present (e.g., /en/privacy-policy -> /privacy-policy)
+      for (const loc of locales) {
+        if (currentPath.startsWith(`/${loc}/`)) {
+          currentPath = currentPath.slice(loc.length + 1);
+          break;
+        } else if (currentPath === `/${loc}`) {
+          currentPath = '/';
+          break;
+        }
+      }
+
+      // Build the new URL
       let newPath: string;
       if (newLocale === defaultLocale) {
         // Default locale (es) - no prefix needed
-        newPath = pathname;
+        newPath = currentPath || '/';
       } else {
         // Non-default locale (en) - add prefix
-        newPath = `/${newLocale}${pathname}`;
+        newPath = `/${newLocale}${currentPath}`;
       }
 
       // Use window.location for a clean navigation without React conflicts
