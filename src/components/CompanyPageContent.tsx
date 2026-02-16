@@ -30,9 +30,9 @@ export default function CompanyPageContent({ verticalName }: CompanyPageContentP
   const t = useTranslations('company');
 
   const leadershipItems = [
-    { name: 'Executive Team', icon: Users, descKey: 'vision' as const },
-    { name: 'Technical Leaders', icon: Target, descKey: 'innovation' as const },
-    { name: 'Client Partners', icon: Award, descKey: 'quality' as const },
+    { nameKey: 'executive' as const, icon: Users, descKey: 'vision' as const },
+    { nameKey: 'technical' as const, icon: Target, descKey: 'innovation' as const },
+    { nameKey: 'clients' as const, icon: Award, descKey: 'quality' as const },
   ];
 
   return (
@@ -132,7 +132,7 @@ export default function CompanyPageContent({ verticalName }: CompanyPageContentP
                   <div className="w-16 h-16 bg-[#dbe6ff] rounded-2xl flex items-center justify-center mx-auto mb-4">
                     <item.icon className="w-8 h-8 text-[#1F5CFF]" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{item.name}</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{t(`leadershipRoles.${item.nameKey}`)}</h3>
                   <p className="text-gray-600">{t(`roles.${item.descKey}`)}</p>
                 </motion.div>
               ))}

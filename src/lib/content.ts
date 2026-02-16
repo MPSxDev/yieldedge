@@ -679,216 +679,462 @@ export const crContent: PageContent = {
   hero: {
     slides: [
       {
-        heading: 'Tu Socio de Crecimiento',
-        subheading: 'Aumenta Tus Leads e Ingresos Con Un Sistema Que Da Seguimiento Por Ti',
-        description: 'Ayudamos a negocios a convertir visitantes en llamadas agendadas y clientes que pagan a través de sitios web inteligentes y seguimientos automatizados.',
-        ctaText: 'Agenda Una Llamada',
-        ctaLink: '/get-in-touch',
+        heading: 'Más Clientes Para Tu Negocio',
+        subheading: 'Atraé más clientes y vendé más con un sistema digital que trabaja por vos',
+        description: 'Ayudamos a PYMEs en Costa Rica a verse profesionales online, captar más clientes y cerrar más ventas — sin complicaciones técnicas.',
+        ctaText: 'Hablemos por WhatsApp',
+        ctaLink: 'https://wa.me/50688888888?text=Hola%2C%20quiero%20información%20sobre%20sus%20servicios',
         backgroundImage: '/assets/img1.jpg',
       },
     ],
   },
   services: {
-    sectionLabel: 'Lo Que Construimos',
-    title: 'Convierte visitantes en',
-    titleHighlight: 'clientes que pagan',
-    description: 'Construimos sitios web de alta conversión y sistemas de automatización que capturan leads, dan seguimiento automático, y te ayudan a cerrar más ventas — 24/7.',
+    sectionLabel: 'Qué Hacemos Por Vos',
+    title: 'Atraé más clientes y',
+    titleHighlight: 'vendé más',
+    description: 'Creamos presencia web profesional y sistemas que captan clientes, dan seguimiento automático y te ayudan a cerrar más ventas — 24/7.',
     services: [
       {
         icon: 'Globe',
-        title: 'Sitios Web y Landing Pages de Alta Conversión',
-        description: 'Sitios web profesionales diseñados para convertir visitantes en leads. Responsivos, rápidos y optimizados para tus objetivos de negocio.',
-        features: ['Diseño responsivo', 'Carga rápida', 'Optimizado para SEO', 'Enfocado en conversión'],
+        title: 'Presencia Web Profesional',
+        description: 'Sitios web y landing pages que transmiten confianza y convierten visitantes en clientes. Rápidos, seguros y optimizados para celular.',
+        features: ['Diseño profesional', 'Optimizado para celular', 'Carga rápida', 'Aparecé en Google'],
         image: '/assets/img4.jpg',
       },
       {
         icon: 'Users',
-        title: 'Captura de Leads + Conexión CRM',
-        description: 'Captura leads desde tu sitio web y sincronízalos automáticamente con tu CRM. Nunca pierdas un cliente potencial.',
-        features: ['Automatización de formularios', 'Integración CRM', 'Calificación de leads', 'Notificaciones instantáneas'],
+        title: 'Captura de Clientes + WhatsApp',
+        description: 'Formularios inteligentes que captan clientes potenciales y los envían directo a tu WhatsApp. Nunca pierdas una oportunidad.',
+        features: ['Formularios que convierten', 'Notificación por WhatsApp', 'Organización de contactos', 'Sin perder mensajes'],
         image: '/assets/img5.jpg',
       },
       {
         icon: 'MessageCircle',
-        title: 'Seguimientos Automatizados por Email / SMS / WhatsApp',
-        description: 'Configura secuencias de seguimiento automatizadas que nutren leads, responden preguntas y agendan llamadas — incluso cuando no estás disponible.',
-        features: ['Automatización de email', 'Seguimiento por SMS', 'Integración WhatsApp', 'Programación inteligente'],
+        title: 'Seguimiento Automático',
+        description: 'Secuencias automáticas por WhatsApp y email que mantienen a tus clientes interesados — incluso cuando estás ocupado.',
+        features: ['WhatsApp automático', 'Email de seguimiento', 'Recordatorios de citas', 'Respuestas 24/7'],
         image: '/assets/img6.jpg',
       },
       {
-        icon: 'BarChart',
-        title: 'Dashboards Simples y Seguimiento de Rendimiento',
-        description: 'Ve exactamente qué está funcionando con dashboards claros que muestran leads, conversiones, ingresos y ROI — todo en un solo lugar.',
-        features: ['Analíticas en tiempo real', 'Seguimiento de ingresos', 'Análisis de fuentes de leads', 'Reportes de ROI'],
+        icon: 'Search',
+        title: 'Aparecé en Google (SEO Local)',
+        description: 'Optimización para que tu negocio aparezca cuando busquen tus servicios en Costa Rica. Más visibilidad = más clientes.',
+        features: ['Google My Business', 'SEO para Costa Rica', 'Palabras clave locales', 'Más visitas orgánicas'],
         image: '/assets/img4.jpg',
       },
       {
-        icon: 'Bot',
-        title: 'IA Opcional para Intake y Automatización de FAQs',
-        description: 'Deja que la IA maneje las preguntas iniciales, califique leads y agende citas automáticamente — liberándote para enfocarte en cerrar ventas.',
-        features: ['Chat con IA', 'Automatización de FAQs', 'Calificación de leads', 'Agendamiento de citas'],
+        icon: 'BarChart',
+        title: 'Reportes Claros de Resultados',
+        description: 'Dashboards simples que muestran cuántos clientes llegaron, de dónde vinieron y cuánto vendiste. Sin complicaciones.',
+        features: ['Métricas claras', 'Origen de clientes', 'Seguimiento de ventas', 'Reportes mensuales'],
         image: '/assets/img5.jpg',
       },
     ],
   },
   whyChooseUs: {
-    title: '¿Por Qué Elegir',
-    titleHighlight: 'Yieldge?',
-    description: 'Sistemas probados usados por negocios en crecimiento. Hemos ayudado a clientes a aumentar leads, acelerar seguimientos y cerrar más ventas — para que te enfoques en lo que mejor haces.',
+    title: '¿Por Qué Trabajar',
+    titleHighlight: 'Con Nosotros?',
+    description: 'No somos una fábrica de páginas web. Trabajamos de la mano con negocios que quieren crecer de forma ordenada.',
     image: '/assets/img7.jpg',
-    imageAlt: 'Crecimiento y rendimiento',
+    imageAlt: 'Equipo Yieldge Costa Rica',
     values: [
       {
+        icon: 'Handshake',
+        title: 'Acompañamiento Real',
+        description: 'No te dejamos solo con un sitio web. Te guiamos paso a paso para que entiendas cómo atraer más clientes.',
+      },
+      {
         icon: 'Target',
-        title: 'Flujos de Trabajo Probados',
-        description: 'Usamos sistemas y flujos de trabajo probados que han ayudado a negocios de diversas industrias a aumentar ingresos y reducir trabajo manual.',
+        title: 'Enfocados en Resultados',
+        description: 'Medimos todo: cuántos clientes llegaron, de dónde vinieron, cuánto vendiste. Sin humo, solo números.',
       },
       {
-        icon: 'Zap',
-        title: 'Resultados Comprobados',
-        description: 'Nuestros clientes ven tiempos de respuesta más rápidos, más llamadas agendadas y mayores ingresos — con métricas claras que lo demuestran.',
-      },
-      {
-        icon: 'Lightbulb',
-        title: 'Soluciones Personalizadas',
-        description: 'Cada sistema se construye para las necesidades específicas de tu negocio, objetivos y herramientas existentes — sin plantillas genéricas.',
+        icon: 'MapPin',
+        title: 'Conocemos Costa Rica',
+        description: 'Entendemos el mercado tico. Sabemos qué funciona aquí para PYMEs de servicios, comercio y profesionales.',
       },
       {
         icon: 'Shield',
-        title: 'Confiable y Seguro',
-        description: 'Seguridad y confiabilidad de nivel empresarial. Tu información de clientes y datos de negocio permanecen protegidos con estándares líderes en la industria.',
+        title: 'Tu Información Segura',
+        description: 'Cumplimos con la Ley N.º 8968 de Protección de Datos de Costa Rica. Tu información y la de tus clientes está protegida.',
       },
     ],
   },
   process: {
-    sectionLabel: 'Cómo Funciona',
-    title: 'De revisión a',
-    titleHighlight: 'ingresos en 3 pasos',
-    description: 'Nuestro proceso probado asegura una implementación fluida y resultados medibles — desde la evaluación inicial hasta el crecimiento continuo.',
+    sectionLabel: 'Así Trabajamos',
+    title: 'De diagnóstico a',
+    titleHighlight: 'más ventas en 3 pasos',
+    description: 'Un proceso simple y claro. Sin tecnicismos ni complicaciones.',
     steps: [
       {
-        icon: 'ClipboardCheck',
+        icon: 'MessageCircle',
         number: '01',
-        title: 'Revisión Inicial (Sin Compromiso)',
-        description: 'Analizamos tu flujo actual de leads, identificamos oportunidades y te mostramos exactamente cómo la automatización puede aumentar tus ingresos.',
+        title: 'Diagnóstico Gratis por WhatsApp',
+        description: 'Hablamos de tu negocio, entendemos tus necesidades y te mostramos qué podemos hacer por vos. Sin compromiso.',
         image: '/assets/img9.jpg',
-        deliverables: ['Análisis del estado actual', 'Evaluación de oportunidades', 'Proyección de ROI'],
+        deliverables: ['Llamada o chat de 15-20 mins', 'Análisis de tu situación actual', 'Propuesta clara y honesta'],
       },
       {
-        icon: 'FileCode',
+        icon: 'Palette',
         number: '02',
-        title: 'Construimos y Conectamos Tu Sistema',
-        description: 'Construimos tu sitio web, configuramos la captura de leads, conectamos tu CRM y configuramos seguimientos automatizados — todo adaptado a tu negocio.',
+        title: 'Diseñamos y Construimos Tu Solución',
+        description: 'Creamos tu sitio web, configuramos WhatsApp Business, formularios y todo lo que necesitás para captar más clientes.',
         image: '/assets/img10.jpg',
-        deliverables: ['Lanzamiento del sitio', 'Integración CRM', 'Configuración de automatización', 'Capacitación del equipo'],
+        deliverables: ['Sitio web profesional', 'Formularios que convierten', 'WhatsApp configurado', 'Te enseñamos a usarlo'],
       },
       {
-        icon: 'Rocket',
+        icon: 'TrendingUp',
         number: '03',
-        title: 'Lanzamiento, Medición y Mejora de Ingresos',
-        description: 'Tu sistema entra en funcionamiento 24/7. Monitoreamos el rendimiento, optimizamos conversiones y te ayudamos a escalar lo que funciona.',
+        title: 'Lanzamos y Medimos Resultados',
+        description: 'Tu negocio empieza a recibir clientes. Te mostramos reportes claros y te ayudamos a mejorar cada mes.',
         image: '/assets/img11.jpg',
-        deliverables: ['Monitoreo de rendimiento', 'Optimización de conversiones', 'Soporte continuo', 'Crecimiento de ingresos'],
+        deliverables: ['Lanzamiento del sitio', 'Reportes mensuales', 'Soporte continuo', 'Mejoras basadas en datos'],
       },
     ],
-    ctaText: 'Agenda Una Revisión Inicial',
+    ctaText: 'Solicitar Diagnóstico Gratis',
   },
   caseStudies: {
     sectionLabel: 'Casos de Éxito',
-    title: 'Resultados Reales para',
-    titleHighlight: 'Negocios en Crecimiento',
-    description: 'Ve cómo hemos ayudado a negocios de diversas industrias a aumentar leads, acelerar seguimientos y crecer ingresos con automatización inteligente.',
+    title: 'Resultados Reales en',
+    titleHighlight: 'Costa Rica',
+    description: 'Negocios como el tuyo que ya están atrayendo más clientes y vendiendo más.',
     caseStudies: [
       {
-        title: 'Negocio de Servicios',
-        category: 'Generación de Leads',
+        title: 'Clínica Dental',
+        category: 'Más Citas Agendadas',
         location: 'San José, CR',
-        description: 'Un negocio de servicios luchando con seguimientos lentos y oportunidades perdidas. Construimos un sitio web de alta conversión con captura de leads automatizada y secuencias de seguimiento.',
+        description: 'Una clínica dental que perdía pacientes porque no contestaba WhatsApp a tiempo. Le creamos un sitio profesional con formulario de citas y WhatsApp automático.',
         achievements: [
-          'Aumentó leads calificados en 55%',
-          'Redujo tiempo de respuesta de horas a minutos',
-          'Agendó 3x más llamadas por mes',
+          '55% más citas agendadas por mes',
+          'Respuesta automática en menos de 1 minuto',
+          'Pacientes encuentran la clínica en Google',
         ],
         image: '/assets/img12.jpg',
       },
       {
-        title: 'Agencia',
-        category: 'Automatización de Operaciones',
+        title: 'Bufete de Abogados',
+        category: 'Presencia Profesional',
         location: 'Heredia, CR',
-        description: 'Una agencia manejando múltiples clientes con procesos manuales. Construimos flujos automatizados para intake de leads, comunicación con clientes y seguimiento de proyectos.',
+        description: 'Un bufete que dependía solo de referencias. Creamos su sitio web profesional con SEO local y formulario de consultas.',
         achievements: [
-          'Redujo tiempo administrativo en 50%',
-          'Mejoró tiempo de respuesta al cliente en 80%',
-          'Aumentó capacidad de clientes sin contratar',
+          '3x más consultas desde Google',
+          'Imagen profesional que genera confianza',
+          'Menos tiempo explicando qué hacen',
         ],
         image: '/assets/img12.jpg',
       },
       {
-        title: 'Marca E-commerce',
-        category: 'Crecimiento de Ingresos',
-        location: 'Alajuela, CR',
-        description: 'Una marca e-commerce necesitando mejor captura de leads y seguimiento de clientes. Implementamos secuencias de email automatizadas e integración CRM.',
+        title: 'Restaurante Local',
+        category: 'Más Reservaciones',
+        location: 'Escazú, CR',
+        description: 'Un restaurante que recibía llamadas todo el día para reservaciones. Implementamos reservas online y menú digital.',
         achievements: [
-          'Aumentó tasa de conversión de email en 40%',
-          'Redujo abandono de carrito en 35%',
-          'Creció ingresos mensuales en 28%',
+          '40% menos llamadas de reservación',
+          'Clientes ven el menú antes de llegar',
+          'Reservaciones automáticas por WhatsApp',
         ],
         image: '/assets/img12.jpg',
       },
     ],
     stats: [
-      { icon: 'Timer', value: '40%', label: 'Tiempo de respuesta más rápido' },
-      { icon: 'TrendingUp', value: '55%', label: 'Más llamadas agendadas' },
-      { icon: 'DollarSign', value: '50%', label: 'Menos seguimiento manual' },
-      { icon: 'BarChart', value: '24/7', label: 'Visibilidad clara de ingresos' },
+      { icon: 'Users', value: '55%', label: 'Más clientes captados' },
+      { icon: 'Timer', value: '<1min', label: 'Tiempo de respuesta' },
+      { icon: 'TrendingUp', value: '3x', label: 'Más consultas' },
+      { icon: 'Star', value: '100%', label: 'Clientes satisfechos' },
     ],
   },
   faq: {
     sectionLabel: 'Preguntas Frecuentes',
-    title: '¿Preguntas?',
-    titleHighlight: 'Tenemos respuestas',
-    description: 'Preguntas comunes sobre nuestras soluciones de sitios web y automatización',
+    title: '¿Tenés',
+    titleHighlight: 'Preguntas?',
+    description: 'Respondemos las dudas más comunes de negocios en Costa Rica.',
     faqs: [
       {
-        question: '¿Esto funcionará para mi tipo de negocio?',
-        answer: 'Sí. Nuestros sistemas funcionan para negocios de servicios, agencias, restaurantes, bufetes de abogados, clínicas, PYMEs, marcas e-commerce y más. Personalizamos cada solución para adaptarse a tus necesidades específicas e industria.',
+        question: '¿Esto sirve para mi tipo de negocio?',
+        answer: 'Sí. Trabajamos con clínicas, restaurantes, bufetes de abogados, salones de belleza, talleres, tiendas, profesionales independientes y PYMEs de todo tipo en Costa Rica. Cada solución se adapta a tu negocio específico.',
       },
       {
-        question: '¿Mis datos están seguros y privados?',
-        answer: 'Absolutamente. Implementamos medidas de seguridad de nivel empresarial incluyendo almacenamiento de datos encriptado, infraestructura cloud segura y controles de acceso estrictos. Tu información de clientes y datos de negocio están protegidos con estándares de seguridad líderes en la industria. Nunca compartimos ni vendemos tus datos.',
+        question: '¿Cuánto cuesta?',
+        answer: 'Depende de lo que necesités. Sitios web básicos arrancan desde ₡350,000. Conversamos primero para entender tu negocio y te damos una propuesta clara con precios exactos. Sin sorpresas.',
       },
       {
-        question: '¿Cuánto tiempo toma la configuración?',
-        answer: 'Depende del alcance de tu proyecto. Sitios web simples con automatización básica pueden estar listos en 2-4 semanas. Sistemas más completos típicamente toman 6-12 semanas. Trabajamos en fases, así que empezarás a ver valor temprano en el proceso.',
+        question: '¿En cuánto tiempo está listo?',
+        answer: 'Un sitio web profesional básico puede estar listo en 2-3 semanas. Proyectos más completos con automatizaciones toman 4-6 semanas. Siempre te damos fechas claras desde el inicio.',
       },
       {
-        question: '¿Cuál es el costo?',
-        answer: 'La inversión varía según tus necesidades específicas y tamaño del negocio. Agenda una revisión inicial y te proporcionaremos una propuesta detallada con precios claros. La mayoría de clientes ve ROI dentro de 6-12 meses a través de leads e ingresos aumentados.',
+        question: '¿Necesito saber de tecnología?',
+        answer: 'Para nada. Nosotros nos encargamos de todo lo técnico. Te entregamos algo que podés usar fácilmente y te enseñamos a manejarlo. Si tenés dudas después, estamos disponibles para ayudarte.',
       },
       {
-        question: '¿Necesito conocimiento técnico?',
-        answer: 'No se requiere experiencia técnica. Diseñamos sistemas fáciles de usar y proporcionamos capacitación completa para tu equipo. También ofrecemos soporte continuo para asegurar una operación fluida. Si surgen problemas, nuestro equipo de soporte está disponible para ayudar.',
+        question: '¿Mi información está segura?',
+        answer: 'Sí. Cumplimos con la Ley N.º 8968 de Protección de Datos de Costa Rica. Usamos servidores seguros, conexiones encriptadas y nunca compartimos ni vendemos tu información.',
       },
       {
-        question: '¿Puede integrarse con mis herramientas existentes?',
-        answer: 'Sí. Nos especializamos en integrar con herramientas de negocio populares, CRMs (como HubSpot, Salesforce), plataformas de email, procesadores de pago y otras herramientas que ya usas. Nuestras soluciones están diseñadas para mejorar tu flujo de trabajo actual, no interrumpirlo.',
+        question: '¿Qué pasa si necesito cambios después?',
+        answer: 'Ofrecemos planes de mantenimiento mensual que incluyen actualizaciones, cambios menores y soporte. También podés pedirnos cambios puntuales cuando los necesités.',
       },
     ],
-    ctaText: 'Agenda una consulta',
+    ctaText: 'Hablemos por WhatsApp',
   },
   finalCTA: {
-    sectionLabel: 'Oferta Especial',
-    title: '¿Listo Para Dejar de Perder Leads?',
-    description: 'Agenda una revisión inicial sin compromiso. Analizaremos tu flujo actual de leads, identificaremos oportunidades y te mostraremos exactamente cómo la automatización puede aumentar tus ingresos.',
+    sectionLabel: 'Empezá Hoy',
+    title: '¿Listo Para Atraer Más Clientes?',
+    description: 'Hablemos de tu negocio. Te escuchamos, entendemos tus necesidades y te mostramos cómo podemos ayudarte a crecer. Sin compromiso.',
     benefits: [
-      'Estrategia personalizada para tu negocio',
-      'Proyección de ROI y plan de implementación',
-      'Respuestas a todas tus preguntas técnicas',
+      'Diagnóstico gratis de tu situación actual',
+      'Propuesta clara con precios exactos',
+      'Respuestas a todas tus preguntas',
     ],
-    ctaText: 'Agenda Una Revisión Inicial',
-    ctaSubtext: '📅 Disponibilidad inmediata • 💬 Sin compromiso • ⚡ Resultados claros',
+    ctaText: 'Hablemos por WhatsApp',
+    ctaSubtext: 'Respondemos en menos de 1 hora • Sin compromiso • Diagnóstico gratis',
     image: '/assets/img3.jpg',
-    imageAlt: 'Trabajemos juntos',
+    imageAlt: 'Equipo Yieldge Costa Rica',
+  },
+};
+
+// Costa Rica specific content for company, solutions and careers pages
+export interface CRCompanyContent {
+  hero: {
+    label: string;
+    title: string;
+    subtitle: string;
+    description: string;
+  };
+  about: {
+    title: string;
+    description: string;
+    highlights: Array<{
+      icon: string;
+      value: string;
+      label: string;
+    }>;
+  };
+  values: {
+    title: string;
+    description: string;
+    items: Array<{
+      icon: string;
+      title: string;
+      description: string;
+    }>;
+  };
+  team: {
+    title: string;
+    description: string;
+  };
+}
+
+export interface CRSolutionsContent {
+  hero: {
+    label: string;
+    title: string;
+    titleHighlight: string;
+    description: string;
+  };
+  solutions: Array<{
+    icon: string;
+    title: string;
+    description: string;
+    features: string[];
+    forWho: string;
+    image: string;
+  }>;
+  cta: {
+    title: string;
+    description: string;
+    buttonText: string;
+  };
+}
+
+export interface CRCareersContent {
+  hero: {
+    label: string;
+    title: string;
+    description: string;
+  };
+  culture: {
+    title: string;
+    description: string;
+    values: Array<{
+      icon: string;
+      title: string;
+      description: string;
+    }>;
+  };
+  opportunities: {
+    title: string;
+    description: string;
+    ctaText: string;
+    ctaDescription: string;
+  };
+}
+
+export const crCompanyContent: CRCompanyContent = {
+  hero: {
+    label: 'Sobre Nosotros',
+    title: 'Tu Aliado Digital en Costa Rica',
+    subtitle: 'No somos una fábrica de páginas web',
+    description: 'Somos un equipo pequeño que trabaja de la mano con negocios que quieren crecer de forma ordenada. Entendemos el mercado tico y sabemos qué funciona aquí.',
+  },
+  about: {
+    title: 'Sobre Yieldge Costa Rica',
+    description: 'Nacimos con una misión clara: ayudar a PYMEs en Costa Rica a competir en el mundo digital sin necesidad de grandes presupuestos ni conocimientos técnicos. Creemos que todo negocio, sin importar su tamaño, merece verse profesional online y atraer más clientes.',
+    highlights: [
+      { icon: 'MapPin', value: 'Costa Rica', label: 'Operamos localmente' },
+      { icon: 'Users', value: '50+', label: 'Negocios atendidos' },
+      { icon: 'Star', value: '100%', label: 'Clientes satisfechos' },
+    ],
+  },
+  values: {
+    title: 'Cómo Trabajamos',
+    description: 'Nuestros valores definen cada proyecto que hacemos.',
+    items: [
+      {
+        icon: 'MessageCircle',
+        title: 'Comunicación Clara',
+        description: 'Sin tecnicismos. Te explicamos todo en palabras simples y siempre sabés en qué etapa está tu proyecto.',
+      },
+      {
+        icon: 'Target',
+        title: 'Enfoque en Resultados',
+        description: 'No vendemos humo. Medimos todo y te mostramos exactamente cuántos clientes llegaron y de dónde.',
+      },
+      {
+        icon: 'Handshake',
+        title: 'Acompañamiento Real',
+        description: 'No te dejamos solo después de entregar. Estamos disponibles para ayudarte y resolver dudas.',
+      },
+      {
+        icon: 'Shield',
+        title: 'Honestidad Ante Todo',
+        description: 'Si algo no es para vos, te lo decimos. Preferimos perder una venta que dejarte con algo que no necesitás.',
+      },
+    ],
+  },
+  team: {
+    title: 'Nuestro Equipo',
+    description: 'Un equipo pequeño pero comprometido. Cada miembro conoce tu proyecto y está disponible para ayudarte.',
+  },
+};
+
+export const crSolutionsContent: CRSolutionsContent = {
+  hero: {
+    label: 'Nuestras Soluciones',
+    title: 'Soluciones Digitales para',
+    titleHighlight: 'Negocios en Costa Rica',
+    description: 'No vendemos tecnología. Resolvemos problemas reales de negocios como el tuyo.',
+  },
+  solutions: [
+    {
+      icon: 'Globe',
+      title: 'Sitio Web Profesional',
+      description: 'Tu negocio visible 24/7. Un sitio web que transmite confianza, aparece en Google y convierte visitantes en clientes.',
+      features: [
+        'Diseño profesional que refleja tu marca',
+        'Optimizado para celular (donde están tus clientes)',
+        'Carga rápida (menos de 3 segundos)',
+        'Aparecé en Google cuando busquen tus servicios',
+      ],
+      forWho: 'Ideal para: clínicas, restaurantes, bufetes, salones, talleres, tiendas',
+      image: '/assets/img4.jpg',
+    },
+    {
+      icon: 'MessageCircle',
+      title: 'WhatsApp que Vende',
+      description: 'Capturá clientes desde tu sitio web y respondé automáticamente. Nunca pierdas una oportunidad por no contestar a tiempo.',
+      features: [
+        'Botón de WhatsApp siempre visible',
+        'Formularios que envían directo a tu WhatsApp',
+        'Respuestas automáticas cuando no podés contestar',
+        'Organización de conversaciones por cliente',
+      ],
+      forWho: 'Ideal para: negocios que reciben muchas consultas por WhatsApp',
+      image: '/assets/img5.jpg',
+    },
+    {
+      icon: 'Search',
+      title: 'SEO Local (Aparecé en Google)',
+      description: 'Que te encuentren cuando busquen tus servicios en Costa Rica. Más visibilidad = más clientes.',
+      features: [
+        'Optimización para búsquedas locales',
+        'Configuración de Google My Business',
+        'Palabras clave de tu industria',
+        'Reportes mensuales de posicionamiento',
+      ],
+      forWho: 'Ideal para: negocios que quieren más clientes desde Google',
+      image: '/assets/img6.jpg',
+    },
+    {
+      icon: 'Calendar',
+      title: 'Sistema de Citas Online',
+      description: 'Dejá que tus clientes agenden solos. Menos llamadas, menos WhatsApps, más tiempo para vos.',
+      features: [
+        'Calendario de citas integrado a tu sitio',
+        'Confirmaciones automáticas por WhatsApp',
+        'Recordatorios para reducir ausencias',
+        'Sincronización con tu agenda',
+      ],
+      forWho: 'Ideal para: clínicas, salones de belleza, consultorios, coaches',
+      image: '/assets/img4.jpg',
+    },
+    {
+      icon: 'ShoppingCart',
+      title: 'Tienda Online Básica',
+      description: 'Vendé tus productos online. Catálogo, carrito y pagos integrados.',
+      features: [
+        'Catálogo de productos con fotos',
+        'Carrito de compras fácil de usar',
+        'Integración con SINPE Móvil',
+        'Gestión de inventario básica',
+      ],
+      forWho: 'Ideal para: tiendas, emprendedores, negocios con productos físicos',
+      image: '/assets/img5.jpg',
+    },
+  ],
+  cta: {
+    title: '¿No sabés qué necesitás?',
+    description: 'Hablemos. Te escuchamos y te recomendamos solo lo que realmente necesita tu negocio.',
+    buttonText: 'Diagnóstico Gratis por WhatsApp',
+  },
+};
+
+export const crCareersContent: CRCareersContent = {
+  hero: {
+    label: 'Trabajá Con Nosotros',
+    title: 'Carreras en Yieldge Costa Rica',
+    description: 'Buscamos personas que quieran crecer, aprender y aportar valor real a negocios.',
+  },
+  culture: {
+    title: 'Nuestra Cultura',
+    description: 'No somos corporativos. Somos un equipo pequeño donde tu trabajo importa.',
+    values: [
+      {
+        icon: 'Lightbulb',
+        title: 'Aprendizaje Continuo',
+        description: 'Siempre hay algo nuevo que aprender. Te apoyamos en tu crecimiento profesional.',
+      },
+      {
+        icon: 'Users',
+        title: 'Trabajo en Equipo',
+        description: 'Todos aportamos. Tu opinión cuenta y tus ideas se escuchan.',
+      },
+      {
+        icon: 'Heart',
+        title: 'Balance de Vida',
+        description: 'Trabajo remoto, horarios flexibles y respeto por tu tiempo personal.',
+      },
+      {
+        icon: 'Target',
+        title: 'Impacto Real',
+        description: 'Trabajás directamente con clientes y ves el resultado de tu trabajo.',
+      },
+    ],
+  },
+  opportunities: {
+    title: 'Oportunidades Actuales',
+    description: 'Actualmente no tenemos posiciones abiertas, pero siempre nos interesa conocer gente talentosa.',
+    ctaText: 'Envianos tu CV',
+    ctaDescription: 'Si creés que podés aportar a nuestro equipo, escribinos a careers@yieldge.com',
   },
 };
 

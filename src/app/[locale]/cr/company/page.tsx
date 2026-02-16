@@ -1,18 +1,27 @@
 import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import CompanyPageContent from '@/components/CompanyPageContent';
+import CRCompanyPageContent from '@/components/CRCompanyPageContent';
 
 export const metadata: Metadata = {
-  title: 'Sobre Nosotros - Costa Rica',
-  description: 'Conoce a Yieldge y nuestra división dedicada a Costa Rica. Ayudamos a empresas a prosperar con tecnología.',
+  title: 'Sobre Nosotros | Yieldge Costa Rica - Tu Aliado Digital',
+  description: 'Somos tu aliado digital en Costa Rica. Ayudamos a PYMEs a verse profesionales online y atraer más clientes. Sin complicaciones técnicas, con resultados reales.',
+  keywords: 'diseño web Costa Rica, páginas web San José, agencia digital Costa Rica, desarrollo web pymes, marketing digital Costa Rica',
+  openGraph: {
+    title: 'Sobre Nosotros | Yieldge Costa Rica',
+    description: 'Tu aliado digital en Costa Rica. Ayudamos a PYMEs a atraer más clientes y vender más.',
+    type: 'website',
+  },
+  alternates: {
+    canonical: '/cr/company',
+  },
 };
 
 export default function CRCompanyPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <CompanyPageContent verticalName="Costa Rica" />
+      <CRCompanyPageContent />
       <Footer />
     </div>
   );

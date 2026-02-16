@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import Container from '@/components/ui/Container';
 import { EnhancedHeroSlide } from '@/lib/content';
 
@@ -28,6 +29,8 @@ interface HeroDefaultProps {
 }
 
 export default function HeroDefault({ slide }: HeroDefaultProps) {
+  const t = useTranslations('hero');
+
   return (
     <section
       id="hero"
@@ -41,7 +44,7 @@ export default function HeroDefault({ slide }: HeroDefaultProps) {
         <div className="absolute inset-0 opacity-10">
           <Image
             src={slide.backgroundImage}
-            alt={slide.heading}
+            alt={t('heading')}
             fill
             className="object-cover"
             priority
@@ -61,7 +64,7 @@ export default function HeroDefault({ slide }: HeroDefaultProps) {
             {/* Heading */}
             <motion.div variants={fadeInUp} className="mb-4 sm:mb-6">
               <h2 className="text-xs sm:text-sm uppercase tracking-widest text-[#1F5CFF] font-semibold mb-3 sm:mb-4">
-                {slide.heading}
+                {t('heading')}
               </h2>
             </motion.div>
 
@@ -70,7 +73,7 @@ export default function HeroDefault({ slide }: HeroDefaultProps) {
               variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-gray-900 mb-4 sm:mb-6 leading-[1.1] sm:leading-[1.05]"
             >
-              {slide.subheading}
+              {t('subheading')}
             </motion.h1>
 
             {/* Description */}
@@ -78,18 +81,18 @@ export default function HeroDefault({ slide }: HeroDefaultProps) {
               variants={fadeInUp}
               className="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 sm:mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0"
             >
-              {slide.description}
+              {t('description')}
             </motion.p>
 
             {/* CTAs */}
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start">
               <motion.a
-                href={slide.ctaLink}
+                href={t('ctaLink')}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="group inline-flex items-center justify-center gap-2 sm:gap-3 px-6 py-4 sm:px-8 sm:py-5 bg-[#1F5CFF] text-white text-base sm:text-lg font-semibold rounded-xl sm:rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-lg shadow-[#1F5CFF]/30 hover:shadow-xl hover:shadow-[#1F5CFF]/40"
               >
-                {slide.ctaText}
+                {t('ctaText')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </motion.a>
 
@@ -117,7 +120,7 @@ export default function HeroDefault({ slide }: HeroDefaultProps) {
               <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl">
                 <Image
                   src={slide.backgroundImage}
-                  alt={slide.heading}
+                  alt={t('heading')}
                   fill
                   className="object-cover"
                   priority

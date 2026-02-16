@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Target, Users, Lightbulb, Shield } from 'lucide-react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -24,34 +25,11 @@ const staggerContainer = {
   },
 };
 
-const values = [
-  {
-    icon: Target,
-    title: 'Enfoque en resultados',
-    description:
-      'Cada línea de código, cada decisión técnica está orientada a generar impacto medible en tu negocio.',
-  },
-  {
-    icon: Lightbulb,
-    title: 'Innovación constante',
-    description:
-      'Aplicamos las tecnologías más avanzadas sin perder de vista la estabilidad y el rendimiento.',
-  },
-  {
-    icon: Users,
-    title: 'Colaboración cercana',
-    description:
-      'Trabajamos como una extensión de tu equipo, con transparencia total en cada etapa del proceso.',
-  },
-  {
-    icon: Shield,
-    title: 'Calidad garantizada',
-    description:
-      'Código limpio, arquitecturas sólidas y pruebas exhaustivas para garantizar la máxima fiabilidad.',
-  },
-];
+const valueIcons = [Target, Lightbulb, Users, Shield];
+const valueKeys = ['results', 'innovation', 'collaboration', 'quality'] as const;
 
 export default function Vision() {
+  const t = useTranslations('vision');
   return (
     <section
       id="sobre-nosotros"
@@ -69,7 +47,7 @@ export default function Vision() {
           transition={{ duration: 1.5 }}
           className="absolute top-10 right-20 w-72 h-72 rounded-3xl overflow-hidden hidden xl:block"
         >
-          <Image src="/assets/img13.jpg" alt="Vision" fill className="object-cover" />
+          <Image src="/assets/img13.jpg" alt={t('title')} fill className="object-cover" />
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -77,7 +55,7 @@ export default function Vision() {
           transition={{ duration: 1.5, delay: 0.2 }}
           className="absolute bottom-20 left-20 w-64 h-64 rounded-3xl overflow-hidden hidden xl:block"
         >
-          <Image src="/assets/img1.jpg" alt="Innovation" fill className="object-cover" />
+          <Image src="/assets/img1.jpg" alt={t('values.innovation.title')} fill className="object-cover" />
         </motion.div>
       </div>
 
@@ -95,48 +73,45 @@ export default function Vision() {
             variants={fadeInUp}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extralight tracking-tight text-gray-900 mb-8 sm:mb-10 leading-[1.1]"
           >
-            Nuestra{' '}
-            <span className="font-light bg-gradient-to-r from-[#1F5CFF] to-[#1F5CFF] bg-clip-text text-transparent">
-              visión
-            </span>
+            {t('title')}
           </motion.h2>
           <motion.p
             variants={fadeInUp}
             className="text-xl sm:text-2xl md:text-3xl font-light text-gray-600 leading-relaxed"
           >
-            En Yieldge, creemos que la tecnología debe ser un motor de
-            crecimiento, no una barrera. Por eso construimos sistemas que no
-            solo funcionan, sino que{' '}
-            <span className="text-gray-900 font-normal">rinden</span>.
+            {t('description')}
           </motion.p>
         </div>
 
         {/* Values grid - Uniform cards, centered content */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 mb-20 sm:mb-24">
-          {values.map((value, index) => (
-            <motion.div
-              key={index}
-              variants={fadeInUp}
-              className="group relative"
-            >
-              <div className="bg-white rounded-3xl p-10 sm:p-12 border border-gray-100 hover:border-[#dbe6ff] transition-all duration-300 hover:shadow-xl hover:shadow-[#1F5CFF]/5 h-full flex flex-col items-center text-center">
-                {/* Icon - Centered and uniform */}
-                <div className="mb-8">
-                  <div className="w-16 h-16 sm:w-18 sm:h-18 rounded-2xl bg-[#eff4ff] group-hover:bg-[#dbe6ff] flex items-center justify-center transition-colors">
-                    <value.icon className="w-8 h-8 sm:w-9 sm:h-9 text-[#1F5CFF]" />
+          {valueKeys.map((key, index) => {
+            const IconComponent = valueIcons[index];
+            return (
+              <motion.div
+                key={key}
+                variants={fadeInUp}
+                className="group relative"
+              >
+                <div className="bg-white rounded-3xl p-10 sm:p-12 border border-gray-100 hover:border-[#dbe6ff] transition-all duration-300 hover:shadow-xl hover:shadow-[#1F5CFF]/5 h-full flex flex-col items-center text-center">
+                  {/* Icon - Centered and uniform */}
+                  <div className="mb-8">
+                    <div className="w-16 h-16 sm:w-18 sm:h-18 rounded-2xl bg-[#eff4ff] group-hover:bg-[#dbe6ff] flex items-center justify-center transition-colors">
+                      <IconComponent className="w-8 h-8 sm:w-9 sm:h-9 text-[#1F5CFF]" />
+                    </div>
                   </div>
-                </div>
 
-                {/* Content - Centered */}
-                <h3 className="text-2xl sm:text-3xl font-medium text-gray-900 mb-5">
-                  {value.title}
-                </h3>
-                <p className="text-lg sm:text-xl font-light text-gray-600 leading-relaxed max-w-md">
-                  {value.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+                  {/* Content - Centered */}
+                  <h3 className="text-2xl sm:text-3xl font-medium text-gray-900 mb-5">
+                    {t(`values.${key}.title`)}
+                  </h3>
+                  <p className="text-lg sm:text-xl font-light text-gray-600 leading-relaxed max-w-md">
+                    {t(`values.${key}.description`)}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
 
         {/* CTA - Centered */}
@@ -145,7 +120,7 @@ export default function Vision() {
           className="max-w-3xl mx-auto text-center"
         >
           <p className="text-gray-600 mb-8 text-xl sm:text-2xl font-light">
-            Trabajemos juntos para hacer realidad tu visión
+            {t('cta')}
           </p>
           <motion.a
             href="https://calendly.com/anwar-softwaredev"
@@ -155,7 +130,7 @@ export default function Vision() {
             whileTap={{ scale: 0.98 }}
             className="inline-block px-10 py-5 bg-[#1F5CFF] text-white text-lg sm:text-xl font-semibold rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-lg shadow-[#1F5CFF]/25 hover:shadow-2xl hover:shadow-[#1F5CFF]/40"
           >
-            Comienza hoy
+            {t('ctaButton')}
           </motion.a>
         </motion.div>
       </motion.div>

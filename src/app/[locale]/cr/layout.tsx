@@ -1,16 +1,26 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Aumenta Leads e Ingresos | Soluciones Web y Automatización',
-  description: 'Convierte visitantes en llamadas agendadas y clientes que pagan. Construimos sitios web de alta conversión con seguimientos automatizados que trabajan 24/7 para negocios de servicios, agencias y PYMEs.',
-  keywords: 'generación de leads, automatización web, integración CRM, automatización de email, seguimiento SMS, automatización de negocios, captura de leads, optimización de conversión',
+  title: 'Diseño Web Costa Rica | Más Clientes Para Tu Negocio | Yieldge',
+  description: 'Ayudamos a PYMEs en Costa Rica a atraer más clientes y vender más. Sitios web profesionales, SEO local, WhatsApp Business. Diseño web desde ₡350,000. Diagnóstico gratis.',
+  keywords: 'diseño web Costa Rica, páginas web para pymes Costa Rica, SEO local Costa Rica, diseño web San José, agencia digital Costa Rica, WhatsApp Business Costa Rica, sitios web profesionales, marketing digital Costa Rica',
   openGraph: {
-    title: 'Aumenta Leads e Ingresos | Yieldge',
-    description: 'Convierte visitantes en llamadas agendadas y clientes que pagan a través de sitios web inteligentes y seguimientos automatizados.',
+    title: 'Diseño Web Costa Rica | Yieldge',
+    description: 'Más clientes para tu negocio en Costa Rica. Sitios web profesionales desde ₡350,000. Diagnóstico gratis.',
     type: 'website',
+    locale: 'es_CR',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Diseño Web Costa Rica | Yieldge',
+    description: 'Más clientes para tu negocio. Sitios web profesionales para PYMEs en Costa Rica.',
   },
   alternates: {
     canonical: '/cr',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

@@ -2,16 +2,18 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 interface CountdownTimerProps {
   targetDate?: Date;
   className?: string;
 }
 
-export default function CountdownTimer({ 
-  targetDate, 
-  className = '' 
+export default function CountdownTimer({
+  targetDate,
+  className = ''
 }: CountdownTimerProps) {
+  const t = useTranslations('common');
   const [timeLeft, setTimeLeft] = useState({
     hours: 0,
     minutes: 0,
@@ -61,7 +63,7 @@ export default function CountdownTimer({
         <div className="text-4xl font-bold" style={{ color: 'hsl(25, 95%, 53%)' }}>
           {formatTime(timeLeft.hours)}
         </div>
-        <div className="text-xs text-gray-600 uppercase mt-1">Hours</div>
+        <div className="text-xs text-gray-600 uppercase mt-1">{t('hours')}</div>
       </motion.div>
       <motion.div
         className="bg-gray-100 rounded-lg px-6 py-4 text-center countdown-pulse border border-gray-200"
@@ -70,7 +72,7 @@ export default function CountdownTimer({
         <div className="text-4xl font-bold" style={{ color: 'hsl(25, 95%, 53%)' }}>
           {formatTime(timeLeft.minutes)}
         </div>
-        <div className="text-xs text-gray-600 uppercase mt-1">Mins</div>
+        <div className="text-xs text-gray-600 uppercase mt-1">{t('minutes')}</div>
       </motion.div>
       <motion.div
         className="bg-gray-100 rounded-lg px-6 py-4 text-center countdown-pulse border border-gray-200"
@@ -79,7 +81,7 @@ export default function CountdownTimer({
         <div className="text-4xl font-bold" style={{ color: 'hsl(25, 95%, 53%)' }}>
           {formatTime(timeLeft.seconds)}
         </div>
-        <div className="text-xs text-gray-600 uppercase mt-1">Secs</div>
+        <div className="text-xs text-gray-600 uppercase mt-1">{t('seconds')}</div>
       </motion.div>
     </div>
   );

@@ -3,7 +3,9 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { ArrowRight, Check, X } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import Container from '@/components/ui/Container';
+import { Link } from '@/i18n/navigation';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -15,6 +17,7 @@ const fadeInUp = {
 };
 
 export default function InsightsUpdates() {
+  const t = useTranslations('insights');
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
@@ -57,24 +60,25 @@ export default function InsightsUpdates() {
               variants={fadeInUp}
               className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight text-gray-900 mb-4 sm:mb-6 leading-tight"
             >
-              Insights
+              {t('title')}
             </motion.h2>
             <motion.p
               variants={fadeInUp}
               className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 sm:mb-8"
             >
-              The technology landscape evolves rapidly, bringing both challenges and unprecedented opportunities. In our insights section, Yieldge&apos;s thought leaders share expert perspectives and actionable strategies for navigating digital transformation. Explore how our insights can help drive your business forward.
+              {t('description')}
             </motion.p>
             <motion.div variants={fadeInUp}>
-              <motion.a
-                href="/solutions"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-2 sm:gap-3 px-6 py-3.5 sm:px-8 sm:py-5 bg-[#1F5CFF] text-white text-base sm:text-lg font-semibold rounded-xl sm:rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-lg shadow-[#1F5CFF]/30 hover:shadow-xl hover:shadow-[#1F5CFF]/40 w-full sm:w-auto justify-center"
-              >
-                Explore Solutions
-                <ArrowRight className="w-5 h-5" />
-              </motion.a>
+              <Link href="/solutions">
+                <motion.span
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="inline-flex items-center gap-2 sm:gap-3 px-6 py-3.5 sm:px-8 sm:py-5 bg-[#1F5CFF] text-white text-base sm:text-lg font-semibold rounded-xl sm:rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-lg shadow-[#1F5CFF]/30 hover:shadow-xl hover:shadow-[#1F5CFF]/40 w-full sm:w-auto justify-center"
+                >
+                  {t('exploreSolutions')}
+                  <ArrowRight className="w-5 h-5" />
+                </motion.span>
+              </Link>
             </motion.div>
           </motion.div>
 
@@ -89,13 +93,13 @@ export default function InsightsUpdates() {
               variants={fadeInUp}
               className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight text-gray-900 mb-4 sm:mb-6 leading-tight"
             >
-              Stay Updated
+              {t('stayUpdated')}
             </motion.h2>
             <motion.p
               variants={fadeInUp}
               className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 sm:mb-8"
             >
-              Stay ahead of the curve with technological innovation! Join our mailing list to receive exclusive insights, industry updates, and the latest from Yieldge delivered directly to your inbox.
+              {t('newsletterDescription')}
             </motion.p>
 
             <motion.form
@@ -108,7 +112,7 @@ export default function InsightsUpdates() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email address"
+                  placeholder={t('emailPlaceholder')}
                   className="flex-1 px-5 py-3.5 sm:px-6 sm:py-5 rounded-xl sm:rounded-full border-2 border-gray-200 focus:border-[#1F5CFF] focus:outline-none text-base sm:text-lg transition-all duration-300"
                   required
                 />
@@ -118,7 +122,7 @@ export default function InsightsUpdates() {
                   whileTap={{ scale: 0.98 }}
                   className="px-6 py-3.5 sm:px-8 sm:py-5 bg-[#1F5CFF] text-white text-base sm:text-lg font-semibold rounded-xl sm:rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-lg shadow-[#1F5CFF]/30 hover:shadow-xl hover:shadow-[#1F5CFF]/40 whitespace-nowrap"
                 >
-                  Subscribe
+                  {t('subscribe')}
                 </motion.button>
               </div>
 
@@ -130,7 +134,7 @@ export default function InsightsUpdates() {
                   className="flex items-center gap-2 p-3 sm:p-4 bg-green-50 border border-green-200 rounded-xl text-green-700 text-sm sm:text-base"
                 >
                   <Check className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-                  <span>Successfully subscribed! Check your email for confirmation.</span>
+                  <span>{t('successMessage')}</span>
                 </motion.div>
               )}
 
@@ -141,7 +145,7 @@ export default function InsightsUpdates() {
                   className="flex items-center gap-2 p-3 sm:p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm sm:text-base"
                 >
                   <X className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-                  <span>Something went wrong. Please try again.</span>
+                  <span>{t('errorMessage')}</span>
                 </motion.div>
               )}
             </motion.form>

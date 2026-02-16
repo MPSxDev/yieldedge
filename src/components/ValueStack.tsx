@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import Container from '@/components/ui/Container';
 import { ValueStackContent, valueStackContent } from '@/lib/content';
 import { iconMap } from '@/lib/iconMap';
@@ -27,6 +28,8 @@ interface ValueStackProps {
 }
 
 export default function ValueStack({ content = valueStackContent }: ValueStackProps) {
+  const t = useTranslations('valueStack');
+
   return (
     <section id="value-stack" className="relative py-16 sm:py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
       {/* Background decoration */}
@@ -87,7 +90,7 @@ export default function ValueStack({ content = valueStackContent }: ValueStackPr
               >
                 {item.highlight && (
                   <span className="absolute -top-2.5 sm:-top-3 left-4 sm:left-6 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-[#1F5CFF] text-white text-xs font-semibold rounded-full">
-                    Most Popular
+                    {t('mostPopular')}
                   </span>
                 )}
                 <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4 ${

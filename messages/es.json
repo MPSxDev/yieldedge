@@ -46,7 +46,12 @@
     "goToSlide": "Ir a diapositiva {number}",
     "discoverYieldge": "DESCUBRE YIELDGE",
     "learnMore": "Conocer Más",
-    "bookConsultation": "Agenda tu Consulta"
+    "bookConsultation": "Agenda tu Consulta",
+    "heading": "Excelencia Digital",
+    "subheading": "Más de 15 años de innovación",
+    "description": "Con más de 15 años sirviendo el panorama tecnológico global, Yieldge se ha establecido como un socio de confianza en transformación digital. Hemos empoderado a innumerables organizaciones para optimizar operaciones y lograr resultados medibles.",
+    "ctaText": "Agenda una Consulta",
+    "ctaLink": "https://calendly.com/anwar-softwaredev"
   },
   "services": {
     "sectionLabel": "Nuestras Soluciones",
@@ -206,7 +211,8 @@
     "description": "Agenda una consulta gratuita con nuestro equipo de expertos y descubre cómo podemos ayudarte a alcanzar tus objetivos tecnológicos.",
     "benefits": ["Consulta gratuita sin compromiso", "Soluciones personalizadas para tu negocio", "Equipo de expertos dedicado"],
     "ctaText": "Agenda tu Consulta",
-    "ctaSubtext": "Sin compromiso - Solo posibilidades"
+    "ctaSubtext": "Sin compromiso - Solo posibilidades",
+    "imageAlt": "Consulta de negocios"
   },
   "company": {
     "aboutUs": "Sobre Nosotros",
@@ -216,6 +222,11 @@
     "experience": "15+ Años de Experiencia",
     "leadershipTeam": "Equipo de Liderazgo",
     "leadershipDescription": "Nuestro equipo de liderazgo aporta décadas de experiencia combinada en tecnología, negocios e innovación.",
+    "leadershipRoles": {
+      "executive": "Equipo Ejecutivo",
+      "technical": "Líderes Técnicos",
+      "clients": "Socios de Clientes"
+    },
     "roles": {
       "vision": "Guiando nuestra visión y dirección estratégica",
       "innovation": "Impulsando la innovación y la excelencia técnica",
@@ -259,14 +270,39 @@
     "submit": "Enviar",
     "loading": "Cargando...",
     "error": "Error",
-    "success": "Éxito"
+    "success": "Éxito",
+    "hours": "Horas",
+    "minutes": "Mins",
+    "seconds": "Segs",
+    "tapToViewDetails": "Toca para ver detalles",
+    "results": "Resultados",
+    "deliverables": "Entregables",
+    "logoAlt": "Yieldge - Tecnología que Rinde"
+  },
+  "errors": {
+    "generic": "Algo salió mal. Por favor intenta de nuevo.",
+    "networkError": "Error de red. Por favor verifica tu conexión.",
+    "serverError": "Error del servidor. Por favor intenta más tarde.",
+    "validationError": "Por favor verifica tu información e intenta de nuevo.",
+    "notFound": "El recurso solicitado no fue encontrado.",
+    "unauthorized": "No estás autorizado para realizar esta acción.",
+    "sessionExpired": "Tu sesión ha expirado. Por favor inicia sesión de nuevo.",
+    "formSubmissionFailed": "Error al enviar el formulario. Por favor intenta de nuevo.",
+    "invalidEmail": "Por favor ingresa un correo electrónico válido.",
+    "requiredField": "Este campo es obligatorio.",
+    "tooShort": "Este valor es muy corto.",
+    "tooLong": "Este valor es muy largo."
   },
   "insights": {
     "title": "Insights",
-    "description": "Mantente al día con las últimas tendencias y mejores prácticas en tecnología.",
+    "description": "El panorama tecnológico evoluciona rápidamente, trayendo tanto desafíos como oportunidades sin precedentes. En nuestra sección de insights, los líderes de pensamiento de Yieldge comparten perspectivas expertas y estrategias accionables para navegar la transformación digital. Explora cómo nuestros insights pueden impulsar tu negocio.",
     "exploreSolutions": "Explorar Soluciones",
     "stayUpdated": "Mantente Actualizado",
-    "newsletterDescription": "Suscríbete a nuestro newsletter para recibir las últimas noticias y actualizaciones."
+    "newsletterDescription": "¡Mantente a la vanguardia con la innovación tecnológica! Únete a nuestra lista de correo para recibir insights exclusivos, actualizaciones de la industria y lo último de Yieldge directamente en tu bandeja de entrada.",
+    "emailPlaceholder": "Ingresa tu correo electrónico",
+    "subscribe": "Suscribirse",
+    "successMessage": "¡Suscripción exitosa! Revisa tu correo para confirmar.",
+    "errorMessage": "Algo salió mal. Por favor intenta de nuevo."
   },
   "vision": {
     "title": "Nuestra Visión",

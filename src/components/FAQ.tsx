@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import Container from '@/components/ui/Container';
 import { FAQContent, homepageContent } from '@/lib/content';
 
@@ -80,6 +81,7 @@ interface FAQProps {
 }
 
 export default function FAQ({ content = homepageContent.faq }: FAQProps) {
+  const t = useTranslations('faq');
   // FAQ Structured Data for SEO
   const faqSchema = {
     "@context": "https://schema.org",
@@ -146,7 +148,7 @@ export default function FAQ({ content = homepageContent.faq }: FAQProps) {
             className="text-center mt-8 sm:mt-12"
           >
             <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">
-              Still have questions?
+              {t('stillHaveQuestions')}
             </p>
             <motion.a
               href="https://calendly.com/anwar-softwaredev"

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import Container from '@/components/ui/Container';
 import { homepageContent } from '@/lib/content';
 import { iconMap } from '@/lib/iconMap';
@@ -50,6 +51,8 @@ interface SolutionsPageContentProps {
  * Used by both the global /solutions page and vertical-specific solutions pages.
  */
 export default function SolutionsPageContent({ verticalName }: SolutionsPageContentProps) {
+  const t = useTranslations('services');
+  const tCommon = useTranslations('common');
   const content = homepageContent.services;
 
   return (
@@ -67,7 +70,7 @@ export default function SolutionsPageContent({ verticalName }: SolutionsPageCont
               variants={fadeInUp}
               className="text-[#1F5CFF] font-semibold mb-4 text-sm uppercase tracking-wide"
             >
-              What We Offer
+              {t('sectionLabel')}
             </motion.p>
             <motion.h1
               variants={fadeInUp}
@@ -75,13 +78,13 @@ export default function SolutionsPageContent({ verticalName }: SolutionsPageCont
             >
               {verticalName ? (
                 <>
-                  Solutions for{' '}
+                  {t('title')}{' '}
                   <span className="text-[#1F5CFF]">{verticalName}</span>
                 </>
               ) : (
                 <>
-                  Our{' '}
-                  <span className="text-[#1F5CFF]">Solutions</span>
+                  {t('title')}{' '}
+                  <span className="text-[#1F5CFF]">{t('titleHighlight')}</span>
                 </>
               )}
             </motion.h1>
@@ -200,7 +203,7 @@ export default function SolutionsPageContent({ verticalName }: SolutionsPageCont
                       whileHover={{ x: 4 }}
                       className="inline-flex items-center gap-2 text-[#1F5CFF] font-semibold hover:gap-3 transition-all"
                     >
-                      Learn More
+                      {tCommon('learnMore')}
                       <ArrowRight className="w-5 h-5" />
                     </motion.a>
                   </div>

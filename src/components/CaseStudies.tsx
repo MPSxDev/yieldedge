@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { ChevronDown, MapPin } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import Container from '@/components/ui/Container';
 import { CaseStudiesContent, homepageContent } from '@/lib/content';
 import { iconMap } from '@/lib/iconMap';
@@ -39,9 +40,13 @@ interface CaseStudyCardProps {
     image: string;
   };
   index: number;
+  translations: {
+    tapToView: string;
+    results: string;
+  };
 }
 
-function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
+function CaseStudyCard({ caseStudy, translations }: CaseStudyCardProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = () => {
@@ -121,7 +126,7 @@ function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
 
           {/* Tap hint text on mobile */}
           <p className={`text-sm text-gray-500 transition-opacity duration-300 ${isOpen ? 'opacity-0 h-0' : 'opacity-100 mb-2'}`}>
-            Tap to view details
+            {translations.tapToView}
           </p>
 
           {/* Expandable content - Location, Description, Achievements */}
@@ -152,7 +157,7 @@ function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
               {/* Results */}
               <div>
                 <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3">
-                  Results:
+                  {translations.results}:
                 </h4>
                 <ul className="space-y-2">
                   {caseStudy.achievements.map((achievement, idx) => (
@@ -174,6 +179,12 @@ function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
 }
 
 export default function CaseStudies({ content = homepageContent.caseStudies }: CaseStudiesProps) {
+  const t = useTranslations('caseStudies');
+  const translations = {
+    tapToView: t('tapToView'),
+    results: t('results'),
+  };
+
   return (
     <section
       id="case-studies"
@@ -206,7 +217,7 @@ export default function CaseStudies({ content = homepageContent.caseStudies }: C
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16 lg:mb-20"
           >
             {content.caseStudies.map((caseStudy, index) => (
-              <CaseStudyCard key={index} caseStudy={caseStudy} index={index} />
+              <CaseStudyCard key={index} caseStudy={caseStudy} index={index} translations={translations} />
             ))}
           </motion.div>
 

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import Container from '@/components/ui/Container';
 import { WhyChooseUsContent, homepageContent } from '@/lib/content';
 import { iconMap } from '@/lib/iconMap';
@@ -28,8 +29,12 @@ interface WhyChooseUsProps {
 }
 
 export default function WhyChooseUs({ content = homepageContent.whyChooseUs }: WhyChooseUsProps) {
+  const t = useTranslations('whyChooseUs');
   const hasNewLayout = content.topImage && content.bottomImage;
   const isStacked = content.layout === 'stacked';
+
+  // Value keys for translations
+  const valueKeys = ['experience', 'results', 'innovation', 'collaboration'] as const;
 
   return (
     <section
@@ -49,14 +54,14 @@ export default function WhyChooseUs({ content = homepageContent.whyChooseUs }: W
               variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-4 sm:mb-6 leading-tight"
             >
-              {content.title}{' '}
-              <span className="text-[#1F5CFF]">{content.titleHighlight}</span>
+              {t('title')}{' '}
+              <span className="text-[#1F5CFF]">{t('titleHighlight')}</span>
             </motion.h2>
             <motion.p
               variants={fadeInUp}
               className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed"
             >
-              {content.description}
+              {t('description')}
             </motion.p>
           </div>
 
@@ -80,11 +85,11 @@ export default function WhyChooseUs({ content = homepageContent.whyChooseUs }: W
 
               {/* Cards Grid - 2x2 */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-10 sm:mb-14">
-                {content.values.map((value, index) => {
-                  const IconComponent = iconMap[value.icon] || iconMap.Shield;
+                {valueKeys.map((key, index) => {
+                  const IconComponent = iconMap[content.values[index]?.icon] || iconMap.Shield;
                   return (
                     <motion.div
-                      key={index}
+                      key={key}
                       variants={fadeInUp}
                       className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-gray-200 hover:border-[#1F5CFF] hover:shadow-xl transition-all duration-300 motion-safe:hover:-translate-y-1 flex flex-col h-full"
                     >
@@ -92,10 +97,10 @@ export default function WhyChooseUs({ content = homepageContent.whyChooseUs }: W
                         <IconComponent className="w-6 h-6 sm:w-7 sm:h-7 text-[#1F5CFF]" />
                       </div>
                       <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
-                        {value.title}
+                        {t(`values.${key}.title`)}
                       </h3>
                       <p className="text-gray-600 leading-relaxed text-base">
-                        {value.description}
+                        {t(`values.${key}.description`)}
                       </p>
                     </motion.div>
                   );
@@ -139,11 +144,11 @@ export default function WhyChooseUs({ content = homepageContent.whyChooseUs }: W
 
               {/* Cards Grid - 2x2 */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                {content.values.map((value, index) => {
-                  const IconComponent = iconMap[value.icon] || iconMap.Shield;
+                {valueKeys.map((key, index) => {
+                  const IconComponent = iconMap[content.values[index]?.icon] || iconMap.Shield;
                   return (
                     <motion.div
-                      key={index}
+                      key={key}
                       variants={fadeInUp}
                       className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-gray-200 hover:border-[#1F5CFF] hover:shadow-xl transition-all duration-300 motion-safe:hover:-translate-y-1 flex flex-col h-full"
                     >
@@ -151,10 +156,10 @@ export default function WhyChooseUs({ content = homepageContent.whyChooseUs }: W
                         <IconComponent className="w-6 h-6 sm:w-7 sm:h-7 text-[#1F5CFF]" />
                       </div>
                       <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
-                        {value.title}
+                        {t(`values.${key}.title`)}
                       </h3>
                       <p className="text-gray-600 leading-relaxed text-base">
-                        {value.description}
+                        {t(`values.${key}.description`)}
                       </p>
                     </motion.div>
                   );
@@ -185,11 +190,11 @@ export default function WhyChooseUs({ content = homepageContent.whyChooseUs }: W
 
               {/* Cards Column - 2x2 Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {content.values.map((value, index) => {
-                  const IconComponent = iconMap[value.icon] || iconMap.Shield;
+                {valueKeys.map((key, index) => {
+                  const IconComponent = iconMap[content.values[index]?.icon] || iconMap.Shield;
                   return (
                     <motion.div
-                      key={index}
+                      key={key}
                       variants={fadeInUp}
                       className="bg-white rounded-xl p-6 shadow-sm border border-neutral-200/60 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col"
                     >
@@ -197,10 +202,10 @@ export default function WhyChooseUs({ content = homepageContent.whyChooseUs }: W
                         <IconComponent className="w-6 h-6 text-[#1F5CFF]" />
                       </div>
                       <h3 className="text-2xl font-semibold leading-tight text-gray-900 mb-3">
-                        {value.title}
+                        {t(`values.${key}.title`)}
                       </h3>
                       <p className="text-sm text-neutral-600 leading-relaxed">
-                        {value.description}
+                        {t(`values.${key}.description`)}
                       </p>
                     </motion.div>
                   );

@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -25,6 +26,8 @@ const staggerContainer = {
 };
 
 export default function ProblemSection() {
+  const t = useTranslations('problem');
+  const tCommon = useTranslations('common');
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -51,7 +54,7 @@ export default function ProblemSection() {
           transition={{ duration: 1.2 }}
           className="absolute top-20 right-10 w-64 h-64 rounded-3xl overflow-hidden hidden lg:block"
         >
-          <Image src="/assets/img7.jpg" alt="Growth" fill className="object-cover" />
+          <Image src="/assets/img7.jpg" alt={tCommon('logoAlt')} fill className="object-cover" />
         </motion.div>
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -59,7 +62,7 @@ export default function ProblemSection() {
           transition={{ duration: 1.2, delay: 0.2 }}
           className="absolute bottom-20 left-10 w-56 h-56 rounded-3xl overflow-hidden hidden lg:block"
         >
-          <Image src="/assets/img8.jpg" alt="Performance" fill className="object-cover" />
+          <Image src="/assets/img8.jpg" alt={tCommon('logoAlt')} fill className="object-cover" />
         </motion.div>
       </div>
 
@@ -78,12 +81,7 @@ export default function ProblemSection() {
             variants={fadeInUp}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extralight tracking-tight text-gray-900 mb-8 sm:mb-10 leading-[1.1]"
           >
-            La mayoría de las empresas no tienen{' '}
-            <span className="font-light">un problema de tecnología.</span>
-            <br />
-            <span className="block mt-4 sm:mt-6 font-normal bg-gradient-to-r from-[#1F5CFF] to-[#1F5CFF] bg-clip-text text-transparent">
-              Tienen un problema de rendimiento.
-            </span>
+            {t('headline')}
           </motion.h2>
 
           {/* Subtitle - BIGGER and more readable */}
@@ -91,9 +89,7 @@ export default function ProblemSection() {
             variants={fadeInUp}
             className="text-xl sm:text-2xl md:text-3xl font-light text-gray-600 leading-relaxed max-w-5xl mx-auto mb-12 sm:mb-16"
           >
-            En Yieldge transformamos cada línea de código en una herramienta de
-            crecimiento medible. Tecnología que no solo funciona, sino que{' '}
-            <span className="text-gray-900 font-normal">rinde</span>.
+            {t('subtitle')}
           </motion.p>
 
           {/* CTA - BIGGER button */}
@@ -108,9 +104,9 @@ export default function ProblemSection() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
               className="inline-block px-10 py-5 bg-[#1F5CFF] text-white text-lg sm:text-xl font-semibold rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-lg shadow-[#1F5CFF]/25 hover:shadow-2xl hover:shadow-[#1F5CFF]/40"
-              aria-label="Agenda una consulta gratuita"
+              aria-label={t('ctaButton')}
             >
-              Hablemos de tu proyecto
+              {t('ctaButton')}
             </motion.a>
           </motion.div>
         </div>

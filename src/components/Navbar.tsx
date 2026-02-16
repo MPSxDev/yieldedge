@@ -44,6 +44,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const t = useTranslations('nav');
+  const tCommon = useTranslations('common');
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -78,7 +79,7 @@ export default function Navbar() {
             <motion.div className="h-8 sm:h-10 w-auto relative flex-shrink-0">
               <Image
                 src="/brand/logo-main.png"
-                alt="Yieldge - Technology that Performs"
+                alt={tCommon('logoAlt')}
                 width={160}
                 height={40}
                 className="object-contain h-full w-auto"

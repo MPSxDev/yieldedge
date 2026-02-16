@@ -22,6 +22,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   const t = useTranslations('footer');
   const tLinks = useTranslations('solutionsLinks');
+  const tCommon = useTranslations('common');
 
   const solutionsLinks = [
     { text: tLinks('qaAutomation'), href: '/solutions#qa-automation' },
@@ -62,7 +63,7 @@ export default function Footer() {
               <div className="h-8 sm:h-10 w-auto relative">
                 <Image
                   src="/brand/logo-main.png"
-                  alt="Yieldge - Technology Solutions & Offshore Development"
+                  alt={tCommon('logoAlt')}
                   width={160}
                   height={40}
                   className="object-contain h-full w-auto"

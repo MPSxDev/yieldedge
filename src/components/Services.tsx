@@ -33,6 +33,19 @@ export default function Services({ content = homepageContent.services }: Service
   const t = useTranslations('services');
   const tCommon = useTranslations('common');
 
+  // Service keys for translations - order matches content.services
+  const serviceKeys = [
+    'qaAutomation',
+    'security',
+    'consulting',
+    'mobileWeb',
+    'staffAugmentation',
+    'analytics',
+    'cloud',
+    'offshore',
+    'tailoredSoftware',
+  ] as const;
+
   return (
     <section
       id="servicios"
@@ -74,11 +87,14 @@ export default function Services({ content = homepageContent.services }: Service
 
           {/* Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {content.services.map((service, index) => {
+            {serviceKeys.map((key, index) => {
+              const service = content.services[index];
+              if (!service) return null;
               const IconComponent = iconMap[service.icon] || iconMap.Globe;
+              const features = t.raw(`${key}.features`) as string[];
               return (
                 <motion.div
-                  key={index}
+                  key={key}
                   variants={fadeInUp}
                   className="group relative bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-gray-200 hover:border-[#1F5CFF] hover:shadow-2xl transition-all duration-500"
                 >
@@ -86,7 +102,7 @@ export default function Services({ content = homepageContent.services }: Service
                   <div className="relative w-full h-48 sm:h-56 lg:h-64 overflow-hidden bg-gradient-to-br from-[#eff4ff] to-gray-100">
                     <Image
                       src={service.image}
-                      alt={service.title}
+                      alt={t(`${key}.title`)}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       quality={90}
@@ -119,20 +135,18 @@ export default function Services({ content = homepageContent.services }: Service
                   {/* Content */}
                   <div className="p-5 sm:p-6 lg:p-8">
                     <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1.5 sm:mb-2">
-                      {service.title}
+                      {t(`${key}.title`)}
                     </h3>
-                    {service.subtitle && (
-                      <p className="text-[#1F5CFF] font-medium mb-3 sm:mb-4 text-xs sm:text-sm">
-                        {service.subtitle}
-                      </p>
-                    )}
+                    <p className="text-[#1F5CFF] font-medium mb-3 sm:mb-4 text-xs sm:text-sm">
+                      {t(`${key}.subtitle`)}
+                    </p>
                     <p className="text-gray-600 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-                      {service.description}
+                      {t(`${key}.description`)}
                     </p>
 
                     {/* Features */}
                     <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
-                      {service.features.map((feature, idx) => (
+                      {features.map((feature, idx) => (
                         <li key={idx} className="flex items-center text-gray-700 text-xs sm:text-sm">
                           <div className="w-1.5 h-1.5 rounded-full bg-[#1F5CFF] mr-2 sm:mr-3 flex-shrink-0" />
                           {feature}

@@ -46,7 +46,12 @@
     "goToSlide": "Go to slide {number}",
     "discoverYieldge": "DISCOVER YIELDGE",
     "learnMore": "Learn More",
-    "bookConsultation": "Book a Consultation"
+    "bookConsultation": "Book a Consultation",
+    "heading": "Digital Excellence",
+    "subheading": "More than 15 years of innovation",
+    "description": "With over 15+ years serving the global technology landscape, Yieldge has established itself as a trusted partner in digital transformation. We've empowered countless organizations to streamline operations and achieve measurable results.",
+    "ctaText": "Book a Consultation",
+    "ctaLink": "https://calendly.com/anwar-softwaredev"
   },
   "services": {
     "sectionLabel": "Our Solutions",
@@ -206,7 +211,8 @@
     "description": "Schedule a free consultation with our team of experts and discover how we can help you achieve your technology goals.",
     "benefits": ["Free no-obligation consultation", "Customized solutions for your business", "Dedicated team of experts"],
     "ctaText": "Schedule Your Consultation",
-    "ctaSubtext": "No commitment - Just possibilities"
+    "ctaSubtext": "No commitment - Just possibilities",
+    "imageAlt": "Business consultation"
   },
   "company": {
     "aboutUs": "About Us",
@@ -216,6 +222,11 @@
     "experience": "15+ Years Experience",
     "leadershipTeam": "Leadership Team",
     "leadershipDescription": "Our leadership team brings decades of combined experience in technology, business, and innovation.",
+    "leadershipRoles": {
+      "executive": "Executive Team",
+      "technical": "Technical Leaders",
+      "clients": "Client Partners"
+    },
     "roles": {
       "vision": "Guiding our vision and strategic direction",
       "innovation": "Driving innovation and technical excellence",
@@ -259,14 +270,39 @@
     "submit": "Submit",
     "loading": "Loading...",
     "error": "Error",
-    "success": "Success"
+    "success": "Success",
+    "hours": "Hours",
+    "minutes": "Mins",
+    "seconds": "Secs",
+    "tapToViewDetails": "Tap to view details",
+    "results": "Results",
+    "deliverables": "Deliverables",
+    "logoAlt": "Yieldge - Technology that Performs"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "networkError": "Network error. Please check your connection.",
+    "serverError": "Server error. Please try again later.",
+    "validationError": "Please check your input and try again.",
+    "notFound": "The requested resource was not found.",
+    "unauthorized": "You are not authorized to perform this action.",
+    "sessionExpired": "Your session has expired. Please log in again.",
+    "formSubmissionFailed": "Failed to submit form. Please try again.",
+    "invalidEmail": "Please enter a valid email address.",
+    "requiredField": "This field is required.",
+    "tooShort": "This value is too short.",
+    "tooLong": "This value is too long."
   },
   "insights": {
     "title": "Insights",
-    "description": "Stay up to date with the latest trends and best practices in technology.",
+    "description": "The technology landscape evolves rapidly, bringing both challenges and unprecedented opportunities. In our insights section, Yieldge's thought leaders share expert perspectives and actionable strategies for navigating digital transformation. Explore how our insights can help drive your business forward.",
     "exploreSolutions": "Explore Solutions",
     "stayUpdated": "Stay Updated",
-    "newsletterDescription": "Subscribe to our newsletter to receive the latest news and updates."
+    "newsletterDescription": "Stay ahead of the curve with technological innovation! Join our mailing list to receive exclusive insights, industry updates, and the latest from Yieldge delivered directly to your inbox.",
+    "emailPlaceholder": "Enter your email address",
+    "subscribe": "Subscribe",
+    "successMessage": "Successfully subscribed! Check your email for confirmation.",
+    "errorMessage": "Something went wrong. Please try again."
   },
   "vision": {
     "title": "Our Vision",

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import Container from '@/components/ui/Container';
 import { ProcessContent, homepageContent } from '@/lib/content';
 import { iconMap } from '@/lib/iconMap';
@@ -29,6 +30,8 @@ interface ProcessProps {
 }
 
 export default function Process({ content = homepageContent.process }: ProcessProps) {
+  const t = useTranslations('process');
+
   return (
     <section
       id="how-it-works"
@@ -127,7 +130,7 @@ export default function Process({ content = homepageContent.process }: ProcessPr
                       {/* Deliverables */}
                       <div className="mb-6 sm:mb-8">
                         <p className="text-xs sm:text-sm font-semibold text-gray-900 uppercase tracking-wide mb-3 sm:mb-4">
-                          Deliverables
+                          {t('deliverables')}
                         </p>
                         <ul className="space-y-2 sm:space-y-3">
                           {step.deliverables.map((item, idx) => (
@@ -151,7 +154,7 @@ export default function Process({ content = homepageContent.process }: ProcessPr
             className="mt-12 sm:mt-16 lg:mt-20 text-center"
           >
             <p className="text-gray-600 mb-4 sm:mb-6 text-base sm:text-lg">
-              Ready to streamline your real-estate business?
+              {t('ctaText')}
             </p>
             <motion.a
               href="https://calendly.com/anwar-softwaredev"
