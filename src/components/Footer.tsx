@@ -59,18 +59,18 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 lg:gap-16 mb-10 sm:mb-16">
           {/* Brand - Full width on mobile */}
           <div className="col-span-2 md:col-span-1">
-            <div className="mb-4 sm:mb-6">
-              <div className="h-8 sm:h-10 w-auto relative">
+            <div className="mb-6 sm:mb-6">
+              <div className="h-12 sm:h-10 w-auto">
                 <Image
                   src="/brand/logo-main.png"
                   alt={tCommon('logoAlt')}
                   width={160}
-                  height={40}
+                  height={48}
                   className="object-contain h-full w-auto"
                 />
               </div>
             </div>
-            <p className="text-gray-600 leading-relaxed mb-6 sm:mb-8 text-xs sm:text-sm max-w-xs">
+            <p className="text-gray-600 leading-relaxed mb-6 sm:mb-8 text-xs sm:text-sm max-w-xs mt-2">
               {t('description')}
             </p>
 

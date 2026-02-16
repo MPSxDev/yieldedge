@@ -80,13 +80,13 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16 sm:h-20">
           {/* Logo - route-aware: links to vertical root when inside a vertical */}
           <Link href={logoHref(pathname)} className="flex items-center cursor-pointer">
-            <motion.div className="h-8 sm:h-10 w-auto relative flex-shrink-0">
+            <motion.div className="h-10 sm:h-10 w-auto relative flex-shrink-0 overflow-hidden">
               <Image
                 src="/brand/logo-main.png"
                 alt={tCommon('logoAlt')}
-                width={160}
-                height={40}
-                className="object-contain h-full w-auto"
+                width={140}
+                height={36}
+                className="object-contain h-full w-auto max-h-10"
                 priority
               />
             </motion.div>

@@ -153,16 +153,6 @@ export default function CRCompanyPageContent() {
                   )}
                 </div>
               </div>
-
-              {/* Einstein Quote */}
-              <div className="mb-12 p-6 sm:p-8 bg-[#eff4ff] rounded-2xl border-l-4 border-[#1F5CFF] max-w-3xl mx-auto">
-                <p className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-900 italic mb-3">
-                  &ldquo;{content.mission.donation.quote.text}&rdquo;
-                </p>
-                <p className="text-base sm:text-lg text-gray-500">
-                  — {content.mission.donation.quote.author}
-                </p>
-              </div>
             </motion.div>
           </motion.div>
         </Container>
@@ -285,7 +275,7 @@ export default function CRCompanyPageContent() {
               </p>
             </motion.div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
               {content.values.items.map((value, index) => {
                 const IconComponent = iconMap[value.icon] || iconMap.Globe;
                 return (

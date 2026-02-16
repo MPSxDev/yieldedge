@@ -1009,7 +1009,7 @@ export const crCompanyContent: CRCompanyContent = {
     label: 'Sobre Nosotros',
     title: 'Tu Aliado Digital en Costa Rica',
     subtitle: 'No somos una fábrica de páginas web',
-    description: 'Somos un equipo pequeño que trabaja de la mano con negocios que quieren crecer de forma ordenada. Entendemos el mercado tico y sabemos qué funciona aquí.',
+    description: 'Somos un equipo pequeño que trabaja de la mano con negocios que quieren crecer de forma ordenada. Entendemos el mercado costaricense y sabemos qué funciona mejor en el país.',
     image: '/assets/prof/hunters-race-MYbhN8KaaEc-unsplash.jpg',
   },
   about: {
@@ -1039,11 +1039,6 @@ export const crCompanyContent: CRCompanyContent = {
         icon: 'Handshake',
         title: 'Acompañamiento Real',
         description: 'No te dejamos solo después de entregar. Estamos disponibles para ayudarte y resolver dudas.',
-      },
-      {
-        icon: 'Shield',
-        title: 'Honestidad Ante Todo',
-        description: 'Si algo no es para vos, te lo decimos. Preferimos perder una venta que dejarte con algo que no necesitás.',
       },
     ],
   },
