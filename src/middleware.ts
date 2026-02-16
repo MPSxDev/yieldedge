@@ -1,12 +1,9 @@
 import createMiddleware from 'next-intl/middleware';
+import { NextRequest, NextResponse } from 'next/server';
 import { locales, defaultLocale } from './i18n/config';
 
-// Middleware to handle locale detection and routing
-// Routes:
-// - `/` -> Spanish (default)
-// - `/es/*` -> Spanish (explicit, will redirect to remove /es prefix)
-// - `/en/*` -> English
-export default createMiddleware({
+// Create the next-intl middleware
+const intlMiddleware = createMiddleware({
   locales,
   defaultLocale,
   // 'as-needed' hides the default locale (es) from URLs
@@ -16,6 +13,20 @@ export default createMiddleware({
   // If detected locale is not Spanish, redirect to that locale
   localeDetection: true,
 });
+
+// Custom middleware that handles CR routes (always Spanish) before next-intl
+export default function middleware(request: NextRequest) {
+  const pathname = request.nextUrl.pathname;
+
+  // CR routes should always be in Spanish - redirect /en/cr/* to /cr/*
+  if (pathname.startsWith('/en/cr')) {
+    const newPathname = pathname.replace('/en/cr', '/cr');
+    return NextResponse.redirect(new URL(newPathname, request.url));
+  }
+
+  // For all other routes, use the standard next-intl middleware
+  return intlMiddleware(request);
+}
 
 export const config = {
   // Match all pathnames except for:

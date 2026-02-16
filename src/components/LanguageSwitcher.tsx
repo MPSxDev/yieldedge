@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocale } from 'next-intl';
 import { locales, localeShortNames, type Locale } from '@/i18n/config';
 import { motion } from 'framer-motion';
@@ -16,6 +16,18 @@ export default function LanguageSwitcher({
 }: LanguageSwitcherProps) {
   const locale = useLocale() as Locale;
   const [isNavigating, setIsNavigating] = useState(false);
+  const [isCRRoute, setIsCRRoute] = useState(false);
+
+  // Check if we're on a CR route (always Spanish, no language switch needed)
+  useEffect(() => {
+    const path = window.location.pathname;
+    setIsCRRoute(path.startsWith('/cr') || path.startsWith('/en/cr'));
+  }, []);
+
+  // Don't show language switcher on CR routes (always Spanish)
+  if (isCRRoute) {
+    return null;
+  }
 
   const switchLocale = (newLocale: Locale) => {
     if (newLocale === locale || isNavigating) return;
