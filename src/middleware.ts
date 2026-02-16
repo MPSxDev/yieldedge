@@ -24,6 +24,12 @@ export default function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL(newPathname, request.url));
   }
 
+  // For /cr routes without locale prefix, skip locale detection and serve directly
+  // This prevents redirecting /cr to /en/cr based on browser language
+  if (pathname.startsWith('/cr')) {
+    return NextResponse.next();
+  }
+
   // For all other routes, use the standard next-intl middleware
   return intlMiddleware(request);
 }
