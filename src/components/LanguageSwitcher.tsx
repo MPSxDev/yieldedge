@@ -2,8 +2,7 @@
 
 import { useState } from 'react';
 import { useLocale } from 'next-intl';
-import { usePathname } from '@/i18n/navigation';
-import { locales, localeShortNames, localeNames, defaultLocale, type Locale } from '@/i18n/config';
+import { locales, localeShortNames, type Locale } from '@/i18n/config';
 import { motion } from 'framer-motion';
 
 interface LanguageSwitcherProps {
@@ -16,86 +15,85 @@ export default function LanguageSwitcher({
   variant = 'default',
 }: LanguageSwitcherProps) {
   const locale = useLocale() as Locale;
-  const pathname = usePathname();
   const [isNavigating, setIsNavigating] = useState(false);
 
   const switchLocale = (newLocale: Locale) => {
-    if (newLocale !== locale && !isNavigating) {
-      setIsNavigating(true);
+    if (newLocale === locale || isNavigating) return;
 
-      // Get current path and remove any existing locale prefix
-      let currentPath = window.location.pathname;
+    setIsNavigating(true);
 
-      // Remove locale prefix if present (e.g., /en/privacy-policy -> /privacy-policy)
-      for (const loc of locales) {
-        if (currentPath.startsWith(`/${loc}/`)) {
-          currentPath = currentPath.slice(loc.length + 1);
-          break;
-        } else if (currentPath === `/${loc}`) {
-          currentPath = '/';
-          break;
-        }
-      }
+    // Get current full path from browser
+    const currentFullPath = window.location.pathname;
 
-      // Build the new URL
-      let newPath: string;
-      if (newLocale === defaultLocale) {
-        // Default locale (es) - no prefix needed
-        newPath = currentPath || '/';
-      } else {
-        // Non-default locale (en) - add prefix
-        newPath = `/${newLocale}${currentPath}`;
-      }
+    // Remove any locale prefix to get the clean path
+    let cleanPath = currentFullPath;
 
-      // Use window.location for a clean navigation without React conflicts
-      window.location.href = newPath;
+    // Check if path starts with a locale prefix and remove it
+    if (cleanPath.startsWith('/en/')) {
+      cleanPath = cleanPath.substring(3); // Remove '/en'
+    } else if (cleanPath === '/en') {
+      cleanPath = '/';
     }
+    // Spanish (es) is default, so paths like /privacy-policy are already clean
+
+    // Build new path based on target locale
+    let newPath: string;
+    if (newLocale === 'es') {
+      // Spanish is default - no prefix
+      newPath = cleanPath || '/';
+    } else {
+      // English needs /en prefix
+      newPath = `/en${cleanPath}`;
+    }
+
+    // Navigate
+    window.location.href = newPath;
   };
 
   const isLoading = isNavigating;
 
-  // Minimal variant - just flags
+  // Minimal variant - text links
   if (variant === 'minimal') {
     return (
-      <div className={`flex items-center gap-1 ${className}`}>
-        {locales.map((loc) => (
-          <button
-            key={loc}
-            onClick={() => switchLocale(loc)}
-            disabled={isLoading}
-            className={`text-xl transition-all ${
-              locale === loc
-                ? 'scale-110'
-                : 'opacity-60 hover:opacity-100 hover:scale-105'
-            } ${isLoading ? 'opacity-30 cursor-not-allowed' : ''}`}
-            aria-label={localeNames[loc]}
-          >
-            {localeShortNames[loc]}
-          </button>
+      <div className={`flex items-center gap-2 ${className}`}>
+        {locales.map((loc, index) => (
+          <span key={loc} className="flex items-center">
+            {index > 0 && <span className="text-gray-400 mx-1">/</span>}
+            <button
+              onClick={() => switchLocale(loc)}
+              disabled={isLoading}
+              className={`text-sm font-medium transition-colors ${
+                locale === loc
+                  ? 'text-[#1F5CFF]'
+                  : 'text-gray-600 hover:text-gray-900'
+              } ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+            >
+              {localeShortNames[loc]}
+            </button>
+          </span>
         ))}
       </div>
     );
   }
 
-  // Compact variant - smaller pills with flags
+  // Compact variant - smaller pills
   if (variant === 'compact') {
     return (
       <div
-        className={`flex items-center gap-0.5 p-0.5 bg-gray-100 rounded-full ${className}`}
+        className={`flex items-center gap-1 p-0.5 bg-gray-100 rounded-full ${className}`}
       >
         {locales.map((loc) => (
           <motion.button
             key={loc}
             onClick={() => switchLocale(loc)}
             disabled={isLoading}
-            whileHover={isLoading ? {} : { scale: 1.05 }}
-            whileTap={isLoading ? {} : { scale: 0.95 }}
-            className={`px-2 py-1 text-lg rounded-full transition-all duration-200 ${
+            whileHover={isLoading ? {} : { scale: 1.02 }}
+            whileTap={isLoading ? {} : { scale: 0.98 }}
+            className={`px-2.5 py-1 text-xs font-semibold rounded-full transition-all duration-200 ${
               locale === loc
-                ? 'bg-white shadow-sm scale-105'
-                : 'opacity-60 hover:opacity-100'
-            } ${isLoading ? 'opacity-30 cursor-not-allowed' : ''}`}
-            aria-label={localeNames[loc]}
+                ? 'bg-white text-[#1F5CFF] shadow-sm'
+                : 'text-gray-600 hover:text-gray-900'
+            } ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
             {localeShortNames[loc]}
           </motion.button>
@@ -104,7 +102,7 @@ export default function LanguageSwitcher({
     );
   }
 
-  // Default variant - full pills with flags
+  // Default variant - full pills
   return (
     <div
       className={`flex items-center gap-1 p-1 bg-gray-100 rounded-full ${className}`}
@@ -114,14 +112,13 @@ export default function LanguageSwitcher({
           key={loc}
           onClick={() => switchLocale(loc)}
           disabled={isLoading}
-          whileHover={isLoading ? {} : { scale: 1.05 }}
-          whileTap={isLoading ? {} : { scale: 0.95 }}
-          className={`px-3 py-1.5 text-xl rounded-full transition-all duration-200 ${
+          whileHover={isLoading ? {} : { scale: 1.02 }}
+          whileTap={isLoading ? {} : { scale: 0.98 }}
+          className={`px-3 py-1.5 text-sm font-semibold rounded-full transition-all duration-200 ${
             locale === loc
-              ? 'bg-white shadow-sm scale-105'
-              : 'opacity-60 hover:opacity-100'
-          } ${isLoading ? 'opacity-30 cursor-not-allowed' : ''}`}
-          aria-label={localeNames[loc]}
+              ? 'bg-white text-[#1F5CFF] shadow-sm'
+              : 'text-gray-600 hover:text-gray-900'
+          } ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
         >
           {localeShortNames[loc]}
         </motion.button>
