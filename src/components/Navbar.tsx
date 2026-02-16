@@ -32,6 +32,10 @@ function solutionsHref(pathname: string): string {
 
 function companyHref(pathname: string): string {
   const prefix = getVerticalPrefix(pathname);
+  // For CR route, use /mision instead of /company
+  if (prefix === '/cr') {
+    return '/cr/mision';
+  }
   return prefix ? `${prefix}/company` : '/company';
 }
 

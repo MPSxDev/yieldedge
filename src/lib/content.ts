@@ -771,7 +771,7 @@ export const crContent: PageContent = {
         number: '01',
         title: 'Diagnóstico Gratis por WhatsApp',
         description: 'Hablamos de tu negocio, entendemos tus necesidades y te mostramos qué podemos hacer por vos. Sin compromiso.',
-        image: '/assets/img9.jpg',
+        image: '/assets/office/hoi-an-and-da-nang-photographer-jsaM46IKhlo-unsplash.jpg',
         deliverables: ['Llamada o chat de 15-20 mins', 'Análisis de tu situación actual', 'Propuesta clara y honesta'],
       },
       {
@@ -779,7 +779,7 @@ export const crContent: PageContent = {
         number: '02',
         title: 'Diseñamos y Construimos Tu Solución',
         description: 'Creamos tu sitio web, configuramos WhatsApp Business, formularios y todo lo que necesitás para captar más clientes.',
-        image: '/assets/img10.jpg',
+        image: '/assets/tech/shutterstock_2055553571.jpg',
         deliverables: ['Sitio web profesional', 'Formularios que convierten', 'WhatsApp configurado', 'Te enseñamos a usarlo'],
       },
       {
@@ -787,7 +787,7 @@ export const crContent: PageContent = {
         number: '03',
         title: 'Lanzamos y Medimos Resultados',
         description: 'Tu negocio empieza a recibir clientes. Te mostramos reportes claros y te ayudamos a mejorar cada mes.',
-        image: '/assets/img11.jpg',
+        image: '/assets/tech/analitics 3.webp',
         deliverables: ['Lanzamiento del sitio', 'Reportes mensuales', 'Soporte continuo', 'Mejoras basadas en datos'],
       },
     ],
@@ -838,7 +838,7 @@ export const crContent: PageContent = {
     ],
     stats: [
       { icon: 'Users', value: '55%', label: 'Más clientes captados' },
-      { icon: 'Timer', value: '<1min', label: 'Tiempo de respuesta' },
+      { icon: 'Timer', value: '✓', label: 'Atención personalizada' },
       { icon: 'TrendingUp', value: '3x', label: 'Más consultas' },
       { icon: 'Star', value: '100%', label: 'Clientes satisfechos' },
     ],
@@ -894,6 +894,21 @@ export const crContent: PageContent = {
 
 // Costa Rica specific content for company, solutions and careers pages
 export interface CRCompanyContent {
+  mission: {
+    title: string;
+    subtitle: string;
+    description: string;
+    donation: {
+      title: string;
+      firstParagraph: string;
+      secondParagraph: string;
+      quote: {
+        text: string;
+        author: string;
+      };
+      images: string[];
+    };
+  };
   hero: {
     label: string;
     title: string;
@@ -971,6 +986,24 @@ export interface CRCareersContent {
 }
 
 export const crCompanyContent: CRCompanyContent = {
+  mission: {
+    title: 'Tecnología que transforma vidas',
+    subtitle: 'Misión',
+    description: 'La innovación tiene sentido cuando mejora la vida de las personas.',
+    donation: {
+      title: 'Compromiso Social',
+      firstParagraph: 'Una parte de nuestras ganancias se destina a apoyar iniciativas que ayudan a niños en situación vulnerable, porque creemos que el acceso a oportunidades —educación, tecnología y conocimiento— puede cambiar destinos.',
+      secondParagraph: 'Crecer como empresa también significa dar de vuelta y construir un futuro mejor para todos.',
+      quote: {
+        text: 'Solo una vida vivida para los demás merece la pena ser vivida.',
+        author: 'Albert Einstein',
+      },
+      images: [
+        '/assets/charity/happykids.jpeg',
+        '/assets/charity/vikram-aditya-9Awu92Opbco-unsplash.jpg',
+      ],
+    },
+  },
   hero: {
     label: 'Sobre Nosotros',
     title: 'Tu Aliado Digital en Costa Rica',
@@ -1015,7 +1048,7 @@ export const crCompanyContent: CRCompanyContent = {
   },
   team: {
     title: 'Nuestro Equipo',
-    description: 'Un equipo pequeño pero comprometido. Cada miembro conoce tu proyecto y está disponible para ayudarte.',
+    description: 'Un equipo pequeño pero comprometido en crecimiento. Cada miembro conoce tu proyecto y está disponible para ayudarte.',
   },
 };
 

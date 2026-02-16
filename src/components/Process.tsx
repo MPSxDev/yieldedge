@@ -88,7 +88,15 @@ export default function Process({ content = homepageContent.process }: ProcessPr
                     }`}
                   >
                     {/* Image */}
-                    <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                    <div className={`${index % 2 === 1 ? 'lg:order-2' : ''} relative`}>
+                      {/* Number Badge - Outside Image */}
+                      <div className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 z-10">
+                        <div className="w-12 h-12 sm:w-14 lg:w-16 sm:h-14 lg:h-16 rounded-xl sm:rounded-2xl bg-white flex items-center justify-center shadow-lg border-2 border-[#1F5CFF]/20">
+                          <span className="text-xl sm:text-2xl font-bold text-[#1F5CFF]">
+                            {step.number}
+                          </span>
+                        </div>
+                      </div>
                       <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg sm:shadow-xl group bg-gradient-to-br from-[#eff4ff] to-gray-100">
                         <Image
                           src={step.image}
@@ -100,15 +108,6 @@ export default function Process({ content = homepageContent.process }: ProcessPr
                           className="object-cover group-hover:scale-105 transition-transform duration-700"
                         />
                         <div className="absolute inset-0 bg-gradient-to-tr from-[#1F5CFF]/20 to-transparent" />
-
-                        {/* Number Overlay */}
-                        <div className="absolute top-4 left-4 sm:top-6 sm:left-6">
-                          <div className="w-12 h-12 sm:w-14 lg:w-16 sm:h-14 lg:h-16 rounded-xl sm:rounded-2xl bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-lg">
-                            <span className="text-xl sm:text-2xl font-bold text-[#1F5CFF]">
-                              {step.number}
-                            </span>
-                          </div>
-                        </div>
                       </div>
                     </div>
 

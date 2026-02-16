@@ -28,6 +28,90 @@ export default function CRCompanyPageContent() {
 
   return (
     <>
+      {/* Mission Section */}
+      <section className="relative pt-32 pb-16 bg-gradient-to-br from-[#eff4ff] via-white to-white">
+        <Container>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="max-w-4xl mx-auto text-center mb-16"
+          >
+            <motion.p
+              variants={fadeInUp}
+              className="text-[#1F5CFF] font-semibold mb-4 text-sm uppercase tracking-wide"
+            >
+              {content.mission.subtitle}
+            </motion.p>
+            <motion.h1
+              variants={fadeInUp}
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6"
+            >
+              {content.mission.title}
+            </motion.h1>
+            <motion.p
+              variants={fadeInUp}
+              className="text-xl text-gray-600 leading-relaxed mb-12"
+            >
+              {content.mission.description}
+            </motion.p>
+          </motion.div>
+
+          {/* Donation Section */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={staggerContainer}
+            className="bg-white rounded-3xl shadow-xl p-8 sm:p-12 lg:p-16 max-w-5xl mx-auto"
+          >
+            <motion.div variants={fadeInUp} className="text-center mb-8">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-8">
+                {content.mission.donation.title}
+              </h2>
+              
+              {/* First Paragraph */}
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed mb-12 max-w-3xl mx-auto">
+                {content.mission.donation.firstParagraph}
+              </p>
+
+              {/* Images - Centered and Larger */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-12 max-w-4xl mx-auto">
+                {content.mission.donation.images.map((img, index) => (
+                  <motion.div
+                    key={index}
+                    variants={fadeInUp}
+                    className="relative aspect-square rounded-2xl overflow-hidden shadow-xl"
+                  >
+                    <Image
+                      src={img}
+                      alt={`Donación ${index + 1}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Second Paragraph */}
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed mb-12 max-w-3xl mx-auto">
+                {content.mission.donation.secondParagraph}
+              </p>
+
+              {/* Einstein Quote */}
+              <div className="mb-12 p-6 sm:p-8 bg-[#eff4ff] rounded-2xl border-l-4 border-[#1F5CFF] max-w-3xl mx-auto">
+                <p className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-900 italic mb-3">
+                  "{content.mission.donation.quote.text}"
+                </p>
+                <p className="text-base sm:text-lg text-gray-500">
+                  — {content.mission.donation.quote.author}
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        </Container>
+      </section>
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 bg-gradient-to-br from-[#eff4ff] via-white to-white">
         <Container>
