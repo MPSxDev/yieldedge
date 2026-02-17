@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, ArrowUp } from 'lucide-react';
+import { Linkedin, Mail, ArrowUp } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
@@ -48,7 +48,6 @@ export default function Footer({ description }: FooterProps) {
   const socialLinks = [
     { icon: XIcon, href: 'https://x.com/yieldge', label: 'X' },
     { icon: Linkedin, href: 'https://www.linkedin.com/company/yieldge', label: 'LinkedIn' },
-    { icon: Github, href: 'https://github.com/yieldge', label: 'GitHub' },
     { icon: Mail, href: 'mailto:info@yieldge.com', label: 'Email' },
   ];
 
