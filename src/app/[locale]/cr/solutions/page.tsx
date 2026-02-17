@@ -45,7 +45,7 @@ export default function CRSolutionsPage() {
     <div className="min-h-screen bg-white">
       <Navbar />
       <CRSolutionsPageContent />
-      <Footer />
+      <Footer description="Yieldge Costa Rica y Latam: Tu aliado en soluciones digitales para PYMEs. Sitios web profesionales, SEO local y marketing digital que generan resultados." />
     </div>
   );
 }

@@ -18,7 +18,11 @@ const XIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-export default function Footer() {
+interface FooterProps {
+  description?: string;
+}
+
+export default function Footer({ description }: FooterProps) {
   const currentYear = new Date().getFullYear();
   const t = useTranslations('footer');
   const tLinks = useTranslations('solutionsLinks');
@@ -71,7 +75,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-600 leading-relaxed mb-6 sm:mb-8 text-xs sm:text-sm max-w-xs">
-              {t('description')}
+              {description || t('description')}
             </p>
 
             {/* Social Links */}
