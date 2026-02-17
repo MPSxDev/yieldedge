@@ -1067,7 +1067,7 @@ export const crSolutionsContent: CRSolutionsContent = {
         'Aparecé en Google cuando busquen tus servicios',
       ],
       forWho: 'Ideal para: clínicas, restaurantes, bufetes, salones, talleres, tiendas',
-      image: '/assets/prof/gabrielle-henderson-HJckKnwCXxQ-unsplash.jpg',
+      image: '/assets/sales/young-professional-website-developer-cooperative-computer-engineer-team-brainstorming-sharing-idea-program-writing-coding-modern-meeting-room-teamwork-concept-closeup-burgeoning.jpg',
     },
     {
       icon: 'MessageCircle',
@@ -1080,7 +1080,7 @@ export const crSolutionsContent: CRSolutionsContent = {
         'Organización de conversaciones por cliente',
       ],
       forWho: 'Ideal para: negocios que reciben muchas consultas por WhatsApp',
-      image: '/assets/office/vitaly-gariev-4SpsVc22_6g-unsplash.jpg',
+      image: '/assets/sales/woman-using-smartphone-work-business-social-network-communication.jpg',
     },
     {
       icon: 'Search',
@@ -1093,7 +1093,7 @@ export const crSolutionsContent: CRSolutionsContent = {
         'Reportes mensuales de posicionamiento',
       ],
       forWho: 'Ideal para: negocios que quieren más clientes desde Google',
-      image: '/assets/odonto/nate-johnston-fNSPSQAH1mQ-unsplash.jpg',
+      image: '/assets/sales/closeup-hands-using-mobile-phone-computer-laptop-black-marble-table.jpg',
     },
     {
       icon: 'Calendar',
@@ -1106,7 +1106,7 @@ export const crSolutionsContent: CRSolutionsContent = {
         'Sincronización con tu agenda',
       ],
       forWho: 'Ideal para: clínicas, salones de belleza, consultorios, coaches',
-      image: '/assets/odonto/laurent-yasiel-607-cXjrge4-unsplash.jpg',
+      image: '/assets/sales/calendar-computer-software-application-brisk-schedule-planning.jpg',
     },
     {
       icon: 'ShoppingCart',
@@ -1119,7 +1119,7 @@ export const crSolutionsContent: CRSolutionsContent = {
         'Gestión de inventario básica',
       ],
       forWho: 'Ideal para: tiendas, emprendedores, negocios con productos físicos',
-      image: '/assets/prof/giammarco-boscaro-zeH-ljawHtg-unsplash.jpg',
+      image: '/assets/sales/woman-shopping-online-internet-marketplace-browsing-sale-items-modern-lifestyle-use-credit-card-online-payment-from-wallet-protected-by-crucial-cyber-security-software.jpg',
     },
   ],
   cta: {
