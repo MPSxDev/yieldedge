@@ -73,8 +73,7 @@ export default function CRCompanyPageContent() {
           {/* Donation Section */}
           <motion.div
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            animate="visible"
             variants={staggerContainer}
             className="bg-white rounded-3xl shadow-xl p-8 sm:p-12 lg:p-16 max-w-5xl mx-auto"
           >
