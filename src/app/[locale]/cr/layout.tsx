@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
+import WhatsAppCTA from '@/components/WhatsAppCTA';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yieldge.com';
+const CR_WHATSAPP_NUMBER = '+50670724236';
 
 export const metadata: Metadata = {
   title: 'Diseño Web Costa Rica | Más Clientes Para Tu Negocio',
@@ -63,7 +65,7 @@ export default function CRLayout({
     name: 'Yieldge Costa Rica',
     description: 'Diseño web profesional para PYMEs en Costa Rica. Sitios web, SEO local y marketing digital.',
     url: `${siteUrl}/cr`,
-    telephone: '+506-XXXX-XXXX', // Add actual phone number
+    telephone: CR_WHATSAPP_NUMBER,
     email: 'info@yieldge.com',
     address: {
       '@type': 'PostalAddress',
@@ -179,6 +181,7 @@ export default function CRLayout({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       {children}
+      <WhatsAppCTA phoneNumber={CR_WHATSAPP_NUMBER} />
     </>
   );
 }
