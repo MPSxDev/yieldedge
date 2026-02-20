@@ -23,13 +23,17 @@ const staggerContainer = {
   },
 };
 
-export default function CRSolutionsPageContent() {
+interface CRSolutionsPageContentProps {
+  hideHero?: boolean;
+}
+
+export default function CRSolutionsPageContent({ hideHero = false }: CRSolutionsPageContentProps) {
   const content = crSolutionsContent;
 
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 bg-gradient-to-br from-[#eff4ff] via-white to-white">
+      {!hideHero && <section className="relative pt-32 pb-16 bg-gradient-to-br from-[#eff4ff] via-white to-white">
         <Container>
           <motion.div
             initial="hidden"
@@ -58,7 +62,7 @@ export default function CRSolutionsPageContent() {
             </motion.p>
           </motion.div>
         </Container>
-      </section>
+      </section>}
 
       {/* Quick Navigation */}
       <section className="py-8 bg-gray-50 border-y border-gray-200">

@@ -269,20 +269,20 @@ select:focus-visible {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
 }
 
-/* Premium Typography Utilities */
-h1, .text-h1 {
+/* Premium Typography Utilities - Only apply to elements with these classes */
+.text-h1 {
   font-size: var(--font-size-h1);
   line-height: var(--line-height-tight);
   letter-spacing: -0.025em;
 }
 
-h2, .text-h2 {
+.text-h2 {
   font-size: var(--font-size-h2);
   line-height: var(--line-height-tight);
   letter-spacing: -0.022em;
 }
 
-h3, .text-h3 {
+.text-h3 {
   font-size: var(--font-size-h3);
   line-height: var(--line-height-normal);
   letter-spacing: -0.019em;

@@ -64,23 +64,23 @@ export default function Services({ content = homepageContent.services, useConten
           viewport={{ once: true, amount: 0.1, margin: '0px 0px -100px 0px' }}
         >
           {/* Section Header */}
-          <div className="max-w-3xl mb-10 sm:mb-16">
+          <div className="max-w-3xl mb-12 sm:mb-16 lg:mb-20">
             <motion.p
               variants={fadeInUp}
-              className="text-[#1F5CFF] font-semibold mb-3 sm:mb-4 text-xs sm:text-sm uppercase tracking-wide"
+              className="text-[#1F5CFF] font-medium mb-4 sm:mb-5 text-xs uppercase tracking-wide"
             >
               {useContentDirectly && content.sectionLabel ? content.sectionLabel : t('sectionLabel')}
             </motion.p>
             <motion.h2
               variants={fadeInUp}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-4 sm:mb-6"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-gray-900 mb-5 sm:mb-6 leading-[1.15]"
             >
               {useContentDirectly && content.title ? content.title : t('title')}{' '}
               <span className="text-[#1F5CFF]">{useContentDirectly && content.titleHighlight ? content.titleHighlight : t('titleHighlight')}</span>
             </motion.h2>
             <motion.p
               variants={fadeInUp}
-              className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed"
+              className="text-base sm:text-lg text-gray-600 leading-[1.7]"
             >
               {useContentDirectly && content.description ? content.description : t('description')}
             </motion.p>
@@ -134,23 +134,23 @@ export default function Services({ content = homepageContent.services, useConten
 
                     {/* Content */}
                     <div className="p-5 sm:p-6 lg:p-8">
-                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1.5 sm:mb-2">
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 leading-tight">
                         {service.title}
                       </h3>
                       {service.subtitle && (
-                        <p className="text-[#1F5CFF] font-medium mb-3 sm:mb-4 text-xs sm:text-sm">
+                        <p className="text-[#1F5CFF] font-medium mb-3 text-xs">
                           {service.subtitle}
                         </p>
                       )}
-                      <p className="text-gray-600 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
+                      <p className="text-gray-600 mb-5 leading-[1.6] text-sm">
                         {service.description}
                       </p>
 
                       {/* Features */}
-                      <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
+                      <ul className="space-y-2.5 mb-5">
                         {service.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-center text-gray-700 text-xs sm:text-sm">
-                            <div className="w-1.5 h-1.5 rounded-full bg-[#1F5CFF] mr-2 sm:mr-3 flex-shrink-0" />
+                          <li key={idx} className="flex items-center text-gray-700 text-sm">
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#1F5CFF] mr-2.5 flex-shrink-0" />
                             {feature}
                           </li>
                         ))}
@@ -161,10 +161,10 @@ export default function Services({ content = homepageContent.services, useConten
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ x: 4 }}
-                        className="inline-flex items-center gap-2 text-[#1F5CFF] font-semibold hover:gap-3 transition-all text-sm sm:text-base"
+                        className="inline-flex items-center gap-2 text-[#1F5CFF] font-medium hover:gap-3 transition-all text-sm"
                       >
                         {tCommon('learnMore')}
-                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                        <ArrowRight className="w-4 h-4" />
                       </motion.a>
                     </div>
                   </motion.div>
@@ -219,21 +219,21 @@ export default function Services({ content = homepageContent.services, useConten
 
                     {/* Content */}
                     <div className="p-5 sm:p-6 lg:p-8">
-                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1.5 sm:mb-2">
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 leading-tight">
                         {t(`${key}.title`)}
                       </h3>
-                      <p className="text-[#1F5CFF] font-medium mb-3 sm:mb-4 text-xs sm:text-sm">
+                      <p className="text-[#1F5CFF] font-medium mb-3 text-xs">
                         {t(`${key}.subtitle`)}
                       </p>
-                      <p className="text-gray-600 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
+                      <p className="text-gray-600 mb-5 leading-[1.6] text-sm">
                         {t(`${key}.description`)}
                       </p>
 
                       {/* Features */}
-                      <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
+                      <ul className="space-y-2.5 mb-5">
                         {features.map((feature, idx) => (
-                          <li key={idx} className="flex items-center text-gray-700 text-xs sm:text-sm">
-                            <div className="w-1.5 h-1.5 rounded-full bg-[#1F5CFF] mr-2 sm:mr-3 flex-shrink-0" />
+                          <li key={idx} className="flex items-center text-gray-700 text-sm">
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#1F5CFF] mr-2.5 flex-shrink-0" />
                             {feature}
                           </li>
                         ))}
@@ -244,10 +244,10 @@ export default function Services({ content = homepageContent.services, useConten
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ x: 4 }}
-                        className="inline-flex items-center gap-2 text-[#1F5CFF] font-semibold hover:gap-3 transition-all text-sm sm:text-base"
+                        className="inline-flex items-center gap-2 text-[#1F5CFF] font-medium hover:gap-3 transition-all text-sm"
                       >
                         {tCommon('learnMore')}
-                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                        <ArrowRight className="w-4 h-4" />
                       </motion.a>
                     </div>
                   </motion.div>

@@ -189,6 +189,27 @@ export interface FinalCTAContent {
   imageAlt: string;
 }
 
+export interface AboutYieldgeContent {
+  sectionLabel: string;
+  title: string;
+  titleHighlight: string;
+  description: string;
+  stats: {
+    value: string;
+    label: string;
+    icon: string;
+  }[];
+  values: {
+    icon: string;
+    title: string;
+    description: string;
+  }[];
+  commitment: {
+    title: string;
+    description: string;
+  };
+}
+
 export interface PageContent {
   hero: HeroContent;
   services: ServicesContent;
@@ -197,6 +218,7 @@ export interface PageContent {
   caseStudies: CaseStudiesContent;
   faq: FAQContent;
   finalCTA: FinalCTAContent;
+  aboutYieldge?: AboutYieldgeContent;
 }
 
 // Homepage content (Technology Solutions & Offshore Development)
@@ -889,6 +911,50 @@ export const crContent: PageContent = {
     ctaSubtext: 'Respondemos en menos de 1 hora • Sin compromiso • Diagnóstico gratis',
     image: '/assets/odonto/ozkan-guner-AduzI0N9iRI-unsplash.jpg',
     imageAlt: 'Equipo Yieldge Costa Rica',
+  },
+  aboutYieldge: {
+    sectionLabel: 'Sobre Nosotros',
+    title: 'Tu Aliado Digital en',
+    titleHighlight: 'Costa Rica',
+    description: 'No somos una fábrica de páginas web. Somos un equipo pequeño que trabaja de cerca con negocios que buscan crecer de forma ordenada. Entendemos el mercado tico y lo que funciona aquí.',
+    stats: [
+      {
+        value: '50+',
+        label: 'Clientes Atendidos',
+        icon: 'Users',
+      },
+      {
+        value: '100%',
+        label: 'Clientes Satisfechos',
+        icon: 'Star',
+      },
+      {
+        value: 'CR',
+        label: 'Operamos en Costa Rica',
+        icon: 'MapPin',
+      },
+    ],
+    values: [
+      {
+        icon: 'MessageCircle',
+        title: 'Comunicación Clara',
+        description: 'Te explicamos todo sin tecnicismos. Sabés exactamente qué estamos haciendo y por qué. Nada de jerga confusa ni sorpresas.',
+      },
+      {
+        icon: 'Target',
+        title: 'Enfocados en Resultados',
+        description: 'Medimos todo: cuántos clientes llegaron, de dónde vinieron, cuánto vendiste. Te mostramos números reales, no promesas vacías.',
+      },
+      {
+        icon: 'Handshake',
+        title: 'Acompañamiento Genuino',
+        description: 'No desaparecemos después de entregar. Seguimos disponibles para ayudarte con dudas, cambios y nuevas ideas cuando las necesités.',
+      },
+    ],
+    commitment: {
+      title: 'Nuestro Compromiso Social',
+      description: 'Creemos que la tecnología tiene sentido cuando mejora la vida de las personas. Por eso, una parte de nuestras ganancias se destina a apoyar la educación y el acceso a tecnología de niños en situación vulnerable en Costa Rica.',
+    },
   },
 };
 

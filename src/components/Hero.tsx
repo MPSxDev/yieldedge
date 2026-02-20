@@ -86,7 +86,7 @@ export default function Hero({ content = homepageContent.hero }: HeroProps) {
       )}
 
       {/* Main container - perfectly centered */}
-      <Container className="relative z-10 py-20 sm:py-32">
+      <Container className="relative z-10 py-24 sm:py-32 lg:py-36">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
@@ -96,7 +96,7 @@ export default function Hero({ content = homepageContent.hero }: HeroProps) {
             transition={{ duration: 0.6 }}
           >
             {/* Content grid - balanced on large screens */}
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               {/* Left: Content */}
               <motion.div
                 variants={staggerContainer}
@@ -104,17 +104,17 @@ export default function Hero({ content = homepageContent.hero }: HeroProps) {
                 animate="visible"
                 className="order-2 lg:order-1"
               >
-                {/* Heading */}
+                {/* Eyebrow label */}
                 <motion.div variants={fadeInUp} className="mb-6">
-                  <h2 className="text-sm uppercase tracking-widest text-[#1F5CFF] font-semibold mb-4">
+                  <span className="text-sm sm:text-base uppercase tracking-wide text-[#1F5CFF] font-semibold">
                     {slide.heading}
-                  </h2>
+                  </span>
                 </motion.div>
 
-                {/* Subheading */}
+                {/* Main headline */}
                 <motion.h1
                   variants={fadeInUp}
-                  className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-gray-900 mb-6 leading-[1.05]"
+                  className="text-lg sm:text-xl md:text-2xl lg:text-[1.75rem] font-semibold tracking-tight text-gray-900 mb-8 leading-[1.3]"
                 >
                   {slide.subheading}
                 </motion.h1>
@@ -122,7 +122,7 @@ export default function Hero({ content = homepageContent.hero }: HeroProps) {
                 {/* Description */}
                 <motion.p
                   variants={fadeInUp}
-                  className="text-lg sm:text-xl text-gray-600 mb-10 leading-relaxed max-w-xl"
+                  className="text-base sm:text-lg lg:text-xl text-gray-600 mb-10 leading-[1.7] max-w-xl"
                 >
                   {slide.description}
                 </motion.p>
@@ -131,12 +131,12 @@ export default function Hero({ content = homepageContent.hero }: HeroProps) {
                 <motion.div variants={fadeInUp}>
                   <motion.a
                     href={slide.ctaLink}
-                    whileHover={{ scale: 1.02 }}
+                    whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.98 }}
-                    className="group inline-flex items-center justify-center gap-3 px-8 py-5 bg-[#1F5CFF] text-white text-lg font-semibold rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-lg shadow-[#1F5CFF]/30 hover:shadow-xl hover:shadow-[#1F5CFF]/40"
+                    className="group inline-flex items-center justify-center gap-3 px-7 py-4 bg-[#1F5CFF] text-white text-base font-medium rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-lg shadow-[#1F5CFF]/25 hover:shadow-xl hover:shadow-[#1F5CFF]/35"
                   >
                     {slide.ctaText}
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </motion.a>
                 </motion.div>
               </motion.div>

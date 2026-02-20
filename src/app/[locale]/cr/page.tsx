@@ -14,11 +14,15 @@ const WhyChooseUs = dynamic(() => import('@/components/WhyChooseUs'), {
   loading: () => <div className="min-h-screen" />,
 });
 
+const AboutYieldgeCR = dynamic(() => import('@/components/AboutYieldgeCR'), {
+  loading: () => <div className="min-h-screen" />,
+});
+
 const Process = dynamic(() => import('@/components/Process'), {
   loading: () => <div className="min-h-screen" />,
 });
 
-const CaseStudies = dynamic(() => import('@/components/CaseStudies'), {
+const CRSolutionsPageContent = dynamic(() => import('@/components/CRSolutionsPageContent'), {
   loading: () => <div className="min-h-screen" />,
 });
 
@@ -43,9 +47,10 @@ export default function CRPage() {
       {/* Main content sections with spacing */}
       <main className="space-y-20 sm:space-y-24 lg:space-y-32">
         <Services content={crContent.services} useContentDirectly={true} />
+        <CRSolutionsPageContent hideHero={true} />
+        <AboutYieldgeCR content={crContent.aboutYieldge!} />
         <WhyChooseUs content={crContent.whyChooseUs} />
         <Process content={crContent.process} />
-        <CaseStudies content={crContent.caseStudies} />
         <FAQ content={crContent.faq} />
         <FinalCTA content={crContent.finalCTA} />
       </main>
