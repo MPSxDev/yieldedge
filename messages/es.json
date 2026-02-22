@@ -57,67 +57,89 @@
     "sectionLabel": "Nuestras Soluciones",
     "title": "Nuestras",
     "titleHighlight": "Soluciones",
-    "description": "Yieldge ofrece soluciones tecnológicas de vanguardia diseñadas para acelerar el crecimiento de tu negocio y la excelencia operativa. Nuestros expertos certificados aprovechan metodologías y herramientas avanzadas para crear resultados transformadores.",
+    "description": "Soluciones tecnológicas de vanguardia para acelerar el crecimiento de tu negocio.",
     "learnMore": "Más Información",
     "qaAutomation": {
-      "title": "QA y Automatización de Pruebas",
+      "title": "QA y Automatización",
+      "shortDescription": "Software sin errores, entregas más rápidas.",
       "subtitle": "Entrega más rápido con confianza a través de aseguramiento de calidad automatizado integrado en tu pipeline de entrega.",
-      "description": "Aseguramos que tu software funcione perfectamente antes de llegar a los usuarios. Nuestros servicios de QA y automatización de pruebas reducen errores, mejoran la estabilidad y protegen tus plazos de lanzamiento.",
-      "features": ["Suites de pruebas automatizadas (unitarias, integración, E2E)", "Pruebas manuales y exploratorias", "Pruebas de rendimiento y carga", "Integración de pruebas CI/CD"]
+      "description": "Aseguramos que tu software funcione perfectamente antes de llegar a los usuarios.",
+      "features": ["Pruebas automatizadas E2E", "Pruebas de rendimiento", "Integración CI/CD"]
     },
     "security": {
-      "title": "Servicios de Seguridad",
+      "title": "Ciberseguridad",
+      "shortDescription": "Protege sistemas, datos y reputación.",
       "subtitle": "Protege tus sistemas, datos y reputación con ciberseguridad de nivel empresarial.",
-      "description": "Ayudamos a las organizaciones a identificar vulnerabilidades, prevenir ataques y mantener el cumplimiento en un panorama digital cada vez más hostil.",
-      "features": ["Evaluaciones de ciberseguridad y hardening", "Detección y prevención de amenazas", "Auditorías de seguridad y análisis de riesgos", "Soporte de cumplimiento (SOC, ISO, mejores prácticas)"]
+      "description": "Identificamos vulnerabilidades y prevenimos ataques en tu infraestructura.",
+      "features": ["Evaluaciones de seguridad", "Detección de amenazas", "Cumplimiento SOC/ISO"]
     },
     "consulting": {
-      "title": "Consultoría Tecnológica",
+      "title": "Consultoría Tech",
+      "shortDescription": "Decisiones tecnológicas estratégicas.",
       "subtitle": "Convierte las decisiones tecnológicas en ventajas comerciales a largo plazo.",
-      "description": "Trabajamos junto a tu equipo de liderazgo para diseñar arquitecturas escalables, modernizar sistemas y alinear la tecnología con los objetivos del negocio.",
-      "features": ["Planificación tecnológica estratégica", "Iniciativas de transformación digital", "Diseño de sistemas y arquitectura", "Mejores prácticas de ingeniería"]
+      "description": "Diseñamos arquitecturas escalables alineadas con tus objetivos.",
+      "features": ["Planificación estratégica", "Transformación digital", "Diseño de arquitectura"]
     },
     "mobileWeb": {
       "title": "Apps Móviles y Web",
-      "subtitle": "Desarrollo de aplicaciones móviles y web personalizadas para experiencias de usuario excepcionales.",
-      "description": "Desarrollo de aplicaciones móviles y web personalizadas para experiencias de usuario excepcionales.",
-      "features": ["Apps móviles", "Desarrollo web", "Experiencia de usuario", "Diseño responsivo"]
+      "shortDescription": "Experiencias digitales excepcionales.",
+      "subtitle": "Desarrollo de aplicaciones móviles y web personalizadas.",
+      "description": "Aplicaciones móviles y web de alto rendimiento.",
+      "features": ["Apps nativas/híbridas", "Desarrollo web", "UX/UI optimizado"]
     },
     "staffAugmentation": {
-      "title": "Aumento de Personal",
-      "subtitle": "Accede a talento técnico de primer nivel para escalar tu equipo de manera rápida y eficiente.",
-      "description": "Accede a talento técnico de primer nivel para escalar tu equipo de manera rápida y eficiente.",
-      "features": ["Talento técnico", "Escalamiento de equipos", "Recursos expertos", "Compromiso flexible"]
+      "title": "Staff Augmentation",
+      "shortDescription": "Talento técnico on-demand.",
+      "subtitle": "Accede a talento técnico de primer nivel.",
+      "description": "Escala tu equipo con expertos certificados.",
+      "features": ["Talento certificado", "Integración rápida", "Modelo flexible"]
     },
     "analytics": {
-      "title": "Análisis e Insights",
-      "subtitle": "Insights basados en datos y soluciones de análisis para impulsar decisiones comerciales informadas.",
-      "description": "Insights basados en datos y soluciones de análisis para impulsar decisiones comerciales informadas.",
-      "features": ["Inteligencia de negocios", "Análisis de datos", "Reportes", "Insights"]
+      "title": "Analytics e IA",
+      "shortDescription": "Datos que impulsan decisiones.",
+      "subtitle": "Insights basados en datos para decisiones informadas.",
+      "description": "Transforma datos en ventajas competitivas.",
+      "features": ["Business Intelligence", "Machine Learning", "Dashboards en tiempo real"]
     },
     "cloud": {
-      "title": "Soluciones en la Nube",
-      "subtitle": "Infraestructura en la nube escalable y servicios de migración para negocios modernos.",
-      "description": "Infraestructura en la nube escalable y servicios de migración para negocios modernos.",
-      "features": ["Migración a la nube", "Infraestructura", "Escalabilidad", "DevOps"]
+      "title": "Cloud Solutions",
+      "shortDescription": "Infraestructura escalable y segura.",
+      "subtitle": "Infraestructura en la nube escalable y servicios de migración.",
+      "description": "Migración y optimización en AWS, Azure, GCP.",
+      "features": ["Migración cloud", "Infraestructura IaC", "DevOps/SRE"]
     },
     "offshore": {
-      "title": "Desarrollo Offshore",
-      "subtitle": "Equipos de desarrollo de software nearshore que entregan calidad y valor.",
-      "description": "Equipos de desarrollo de software nearshore que entregan calidad y valor.",
-      "features": ["Equipos nearshore", "Entrega de calidad", "Costo-efectivo", "Desarrolladores expertos"]
+      "title": "Nearshore Dev",
+      "shortDescription": "Equipos dedicados, misma zona horaria.",
+      "subtitle": "Equipos de desarrollo nearshore que entregan calidad.",
+      "description": "Desarrollo de software con equipos en tu zona horaria.",
+      "features": ["Equipos dedicados", "Zona horaria compatible", "Comunicación fluida"]
     },
     "tailoredSoftware": {
       "title": "Software a Medida",
-      "subtitle": "Soluciones de software personalizadas diseñadas específicamente para las necesidades únicas de tu negocio.",
-      "description": "Soluciones de software personalizadas diseñadas específicamente para las necesidades únicas de tu negocio.",
-      "features": ["Desarrollo personalizado", "Específico para negocios", "Soluciones escalables", "Ciclo de vida completo"]
+      "shortDescription": "Soluciones únicas para tu negocio.",
+      "subtitle": "Software personalizado para necesidades únicas.",
+      "description": "Desarrollo end-to-end adaptado a tu operación.",
+      "features": ["Desarrollo custom", "Integración sistemas", "Soporte continuo"]
     }
   },
   "whyChooseUs": {
     "title": "¿Por qué elegir",
     "titleHighlight": "Yieldge?",
     "description": "Con más de 15 años sirviendo al panorama tecnológico global, Yieldge se ha establecido como un socio de confianza en la transformación digital. Hemos empoderado a innumerables organizaciones para optimizar operaciones y lograr resultados medibles.",
+    "subtitle": "Socio tecnológico de confianza con resultados comprobados en transformación digital.",
+    "bullets": {
+      "experience": "15+ años de experiencia en soluciones tecnológicas",
+      "results": "ROI medible y mejoras operativas tangibles",
+      "innovation": "Innovación aplicada con tecnología de vanguardia",
+      "collaboration": "Colaboración cercana con tu equipo"
+    },
+    "miniCards": {
+      "experience": "Experiencia",
+      "results": "ROI",
+      "innovation": "Innovación",
+      "collaboration": "Cercanía"
+    },
     "values": {
       "experience": {
         "title": "15+ Años de Experiencia",

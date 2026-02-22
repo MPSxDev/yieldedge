@@ -58,6 +58,10 @@ export default function LanguageSwitcher({
       newPath = `/en${cleanPath}`;
     }
 
+    // Set the NEXT_LOCALE cookie so the middleware respects user's explicit choice
+    // This prevents localeDetection from overriding the user's selection
+    document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000; SameSite=Lax`;
+
     // Navigate
     window.location.href = newPath;
   };

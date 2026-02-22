@@ -6,13 +6,14 @@ import { useTranslations } from 'next-intl';
 import Container from '@/components/ui/Container';
 import { WhyChooseUsContent, homepageContent } from '@/lib/content';
 import { iconMap } from '@/lib/iconMap';
+import { Target, TrendingUp, Lightbulb, Users } from 'lucide-react';
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as const },
+    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const },
   },
 };
 
@@ -20,13 +21,21 @@ const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.1 },
+    transition: { staggerChildren: 0.1, delayChildren: 0.05 },
   },
 };
 
 interface WhyChooseUsProps {
   content?: WhyChooseUsContent;
 }
+
+// Mini-card icons mapping
+const miniCardIcons = {
+  experience: Target,
+  results: TrendingUp,
+  innovation: Lightbulb,
+  collaboration: Users,
+};
 
 export default function WhyChooseUs({ content = homepageContent.whyChooseUs }: WhyChooseUsProps) {
   const t = useTranslations('whyChooseUs');
@@ -36,6 +45,106 @@ export default function WhyChooseUs({ content = homepageContent.whyChooseUs }: W
   // Value keys for translations
   const valueKeys = ['experience', 'results', 'innovation', 'collaboration'] as const;
 
+  // Bullet points data
+  const bulletPoints = [
+    { key: 'experience', text: t('bullets.experience') },
+    { key: 'results', text: t('bullets.results') },
+    { key: 'innovation', text: t('bullets.innovation') },
+    { key: 'collaboration', text: t('bullets.collaboration') },
+  ];
+
+  // Use compact layout for homepage (default), legacy layouts for other pages
+  const useCompactLayout = !hasNewLayout && !isStacked && content === homepageContent.whyChooseUs;
+
+  if (useCompactLayout) {
+    return (
+      <section
+        id="porque-elegirnos"
+        className="relative bg-gradient-to-b from-white to-[#eff4ff]/30 py-10 lg:py-14 overflow-hidden"
+      >
+        <Container className="relative z-10">
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
+          >
+            {/* Left Column - Content */}
+            <div className="order-2 lg:order-1">
+              {/* Headline */}
+              <motion.h2
+                variants={fadeInUp}
+                className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 mb-3 leading-tight"
+              >
+                {t('title')}{' '}
+                <span className="text-[#1F5CFF]">{t('titleHighlight')}</span>
+              </motion.h2>
+
+              {/* Subtitle / Positioning statement */}
+              <motion.p
+                variants={fadeInUp}
+                className="text-sm sm:text-base text-gray-600 mb-5 leading-relaxed"
+              >
+                {t('subtitle')}
+              </motion.p>
+
+              {/* Bullet Points */}
+              <motion.ul variants={fadeInUp} className="space-y-2 mb-6">
+                {bulletPoints.map((bullet) => (
+                  <li key={bullet.key} className="flex items-center gap-2 text-sm text-gray-700">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#1F5CFF] flex-shrink-0" />
+                    {bullet.text}
+                  </li>
+                ))}
+              </motion.ul>
+
+              {/* Mini Cards Grid 2x2 */}
+              <motion.div variants={fadeInUp} className="grid grid-cols-2 gap-3">
+                {valueKeys.map((key) => {
+                  const IconComponent = miniCardIcons[key];
+                  return (
+                    <div
+                      key={key}
+                      className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm hover:border-[#1F5CFF]/30 hover:shadow-md transition-all duration-200"
+                    >
+                      <div className="w-9 h-9 rounded-lg bg-[#eff4ff] flex items-center justify-center mb-2">
+                        <IconComponent className="w-4 h-4 text-[#1F5CFF]" />
+                      </div>
+                      <h3 className="text-sm font-semibold text-gray-900">
+                        {t(`miniCards.${key}`)}
+                      </h3>
+                    </div>
+                  );
+                })}
+              </motion.div>
+            </div>
+
+            {/* Right Column - Image */}
+            <motion.div
+              variants={fadeInUp}
+              className="order-1 lg:order-2 flex items-center justify-center"
+            >
+              <div className="relative w-full max-w-md lg:max-w-none aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-[#eff4ff] to-gray-100">
+                <Image
+                  src={content.image}
+                  alt={content.imageAlt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={90}
+                  loading="lazy"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#1F5CFF]/5 to-transparent" />
+              </div>
+            </motion.div>
+          </motion.div>
+        </Container>
+      </section>
+    );
+  }
+
+  // Original layouts for other pages
   return (
     <section
       id="porque-elegirnos"

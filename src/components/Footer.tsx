@@ -34,7 +34,7 @@ export default function Footer({ description }: FooterProps) {
   ];
 
   const socialLinks = [
-    { icon: Instagram, href: 'https://www.instagram.com/yieldge', label: 'Instagram' },
+    { icon: Instagram, href: 'https://www.instagram.com/yieldge.software/', label: 'Instagram' },
   ];
 
   const scrollToTop = () => {

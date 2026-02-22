@@ -57,67 +57,89 @@
     "sectionLabel": "Our Solutions",
     "title": "Our",
     "titleHighlight": "Solutions",
-    "description": "Yieldge delivers cutting-edge technology solutions designed to accelerate your business growth and operational excellence. Our certified experts leverage advanced methodologies and tools to create transformative outcomes.",
+    "description": "Cutting-edge technology solutions to accelerate your business growth.",
     "learnMore": "Learn More",
     "qaAutomation": {
-      "title": "QA & Test Automation",
-      "subtitle": "Ship faster with confidence through automated quality assurance built into your delivery pipeline.",
-      "description": "We ensure your software performs flawlessly before it reaches users. Our QA and test automation services reduce bugs, improve stability, and protect your release timelines.",
-      "features": ["Automated test suites (unit, integration, E2E)", "Manual and exploratory testing", "Performance and load testing", "CI/CD testing integration"]
+      "title": "QA & Automation",
+      "shortDescription": "Bug-free software, faster releases.",
+      "subtitle": "Ship faster with confidence through automated quality assurance.",
+      "description": "We ensure your software performs flawlessly before it reaches users.",
+      "features": ["E2E automated testing", "Performance testing", "CI/CD integration"]
     },
     "security": {
-      "title": "Security Services",
-      "subtitle": "Protect your systems, data, and reputation with enterprise-grade cybersecurity.",
-      "description": "We help organizations identify vulnerabilities, prevent attacks, and stay compliant in an increasingly hostile digital landscape.",
-      "features": ["Cybersecurity assessments and hardening", "Threat detection and prevention", "Security audits and risk analysis", "Compliance support (SOC, ISO, best practices)"]
+      "title": "Cybersecurity",
+      "shortDescription": "Protect systems, data, and reputation.",
+      "subtitle": "Enterprise-grade cybersecurity for your organization.",
+      "description": "Identify vulnerabilities and prevent attacks on your infrastructure.",
+      "features": ["Security assessments", "Threat detection", "SOC/ISO compliance"]
     },
     "consulting": {
-      "title": "Technology Consulting",
-      "subtitle": "Turn technology decisions into long-term business advantages.",
-      "description": "We work alongside your leadership team to design scalable architectures, modernize systems, and align technology with business goals.",
-      "features": ["Strategic technology planning", "Digital transformation initiatives", "System and architecture design", "Engineering best practices"]
+      "title": "Tech Consulting",
+      "shortDescription": "Strategic technology decisions.",
+      "subtitle": "Turn technology decisions into business advantages.",
+      "description": "Scalable architectures aligned with your goals.",
+      "features": ["Strategic planning", "Digital transformation", "Architecture design"]
     },
     "mobileWeb": {
       "title": "Mobile & Web Apps",
-      "subtitle": "Custom mobile and web application development for exceptional user experiences.",
-      "description": "Custom mobile and web application development for exceptional user experiences.",
-      "features": ["Mobile apps", "Web development", "User experience", "Responsive design"]
+      "shortDescription": "Exceptional digital experiences.",
+      "subtitle": "Custom mobile and web application development.",
+      "description": "High-performance mobile and web applications.",
+      "features": ["Native/hybrid apps", "Web development", "Optimized UX/UI"]
     },
     "staffAugmentation": {
       "title": "Staff Augmentation",
-      "subtitle": "Access top technical talent to scale your team quickly and efficiently.",
-      "description": "Access top technical talent to scale your team quickly and efficiently.",
-      "features": ["Technical talent", "Team scaling", "Expert resources", "Flexible engagement"]
+      "shortDescription": "On-demand technical talent.",
+      "subtitle": "Access top technical talent to scale your team.",
+      "description": "Scale your team with certified experts.",
+      "features": ["Certified talent", "Fast integration", "Flexible model"]
     },
     "analytics": {
-      "title": "Analytics and Insights",
-      "subtitle": "Data-driven insights and analytics solutions to power informed business decisions.",
-      "description": "Data-driven insights and analytics solutions to power informed business decisions.",
-      "features": ["Business intelligence", "Data analytics", "Reporting", "Insights"]
+      "title": "Analytics & AI",
+      "shortDescription": "Data-driven decision making.",
+      "subtitle": "Data-driven insights for informed decisions.",
+      "description": "Transform data into competitive advantages.",
+      "features": ["Business Intelligence", "Machine Learning", "Real-time dashboards"]
     },
     "cloud": {
       "title": "Cloud Solutions",
-      "subtitle": "Scalable cloud infrastructure and migration services for modern businesses.",
-      "description": "Scalable cloud infrastructure and migration services for modern businesses.",
-      "features": ["Cloud migration", "Infrastructure", "Scalability", "DevOps"]
+      "shortDescription": "Scalable, secure infrastructure.",
+      "subtitle": "Scalable cloud infrastructure and migration services.",
+      "description": "Migration and optimization on AWS, Azure, GCP.",
+      "features": ["Cloud migration", "IaC infrastructure", "DevOps/SRE"]
     },
     "offshore": {
-      "title": "Offshore Development",
-      "subtitle": "Nearshore software development teams delivering quality and value.",
-      "description": "Nearshore software development teams delivering quality and value.",
-      "features": ["Nearshore teams", "Quality delivery", "Cost-effective", "Expert developers"]
+      "title": "Nearshore Dev",
+      "shortDescription": "Dedicated teams, same timezone.",
+      "subtitle": "Nearshore teams delivering quality and value.",
+      "description": "Software development with teams in your timezone.",
+      "features": ["Dedicated teams", "Compatible timezone", "Seamless communication"]
     },
     "tailoredSoftware": {
       "title": "Tailored Software",
-      "subtitle": "Custom software solutions designed specifically for your unique business needs.",
-      "description": "Custom software solutions designed specifically for your unique business needs.",
-      "features": ["Custom development", "Business-specific", "Scalable solutions", "Full lifecycle"]
+      "shortDescription": "Unique solutions for your business.",
+      "subtitle": "Custom software for your unique needs.",
+      "description": "End-to-end development tailored to your operation.",
+      "features": ["Custom development", "System integration", "Ongoing support"]
     }
   },
   "whyChooseUs": {
     "title": "Why Choose",
     "titleHighlight": "Yieldge?",
     "description": "With over 15+ years serving the global technology landscape, Yieldge has established itself as a trusted partner in digital transformation. We've empowered countless organizations to streamline operations and achieve measurable results.",
+    "subtitle": "Trusted technology partner with proven results in digital transformation.",
+    "bullets": {
+      "experience": "15+ years of experience in technology solutions",
+      "results": "Measurable ROI and tangible operational improvements",
+      "innovation": "Applied innovation with cutting-edge technology",
+      "collaboration": "Close collaboration with your team"
+    },
+    "miniCards": {
+      "experience": "Experience",
+      "results": "ROI",
+      "innovation": "Innovation",
+      "collaboration": "Partnership"
+    },
     "values": {
       "experience": {
         "title": "15+ Years of Experience",
