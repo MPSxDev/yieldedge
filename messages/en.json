@@ -15,7 +15,7 @@
     "emergencyHelp": "Emergency Help"
   },
   "footer": {
-    "description": "Technology partner specialized in web services, cloud infrastructure, and AI automation for the real-estate industry.",
+    "description": "Strategic technology partner delivering web services, cloud infrastructure, and AI automation for modern organizations.",
     "solutions": "Solutions",
     "contact": "Contact",
     "legal": "Legal",
@@ -263,6 +263,24 @@
       "certificationDesc": "We sponsor industry certifications for professional growth",
       "career": "Career Growth",
       "careerDesc": "Clear career paths and mentorship opportunities"
+    },
+    "mission": {
+      "title": "Technology that transforms lives",
+      "subtitle": "Mission",
+      "description": "Innovation makes sense when it improves people's lives.",
+      "donation": {
+        "title": "Social Commitment",
+        "firstParagraph": "A portion of our profits goes to support initiatives that help children in vulnerable situations, because we believe that access to opportunities — education, technology, and knowledge — can change destinies.",
+        "secondParagraph": "Growing as a company also means giving back and building a better future for everyone.",
+        "imageAlt": "Donation",
+        "prevImage": "Previous image",
+        "nextImage": "Next image",
+        "goToImage": "Go to image",
+        "quote": {
+          "text": "Only a life lived for others is a life worthwhile.",
+          "author": "Albert Einstein"
+        }
+      }
     }
   },
   "careers": {

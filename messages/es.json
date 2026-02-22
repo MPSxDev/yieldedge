@@ -15,7 +15,7 @@
     "emergencyHelp": "Ayuda de Emergencia"
   },
   "footer": {
-    "description": "Socio tecnológico especializado en servicios web, infraestructura en la nube y automatización con IA para la industria inmobiliaria.",
+    "description": "Socio tecnológico especializado en servicios web, infraestructura en la nube y automatización con IA para tu negocio.",
     "solutions": "Soluciones",
     "contact": "Contacto",
     "legal": "Legal",
@@ -263,6 +263,24 @@
       "certificationDesc": "Patrocinamos certificaciones de la industria para el crecimiento profesional",
       "career": "Crecimiento Profesional",
       "careerDesc": "Caminos claros de carrera y oportunidades de mentoría"
+    },
+    "mission": {
+      "title": "Tecnología que transforma vidas",
+      "subtitle": "Misión",
+      "description": "La innovación tiene sentido cuando mejora la vida de las personas.",
+      "donation": {
+        "title": "Compromiso Social",
+        "firstParagraph": "Una parte de nuestras ganancias se destina a apoyar iniciativas que ayudan a niños en situación vulnerable, porque creemos que el acceso a oportunidades —educación, tecnología y conocimiento— puede cambiar destinos.",
+        "secondParagraph": "Crecer como empresa también significa dar de vuelta y construir un futuro mejor para todos.",
+        "imageAlt": "Donación",
+        "prevImage": "Imagen anterior",
+        "nextImage": "Siguiente imagen",
+        "goToImage": "Ir a imagen",
+        "quote": {
+          "text": "Solo una vida vivida para los demás merece la pena ser vivida.",
+          "author": "Albert Einstein"
+        }
+      }
     }
   },
   "careers": {

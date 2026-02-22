@@ -43,12 +43,12 @@ export default function Footer({ description }: FooterProps) {
 
   return (
     <footer className="relative bg-gray-50 border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-16 lg:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8 sm:py-10 lg:py-12">
         {/* Main Content */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 lg:gap-16 mb-10 sm:mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 mb-6 sm:mb-8">
           {/* Brand - Full width on mobile */}
           <div className="col-span-2 md:col-span-1">
-            <div className="mb-8 sm:mb-6">
+            <div className="mb-4 sm:mb-5">
               <div className="h-8 sm:h-10 w-auto max-w-[120px] sm:max-w-[160px] overflow-hidden">
                 <Image
                   src="/brand/logo-main.png"
@@ -59,7 +59,7 @@ export default function Footer({ description }: FooterProps) {
                 />
               </div>
             </div>
-            <p className="text-gray-600 leading-relaxed mb-6 sm:mb-8 text-xs sm:text-sm max-w-xs">
+            <p className="text-gray-600 leading-relaxed mb-4 sm:mb-5 text-xs sm:text-sm max-w-xs">
               {description || t('description')}
             </p>
 
@@ -84,10 +84,10 @@ export default function Footer({ description }: FooterProps) {
 
           {/* Solutions Links */}
           <div className="col-span-1">
-            <h3 className="text-xs sm:text-sm font-bold text-gray-900 uppercase tracking-wide mb-4 sm:mb-6">
+            <h3 className="text-xs sm:text-sm font-bold text-gray-900 uppercase tracking-wide mb-3 sm:mb-4">
               {t('solutions')}
             </h3>
-            <ul className="space-y-2 sm:space-y-3">
+            <ul className="space-y-1.5 sm:space-y-2">
               {solutionsLinks.map((link) => (
                 <li key={link.text}>
                   <Link
@@ -122,10 +122,10 @@ export default function Footer({ description }: FooterProps) {
 
           {/* Contact & Legal - Hidden on small mobile, visible on md+ */}
           <div className="hidden md:block col-span-1">
-            <h3 className="text-xs sm:text-sm font-bold text-gray-900 uppercase tracking-wide mb-4 sm:mb-6">
+            <h3 className="text-xs sm:text-sm font-bold text-gray-900 uppercase tracking-wide mb-3 sm:mb-4">
               {t('contact')}
             </h3>
-            <p className="text-gray-600 mb-4 sm:mb-6 leading-relaxed text-xs sm:text-sm">
+            <p className="text-gray-600 mb-3 sm:mb-4 leading-relaxed text-xs sm:text-sm">
               {t('readyToStreamline')}
             </p>
             <motion.a
@@ -134,17 +134,17 @@ export default function Footer({ description }: FooterProps) {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="inline-block px-5 py-2.5 sm:px-6 sm:py-3 bg-[#1F5CFF] text-white font-semibold rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-md text-xs sm:text-sm mb-6 sm:mb-8"
+              className="inline-block px-5 py-2 sm:px-6 sm:py-2.5 bg-[#1F5CFF] text-white font-semibold rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-md text-xs sm:text-sm mb-4 sm:mb-5"
             >
               {t('scheduleConsultation')}
             </motion.a>
 
             {/* Legal Links */}
-            <div className="mt-6 sm:mt-8">
-              <h3 className="text-xs sm:text-sm font-bold text-gray-900 uppercase tracking-wide mb-4 sm:mb-6">
+            <div className="mt-4 sm:mt-5">
+              <h3 className="text-xs sm:text-sm font-bold text-gray-900 uppercase tracking-wide mb-3 sm:mb-4">
                 {t('legal')}
               </h3>
-              <ul className="space-y-2 sm:space-y-3">
+              <ul className="space-y-1.5 sm:space-y-2">
                 {legalLinks.map((link) => (
                   <li key={link.text}>
                     <Link
@@ -159,7 +159,7 @@ export default function Footer({ description }: FooterProps) {
             </div>
 
             {/* Contact Info */}
-            <div className="mt-6 sm:mt-8 space-y-2 text-xs sm:text-sm text-gray-600">
+            <div className="mt-4 sm:mt-5 space-y-1.5 text-xs sm:text-sm text-gray-600">
               <p>
                 <strong>{t('email')}:</strong>{' '}
                 <a href="mailto:info@yieldge.com" className="hover:text-[#1F5CFF]">
@@ -171,19 +171,19 @@ export default function Footer({ description }: FooterProps) {
         </div>
 
         {/* Mobile CTA - Only visible on small screens */}
-        <div className="md:hidden mb-8 text-center">
-          <p className="text-gray-600 mb-4 text-sm">{t('readyToStreamline')}</p>
+        <div className="md:hidden mb-6 text-center">
+          <p className="text-gray-600 mb-3 text-sm">{t('readyToStreamline')}</p>
           <motion.a
             href="https://calendly.com/anwar-softwaredev"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="inline-block w-full px-6 py-3.5 bg-[#1F5CFF] text-white font-semibold rounded-xl hover:bg-[#1a4edb] transition-all duration-300 shadow-md text-sm"
+            className="inline-block w-full px-6 py-3 bg-[#1F5CFF] text-white font-semibold rounded-xl hover:bg-[#1a4edb] transition-all duration-300 shadow-md text-sm"
           >
             {t('scheduleConsultation')}
           </motion.a>
-          <div className="mt-4 text-xs text-gray-600">
+          <div className="mt-3 text-xs text-gray-600">
             <a href="mailto:info@yieldge.com" className="hover:text-[#1F5CFF]">
               info@yieldge.com
             </a>
@@ -191,7 +191,7 @@ export default function Footer({ description }: FooterProps) {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-6 sm:pt-8 lg:pt-10 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="pt-4 sm:pt-6 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-xs sm:text-sm text-gray-500 text-center sm:text-left">
             {t('copyright', { year: currentYear })}
           </p>

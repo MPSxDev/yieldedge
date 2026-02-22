@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Container from '@/components/ui/Container';
-import { FAQContent, homepageContent } from '@/lib/content';
+import { FAQContent } from '@/lib/content';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -80,13 +80,29 @@ interface FAQProps {
   content?: FAQContent;
 }
 
-export default function FAQ({ content = homepageContent.faq }: FAQProps) {
+export default function FAQ({ content }: FAQProps) {
   const t = useTranslations('faq');
+
+  // Build FAQ content from translations if not provided
+  const faqContent: FAQContent = content || {
+    sectionLabel: t('sectionLabel'),
+    title: t('title'),
+    titleHighlight: t('titleHighlight'),
+    description: t('description'),
+    faqs: [
+      { question: t('items.howLong.question'), answer: t('items.howLong.answer') },
+      { question: t('items.industries.question'), answer: t('items.industries.answer') },
+      { question: t('items.support.question'), answer: t('items.support.answer') },
+      { question: t('items.getStarted.question'), answer: t('items.getStarted.answer') },
+      { question: t('items.pricing.question'), answer: t('items.pricing.answer') },
+    ],
+    ctaText: t('ctaText'),
+  };
   // FAQ Structured Data for SEO
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": content.faqs.map((faq) => ({
+    "mainEntity": faqContent.faqs.map((faq) => ({
       "@type": "Question",
       "name": faq.question,
       "acceptedAnswer": {
@@ -118,26 +134,26 @@ export default function FAQ({ content = homepageContent.faq }: FAQProps) {
               variants={fadeInUp}
               className="text-[#1F5CFF] font-semibold mb-3 sm:mb-4 text-xs sm:text-sm uppercase tracking-wide"
             >
-              {content.sectionLabel}
+              {faqContent.sectionLabel}
             </motion.p>
             <motion.h2
               variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-4 sm:mb-6"
             >
-              {content.title}{' '}
-              <span className="text-[#1F5CFF]">{content.titleHighlight}</span>
+              {faqContent.title}{' '}
+              <span className="text-[#1F5CFF]">{faqContent.titleHighlight}</span>
             </motion.h2>
             <motion.p
               variants={fadeInUp}
               className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed"
             >
-              {content.description}
+              {faqContent.description}
             </motion.p>
           </div>
 
           {/* FAQ List */}
           <div className="max-w-4xl mx-auto bg-white rounded-2xl sm:rounded-3xl border border-gray-200 overflow-hidden shadow-lg">
-            {content.faqs.map((faq, index) => (
+            {faqContent.faqs.map((faq, index) => (
               <FAQItem key={index} faq={faq} index={index} />
             ))}
           </div>
@@ -158,7 +174,7 @@ export default function FAQ({ content = homepageContent.faq }: FAQProps) {
               whileTap={{ scale: 0.98 }}
               className="inline-flex items-center gap-2 text-[#1F5CFF] font-semibold hover:text-[#1a4edb] transition-colors text-sm sm:text-base"
             >
-              {content.ctaText}
+              {faqContent.ctaText}
             </motion.a>
           </motion.div>
         </motion.div>
