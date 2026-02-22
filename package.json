@@ -26,8 +26,17 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "^15.5.12",
+    "eslint-config-next": "^16.1.6",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "overrides": {
+    "typescript-eslint": "8.56.1-alpha.3",
+    "@typescript-eslint/typescript-estree": "8.56.1-alpha.3",
+    "@typescript-eslint/parser": "8.56.1-alpha.3",
+    "@typescript-eslint/eslint-plugin": "8.56.1-alpha.3",
+    "@typescript-eslint/utils": "8.56.1-alpha.3",
+    "@typescript-eslint/type-utils": "8.56.1-alpha.3",
+    "minimatch": "^10.2.1"
   }
 }
