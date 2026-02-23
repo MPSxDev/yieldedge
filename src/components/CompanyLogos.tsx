@@ -50,6 +50,16 @@ export default function CompanyLogos({
   const [isTransitioning, setIsTransitioning] = useState(true);
   const [visibleCount, setVisibleCount] = useState(1); // Start with 1 for mobile-first
 
+  const handlePrev = useCallback(() => {
+    setIsTransitioning(true);
+    setCurrentIndex((prev) => prev - 1);
+  }, []);
+
+  const handleNext = useCallback(() => {
+    setIsTransitioning(true);
+    setCurrentIndex((prev) => prev + 1);
+  }, []);
+
   // Update visible count on mount and resize
   useEffect(() => {
     const updateVisibleCount = () => {
@@ -65,27 +75,6 @@ export default function CompanyLogos({
     updateVisibleCount();
     window.addEventListener('resize', updateVisibleCount);
     return () => window.removeEventListener('resize', updateVisibleCount);
-  }, []);
-
-  if (!logos || logos.length === 0) {
-    return null;
-  }
-
-  const logoHeightClass = 'max-h-64 sm:max-h-56 lg:max-h-64';
-  const logoSize = 480;
-  const logoSizeLarge = 600;
-
-  // Triple the logos for seamless infinite scroll
-  const extendedLogos = [...logos, ...logos, ...logos];
-
-  const handlePrev = useCallback(() => {
-    setIsTransitioning(true);
-    setCurrentIndex((prev) => prev - 1);
-  }, []);
-
-  const handleNext = useCallback(() => {
-    setIsTransitioning(true);
-    setCurrentIndex((prev) => prev + 1);
   }, []);
 
   // Handle infinite loop reset
@@ -115,6 +104,17 @@ export default function CompanyLogos({
       return () => clearTimeout(timeout);
     }
   }, [isTransitioning]);
+
+  if (!logos || logos.length === 0) {
+    return null;
+  }
+
+  const logoHeightClass = 'max-h-64 sm:max-h-56 lg:max-h-64';
+  const logoSize = 480;
+  const logoSizeLarge = 600;
+
+  // Triple the logos for seamless infinite scroll
+  const extendedLogos = [...logos, ...logos, ...logos];
 
   // Calculate the width percentage for each logo item
   const itemWidthPercent = 100 / visibleCount;
