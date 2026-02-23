@@ -42,3 +42,8 @@ next-env.d.ts
 
 # LLM context
 docs/llm-contexto.md
+
+# SEO documentation
+SEO_CHECKLIST.md
+SEO_IMPLEMENTATION.md
+SEO_SUMMARY.md
