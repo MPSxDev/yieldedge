@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import { iconMap } from '@/lib/iconMap';
 import { AboutYieldgeContent } from '@/lib/content';
@@ -115,17 +116,19 @@ export default function AboutYieldgeCR({ content }: AboutYieldgeCRProps) {
             variants={fadeInUp}
             className="max-w-3xl mx-auto"
           >
-            <div className="bg-gradient-to-r from-[#1F5CFF] to-[#4B7BFF] rounded-2xl sm:rounded-3xl p-6 sm:p-10 text-center text-white shadow-xl">
-              <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-5">
-                <iconMap.Heart className="w-7 h-7 text-white" />
+            <Link href="/cr/mision" className="block">
+              <div className="bg-gradient-to-r from-[#1F5CFF] to-[#4B7BFF] rounded-2xl sm:rounded-3xl p-6 sm:p-10 text-center text-white shadow-xl cursor-pointer hover:shadow-2xl hover:scale-[1.02] transition-all duration-300">
+                <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-5">
+                  <iconMap.Heart className="w-7 h-7 text-white" />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold mb-3">
+                  {content.commitment.title}
+                </h3>
+                <p className="text-white/90 leading-relaxed text-base sm:text-lg">
+                  {content.commitment.description}
+                </p>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold mb-3">
-                {content.commitment.title}
-              </h3>
-              <p className="text-white/90 leading-relaxed text-base sm:text-lg">
-                {content.commitment.description}
-              </p>
-            </div>
+            </Link>
           </motion.div>
         </motion.div>
       </Container>

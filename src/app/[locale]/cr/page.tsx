@@ -38,6 +38,10 @@ const Footer = dynamic(() => import('@/components/Footer'), {
   loading: () => <div className="min-h-[400px]" />,
 });
 
+const CompanyLogos = dynamic(() => import('@/components/CompanyLogos'), {
+  loading: () => <div className="min-h-[200px]" />,
+});
+
 export default function CRPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -47,6 +51,15 @@ export default function CRPage() {
       {/* Main content sections with spacing */}
       <main className="space-y-20 sm:space-y-24 lg:space-y-32">
         <Services content={crContent.services} useContentDirectly={true} />
+        {crContent.companyLogos && crContent.companyLogos.logos.length > 0 && (
+          <CompanyLogos
+            sectionLabel={crContent.companyLogos.sectionLabel}
+            title={crContent.companyLogos.title}
+            titleHighlight={crContent.companyLogos.titleHighlight}
+            description={crContent.companyLogos.description}
+            logos={crContent.companyLogos.logos}
+          />
+        )}
         <CRSolutionsPageContent hideHero={true} />
         <AboutYieldgeCR content={crContent.aboutYieldge!} />
         <WhyChooseUs content={crContent.whyChooseUs} />

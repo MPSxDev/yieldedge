@@ -210,6 +210,21 @@ export interface AboutYieldgeContent {
   };
 }
 
+export interface CompanyLogo {
+  name: string;
+  logo: string;
+  url?: string;
+  large?: boolean;
+}
+
+export interface CompanyLogosContent {
+  sectionLabel?: string;
+  title?: string;
+  titleHighlight?: string;
+  description?: string;
+  logos: CompanyLogo[];
+}
+
 export interface PageContent {
   hero: HeroContent;
   services: ServicesContent;
@@ -219,6 +234,7 @@ export interface PageContent {
   faq: FAQContent;
   finalCTA: FinalCTAContent;
   aboutYieldge?: AboutYieldgeContent;
+  companyLogos?: CompanyLogosContent;
 }
 
 // Homepage content (Technology Solutions & Offshore Development)
@@ -955,6 +971,35 @@ export const crContent: PageContent = {
       title: 'Nuestro Compromiso Social',
       description: 'Creemos que la tecnología tiene sentido cuando mejora la vida de las personas. Por eso, una parte de nuestras ganancias se destina a apoyar la educación y el acceso a tecnología de niños en situación vulnerable en Costa Rica.',
     },
+  },
+  companyLogos: {
+    sectionLabel: 'TRABAJOS DESTACADOS',
+    title: 'Algunas de las Empresas con las que hemos colaborado',
+    titleHighlight: '',
+    description: 'Yieldge ha brindado servicios de tecnología y soluciones digitales a organizaciones en distintas etapas de crecimiento.',
+    logos: [
+      {
+        name: '3M',
+        logo: '/assets/logos/3m.png',
+      },
+      {
+        name: 'GastroMedical CR',
+        logo: '/assets/logos/gstromedical.png',
+        large: true,
+      },
+      {
+        name: 'HS',
+        logo: '/assets/logos/hslogo.png',
+      },
+      {
+        name: 'OnlyDust',
+        logo: '/assets/logos/onlydust.jpg',
+      },
+      {
+        name: 'Stellar',
+        logo: '/assets/logos/stellar.avif',
+      },
+    ],
   },
 };
 
