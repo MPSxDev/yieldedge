@@ -124,11 +124,6 @@ export default function CompanyLogos({
       id="selected-work"
       className="relative bg-gradient-to-b from-white to-[#eff4ff]/20 py-16 sm:py-20 lg:py-24 overflow-hidden"
     >
-      <style dangerouslySetInnerHTML={{ __html: `
-        .logo-carousel { --item-width: 100%; }
-        @media (min-width: 640px) { .logo-carousel { --item-width: 50%; } }
-        @media (min-width: 1024px) { .logo-carousel { --item-width: 33.333333%; } }
-      `}} />
       <div className="absolute top-0 right-0 w-64 h-64 bg-[#dbe6ff]/20 rounded-full blur-3xl -z-10 pointer-events-none" />
 
       <Container className="relative z-10">
@@ -177,13 +172,13 @@ export default function CompanyLogos({
 
               {/* Carousel Container */}
               <div
-                className="logo-carousel flex-1 overflow-hidden"
+                className="flex-1 overflow-hidden"
                 aria-label="Company logos carousel"
               >
                 <div
                   className={`flex ${isTransitioning ? 'transition-transform duration-500 ease-out' : ''}`}
                   style={{
-                    transform: `translateX(calc(-${currentIndex} * var(--item-width)))`,
+                    transform: `translateX(-${currentIndex * itemWidthPercent}%)`,
                   }}
                 >
                   {extendedLogos.map((company, index) => {
@@ -201,7 +196,7 @@ export default function CompanyLogos({
                       <div
                         key={`${company.name}-${index}`}
                         className="flex-shrink-0 px-4 sm:px-6 lg:px-8 group/logo"
-                        style={{ width: 'var(--item-width)' }}
+                        style={{ width: `${itemWidthPercent}%` }}
                       >
                         <LogoWrapper
                           {...linkProps}
