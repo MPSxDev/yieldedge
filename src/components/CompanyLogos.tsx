@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Container from '@/components/ui/Container';
@@ -26,8 +26,8 @@ const staggerContainer = {
 export interface CompanyLogo {
   name: string;
   logo: string;
-  url?: string; // Optional link to company website
-  large?: boolean; // Show logo larger
+  url?: string;
+  large?: boolean;
 }
 
 interface CompanyLogosProps {
@@ -46,6 +46,25 @@ export default function CompanyLogos({
   logos,
 }: CompanyLogosProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+  const [visibleCount, setVisibleCount] = useState(3);
+
+  // Update visible count on mount and resize
+  useEffect(() => {
+    const updateVisibleCount = () => {
+      if (window.innerWidth < 640) {
+        setVisibleCount(1);
+      } else if (window.innerWidth < 1024) {
+        setVisibleCount(2);
+      } else {
+        setVisibleCount(3);
+      }
+    };
+
+    updateVisibleCount();
+    window.addEventListener('resize', updateVisibleCount);
+    return () => window.removeEventListener('resize', updateVisibleCount);
+  }, []);
 
   if (!logos || logos.length === 0) {
     return null;
@@ -55,24 +74,55 @@ export default function CompanyLogos({
   const logoSize = 480;
   const logoSizeLarge = 600;
 
-  // Number of logos visible at once (responsive)
-  const getVisibleCount = () => {
-    if (typeof window === 'undefined') return 3;
-    if (window.innerWidth < 640) return 1;
-    if (window.innerWidth < 1024) return 2;
-    return 3;
-  };
+  // Triple the logos for seamless infinite scroll
+  const extendedLogos = [...logos, ...logos, ...logos];
+  const totalLogos = logos.length;
 
-  const visibleCount = typeof window !== 'undefined' ? getVisibleCount() : 3;
+  // Start at the middle set
+  useEffect(() => {
+    setCurrentIndex(totalLogos);
+  }, [totalLogos]);
 
-  // Infinite carousel navigation
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? logos.length - 1 : prev - 1));
-  };
+  const handlePrev = useCallback(() => {
+    setIsTransitioning(true);
+    setCurrentIndex((prev) => prev - 1);
+  }, []);
 
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev === logos.length - 1 ? 0 : prev + 1));
-  };
+  const handleNext = useCallback(() => {
+    setIsTransitioning(true);
+    setCurrentIndex((prev) => prev + 1);
+  }, []);
+
+  // Handle infinite loop reset
+  useEffect(() => {
+    if (currentIndex <= 0) {
+      const timeout = setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentIndex(totalLogos);
+      }, 500);
+      return () => clearTimeout(timeout);
+    }
+    if (currentIndex >= totalLogos * 2) {
+      const timeout = setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentIndex(totalLogos);
+      }, 500);
+      return () => clearTimeout(timeout);
+    }
+  }, [currentIndex, totalLogos]);
+
+  // Re-enable transition after reset
+  useEffect(() => {
+    if (!isTransitioning) {
+      const timeout = setTimeout(() => {
+        setIsTransitioning(true);
+      }, 50);
+      return () => clearTimeout(timeout);
+    }
+  }, [isTransitioning]);
+
+  const logoWidth = 100 / visibleCount;
+  const gapCompensation = ((visibleCount - 1) * 32) / visibleCount;
 
   return (
     <section
@@ -131,12 +181,12 @@ export default function CompanyLogos({
                 aria-label="Company logos carousel"
               >
                 <div
-                  className="flex items-center gap-8 sm:gap-12 lg:gap-16 transition-transform duration-500 ease-out"
+                  className={`flex items-center gap-8 sm:gap-12 lg:gap-16 ${isTransitioning ? 'transition-transform duration-500 ease-out' : ''}`}
                   style={{
-                    transform: `translateX(-${currentIndex * (100 / visibleCount)}%)`,
+                    transform: `translateX(-${currentIndex * logoWidth}%)`,
                   }}
                 >
-                  {logos.map((company) => {
+                  {extendedLogos.map((company, index) => {
                     const LogoWrapper = company.url ? 'a' : 'div';
                     const linkProps = company.url
                       ? {
@@ -149,9 +199,9 @@ export default function CompanyLogos({
 
                     return (
                       <div
-                        key={company.name}
+                        key={`${company.name}-${index}`}
                         className="flex-shrink-0 group/logo"
-                        style={{ width: `calc(${100 / visibleCount}% - ${((visibleCount - 1) * 32) / visibleCount}px)` }}
+                        style={{ width: `calc(${logoWidth}% - ${gapCompensation}px)` }}
                       >
                         <LogoWrapper
                           {...linkProps}
