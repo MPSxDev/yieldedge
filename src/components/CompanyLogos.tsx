@@ -45,7 +45,8 @@ export default function CompanyLogos({
   description = 'We work with companies across different sectors and stages of growth.',
   logos,
 }: CompanyLogosProps) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const totalLogos = logos?.length || 0;
+  const [currentIndex, setCurrentIndex] = useState(totalLogos);
   const [isTransitioning, setIsTransitioning] = useState(true);
   const [visibleCount, setVisibleCount] = useState(3);
 
@@ -70,18 +71,12 @@ export default function CompanyLogos({
     return null;
   }
 
-  const logoHeightClass = 'max-h-48 sm:max-h-56 lg:max-h-64';
+  const logoHeightClass = 'max-h-64 sm:max-h-56 lg:max-h-64';
   const logoSize = 480;
   const logoSizeLarge = 600;
 
   // Triple the logos for seamless infinite scroll
   const extendedLogos = [...logos, ...logos, ...logos];
-  const totalLogos = logos.length;
-
-  // Start at the middle set
-  useEffect(() => {
-    setCurrentIndex(totalLogos);
-  }, [totalLogos]);
 
   const handlePrev = useCallback(() => {
     setIsTransitioning(true);
@@ -208,7 +203,7 @@ export default function CompanyLogos({
                           className={`block ${company.url ? 'cursor-pointer' : 'cursor-default'}`}
                         >
                           <div
-                            className="relative w-full h-52 sm:h-60 lg:h-72 flex items-center justify-center transition-transform duration-300 ease-out group-hover/logo:scale-105 motion-reduce:transition-none motion-reduce:group-hover/logo:scale-100"
+                            className="relative w-full h-72 sm:h-60 lg:h-72 flex items-center justify-center transition-transform duration-300 ease-out group-hover/logo:scale-105 motion-reduce:transition-none motion-reduce:group-hover/logo:scale-100"
                           >
                             <Image
                               src={company.logo}
