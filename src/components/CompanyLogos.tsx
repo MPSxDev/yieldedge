@@ -116,8 +116,8 @@ export default function CompanyLogos({
     }
   }, [isTransitioning]);
 
-  const logoWidth = 100 / visibleCount;
-  const gapCompensation = ((visibleCount - 1) * 32) / visibleCount;
+  // Calculate the width percentage for each logo item
+  const itemWidthPercent = 100 / visibleCount;
 
   return (
     <section
@@ -176,9 +176,9 @@ export default function CompanyLogos({
                 aria-label="Company logos carousel"
               >
                 <div
-                  className={`flex items-center gap-8 sm:gap-12 lg:gap-16 ${isTransitioning ? 'transition-transform duration-500 ease-out' : ''}`}
+                  className={`flex ${isTransitioning ? 'transition-transform duration-500 ease-out' : ''}`}
                   style={{
-                    transform: `translateX(-${currentIndex * logoWidth}%)`,
+                    transform: `translateX(-${currentIndex * itemWidthPercent}%)`,
                   }}
                 >
                   {extendedLogos.map((company, index) => {
@@ -195,8 +195,8 @@ export default function CompanyLogos({
                     return (
                       <div
                         key={`${company.name}-${index}`}
-                        className="flex-shrink-0 group/logo"
-                        style={{ width: `calc(${logoWidth}% - ${gapCompensation}px)` }}
+                        className="flex-shrink-0 px-4 sm:px-6 lg:px-8 group/logo"
+                        style={{ width: `${itemWidthPercent}%` }}
                       >
                         <LogoWrapper
                           {...linkProps}
