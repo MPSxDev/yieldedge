@@ -48,7 +48,7 @@ export default function CompanyLogos({
   const totalLogos = logos?.length || 0;
   const [currentIndex, setCurrentIndex] = useState(totalLogos);
   const [isTransitioning, setIsTransitioning] = useState(true);
-  const [visibleCount, setVisibleCount] = useState(3);
+  const [visibleCount, setVisibleCount] = useState(1); // Start with 1 for mobile-first
 
   // Update visible count on mount and resize
   useEffect(() => {
