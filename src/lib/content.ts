@@ -984,7 +984,7 @@ export const crContent: PageContent = {
       },
       {
         name: 'GastroMedical CR',
-        logo: '/assets/logos/gstromedical.png',
+        logo: '/assets/logos/drzuniga-logo.png',
         large: true,
       },
       {
