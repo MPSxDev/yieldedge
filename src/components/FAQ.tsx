@@ -78,9 +78,10 @@ function FAQItem({ faq }: FAQItemProps) {
 
 interface FAQProps {
   content?: FAQContent;
+  ctaLink?: string;
 }
 
-export default function FAQ({ content }: FAQProps) {
+export default function FAQ({ content, ctaLink = 'https://calendly.com/anwar-softwaredev' }: FAQProps) {
   const t = useTranslations('faq');
 
   // Build FAQ content from translations if not provided
@@ -167,7 +168,7 @@ export default function FAQ({ content }: FAQProps) {
               {t('stillHaveQuestions')}
             </p>
             <motion.a
-              href="https://calendly.com/anwar-softwaredev"
+              href={ctaLink}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}

@@ -225,6 +225,22 @@ export interface CompanyLogosContent {
   logos: CompanyLogo[];
 }
 
+export interface PainPointItem {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export interface PainPointsContent {
+  sectionLabel: string;
+  title: string;
+  titleHighlight: string;
+  description: string;
+  painPoints: PainPointItem[];
+  ctaText: string;
+  ctaSubtext: string;
+}
+
 export interface PageContent {
   hero: HeroContent;
   services: ServicesContent;
@@ -235,6 +251,7 @@ export interface PageContent {
   finalCTA: FinalCTAContent;
   aboutYieldge?: AboutYieldgeContent;
   companyLogos?: CompanyLogosContent;
+  painPoints?: PainPointsContent;
 }
 
 // Homepage content (Technology Solutions & Offshore Development)
@@ -717,14 +734,54 @@ export const crContent: PageContent = {
   hero: {
     slides: [
       {
-        heading: 'Más Clientes Para Tu Negocio',
-        subheading: 'Atraé más clientes y vendé más con un sistema digital que trabaja por vos',
-        description: 'Ayudamos a PYMEs en Costa Rica a verse profesionales online, captar más clientes y cerrar más ventas — sin complicaciones técnicas.',
-        ctaText: 'Hablemos por WhatsApp',
-        ctaLink: 'https://wa.me/50688888888?text=Hola%2C%20quiero%20información%20sobre%20sus%20servicios',
+        heading: '¿Tu Página Web No Te Genera Clientes?',
+        subheading: 'Brindamos soluciones digitales que ayudan a atraer clientes',
+        description: 'Si ya tenés página pero no te llaman, no aparecés en Google o se ve desactualizada — la mejoramos para que empiece a traerte clientes reales. Sin complicaciones técnicas.',
+        ctaText: 'Pedí Tu Diagnóstico Gratis',
+        ctaLink: 'https://wa.me/50670724236?text=Hola%2C%20quiero%20el%20diagn%C3%B3stico%20gratis%20para%20mi%20p%C3%A1gina%20web',
         backgroundImage: '/assets/prof/krakenimages-376KN_ISplE-unsplash.jpg',
       },
     ],
+  },
+  painPoints: {
+    sectionLabel: 'Te Suena Familiar?',
+    title: 'Por Qué Tu Página',
+    titleHighlight: 'No Funciona',
+    description: 'Si alguna de estas situaciones te resulta familiar, no estás solo. Son los problemas más comunes que vemos en negocios de Costa Rica.',
+    painPoints: [
+      {
+        icon: 'Search',
+        title: 'No aparecés en Google',
+        description: 'Tu competencia sale primero cuando buscan tus servicios. Perdés clientes que ni saben que existís.',
+      },
+      {
+        icon: 'Smartphone',
+        title: 'Se ve mal en celular',
+        description: 'El 80% de tus visitantes entran desde el celular. Si tu página no se ve bien ahí, se van.',
+      },
+      {
+        icon: 'Clock',
+        title: 'Carga muy lento',
+        description: 'Más de 3 segundos de carga = visitantes que se van. Google también te penaliza por esto.',
+      },
+      {
+        icon: 'Users',
+        title: 'Visitas pero nadie te contacta',
+        description: 'Tenés tráfico pero no tenés formularios claros, botón de WhatsApp ni llamados a la acción.',
+      },
+      {
+        icon: 'TrendingDown',
+        title: 'Diseño desactualizado',
+        description: 'Una página vieja transmite desconfianza. La gente juzga tu negocio por cómo se ve online.',
+      },
+      {
+        icon: 'AlertCircle',
+        title: 'No sabés qué está pasando',
+        description: 'Sin métricas ni reportes, no tenés idea de cuántas visitas tenés ni de dónde vienen.',
+      },
+    ],
+    ctaText: 'Esto tiene solución.',
+    ctaSubtext: 'Pedí tu diagnóstico gratis y te mostramos exactamente qué está fallando.',
   },
   services: {
     sectionLabel: 'Qué Hacemos Por Vos',
@@ -829,7 +886,7 @@ export const crContent: PageContent = {
         deliverables: ['Lanzamiento del sitio', 'Reportes mensuales', 'Soporte continuo', 'Mejoras basadas en datos'],
       },
     ],
-    ctaText: 'Solicitar Diagnóstico Gratis',
+    ctaText: 'Pedí Tu Diagnóstico Gratis',
   },
   caseStudies: {
     sectionLabel: 'Casos de Éxito',
@@ -893,7 +950,7 @@ export const crContent: PageContent = {
       },
       {
         question: '¿Cuánto cuesta?',
-        answer: 'Depende de lo que necesités. Sitios web básicos arrancan desde ₡350,000. Conversamos primero para entender tu negocio y te damos una propuesta clara con precios exactos. Sin sorpresas.',
+        answer: 'Nos adaptamos a tus necesidades, desde PYMEs hasta empresas grandes (enterprise). Conversamos primero para entender tu negocio y te damos una propuesta clara con precios exactos. Sin sorpresas.',
       },
       {
         question: '¿En cuánto tiempo está listo?',
@@ -912,19 +969,19 @@ export const crContent: PageContent = {
         answer: 'Ofrecemos planes de mantenimiento mensual que incluyen actualizaciones, cambios menores y soporte. También podés pedirnos cambios puntuales cuando los necesités.',
       },
     ],
-    ctaText: 'Hablemos por WhatsApp',
+    ctaText: '¿Tenés Otra Pregunta? Escribinos',
   },
   finalCTA: {
     sectionLabel: 'Empezá Hoy',
-    title: '¿Listo Para Atraer Más Clientes?',
-    description: 'Hablemos de tu negocio. Te escuchamos, entendemos tus necesidades y te mostramos cómo podemos ayudarte a crecer. Sin compromiso.',
+    title: '¿Listo Para Que Tu Página Trabaje Por Vos?',
+    description: 'Pedí tu diagnóstico gratis. Analizamos tu página actual, identificamos qué está fallando y te mostramos cómo arreglarlo. Sin compromiso.',
     benefits: [
-      'Diagnóstico gratis de tu situación actual',
+      'Diagnóstico gratis de tu página actual',
+      'Identificamos exactamente qué está fallando',
       'Propuesta clara con precios exactos',
-      'Respuestas a todas tus preguntas',
     ],
-    ctaText: 'Hablemos por WhatsApp',
-    ctaSubtext: 'Respondemos en menos de 1 hora • Sin compromiso • Diagnóstico gratis',
+    ctaText: 'Pedí Tu Diagnóstico Gratis',
+    ctaSubtext: 'Respondemos en menos de 1 hora • Sin compromiso • 100% gratis',
     image: '/assets/odonto/ozkan-guner-AduzI0N9iRI-unsplash.jpg',
     imageAlt: 'Equipo Yieldge Costa Rica',
   },

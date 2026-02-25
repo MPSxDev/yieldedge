@@ -6,6 +6,10 @@ import Hero from '@/components/Hero';
 import { crContent } from '@/lib/content';
 
 // Lazy load below-the-fold components
+const PainPoints = dynamic(() => import('@/components/PainPoints'), {
+  loading: () => <div className="min-h-[600px]" />,
+});
+
 const Services = dynamic(() => import('@/components/Services'), {
   loading: () => <div className="min-h-screen" />,
 });
@@ -50,6 +54,9 @@ export default function CRPage() {
 
       {/* Main content sections with spacing */}
       <main className="space-y-20 sm:space-y-24 lg:space-y-32">
+        {crContent.painPoints && (
+          <PainPoints content={crContent.painPoints} />
+        )}
         <Services content={crContent.services} useContentDirectly={true} />
         {crContent.companyLogos && crContent.companyLogos.logos.length > 0 && (
           <CompanyLogos
@@ -64,8 +71,17 @@ export default function CRPage() {
         <AboutYieldgeCR content={crContent.aboutYieldge!} />
         <WhyChooseUs content={crContent.whyChooseUs} />
         <Process content={crContent.process} />
-        <FAQ content={crContent.faq} />
-        <FinalCTA content={crContent.finalCTA} />
+        <FAQ
+          content={crContent.faq}
+          ctaLink="https://wa.me/50670724236?text=Hola%2C%20tengo%20una%20pregunta"
+        />
+        <FinalCTA
+          content={crContent.finalCTA}
+          useContentDirectly={true}
+          ctaLink="https://wa.me/50670724236?text=Hola%2C%20quiero%20el%20diagn%C3%B3stico%20gratis%20para%20mi%20p%C3%A1gina%20web"
+          phoneNumber="+506 7072-4236"
+          schedule="Lun - Vie, 8am - 6pm"
+        />
       </main>
 
       <Footer description="Yieldge Costa Rica y Latam: Tu aliado en soluciones digitales para PYMEs. Sitios web profesionales, SEO local y marketing digital que generan resultados." />
