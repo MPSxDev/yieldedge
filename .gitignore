@@ -40,10 +40,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# LLM context
-docs/llm-contexto.md
+# LLM context & documentation
+/docs/
 llmcontext-cr.md
-docs/diagnostico-digital-funnel-copy.md
 
 # SEO documentation
 QUICK_START_SEO.md
