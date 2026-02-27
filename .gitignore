@@ -42,6 +42,8 @@ next-env.d.ts
 
 # LLM context
 docs/llm-contexto.md
+llmcontext-cr.md
+docs/diagnostico-digital-funnel-copy.md
 
 # SEO documentation
 QUICK_START_SEO.md

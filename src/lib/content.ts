@@ -2709,3 +2709,289 @@ export const valueStackContentES: ValueStackContent = {
   ctaSubtext: 'Cupos limitados este mes',
   ctaLink: '/get-in-touch',
 };
+
+// Diagnostico Digital page content - High-conversion funnel for Costa Rica
+export interface DiagnosticoDigitalContent {
+  hero: {
+    heading: string;
+    subheading: string;
+    description: string;
+    primaryCta: string;
+    primaryCtaLink: string;
+    softCta: string;
+    backgroundImage: string;
+  };
+  painPoints: {
+    sectionLabel: string;
+    title: string;
+    description: string;
+    points: Array<{
+      icon: string;
+      title: string;
+      description: string;
+      impact: string;
+    }>;
+    emotionalClose: string;
+  };
+  reframe: {
+    title: string;
+    intro: string;
+    problem: string;
+    systemBenefits: string[];
+    comparison: {
+      without: string;
+      with: string;
+    };
+    transition: string;
+  };
+  authority: {
+    sectionLabel: string;
+    title: string;
+    description: string;
+    points: string[];
+    stats: Array<{
+      value: string;
+      label: string;
+    }>;
+    trustLine: string;
+  };
+  solutions: {
+    sectionLabel: string;
+    title: string;
+    intro: string;
+    items: Array<{
+      icon: string;
+      title: string;
+      tagline: string;
+      features: string[];
+      result: string;
+      image: string;
+    }>;
+    integrationNote: string;
+  };
+  differentiation: {
+    title: string;
+    chaosDescription: string;
+    systemBenefits: string[];
+    strategicTitle: string;
+    strategicBenefits: string[];
+    trustTitle: string;
+    trustDescription: string;
+  };
+  finalCta: {
+    sectionLabel: string;
+    title: string;
+    description: string;
+    deliverables: string[];
+    primaryCta: string;
+    primaryCtaLink: string;
+    supportingDetails: string[];
+    phoneNumber: string;
+    email: string;
+    schedule: string;
+    finalTrustLine: string;
+  };
+}
+
+export const crDiagnosticoContent: DiagnosticoDigitalContent = {
+  hero: {
+    heading: 'Tu negocio crece. Tu sistema digital, no.',
+    subheading: 'Dejá de perder clientes por desorden digital.',
+    description: 'Construimos el sistema que tu negocio necesita para crecer con orden. Un diagnóstico gratuito de 15 minutos que te muestra exactamente qué está frenando tu crecimiento — y cómo solucionarlo.',
+    primaryCta: 'Quiero Mi Diagnóstico Gratis',
+    primaryCtaLink: 'https://wa.me/50670724236?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20digital%20gratis',
+    softCta: 'Ver cómo funciona ↓',
+    backgroundImage: '/assets/prof/krakenimages-376KN_ISplE-unsplash.jpg',
+  },
+  painPoints: {
+    sectionLabel: '¿Te suena familiar?',
+    title: 'Los síntomas de un negocio sin sistema digital',
+    description: 'Si alguna de estas situaciones te resulta familiar, no estás solo. Son los problemas más comunes que vemos en negocios de Costa Rica.',
+    points: [
+      {
+        icon: 'AlertTriangle',
+        title: 'Desorden operativo',
+        description: 'Contestás mensajes a las 11pm. Perdés seguimiento de cotizaciones. No sabés cuántos clientes te contactaron esta semana.',
+        impact: 'El caos no escala. Y te está costando dinero.',
+      },
+      {
+        icon: 'Smartphone',
+        title: 'Dependencia total de WhatsApp',
+        description: 'Todo pasa por tu celular. Si no contestás, perdés la venta. ¿Vacaciones? Imposibles.',
+        impact: 'Tu negocio depende de que vos estés disponible 24/7.',
+      },
+      {
+        icon: 'Clock',
+        title: 'Procesos manuales que devoran tiempo',
+        description: 'Enviás la misma información 20 veces al día. Copiás y pegás. Buscás conversaciones viejas.',
+        impact: 'Tiempo que podrías usar cerrando ventas.',
+      },
+      {
+        icon: 'UserX',
+        title: 'Oportunidades que se escapan',
+        description: 'Clientes que preguntaron y nunca les diste seguimiento. Cotizaciones que no cerraste porque se te olvidó.',
+        impact: 'Cada lead perdido es plata que dejás en la mesa.',
+      },
+      {
+        icon: 'Image',
+        title: 'Imagen digital que no refleja tu calidad',
+        description: 'Tu página tiene 5 años. O peor: no tenés. Tus clientes potenciales buscan en Google y encuentran a tu competencia.',
+        impact: 'Primera impresión digital = decisión de compra.',
+      },
+      {
+        icon: 'EyeOff',
+        title: 'Cero visibilidad de qué funciona',
+        description: 'No sabés de dónde vienen tus clientes. No sabés qué canal te genera más ventas. Tomás decisiones a ciegas.',
+        impact: 'Sin datos, no hay crecimiento estratégico.',
+      },
+    ],
+    emotionalClose: 'Esto no es culpa tuya. Es que nadie te enseñó a construir un sistema digital. Pero seguir así te va a costar más de lo que imaginás.',
+  },
+  reframe: {
+    title: 'No necesitás una página web. Necesitás un sistema.',
+    intro: 'La mayoría de negocios creen que su problema es "no tener página web" o "no estar en redes".',
+    problem: 'El problema real es otro: No tenés un sistema digital que trabaje por vos.',
+    systemBenefits: [
+      'Capture clientes mientras dormís',
+      'Responda automáticamente cuando no podés',
+      'Organice tus contactos sin que vos hagas nada',
+      'Te muestre exactamente de dónde vienen tus ventas',
+    ],
+    comparison: {
+      without: 'Una página web sin sistema es un folleto caro.',
+      with: 'Un sistema digital es una máquina de crecimiento.',
+    },
+    transition: 'Eso es lo que construimos en Yieldge. No páginas. Sistemas.',
+  },
+  authority: {
+    sectionLabel: 'Por qué Yieldge',
+    title: 'No somos una agencia. Somos tu socio de infraestructura digital.',
+    description: 'Hay miles de agencias que te pueden hacer una página web. Nosotros no hacemos eso. Construimos infraestructura digital para negocios que quieren crecer con orden.',
+    points: [
+      'Trabajamos con clínicas, bufetes, restaurantes, empresas de servicios y profesionales que entienden que su presencia digital es parte de su operación — no un gasto de marketing.',
+      'No desaparecemos después de entregar. Nos convertimos en tu equipo técnico externo.',
+      'Medimos todo. Si no genera resultados, lo ajustamos hasta que funcione.',
+    ],
+    stats: [
+      { value: '50+', label: 'Negocios atendidos' },
+      { value: '100%', label: 'Clientes satisfechos' },
+      { value: 'CR', label: 'Operamos en Costa Rica' },
+    ],
+    trustLine: 'Desde PYMEs hasta empresas enterprise. El mismo compromiso.',
+  },
+  solutions: {
+    sectionLabel: 'Qué construimos para vos',
+    title: 'Un sistema digital completo. No piezas sueltas.',
+    intro: 'Cada negocio es diferente. Por eso no vendemos paquetes genéricos. Pero estos son los componentes que usamos para construir tu sistema:',
+    items: [
+      {
+        icon: 'Globe',
+        title: 'Sitio Web Estratégico',
+        tagline: 'No un folleto digital. Una herramienta de conversión.',
+        features: [
+          'Diseño profesional que refleja tu marca',
+          'Optimizado para celular (donde están tus clientes)',
+          'Carga en menos de 3 segundos',
+          'Aparecés en Google cuando buscan tus servicios',
+          'Formularios que capturan leads reales',
+        ],
+        result: 'Clientes te encuentran y te contactan — sin que vos hagas nada.',
+        image: '/assets/prof/amy-hirschi-izxMVv2Z9dw-unsplash.jpg',
+      },
+      {
+        icon: 'MessageCircle',
+        title: 'WhatsApp Inteligente',
+        tagline: 'Dejá de perder ventas por no contestar a tiempo.',
+        features: [
+          'Botón de WhatsApp visible en todo momento',
+          'Respuestas automáticas cuando no podés contestar',
+          'Formularios que envían directo a tu WhatsApp',
+          'Organización de conversaciones por cliente',
+        ],
+        result: 'Capturás el 100% de las consultas, contestés o no.',
+        image: '/assets/office/vitaly-gariev-2OnT7IKfLyw-unsplash.jpg',
+      },
+      {
+        icon: 'Zap',
+        title: 'Automatización de Seguimiento',
+        tagline: 'El follow-up que genera ventas — sin que vos lo hagas.',
+        features: [
+          'Secuencias automáticas por WhatsApp y email',
+          'Recordatorios de citas automáticos',
+          'Confirmaciones sin intervención manual',
+          'Reactivación de clientes que no cerraron',
+        ],
+        result: 'Cerrás más ventas sin trabajar más horas.',
+        image: '/assets/img6.jpg',
+      },
+      {
+        icon: 'Search',
+        title: 'SEO Local (Aparecé en Google)',
+        tagline: 'Que te encuentren cuando busquen lo que ofrecés.',
+        features: [
+          'Optimización para búsquedas locales en Costa Rica',
+          'Configuración de Google My Business',
+          'Palabras clave de tu industria',
+          'Reportes mensuales de posicionamiento',
+        ],
+        result: 'Más clientes desde Google, sin pagar publicidad.',
+        image: '/assets/odonto/ozkan-guner-9Gw9XCuazuY-unsplash.jpg',
+      },
+      {
+        icon: 'BarChart',
+        title: 'Reportes y Visibilidad',
+        tagline: 'Sabé exactamente qué está funcionando.',
+        features: [
+          'Dashboard simple con métricas claras',
+          'De dónde vienen tus clientes',
+          'Cuántas consultas recibiste',
+          'Qué canales te generan más ventas',
+        ],
+        result: 'Tomás decisiones con datos, no con intuición.',
+        image: '/assets/prof/divaris-shirichena-dgPNu73ihYE-unsplash.jpg',
+      },
+    ],
+    integrationNote: 'Todo conectado. Todo automatizado. Todo medible. No son 5 herramientas separadas. Es un sistema integrado que trabaja mientras vos te enfocás en lo que mejor hacés: tu negocio.',
+  },
+  differentiation: {
+    title: '¿Por qué un sistema en vez de herramientas sueltas?',
+    chaosDescription: 'Podés contratar un diseñador para tu página, un community manager para redes, un técnico para WhatsApp Business, un freelancer para SEO... Y terminar con 4 personas que no se hablan entre sí, 4 facturas, y cero integración.',
+    systemBenefits: [
+      'Todo está conectado',
+      'Todo se mide',
+      'Todo escala con tu negocio',
+      'Un solo punto de contacto',
+    ],
+    strategicTitle: 'El orden digital no es un lujo. Es rentabilidad.',
+    strategicBenefits: [
+      'Responden más rápido → cierran más ventas',
+      'Automatizan tareas repetitivas → reducen costos',
+      'Miden resultados → toman mejores decisiones',
+      'Escalan sin caos → crecen de forma sostenible',
+    ],
+    trustTitle: 'Tu información está segura.',
+    trustDescription: 'Cumplimos con la Ley N.º 8968 de Protección de Datos de Costa Rica. Servidores seguros, conexiones encriptadas, y nunca vendemos tu información.',
+  },
+  finalCta: {
+    sectionLabel: 'Empezá hoy',
+    title: 'Un diagnóstico de 15 minutos que puede cambiar tu negocio.',
+    description: 'No te vamos a vender nada en la llamada. Te vamos a mostrar qué está fallando en tu presencia digital actual, dónde estás perdiendo clientes, y qué necesitás para empezar a crecer con orden.',
+    deliverables: [
+      'Qué está fallando en tu presencia digital actual',
+      'Dónde estás perdiendo clientes',
+      'Qué necesitás para empezar a crecer con orden',
+    ],
+    primaryCta: 'Quiero Mi Diagnóstico Gratis',
+    primaryCtaLink: 'https://wa.me/50670724236?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20digital%20gratis',
+    supportingDetails: [
+      '15 minutos por WhatsApp o videollamada',
+      'Sin compromiso',
+      'Sin presión de venta',
+      'Respondemos en menos de 1 hora',
+    ],
+    phoneNumber: '+506 7072-4236',
+    email: 'info@yieldge.com',
+    schedule: 'Lun - Vie, 8am - 6pm',
+    finalTrustLine: '50+ negocios en Costa Rica ya tienen su sistema funcionando. ¿Vas a ser el próximo?',
+  },
+};

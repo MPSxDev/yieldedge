@@ -53,7 +53,11 @@ function projectsHref(pathname: string): string {
   return '';
 }
 
-export default function Navbar() {
+interface NavbarProps {
+  hideNavLinks?: boolean;
+}
+
+export default function Navbar({ hideNavLinks = false }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
@@ -137,7 +141,7 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
+            {!hideNavLinks && navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
@@ -212,7 +216,7 @@ export default function Navbar() {
               className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 shadow-xl relative z-50"
             >
               <div className="px-4 sm:px-6 py-6 space-y-1">
-                {navLinks.map((link, index) => (
+                {!hideNavLinks && navLinks.map((link, index) => (
                   <motion.div
                     key={link.label}
                     initial={{ opacity: 0, x: -20 }}

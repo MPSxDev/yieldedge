@@ -29,6 +29,12 @@ import {
   ShoppingCart,
   Heart,
   Palette,
+  AlertTriangle,
+  Smartphone,
+  UserX,
+  Image,
+  EyeOff,
+  AlertCircle,
 } from 'lucide-react';
 import { LucideIcon } from 'lucide-react';
 
@@ -62,6 +68,12 @@ export const iconMap: Record<string, LucideIcon> = {
   ShoppingCart,
   Heart,
   Palette,
+  AlertTriangle,
+  Smartphone,
+  UserX,
+  Image,
+  EyeOff,
+  AlertCircle,
 };
 
 
