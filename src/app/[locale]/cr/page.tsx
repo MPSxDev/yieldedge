@@ -78,13 +78,13 @@ export default function CRPage() {
         <FinalCTA
           content={crContent.finalCTA}
           useContentDirectly={true}
-          ctaLink="https://wa.me/50670724236?text=Hola%2C%20quiero%20el%20diagn%C3%B3stico%20gratis%20para%20mi%20p%C3%A1gina%20web"
+          ctaLink="https://wa.me/50670724236?text=Hola%2C%20me%20interesa%20agendar%20una%20conversaci%C3%B3n%20estrat%C3%A9gica"
           phoneNumber="+506 7072-4236"
           schedule="Lun - Vie, 8am - 6pm"
         />
       </main>
 
-      <Footer description="Yieldge Costa Rica y Latam: Tu aliado en soluciones digitales para PYMEs. Sitios web profesionales, SEO local y marketing digital que generan resultados." />
+      <Footer description="Yieldge Costa Rica: Socio estratégico en infraestructura digital. Arquitectura web, sistemas de conversión y posicionamiento orgánico para empresas que buscan crecer de forma estructurada." />
     </div>
   );
 }

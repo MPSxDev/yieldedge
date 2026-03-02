@@ -4,12 +4,12 @@ import Footer from '@/components/Footer';
 import CRCompanyPageContent from '@/components/CRCompanyPageContent';
 
 export const metadata: Metadata = {
-  title: 'Misión | Yieldge Costa Rica - Tecnología que transforma vidas',
-  description: 'La innovación tiene sentido cuando mejora la vida de las personas. Una parte de nuestras ganancias se destina a apoyar iniciativas que ayudan a niños en situación vulnerable.',
-  keywords: 'misión yieldge, responsabilidad social Costa Rica, tecnología para niños, donaciones Costa Rica, impacto social',
+  title: 'Propósito | Yieldge Costa Rica - Tecnología con Impacto Real',
+  description: 'Creemos que la innovación solo tiene valor cuando genera un cambio tangible. Destinamos parte de nuestros ingresos a iniciativas educativas para niños en Costa Rica.',
+  keywords: 'propósito yieldge, responsabilidad social Costa Rica, tecnología con impacto, compromiso social empresarial',
   openGraph: {
-    title: 'Misión | Yieldge Costa Rica',
-    description: 'Tecnología que transforma vidas. La innovación tiene sentido cuando mejora la vida de las personas.',
+    title: 'Propósito | Yieldge Costa Rica',
+    description: 'Tecnología con impacto real. Creemos que la innovación solo tiene valor cuando genera un cambio tangible en la vida de las personas.',
     type: 'website',
   },
   alternates: {
@@ -22,7 +22,7 @@ export default function CRMisionPage() {
     <div className="min-h-screen bg-white">
       <Navbar />
       <CRCompanyPageContent />
-      <Footer description="Yieldge Costa Rica y Latam: Tu aliado en soluciones digitales para PYMEs. Sitios web profesionales, SEO local y marketing digital que generan resultados." />
+      <Footer description="Yieldge Costa Rica: Socio estratégico en infraestructura digital. Arquitectura web, sistemas de conversión y posicionamiento orgánico para empresas que buscan crecer de forma estructurada." />
     </div>
   );
 }
