@@ -1044,10 +1044,6 @@ export const crContent: PageContent = {
         logo: '/assets/logos/hslogo.png',
       },
       {
-        name: 'OnlyDust',
-        logo: '/assets/logos/onlydust.jpg',
-      },
-      {
         name: 'Stellar',
         logo: '/assets/logos/stellar.avif',
       },
