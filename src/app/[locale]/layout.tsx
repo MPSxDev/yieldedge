@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
+import Script from "next/script";
 import { locales, type Locale } from "@/i18n/config";
 import "./globals.css";
 import FaviconSwitcher from "@/components/FaviconSwitcher";
@@ -361,6 +362,18 @@ export default async function LocaleLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
         />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-BZY8VYMWJY"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-BZY8VYMWJY');
+          `}
+        </Script>
       </head>
       <body className="antialiased min-h-screen">
         <NextIntlClientProvider messages={messages}>
