@@ -17,7 +17,7 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     name: 'Dr. Daniel Zuniga',
-    title: 'Especialista en Medicina General',
+    title: 'Gastromedical',
     location: 'San Jose, Costa Rica',
     rating: 5,
     quote:
@@ -25,18 +25,18 @@ const testimonials: Testimonial[] = [
     image: '/images/testimonials/avatar-1.jpg',
   },
   {
-    name: 'Maria Fernanda Rojas',
-    title: 'Fundadora de Boutique Eleganza',
-    location: 'Heredia, Costa Rica',
+    name: 'E. Logan',
+    title: 'Cliente Empresarial',
+    location: 'Costa Rica',
     rating: 5,
     quote:
       'Desde que lanzamos nuestra tienda en linea con Yieldge, nuestras ventas se duplicaron. El proceso fue profesional y los resultados superaron nuestras expectativas.',
     image: '/images/testimonials/avatar-2.jpg',
   },
   {
-    name: 'Carlos Jimenez',
-    title: 'Director de Operaciones, LogiTech CR',
-    location: 'Cartago, Costa Rica',
+    name: 'Geovani',
+    title: 'HSGAC International',
+    location: 'Costa Rica',
     rating: 5,
     quote:
       'La automatizacion de procesos que implemento Yieldge nos ahorro horas de trabajo manual cada semana. Un verdadero socio estrategico para nuestro crecimiento.',
