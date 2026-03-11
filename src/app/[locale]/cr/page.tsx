@@ -26,6 +26,10 @@ const Process = dynamic(() => import('@/components/Process'), {
   loading: () => <div className="min-h-screen" />,
 });
 
+const TestimonialsCR = dynamic(() => import('@/components/sections/TestimonialsCR'), {
+  loading: () => <div className="min-h-[600px]" />,
+});
+
 const CRSolutionsPageContent = dynamic(() => import('@/components/CRSolutionsPageContent'), {
   loading: () => <div className="min-h-screen" />,
 });
@@ -71,6 +75,7 @@ export default function CRPage() {
         <AboutYieldgeCR content={crContent.aboutYieldge!} />
         <WhyChooseUs content={crContent.whyChooseUs} />
         <Process content={crContent.process} />
+        <TestimonialsCR />
         <FAQ
           content={crContent.faq}
           ctaLink="https://wa.me/50670724236?text=Hola%2C%20tengo%20una%20pregunta"

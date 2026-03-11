@@ -9,6 +9,7 @@ import CompanyLogos from '@/components/CompanyLogos';
 import { crDiagnosticoContent, crContent } from '@/lib/content';
 import { iconMap } from '@/lib/iconMap';
 import { CheckCircle, ArrowRight, Phone, Mail, Clock } from 'lucide-react';
+import TestimonialsCR from '@/components/sections/TestimonialsCR';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -447,6 +448,9 @@ export default function DiagnosticoDigitalPage() {
           </motion.div>
         </Container>
       </section>
+
+      {/* TESTIMONIALS SECTION */}
+      <TestimonialsCR />
 
       {/* 7. FINAL CTA SECTION */}
       <section className="py-20 sm:py-28 bg-gradient-to-br from-[#1F5CFF] to-[#0d47a1]">
