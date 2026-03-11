@@ -53,6 +53,14 @@ function projectsHref(pathname: string): string {
   return '';
 }
 
+function testimonialsHref(pathname: string): string {
+  const prefix = getVerticalPrefix(pathname);
+  if (prefix === '/cr') {
+    return '/cr#testimonios';
+  }
+  return '';
+}
+
 interface NavbarProps {
   hideNavLinks?: boolean;
 }
@@ -88,11 +96,12 @@ export default function Navbar({ hideNavLinks = false }: NavbarProps) {
   // Build nav links with dynamic hrefs based on current route context
   const isCRRoute = getVerticalPrefix(pathname) === '/cr';
 
-  // CR-specific navigation: Soluciones, Empresa, Trabajá con nosotros
+  // CR-specific navigation: Soluciones, Empresa, Testimonios, Trabajá con nosotros
   const navLinks = isCRRoute
     ? [
         { label: 'Soluciones', href: solutionsHref(pathname) },
         { label: 'Empresa', href: companyHref(pathname) },
+        { label: 'Testimonios', href: testimonialsHref(pathname) },
         { label: 'Trabajá con nosotros', href: careersHref(pathname) },
       ]
     : [

@@ -154,7 +154,7 @@ export default function TestimonialsCR() {
 
   return (
     <>
-      <section className="py-20 sm:py-24 bg-gray-50">
+      <section id="testimonios" className="py-20 sm:py-24 bg-gray-50 scroll-mt-20">
         <Container>
           <motion.div
             initial="hidden"
