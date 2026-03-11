@@ -1,8 +1,9 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import Container from '@/components/ui/Container';
+import TestimonialModal from '@/components/ui/TestimonialModal';
 import { Star } from 'lucide-react';
 
 interface Testimonial {
@@ -11,7 +12,6 @@ interface Testimonial {
   location: string;
   rating: number;
   quote: string;
-  image?: string;
 }
 
 const testimonials: Testimonial[] = [
@@ -22,7 +22,6 @@ const testimonials: Testimonial[] = [
     rating: 5,
     quote:
       'Yieldge construyo nuestro sitio web y automatizo nuestro sistema de citas. Ahora nuevos pacientes encuentran nuestra clinica en linea cada semana.',
-    image: '/images/testimonials/avatar-1.jpg',
   },
   {
     name: 'E. Logan',
@@ -30,26 +29,32 @@ const testimonials: Testimonial[] = [
     location: 'Costa Rica',
     rating: 5,
     quote:
-      'Desde que lanzamos nuestra tienda en linea con Yieldge, nuestras ventas se duplicaron. El proceso fue profesional y los resultados superaron nuestras expectativas.',
-    image: '/images/testimonials/avatar-2.jpg',
+      'Quede satisfecho un 200%, todas las ideas las lograron, buscaron soluciones rapidas y efectivas, mi pagina web quedo mejor de lo que me imaginaba. Su acompanamiento integral es impecable. Son un gran equipo de trabajo super creativo, profesional y puntual.',
   },
   {
-    name: 'Geovani',
+    name: 'Geovani Abarca',
     title: 'HSGAC International',
     location: 'Costa Rica',
     rating: 5,
     quote:
-      'La automatizacion de procesos que implemento Yieldge nos ahorro horas de trabajo manual cada semana. Un verdadero socio estrategico para nuestro crecimiento.',
-    image: '/images/testimonials/avatar-3.jpg',
+      'Agradezco sinceramente el excelente trabajo realizado en la creacion de mi sitio web profesional. El proceso se desarrollo con gran responsabilidad, compromiso y atencion a los detalles, logrando reflejar de manera clara y ordenada mis servicios. El resultado es una plataforma moderna, funcional y profesional.',
+  },
+  {
+    name: 'Joshua Palacios',
+    title: 'Cliente Empresarial',
+    location: 'Costa Rica',
+    rating: 5,
+    quote:
+      'Trabajar con Yieldge fue una muy buena experiencia. Supieron entender la vision de mi proyecto y transformarla en una pagina clara, funcional y con una estetica muy bien lograda. La navegacion es simple, los botones funcionan de forma directa y todo esta pensado para que el usuario tenga una experiencia facil e intuitiva. En poco tiempo ya hemos empezado a ver buenos resultados.',
   },
 ];
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as const },
+    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const },
   },
 };
 
@@ -57,7 +62,7 @@ const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.1 },
+    transition: { staggerChildren: 0.1, delayChildren: 0.1 },
   },
 };
 
@@ -67,7 +72,7 @@ function StarRating({ rating }: { rating: number }) {
       {[...Array(5)].map((_, i) => (
         <Star
           key={i}
-          className={`w-5 h-5 ${
+          className={`w-4 h-4 ${
             i < rating
               ? 'fill-amber-400 text-amber-400'
               : 'fill-gray-200 text-gray-200'
@@ -78,108 +83,135 @@ function StarRating({ rating }: { rating: number }) {
   );
 }
 
-function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
+function TestimonialCard({
+  testimonial,
+  onReadMore,
+}: {
+  testimonial: Testimonial;
+  onReadMore: () => void;
+}) {
   return (
     <motion.div
       variants={fadeInUp}
-      className="group relative bg-white rounded-2xl p-8 border border-gray-100 hover:border-[#dbe6ff] transition-all duration-300 hover:shadow-xl hover:shadow-[#1F5CFF]/5"
+      className="group bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:border-gray-200 transition-all duration-300 flex flex-col h-full"
     >
       {/* Rating */}
-      <div className="mb-6">
+      <div className="mb-4">
         <StarRating rating={testimonial.rating} />
       </div>
 
-      {/* Quote */}
-      <blockquote className="text-gray-700 text-lg leading-relaxed mb-8">
+      {/* Quote - truncated */}
+      <blockquote className="text-gray-600 leading-relaxed mb-4 line-clamp-3 flex-grow">
         &ldquo;{testimonial.quote}&rdquo;
       </blockquote>
 
+      {/* Read more link */}
+      <button
+        onClick={onReadMore}
+        className="text-[#1F5CFF] text-sm font-medium hover:text-[#0d47a1] transition-colors mb-5 text-left"
+      >
+        Leer testimonio completo
+      </button>
+
       {/* Author */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
         {/* Avatar */}
-        <div className="relative w-12 h-12 rounded-full overflow-hidden bg-gradient-to-br from-[#1F5CFF] to-[#60a5fa] flex-shrink-0">
-          {testimonial.image ? (
-            <Image
-              src={testimonial.image}
-              alt={testimonial.name}
-              fill
-              className="object-cover"
-            />
-          ) : (
-            <div className="w-full h-full flex items-center justify-center text-white font-semibold text-lg">
-              {testimonial.name
-                .split(' ')
-                .map((n) => n[0])
-                .join('')
-                .slice(0, 2)}
-            </div>
-          )}
+        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#1F5CFF] to-[#60a5fa] flex items-center justify-center text-white font-medium text-sm flex-shrink-0">
+          {testimonial.name
+            .split(' ')
+            .map((n) => n[0])
+            .join('')
+            .slice(0, 2)}
         </div>
 
-        {/* Name & Details */}
-        <div>
-          <p className="font-semibold text-gray-900">{testimonial.name}</p>
-          <p className="text-sm text-gray-600">{testimonial.title}</p>
-          <p className="text-sm text-[#1F5CFF]">{testimonial.location}</p>
+        {/* Details */}
+        <div className="min-w-0">
+          <p className="font-semibold text-gray-900 text-sm truncate">
+            {testimonial.name}
+          </p>
+          <p className="text-xs text-gray-500 truncate">{testimonial.title}</p>
+          <p className="text-xs text-[#1F5CFF]">{testimonial.location}</p>
         </div>
-      </div>
-
-      {/* Decorative element */}
-      <div className="absolute top-6 right-6 text-6xl text-[#eff4ff] font-serif leading-none select-none">
-        &ldquo;
       </div>
     </motion.div>
   );
 }
 
 export default function TestimonialsCR() {
-  return (
-    <section className="py-20 sm:py-28 bg-gray-50">
-      <Container>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={staggerContainer}
-        >
-          {/* Header */}
-          <motion.div variants={fadeInUp} className="text-center mb-16">
-            <p className="text-[#1F5CFF] font-semibold mb-4 text-sm uppercase tracking-wide">
-              Testimonios
-            </p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Empresas en Costa Rica{' '}
-              <span className="text-[#1F5CFF]">creciendo con Yieldge</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
-              Negocios locales que confiaron en nosotros para impulsar su
-              presencia digital y automatizar sus operaciones.
-            </p>
+  const [selectedTestimonial, setSelectedTestimonial] =
+    useState<Testimonial | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-            {/* Rating indicator */}
-            <div className="inline-flex items-center gap-3 bg-white rounded-full px-6 py-3 shadow-sm border border-gray-100">
-              <div className="flex gap-0.5">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-5 h-5 fill-amber-400 text-amber-400"
-                  />
-                ))}
+  const handleReadMore = (testimonial: Testimonial) => {
+    setSelectedTestimonial(testimonial);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setTimeout(() => setSelectedTestimonial(null), 200);
+  };
+
+  return (
+    <>
+      <section className="py-20 sm:py-24 bg-gray-50">
+        <Container>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={staggerContainer}
+          >
+            {/* Header */}
+            <motion.div variants={fadeInUp} className="text-center mb-12">
+              <p className="text-[#1F5CFF] font-semibold mb-3 text-sm uppercase tracking-wide">
+                Testimonios
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                Empresas en Costa Rica{' '}
+                <span className="text-[#1F5CFF]">creciendo con Yieldge</span>
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-5">
+                Negocios locales que confiaron en nosotros para impulsar su
+                presencia digital.
+              </p>
+
+              {/* Rating indicator */}
+              <div className="inline-flex items-center gap-2 bg-white rounded-full px-5 py-2.5 shadow-sm border border-gray-100">
+                <div className="flex gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className="w-4 h-4 fill-amber-400 text-amber-400"
+                    />
+                  ))}
+                </div>
+                <span className="text-gray-600 text-sm font-medium">
+                  4.9 calificacion promedio
+                </span>
               </div>
-              <span className="text-gray-700 font-medium">
-                4.9 calificacion promedio de negocios locales
-              </span>
+            </motion.div>
+
+            {/* Testimonial Cards Grid */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+              {testimonials.map((testimonial, index) => (
+                <TestimonialCard
+                  key={index}
+                  testimonial={testimonial}
+                  onReadMore={() => handleReadMore(testimonial)}
+                />
+              ))}
             </div>
           </motion.div>
+        </Container>
+      </section>
 
-          {/* Testimonial Cards Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {testimonials.map((testimonial, index) => (
-              <TestimonialCard key={index} testimonial={testimonial} />
-            ))}
-          </div>
-        </motion.div>
-      </Container>
-    </section>
+      {/* Modal */}
+      <TestimonialModal
+        testimonial={selectedTestimonial}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
+    </>
   );
 }
