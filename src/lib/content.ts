@@ -2791,7 +2791,7 @@ export const crDiagnosticoContent: DiagnosticoDigitalContent = {
     primaryCta: 'Agendar Consultoría Gratuita',
     primaryCtaLink: 'https://wa.me/50670724236?text=Hola%2C%20quiero%20agendar%20una%20consultor%C3%ADa%20gratuita%20para%20mi%20cl%C3%ADnica',
     softCta: 'Cómo funciona ↓',
-    backgroundImage: '/assets/prof/krakenimages-376KN_ISplE-unsplash.jpg',
+    backgroundImage: '/assets/featured.jpg',
   },
   painPoints: {
     sectionLabel: 'Oportunidades de optimización',
@@ -2894,7 +2894,7 @@ export const crDiagnosticoContent: DiagnosticoDigitalContent = {
           'Reactivación de pacientes que no han regresado',
         ],
         result: 'Menos citas perdidas, más pacientes que regresan.',
-        image: '/assets/img6.jpg',
+        image: '/assets/odonto/ozkan-guner-AduzI0N9iRI-unsplash.jpg',
       },
       {
         icon: 'Search',
