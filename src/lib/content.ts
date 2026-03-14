@@ -346,7 +346,7 @@ export const homepageContent: PageContent = {
     title: 'Why Choose',
     titleHighlight: 'Yieldge?',
     description: 'With over 15+ years serving the global technology landscape, Yieldge has established itself as a trusted partner in digital transformation. We\'ve empowered countless organizations to streamline operations and achieve measurable results. Our dedicated professionals bring unmatched expertise and passion to every engagement.',
-    image: '/assets/cr/diagnostico/happdent.png',
+    image: '/assets/sales/dr/clinica.png',
     imageAlt: 'Growth and performance',
     values: [
       {
@@ -1169,7 +1169,7 @@ export const crCompanyContent: CRCompanyContent = {
     title: 'Socio Estratégico Digital en Costa Rica',
     subtitle: 'No construimos páginas. Construimos activos digitales.',
     description: 'Colaboramos con empresas que buscan estructurar su presencia digital de forma profesional. Conocemos el mercado costarricense y diseñamos soluciones alineadas con sus objetivos de negocio.',
-    image: '/assets/cr/diagnostico/happdent.png',
+    image: '/assets/sales/dr/clinica.png',
   },
   about: {
     title: 'Nuestra Visión',
@@ -2246,7 +2246,7 @@ export const professionalServicesContent: PageContent = {
         title: 'Qualified Lead Capture + CRM',
         description: 'Intelligent intake forms that pre-qualify leads and sync to your CRM. Only talk to prospects who are the right fit.',
         features: ['Smart intake forms', 'Lead qualification', 'CRM integration', 'Generic contact forms only'],
-        image: '/assets/cr/diagnostico/happdent.png',
+        image: '/assets/sales/dr/clinica.png',
       },
       {
         icon: 'MessageCircle',
@@ -2881,7 +2881,7 @@ export const crDiagnosticoContent: DiagnosticoDigitalContent = {
           'Calendario sincronizado con tu agenda',
         ],
         result: 'Tus pacientes agendan cuando quieren, vos solo atendés.',
-        image: '/assets/office/vitaly-gariev-2OnT7IKfLyw-unsplash.jpg',
+        image: '/assets/sales/dr/clinica.png',
       },
       {
         icon: 'Zap',

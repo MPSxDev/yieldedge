@@ -97,7 +97,7 @@ export default function CompanyPageContent({ verticalName }: CompanyPageContentP
               className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl"
             >
               <Image
-                src="/assets/cr/diagnostico/happdent.png"
+                src="/assets/sales/dr/clinica.png"
                 alt={t('buildingFuture')}
                 fill
                 className="object-cover"
