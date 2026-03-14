@@ -118,17 +118,17 @@ export default function DiagnosticoDigitalPage() {
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
+            <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-12">
               {content.painPoints.points.map((point, index) => {
                 const IconComponent = iconMap[point.icon] || iconMap.AlertCircle;
                 return (
                   <motion.div
                     key={index}
                     variants={fadeInUp}
-                    className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200 hover:border-red-300 hover:shadow-lg transition-all group"
+                    className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200 hover:border-[#1F5CFF]/30 hover:shadow-lg transition-all group"
                   >
-                    <div className="w-14 h-14 bg-red-100 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-red-200 transition-colors">
-                      <IconComponent className="w-7 h-7 text-red-600" />
+                    <div className="w-14 h-14 bg-[#dbe6ff] rounded-2xl flex items-center justify-center mb-4 group-hover:bg-[#c7d9ff] transition-colors">
+                      <IconComponent className="w-7 h-7 text-[#1F5CFF]" />
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 mb-3">
                       {point.title}
@@ -136,7 +136,7 @@ export default function DiagnosticoDigitalPage() {
                     <p className="text-gray-600 mb-4 leading-relaxed">
                       {point.description}
                     </p>
-                    <p className="text-red-600 font-medium text-sm">
+                    <p className="text-[#1F5CFF] font-medium text-sm">
                       → {point.impact}
                     </p>
                   </motion.div>
