@@ -2868,7 +2868,7 @@ export const crDiagnosticoContent: DiagnosticoDigitalContent = {
           'Formularios de contacto que convierten visitas en citas',
         ],
         result: 'Pacientes te encuentran, confían en vos, y agendan — sin que vos hagas nada.',
-        image: '/assets/sales/dentist-happy.png',
+        image: '/assets/sales/dentist-alone.png',
       },
       {
         icon: 'MessageCircle',
