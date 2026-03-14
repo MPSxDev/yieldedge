@@ -538,7 +538,11 @@ export default function DiagnosticoDigitalPage() {
         </Container>
       </section>
 
-      <Footer description="Yieldge Costa Rica: Sistemas digitales para clínicas privadas. Más pacientes, menos desorden administrativo, mejor presencia online." />
+      <Footer
+        minimal
+        ctaText={content.finalCta.primaryCta}
+        ctaLink={content.finalCta.primaryCtaLink}
+      />
     </div>
   );
 }
