@@ -144,6 +144,16 @@ export default function DiagnosticoDigitalPage() {
               })}
             </div>
 
+            <motion.div variants={fadeInUp} className="w-[30%] mx-auto mb-6">
+              <Image
+                src="/assets/sales/dr/surgeon.jpeg"
+                alt="Profesional médico"
+                width={1200}
+                height={800}
+                className="w-full h-auto object-contain rounded-2xl shadow-lg"
+              />
+            </motion.div>
+
             <motion.div
               variants={fadeInUp}
               className="text-center bg-gradient-to-r from-[#eff4ff] to-[#dbe6ff] rounded-2xl p-8 sm:p-12"
@@ -462,7 +472,7 @@ export default function DiagnosticoDigitalPage() {
 
             <motion.div variants={fadeInUp} className="mb-8">
               <p className="text-white/80 mb-4">En la consultoría te mostramos:</p>
-              <ul className="space-y-2 text-left max-w-md mx-auto">
+              <ul className="space-y-2 flex flex-col items-center">
                 {content.finalCta.deliverables.map((item, index) => (
                   <li key={index} className="flex items-center text-white">
                     <CheckCircle className="w-5 h-5 text-[#25D366] mr-3 flex-shrink-0" />
@@ -488,12 +498,12 @@ export default function DiagnosticoDigitalPage() {
 
             <motion.div
               variants={fadeInUp}
-              className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8"
+              className="flex flex-wrap justify-center gap-4 mb-8"
             >
               {content.finalCta.supportingDetails.map((detail, index) => (
                 <div
                   key={index}
-                  className="bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3 text-white/80 text-sm"
+                  className="bg-white/10 backdrop-blur-sm rounded-xl px-6 py-3 text-white/80 text-sm"
                 >
                   {detail}
                 </div>

@@ -2789,7 +2789,7 @@ export const crDiagnosticoContent: DiagnosticoDigitalContent = {
     subheading: 'Sistemas digitales diseñados para clínicas privadas.',
     description: 'El crecimiento de tu clínica no debería significar más llamadas, más papeleo o más caos en la agenda. Te ayudamos a organizar tu consulta con tecnología que trabaja por vos 24/7 — para que puedas enfocarte en lo que mejor hacés: ejercer tu medicina.',
     primaryCta: 'Agendar Consultoría Gratuita',
-    primaryCtaLink: 'https://wa.me/50670724236?text=Hola%2C%20quiero%20agendar%20una%20consultor%C3%ADa%20gratuita%20para%20mi%20cl%C3%ADnica',
+    primaryCtaLink: 'https://wa.me/50670724236?text=Hola%2C%20quiero%20atraer%20m%C3%A1s%20pacientes%20a%20mi%20cl%C3%ADnica%20y%20me%20gustar%C3%ADa%20agendar%20la%20consultor%C3%ADa%20para%20ver%20c%C3%B3mo%20podr%C3%ADamos%20trabajar%20juntos.',
     softCta: 'Cómo funciona ↓',
     backgroundImage: '/assets/featured.jpg',
   },
@@ -2838,7 +2838,7 @@ export const crDiagnosticoContent: DiagnosticoDigitalContent = {
   authority: {
     sectionLabel: 'Por qué elegirnos',
     title: 'Entendemos las necesidades de clínicas privadas.',
-    description: 'No somos una agencia de marketing genérica. Diseñamos sistemas digitales específicamente para médicos y clínicas que quieren crecer de forma organizada — sin perder el control de su consulta.',
+    description: 'Diseñamos sistemas digitales específicamente para médicos y clínicas que quieren crecer de forma organizada — sin perder el control de su consulta.',
     points: [
       'Trabajamos con clínicas de distintas especialidades que entienden que su presencia digital es parte de su operación — no un gasto extra.',
       'Te acompañamos después de la implementación. Nos convertimos en tu equipo técnico de confianza.',
@@ -2932,16 +2932,16 @@ export const crDiagnosticoContent: DiagnosticoDigitalContent = {
     trustDescription: 'Cumplimos con la Ley N.º 8968 de Protección de Datos de Costa Rica. Servidores seguros, conexiones encriptadas, y cuidamos la información de tus pacientes como si fuera nuestra.',
   },
   finalCta: {
-    sectionLabel: 'Da el primer paso',
-    title: 'Descubrí cómo optimizar la operación de tu clínica.',
-    description: 'En una sesión gratuita de 15 minutos te mostramos exactamente qué está frenando el crecimiento de tu consulta — y cómo podemos ayudarte a atraer más pacientes sin aumentar tu carga administrativa.',
+    sectionLabel: 'Hablemos de tu clínica',
+    title: '¿Querés más pacientes sin más desorden?',
+    description: 'En 15 minutos te mostramos cómo otras clínicas en Costa Rica están atrayendo más pacientes y organizando mejor su consulta — sin complicaciones técnicas ni contratos largos.',
     deliverables: [
-      'Análisis de tu presencia digital actual',
-      'Dónde estás perdiendo pacientes potenciales',
-      'Qué necesitás para crecer con más orden y control',
+      'Revisamos tu presencia digital actual',
+      'Identificamos oportunidades concretas de mejora',
+      'Te damos un plan claro para los próximos pasos',
     ],
-    primaryCta: 'Agendar Consultoría Gratuita',
-    primaryCtaLink: 'https://wa.me/50670724236?text=Hola%2C%20quiero%20agendar%20una%20consultor%C3%ADa%20gratuita%20para%20mi%20cl%C3%ADnica',
+    primaryCta: 'Reservar mi consultoría gratuita',
+    primaryCtaLink: 'https://wa.me/50670724236?text=Hola%2C%20quiero%20atraer%20m%C3%A1s%20pacientes%20a%20mi%20cl%C3%ADnica%20y%20me%20gustar%C3%ADa%20agendar%20la%20consultor%C3%ADa%20para%20ver%20c%C3%B3mo%20podr%C3%ADamos%20trabajar%20juntos.',
     supportingDetails: [
       '15 minutos por WhatsApp o videollamada',
       'Sin compromiso',
@@ -2950,6 +2950,6 @@ export const crDiagnosticoContent: DiagnosticoDigitalContent = {
     phoneNumber: '+506 7072-4236',
     email: 'info@yieldge.com',
     schedule: 'Lun - Vie, 8am - 6pm',
-    finalTrustLine: 'Clínicas en Costa Rica ya confían en nosotros. Tu práctica médica merece una presencia digital a la altura.',
+    finalTrustLine: 'Médicos en Costa Rica ya trabajan con nosotros. Tu consulta merece el mismo nivel de atención.',
   },
 };
