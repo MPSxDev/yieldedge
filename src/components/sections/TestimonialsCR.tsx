@@ -21,7 +21,7 @@ const testimonials: Testimonial[] = [
     location: 'San Jose, Costa Rica',
     rating: 5,
     quote:
-      'Yieldge construyo nuestro sitio web y automatizo nuestro sistema de citas. Ahora nuevos pacientes encuentran nuestra clinica en linea cada semana.',
+      'Yieldge desarrolló nuestro sitio web y ahora nuevos pacientes encuentran nuestra clínica en línea cada semana.',
   },
   {
     name: 'E. Logan',

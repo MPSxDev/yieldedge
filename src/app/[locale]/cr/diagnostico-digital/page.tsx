@@ -188,7 +188,7 @@ export default function DiagnosticoDigitalPage() {
             </motion.p>
 
             <motion.div variants={fadeInUp} className="mb-8">
-              <p className="text-lg text-gray-700 mb-4 font-medium">Un sistema que:</p>
+              <p className="text-lg text-gray-700 mb-4 font-medium">Un sistema digital que:</p>
               <ul className="space-y-3">
                 {content.reframe.systemBenefits.map((benefit, index) => (
                   <li key={index} className="flex items-center text-lg text-gray-700">
@@ -258,29 +258,6 @@ export default function DiagnosticoDigitalPage() {
               ))}
             </motion.div>
 
-            <motion.div
-              variants={fadeInUp}
-              className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-12"
-            >
-              {content.authority.stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="text-center bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10"
-                >
-                  <div className="text-3xl sm:text-4xl font-bold text-[#60a5fa] mb-2">
-                    {stat.value}
-                  </div>
-                  <div className="text-gray-400 text-sm">{stat.label}</div>
-                </div>
-              ))}
-            </motion.div>
-
-            <motion.p
-              variants={fadeInUp}
-              className="text-center text-gray-400 italic"
-            >
-              {content.authority.trustLine}
-            </motion.p>
           </motion.div>
         </Container>
       </section>
@@ -412,7 +389,7 @@ export default function DiagnosticoDigitalPage() {
               </div>
 
               <p className="text-2xl font-bold text-gray-900 text-center mb-6">
-                O podés tener un sistema.
+                O podés tener un sistema que trabaje por tu clínica.
               </p>
 
               <div className="bg-green-50 rounded-2xl p-6 sm:p-8 border border-green-200">
@@ -433,7 +410,7 @@ export default function DiagnosticoDigitalPage() {
                 {content.differentiation.strategicTitle}
               </h3>
               <div className="bg-[#1F5CFF] rounded-2xl p-6 sm:p-8">
-                <p className="text-white/80 mb-4">Negocios con sistemas digitales estructurados:</p>
+                <p className="text-white/80 mb-4">Clínicas con sistemas digitales bien estructurados:</p>
                 <ul className="space-y-3">
                   {content.differentiation.strategicBenefits.map((benefit, index) => (
                     <li key={index} className="flex items-center text-white">
@@ -484,7 +461,7 @@ export default function DiagnosticoDigitalPage() {
             </motion.p>
 
             <motion.div variants={fadeInUp} className="mb-8">
-              <p className="text-white/80 mb-4">Te vamos a mostrar:</p>
+              <p className="text-white/80 mb-4">En la consultoría te mostramos:</p>
               <ul className="space-y-2 text-left max-w-md mx-auto">
                 {content.finalCta.deliverables.map((item, index) => (
                   <li key={index} className="flex items-center text-white">
@@ -551,7 +528,7 @@ export default function DiagnosticoDigitalPage() {
         </Container>
       </section>
 
-      <Footer description="Yieldge Costa Rica y Latam: Tu aliado en soluciones digitales para PYMEs. Sitios web profesionales, SEO local y marketing digital que generan resultados." />
+      <Footer description="Yieldge Costa Rica: Sistemas digitales para clínicas privadas. Más pacientes, menos desorden administrativo, mejor presencia online." />
     </div>
   );
 }

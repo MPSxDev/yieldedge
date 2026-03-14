@@ -5,15 +5,15 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yieldge.com';
 const CR_WHATSAPP_NUMBER = '+50670724236';
 
 export const metadata: Metadata = {
-  title: 'Diagnóstico Digital Gratis | Tu Negocio Crece, Tu Sistema No | Yieldge CR',
-  description: 'Diagnóstico digital gratuito de 15 minutos. Descubrí qué está frenando el crecimiento de tu negocio y cómo solucionarlo. Sin compromiso. Para PYMEs en Costa Rica.',
-  keywords: 'diagnóstico digital Costa Rica, sistema digital pymes, automatización negocios, WhatsApp Business Costa Rica, SEO local, sitio web profesional, marketing digital Costa Rica, infraestructura digital',
+  title: 'Consultoría Digital para Clínicas | Más Pacientes, Menos Desorden | Yieldge CR',
+  description: 'Consultoría gratuita de 15 minutos para clínicas privadas. Descubrí cómo atraer más pacientes, organizar tu agenda y reducir la carga administrativa. Sin compromiso.',
+  keywords: 'sistema digital clínicas Costa Rica, agenda médica automatizada, reservas citas online, presencia digital médicos, marketing clínicas privadas, sistema citas pacientes, clínica digital Costa Rica',
   authors: [{ name: 'Yieldge Costa Rica' }],
   creator: 'Yieldge',
   publisher: 'Yieldge',
   openGraph: {
-    title: 'Diagnóstico Digital Gratis | Tu Negocio Crece, Tu Sistema No',
-    description: 'Diagnóstico digital gratuito de 15 minutos. Descubrí qué está frenando tu crecimiento y cómo solucionarlo. Para PYMEs en Costa Rica.',
+    title: 'Consultoría Digital para Clínicas | Más Pacientes, Menos Desorden',
+    description: 'Consultoría gratuita de 15 minutos para clínicas privadas. Atraé más pacientes y organizá tu consulta con sistemas digitales diseñados para médicos.',
     type: 'website',
     locale: 'es_CR',
     url: `${siteUrl}/cr/diagnostico-digital`,
@@ -23,14 +23,14 @@ export const metadata: Metadata = {
         url: `${siteUrl}/assets/featured.jpg`,
         width: 1200,
         height: 630,
-        alt: 'Diagnóstico Digital Gratis - Yieldge Costa Rica',
+        alt: 'Consultoría Digital para Clínicas - Yieldge Costa Rica',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Diagnóstico Digital Gratis | Yieldge Costa Rica',
-    description: 'Diagnóstico digital gratuito de 15 minutos para PYMEs en Costa Rica. Descubrí qué está frenando tu crecimiento.',
+    title: 'Consultoría Digital para Clínicas | Yieldge Costa Rica',
+    description: 'Consultoría gratuita para clínicas privadas. Más pacientes, mejor organización, menos carga administrativa.',
     images: [`${siteUrl}/assets/featured.jpg`],
     creator: '@yieldge',
   },
@@ -58,8 +58,8 @@ export default function DiagnosticoDigitalLayout({
   const diagnosticoSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'Diagnóstico Digital Gratuito',
-    description: 'Diagnóstico digital de 15 minutos para identificar qué está frenando el crecimiento de tu negocio y cómo solucionarlo.',
+    name: 'Consultoría Digital para Clínicas Privadas',
+    description: 'Consultoría gratuita de 15 minutos para clínicas privadas. Te ayudamos a atraer más pacientes, organizar tu agenda y reducir la carga administrativa con sistemas digitales.',
     provider: {
       '@type': 'ProfessionalService',
       name: 'Yieldge Costa Rica',
@@ -74,7 +74,7 @@ export default function DiagnosticoDigitalLayout({
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'CRC',
-      description: 'Diagnóstico digital gratuito de 15 minutos',
+      description: 'Consultoría digital gratuita de 15 minutos para clínicas',
     },
   };
 
@@ -84,26 +84,26 @@ export default function DiagnosticoDigitalLayout({
     mainEntity: [
       {
         '@type': 'Question',
-        name: '¿Qué incluye el diagnóstico digital gratuito?',
+        name: '¿Qué incluye la consultoría digital gratuita para clínicas?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'El diagnóstico incluye un análisis de tu presencia digital actual, identificación de dónde estás perdiendo clientes, y recomendaciones específicas para tu negocio. Dura 15 minutos por WhatsApp o videollamada.',
+          text: 'La consultoría incluye un análisis de tu presencia digital actual, identificación de dónde estás perdiendo pacientes potenciales, y recomendaciones específicas para tu clínica. Dura 15 minutos por WhatsApp o videollamada.',
         },
       },
       {
         '@type': 'Question',
-        name: '¿Por qué necesito un sistema digital y no solo una página web?',
+        name: '¿Por qué mi clínica necesita un sistema digital y no solo una página web?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Una página web sin sistema es solo un folleto digital. Un sistema digital captura clientes automáticamente, responde cuando no podés, organiza tus contactos, y te muestra de dónde vienen tus ventas. Es la diferencia entre tener presencia online y tener una máquina de crecimiento.',
+          text: 'Una página web sin sistema es solo un folleto digital. Un sistema digital permite agendar citas automáticamente, envía recordatorios a tus pacientes para reducir ausencias, organiza la información de pacientes, y te muestra de dónde vienen tus nuevas citas. Es la diferencia entre tener presencia online y tener un sistema que hace crecer tu clínica.',
         },
       },
       {
         '@type': 'Question',
-        name: '¿Trabajan con negocios pequeños?',
+        name: '¿Trabajan con consultorios pequeños y clínicas grandes?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Sí. Trabajamos desde PYMEs hasta empresas enterprise. Nos especializamos en clínicas, bufetes, restaurantes, empresas de servicios y profesionales independientes en Costa Rica.',
+          text: 'Sí. Trabajamos desde consultorios individuales hasta clínicas con múltiples especialistas. Nos especializamos en clínicas privadas de distintas especialidades médicas en Costa Rica.',
         },
       },
     ],
