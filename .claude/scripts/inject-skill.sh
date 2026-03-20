@@ -2,7 +2,7 @@
 # ============================================================================
 # INJECT SKILL - Detector de skills basado en patrones
 # ============================================================================
-# Analiza contenido (errores, código, archivos) y sugiere skills apropiados
+# Compatible con bash 3.x (macOS default)
 #
 # Uso:
 #   echo "error message" | .claude/scripts/inject-skill.sh
@@ -19,11 +19,9 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 CYAN='\033[0;36m'
 MAGENTA='\033[0;35m'
-BOLD='\033[1m'
 NC='\033[0m'
 
 # Configuración
-PATTERNS_FILE=".claude/patterns/skill-triggers.yaml"
 SKILLS_DIR=".claude/skills"
 
 # Variables
@@ -34,96 +32,7 @@ MATCHED_SKILLS=""
 HIGHEST_SEVERITY="info"
 
 # ============================================================================
-# PATRONES EMBEBIDOS (para no depender de yq/parser YAML)
-# ============================================================================
-
-# Arrays asociativos para patrones
-declare -A ERROR_PATTERNS
-declare -A CODE_PATTERNS
-declare -A SECURITY_PATTERNS
-
-# --- Patrones de Error ---
-ERROR_PATTERNS["senior-frontend"]="
-Type '.*' is not assignable
-Property '.*' does not exist on type
-Cannot find name
-Invalid hook call
-Rules of Hooks
-Hydration failed
-Text content does not match
-useEffect has a missing dependency
-You're importing a component that needs useState
-You're importing a component that needs useEffect
-async/await is not yet supported in Client Components
-Cannot find module
-"
-
-ERROR_PATTERNS["senior-backend"]="
-ECONNREFUSED
-Connection refused
-connection pool exhausted
-Too many connections
-relation .* does not exist
-duplicate key value
-deadlock detected
-PrismaClient
-Failed to fetch
-status code [45][0-9]{2}
-"
-
-ERROR_PATTERNS["senior-security"]="
-CORS
-Access-Control-Allow-Origin
-blocked by CORS policy
-unauthorized
-Unauthorized
-401
-invalid token
-jwt expired
-JsonWebTokenError
-"
-
-# --- Patrones de Código (análisis estático) ---
-CODE_PATTERNS["critical"]="
-eval\s*\(
-new\s+Function\s*\(
-innerHTML\s*=
-dangerouslySetInnerHTML
-password\s*[=:]\s*['\"][^'\"]{4,}['\"]
-api_?key\s*[=:]\s*['\"][^'\"]{8,}['\"]
-exec\s*\(.*\$\{
-"
-
-CODE_PATTERNS["warning"]="
-:\s*any\b
-as\s+any\b
-console\.(log|debug|info)\s*\(
-useEffect\s*\([^,]+\)\s*$
-\.then\s*\([^)]+\.then
-"
-
-CODE_PATTERNS["info"]="
-<img\s+[^>]*src=
-style\s*=\s*\{\{
-<a\s+[^>]*href=['\"]\/
-"
-
-# --- Patrones de Seguridad (máxima prioridad) ---
-SECURITY_PATTERNS["block"]="
-eval\s*\(
-exec\s*\(.*\$\{
-password\s*=\s*['\"][^'\"]+['\"]
-api_key\s*=\s*['\"][^'\"]+['\"]
-"
-
-SECURITY_PATTERNS["warn"]="
-innerHTML
-dangerouslySetInnerHTML
-\$\{.*\}.*SELECT|INSERT|UPDATE|DELETE
-"
-
-# ============================================================================
-# FUNCIONES
+# FUNCIONES DE AYUDA
 # ============================================================================
 
 usage() {
@@ -140,165 +49,228 @@ usage() {
     echo "  echo 'error' | $0"
 }
 
+add_skill() {
+    local skill="$1"
+    case "$MATCHED_SKILLS" in
+        *"$skill"*) ;;  # Ya existe
+        *) MATCHED_SKILLS="$MATCHED_SKILLS $skill" ;;
+    esac
+}
+
 log_match() {
     local severity="$1"
-    local pattern="$2"
-    local skill="$3"
-    local message="$4"
+    local skill="$2"
+    local message="$3"
 
     case "$severity" in
         critical)
-            echo -e "${RED}⛔ CRÍTICO:${NC} $message"
-            echo -e "   Skill recomendado: ${MAGENTA}$skill${NC}"
+            printf "${RED}⛔ CRÍTICO:${NC} %s\n" "$message"
+            printf "   Skill recomendado: ${MAGENTA}%s${NC}\n" "$skill"
             HIGHEST_SEVERITY="critical"
             ;;
         error)
-            echo -e "${RED}❌ ERROR:${NC} $message"
-            echo -e "   Skill recomendado: ${MAGENTA}$skill${NC}"
+            printf "${RED}❌ ERROR:${NC} %s\n" "$message"
+            printf "   Skill recomendado: ${MAGENTA}%s${NC}\n" "$skill"
             if [ "$HIGHEST_SEVERITY" != "critical" ]; then
                 HIGHEST_SEVERITY="error"
             fi
             ;;
         warning)
-            echo -e "${YELLOW}⚠️  ADVERTENCIA:${NC} $message"
-            echo -e "   Skill recomendado: ${MAGENTA}$skill${NC}"
+            printf "${YELLOW}⚠️  ADVERTENCIA:${NC} %s\n" "$message"
+            printf "   Skill recomendado: ${MAGENTA}%s${NC}\n" "$skill"
             if [ "$HIGHEST_SEVERITY" = "info" ]; then
                 HIGHEST_SEVERITY="warning"
             fi
             ;;
         info)
             if [ "$VERBOSE" = true ]; then
-                echo -e "${CYAN}ℹ️  INFO:${NC} $message"
-                echo -e "   Skill sugerido: ${MAGENTA}$skill${NC}"
+                printf "${CYAN}ℹ️  INFO:${NC} %s\n" "$message"
+                printf "   Skill sugerido: ${MAGENTA}%s${NC}\n" "$skill"
             fi
             ;;
     esac
 
-    # Añadir skill a la lista (sin duplicados)
-    if [[ ! "$MATCHED_SKILLS" =~ "$skill" ]]; then
-        MATCHED_SKILLS="$MATCHED_SKILLS $skill"
+    add_skill "$skill"
+}
+
+# ============================================================================
+# FUNCIONES DE DETECCIÓN DE PATRONES
+# ============================================================================
+
+check_frontend_errors() {
+    local content="$1"
+
+    # TypeScript errors
+    if echo "$content" | grep -qE "Type '.*' is not assignable|Property '.*' does not exist on type|Cannot find name|Cannot find module"; then
+        log_match "error" "senior-frontend" "Error de TypeScript detectado"
+    fi
+
+    # React hooks errors
+    if echo "$content" | grep -qE "Invalid hook call|Rules of Hooks|rendered more hooks|has a missing dependency"; then
+        log_match "error" "senior-frontend" "Error de React Hooks detectado"
+    fi
+
+    # Hydration errors
+    if echo "$content" | grep -qE "Hydration failed|Text content does not match|server rendered HTML"; then
+        log_match "error" "senior-frontend" "Error de hidratación detectado"
+    fi
+
+    # Next.js client component errors
+    if echo "$content" | grep -qE "needs useState|needs useEffect|async/await is not yet supported in Client"; then
+        log_match "error" "senior-frontend" "Error de Client Component detectado"
+    fi
+}
+
+check_backend_errors() {
+    local content="$1"
+
+    # Database connection errors
+    if echo "$content" | grep -qE "ECONNREFUSED|Connection refused|connection pool exhausted|Too many connections"; then
+        log_match "error" "senior-backend" "Error de conexión a base de datos"
+    fi
+
+    # SQL/Prisma errors
+    if echo "$content" | grep -qE "relation .* does not exist|duplicate key|deadlock detected|PrismaClient"; then
+        log_match "error" "senior-backend" "Error de base de datos/Prisma"
+    fi
+
+    # API errors
+    if echo "$content" | grep -qE "Failed to fetch|status code [45][0-9][0-9]"; then
+        log_match "error" "senior-backend" "Error de API detectado"
+    fi
+}
+
+check_security_errors() {
+    local content="$1"
+
+    # CORS errors
+    if echo "$content" | grep -qE "CORS|Access-Control-Allow-Origin|blocked by CORS policy"; then
+        log_match "warning" "senior-security" "Error de CORS detectado"
+    fi
+
+    # Auth errors
+    if echo "$content" | grep -qE "unauthorized|Unauthorized|401|invalid token|jwt expired|JsonWebTokenError"; then
+        log_match "warning" "senior-security" "Error de autenticación detectado"
     fi
 }
 
 check_security_patterns() {
     local content="$1"
+    local has_critical=false
 
-    # Patrones que BLOQUEAN
-    for pattern in ${SECURITY_PATTERNS["block"]}; do
-        if echo "$content" | grep -qE "$pattern" 2>/dev/null; then
-            log_match "critical" "$pattern" "senior-security" "Patrón de seguridad crítico detectado"
-            return 1
-        fi
-    done
+    # CRITICAL: eval() usage
+    if echo "$content" | grep -qE 'eval\s*\('; then
+        log_match "critical" "senior-security" "Uso de eval() detectado - Riesgo crítico"
+        has_critical=true
+    fi
 
-    # Patrones que ADVIERTEN
-    for pattern in ${SECURITY_PATTERNS["warn"]}; do
-        if echo "$content" | grep -qE "$pattern" 2>/dev/null; then
-            log_match "warning" "$pattern" "senior-security" "Posible problema de seguridad"
-        fi
-    done
+    # CRITICAL: Command injection
+    if echo "$content" | grep -qE 'exec\s*\(.*\$\{|spawn\s*\(.*\$\{'; then
+        log_match "critical" "senior-security" "Posible command injection detectado"
+        has_critical=true
+    fi
 
+    # CRITICAL: Hardcoded secrets
+    if echo "$content" | grep -qE 'password\s*[=:]\s*["][^"]{4,}["]|api_?key\s*[=:]\s*["][^"]{8,}["]'; then
+        log_match "critical" "senior-security" "Posible secreto hardcodeado detectado"
+        has_critical=true
+    fi
+
+    # WARNING: innerHTML
+    if echo "$content" | grep -qE 'innerHTML\s*=|dangerouslySetInnerHTML'; then
+        log_match "warning" "senior-security" "innerHTML/dangerouslySetInnerHTML detectado - Riesgo XSS"
+    fi
+
+    # WARNING: SQL injection
+    if echo "$content" | grep -qE '\$\{.*\}.*(SELECT|INSERT|UPDATE|DELETE)'; then
+        log_match "warning" "senior-security" "Posible SQL injection detectado"
+    fi
+
+    if [ "$has_critical" = true ]; then
+        return 1
+    fi
     return 0
 }
 
-check_error_patterns() {
+check_code_antipatterns() {
     local content="$1"
 
-    # Frontend
-    while IFS= read -r pattern; do
-        [ -z "$pattern" ] && continue
-        if echo "$content" | grep -qE "$pattern" 2>/dev/null; then
-            log_match "error" "$pattern" "senior-frontend" "Error de frontend detectado"
-        fi
-    done <<< "${ERROR_PATTERNS["senior-frontend"]}"
+    # TypeScript any
+    if echo "$content" | grep -qE ':\s*any\b|as\s+any\b'; then
+        log_match "warning" "senior-frontend" "Uso de tipo 'any' detectado"
+    fi
 
-    # Backend
-    while IFS= read -r pattern; do
-        [ -z "$pattern" ] && continue
-        if echo "$content" | grep -qE "$pattern" 2>/dev/null; then
-            log_match "error" "$pattern" "senior-backend" "Error de backend detectado"
-        fi
-    done <<< "${ERROR_PATTERNS["senior-backend"]}"
+    # console.log
+    if echo "$content" | grep -qE 'console\.(log|debug|info)\s*\('; then
+        log_match "info" "senior-frontend" "console.log detectado"
+    fi
 
-    # Security
-    while IFS= read -r pattern; do
-        [ -z "$pattern" ] && continue
-        if echo "$content" | grep -qE "$pattern" 2>/dev/null; then
-            log_match "warning" "$pattern" "senior-security" "Error relacionado con seguridad"
-        fi
-    done <<< "${ERROR_PATTERNS["senior-security"]}"
-}
+    # useEffect sin dependencias
+    if echo "$content" | grep -qE 'useEffect\s*\(\s*\(\s*\)\s*=>' | grep -vq '\[\]'; then
+        log_match "warning" "senior-frontend" "useEffect posiblemente sin dependencias"
+    fi
 
-check_code_patterns() {
-    local content="$1"
+    # Promise chaining
+    if echo "$content" | grep -qE '\.then\s*\([^)]*\.then'; then
+        log_match "warning" "senior-backend" "Promise chaining detectado - Considera async/await"
+    fi
 
-    # Críticos
-    for pattern in ${CODE_PATTERNS["critical"]}; do
-        [ -z "$pattern" ] && continue
-        if echo "$content" | grep -qE "$pattern" 2>/dev/null; then
-            log_match "critical" "$pattern" "senior-security" "Antipatrón crítico en código"
-        fi
-    done
+    # Native img tag
+    if echo "$content" | grep -qE '<img\s+[^>]*src='; then
+        log_match "info" "senior-frontend" "Tag <img> nativo - Considera next/image"
+    fi
 
-    # Warnings
-    for pattern in ${CODE_PATTERNS["warning"]}; do
-        [ -z "$pattern" ] && continue
-        if echo "$content" | grep -qE "$pattern" 2>/dev/null; then
-            log_match "warning" "$pattern" "senior-frontend" "Antipatrón en código"
-        fi
-    done
-
-    # Info
-    for pattern in ${CODE_PATTERNS["info"]}; do
-        [ -z "$pattern" ] && continue
-        if echo "$content" | grep -qE "$pattern" 2>/dev/null; then
-            log_match "info" "$pattern" "senior-frontend" "Sugerencia de mejora"
-        fi
-    done
+    # Inline styles
+    if echo "$content" | grep -qE 'style\s*=\s*\{\{'; then
+        log_match "info" "senior-frontend" "Estilos inline detectados - Considera Tailwind"
+    fi
 }
 
 check_file_context() {
     local filepath="$1"
     local ext="${filepath##*.}"
-    local dir=$(dirname "$filepath")
 
     # Por extensión
     case ".$ext" in
         .tsx|.jsx|.css|.scss)
-            log_match "info" "extension" "senior-frontend" "Archivo de frontend detectado"
+            log_match "info" "senior-frontend" "Archivo de frontend detectado"
             ;;
         .sql|.prisma|.graphql)
-            log_match "info" "extension" "senior-backend" "Archivo de backend detectado"
+            log_match "info" "senior-backend" "Archivo de backend detectado"
             ;;
     esac
 
     # Por path
-    if [[ "$filepath" =~ (auth|security|middleware) ]]; then
-        log_match "warning" "path" "senior-security" "Archivo en contexto de seguridad"
-    elif [[ "$filepath" =~ (components|app/.*\.tsx|pages) ]]; then
-        log_match "info" "path" "senior-frontend" "Archivo de UI/componentes"
-    elif [[ "$filepath" =~ (api|server|lib/db) ]]; then
-        log_match "info" "path" "senior-backend" "Archivo de API/servidor"
-    fi
+    case "$filepath" in
+        *auth*|*security*|*middleware*)
+            log_match "warning" "senior-security" "Archivo en contexto de seguridad"
+            ;;
+        *components*|*app/*.tsx|*pages*)
+            log_match "info" "senior-frontend" "Archivo de UI/componentes"
+            ;;
+        *api*|*server*|*lib/db*)
+            log_match "info" "senior-backend" "Archivo de API/servidor"
+            ;;
+    esac
 }
 
 check_prompt_patterns() {
-    local prompt="$1"
-    prompt=$(echo "$prompt" | tr '[:upper:]' '[:lower:]')
+    local prompt
+    prompt=$(echo "$1" | tr '[:upper:]' '[:lower:]')
 
     # Frontend keywords
     if echo "$prompt" | grep -qE "(componente|component|react|hook|estado|state|ui|interfaz|responsive|tailwind|css|estilo)"; then
-        log_match "info" "prompt" "senior-frontend" "Prompt relacionado con frontend"
+        log_match "info" "senior-frontend" "Prompt relacionado con frontend"
     fi
 
     # Backend keywords
     if echo "$prompt" | grep -qE "(api|endpoint|base de datos|database|query|prisma|graphql|rest|servidor|server|backend)"; then
-        log_match "info" "prompt" "senior-backend" "Prompt relacionado con backend"
+        log_match "info" "senior-backend" "Prompt relacionado con backend"
     fi
 
     # Security keywords (alta prioridad)
     if echo "$prompt" | grep -qE "(seguridad|security|autenticación|auth|jwt|token|xss|csrf|vulnerabilidad|penetration)"; then
-        log_match "warning" "prompt" "senior-security" "Prompt relacionado con seguridad"
+        log_match "warning" "senior-security" "Prompt relacionado con seguridad"
     fi
 }
 
@@ -306,7 +278,7 @@ check_prompt_patterns() {
 # PARSEAR ARGUMENTOS
 # ============================================================================
 
-while [[ $# -gt 0 ]]; do
+while [ $# -gt 0 ]; do
     case $1 in
         --file)
             INPUT="$2"
@@ -343,53 +315,53 @@ done
 # ============================================================================
 
 echo ""
-echo -e "${CYAN}╔════════════════════════════════════════════════════════════╗${NC}"
-echo -e "${CYAN}║         DETECTOR DE SKILLS - Análisis de Patrones          ║${NC}"
-echo -e "${CYAN}╚════════════════════════════════════════════════════════════╝${NC}"
+printf "${CYAN}╔════════════════════════════════════════════════════════════╗${NC}\n"
+printf "${CYAN}║         DETECTOR DE SKILLS - Análisis de Patrones          ║${NC}\n"
+printf "${CYAN}╚════════════════════════════════════════════════════════════╝${NC}\n"
 echo ""
 
 # Obtener contenido a analizar
 case "$MODE" in
     stdin)
         if [ -t 0 ]; then
-            echo -e "${YELLOW}No se proporcionó input. Usa --help para ver opciones.${NC}"
+            printf "${YELLOW}No se proporcionó input. Usa --help para ver opciones.${NC}\n"
             exit 0
         fi
         CONTENT=$(cat)
-        echo -e "${CYAN}Modo:${NC} stdin"
+        printf "${CYAN}Modo:${NC} stdin\n"
         ;;
     file)
         if [ ! -f "$INPUT" ]; then
-            echo -e "${RED}Error: Archivo no encontrado: $INPUT${NC}"
+            printf "${RED}Error: Archivo no encontrado: %s${NC}\n" "$INPUT"
             exit 1
         fi
         CONTENT=$(cat "$INPUT")
-        echo -e "${CYAN}Modo:${NC} archivo"
-        echo -e "${CYAN}Archivo:${NC} $INPUT"
+        printf "${CYAN}Modo:${NC} archivo\n"
+        printf "${CYAN}Archivo:${NC} %s\n" "$INPUT"
         check_file_context "$INPUT"
         ;;
     error)
         CONTENT="$INPUT"
-        echo -e "${CYAN}Modo:${NC} error"
+        printf "${CYAN}Modo:${NC} error\n"
         ;;
     prompt)
         CONTENT="$INPUT"
-        echo -e "${CYAN}Modo:${NC} prompt"
+        printf "${CYAN}Modo:${NC} prompt\n"
         check_prompt_patterns "$CONTENT"
         ;;
 esac
 
 echo ""
-echo -e "${CYAN}Analizando contenido...${NC}"
+printf "${CYAN}Analizando contenido...${NC}\n"
 echo "────────────────────────────────────────────────────────────"
 echo ""
 
 # Ejecutar análisis
-check_security_patterns "$CONTENT"
-SECURITY_RESULT=$?
-
-check_error_patterns "$CONTENT"
-check_code_patterns "$CONTENT"
+check_security_patterns "$CONTENT" || true
+check_frontend_errors "$CONTENT"
+check_backend_errors "$CONTENT"
+check_security_errors "$CONTENT"
+check_code_antipatterns "$CONTENT"
 
 # ============================================================================
 # RESULTADOS
@@ -403,12 +375,12 @@ echo ""
 MATCHED_SKILLS=$(echo "$MATCHED_SKILLS" | xargs)
 
 if [ -z "$MATCHED_SKILLS" ]; then
-    echo -e "${GREEN}✅ No se detectaron patrones que requieran skills específicos${NC}"
+    printf "${GREEN}✅ No se detectaron patrones que requieran skills específicos${NC}\n"
     echo ""
     exit 0
 fi
 
-echo -e "${GREEN}📦 SKILLS RECOMENDADOS:${NC}"
+printf "${GREEN}📦 SKILLS RECOMENDADOS:${NC}\n"
 echo ""
 
 for skill in $MATCHED_SKILLS; do
@@ -416,10 +388,10 @@ for skill in $MATCHED_SKILLS; do
     if [ -n "$skill" ]; then
         # Verificar que el skill existe
         if [ -d "$SKILLS_DIR/$skill" ]; then
-            echo -e "   ${MAGENTA}→ $skill${NC} ${GREEN}(disponible)${NC}"
-            echo -e "     Invocar: ${CYAN}/$skill${NC}"
+            printf "   ${MAGENTA}→ %s${NC} ${GREEN}(disponible)${NC}\n" "$skill"
+            printf "     Invocar: ${CYAN}/%s${NC}\n" "$skill"
         else
-            echo -e "   ${MAGENTA}→ $skill${NC} ${RED}(no instalado)${NC}"
+            printf "   ${MAGENTA}→ %s${NC} ${RED}(no instalado)${NC}\n" "$skill"
         fi
     fi
 done
@@ -429,16 +401,16 @@ echo ""
 # Mostrar severidad general
 case "$HIGHEST_SEVERITY" in
     critical)
-        echo -e "${RED}⛔ Severidad: CRÍTICA - Acción requerida${NC}"
+        printf "${RED}⛔ Severidad: CRÍTICA - Acción requerida${NC}\n"
         ;;
     error)
-        echo -e "${RED}❌ Severidad: ERROR - Revisar antes de continuar${NC}"
+        printf "${RED}❌ Severidad: ERROR - Revisar antes de continuar${NC}\n"
         ;;
     warning)
-        echo -e "${YELLOW}⚠️  Severidad: ADVERTENCIA - Considerar revisión${NC}"
+        printf "${YELLOW}⚠️  Severidad: ADVERTENCIA - Considerar revisión${NC}\n"
         ;;
     info)
-        echo -e "${CYAN}ℹ️  Severidad: INFO - Sugerencias opcionales${NC}"
+        printf "${CYAN}ℹ️  Severidad: INFO - Sugerencias opcionales${NC}\n"
         ;;
 esac
 
