@@ -3,7 +3,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import { HeroContent, homepageContent } from '@/lib/content';
 
@@ -72,19 +71,6 @@ export default function Hero({ content = homepageContent.hero }: HeroProps) {
       {/* Subtle gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#eff4ff]/50 via-white to-white" />
 
-      {/* Background Image */}
-      {slide.backgroundImage && (
-        <div className="absolute inset-0 opacity-10">
-          <Image
-            src={slide.backgroundImage}
-            alt={slide.heading}
-            fill
-            className="object-cover"
-            priority={currentSlide === 0}
-          />
-        </div>
-      )}
-
       {/* Main container - perfectly centered */}
       <Container className="relative z-10 py-24 sm:py-32 lg:py-36">
         <AnimatePresence mode="wait">
@@ -95,75 +81,42 @@ export default function Hero({ content = homepageContent.hero }: HeroProps) {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.6 }}
           >
-            {/* Content grid - balanced on large screens */}
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-              {/* Left: Content */}
-              <motion.div
-                variants={staggerContainer}
-                initial="hidden"
-                animate="visible"
-                className="order-2 lg:order-1"
+            {/* Centered content */}
+            <motion.div
+              variants={staggerContainer}
+              initial="hidden"
+              animate="visible"
+              className="text-center max-w-4xl mx-auto"
+            >
+              {/* Main headline */}
+              <motion.h1
+                variants={fadeInUp}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-8 leading-[1.2]"
               >
-                {/* Eyebrow label */}
-                <motion.div variants={fadeInUp} className="mb-6">
-                  <span className="text-sm sm:text-base uppercase tracking-wide text-[#1F5CFF] font-semibold">
-                    {slide.heading}
-                  </span>
-                </motion.div>
+                {slide.subheading}
+              </motion.h1>
 
-                {/* Main headline */}
-                <motion.h1
-                  variants={fadeInUp}
-                  className="text-lg sm:text-xl md:text-2xl lg:text-[1.75rem] font-semibold tracking-tight text-gray-900 mb-8 leading-[1.3]"
-                >
-                  {slide.subheading}
-                </motion.h1>
-
-                {/* Description */}
-                <motion.p
-                  variants={fadeInUp}
-                  className="text-base sm:text-lg lg:text-xl text-gray-600 mb-10 leading-[1.7] max-w-xl"
-                >
-                  {slide.description}
-                </motion.p>
-
-                {/* CTA */}
-                <motion.div variants={fadeInUp}>
-                  <motion.a
-                    href={slide.ctaLink}
-                    whileHover={{ y: -2 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="group inline-flex items-center justify-center gap-3 px-7 py-4 bg-[#1F5CFF] text-white text-base font-medium rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-lg shadow-[#1F5CFF]/25 hover:shadow-xl hover:shadow-[#1F5CFF]/35"
-                  >
-                    {slide.ctaText}
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </motion.a>
-                </motion.div>
-              </motion.div>
-
-              {/* Right: Hero Image */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1, delay: 0.3 }}
-                className="order-1 lg:order-2 relative"
+              {/* Description */}
+              <motion.p
+                variants={fadeInUp}
+                className="text-lg sm:text-xl lg:text-2xl text-gray-600 mb-12 leading-[1.7] max-w-3xl mx-auto"
               >
-                {slide.backgroundImage && (
-                  <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
-                    <Image
-                      src={slide.backgroundImage}
-                      alt={slide.heading}
-                      fill
-                      className="object-cover"
-                      priority={currentSlide === 0}
-                      loading={currentSlide === 0 ? 'eager' : 'lazy'}
-                    />
-                    {/* Subtle overlay for text readability if needed */}
-                    <div className="absolute inset-0 bg-gradient-to-tr from-[#1F5CFF]/10 to-transparent" />
-                  </div>
-                )}
+                {slide.description}
+              </motion.p>
+
+              {/* CTA */}
+              <motion.div variants={fadeInUp}>
+                <motion.a
+                  href={slide.ctaLink}
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#1F5CFF] text-white text-lg font-medium rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-lg shadow-[#1F5CFF]/25 hover:shadow-xl hover:shadow-[#1F5CFF]/35"
+                >
+                  {slide.ctaText}
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </motion.a>
               </motion.div>
-            </div>
+            </motion.div>
           </motion.div>
         </AnimatePresence>
 

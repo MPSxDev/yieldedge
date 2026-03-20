@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Yieldge | Soluciones Tecnológicas y Desarrollo Offshore",
-    "titleTemplate": "%s | Yieldge",
+    "title": "AI Consulting",
+    "titleTemplate": "%s | AI Consulting",
     "description": "Proveedor líder de soluciones tecnológicas con más de 15 años de experiencia. Ofrecemos desarrollo de software, servicios de seguridad, consultoría tecnológica y equipos offshore en las Américas.",
     "keywords": "desarrollo offshore, soluciones tecnológicas, ingeniería de software, servicios de seguridad, aumento de personal, soluciones en la nube, consultoría tecnológica, automatización QA, desarrollo de apps móviles, desarrollo web, análisis e insights, desarrollo de software a medida, desarrollo nearshore, transformación digital"
   },
@@ -47,10 +47,10 @@
     "discoverYieldge": "DESCUBRE YIELDGE",
     "learnMore": "Conocer Más",
     "bookConsultation": "Agenda tu Consulta",
-    "heading": "Excelencia Digital",
-    "subheading": "Más de 15 años de innovación",
-    "description": "Con más de 15 años sirviendo el panorama tecnológico global, Yieldge se ha establecido como un socio de confianza en transformación digital. Hemos empoderado a innumerables organizaciones para optimizar operaciones y lograr resultados medibles.",
-    "ctaText": "Agenda una Consulta",
+    "heading": "AI Consulting",
+    "subheading": "Impulsamos tu crecimiento digital con consultoría de IA",
+    "description": "Somos consultores que ayudan a mejorar los procesos de tu empresa con asesoría clara y la integración de soluciones donde tienen mayor impacto.",
+    "ctaText": "Conocer más",
     "ctaLink": "https://calendly.com/anwar-softwaredev"
   },
   "services": {
@@ -238,12 +238,12 @@
   },
   "company": {
     "aboutUs": "Sobre Nosotros",
-    "buildingFuture": "Construyendo el Futuro de la Tecnología",
+    "buildingFuture": "Impulsamos el crecimiento de tu negocio a través de IA e infraestructura digital",
     "division": "División {vertical}",
     "aboutYieldge": "Sobre Yieldge",
     "experience": "15+ Años de Experiencia",
     "leadershipTeam": "Equipo de Liderazgo",
-    "leadershipDescription": "Nuestro equipo de liderazgo aporta décadas de experiencia combinada en tecnología, negocios e innovación.",
+    "leadershipDescription": "Ayudamos a empresas a optimizar sus operaciones con estrategia clara, sistemas inteligentes y soluciones de IA implementadas exactamente donde generan el mayor impacto.",
     "leadershipRoles": {
       "executive": "Equipo Ejecutivo",
       "technical": "Líderes Técnicos",

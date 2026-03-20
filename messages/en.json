@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Yieldge | Technology Solutions & Offshore Development",
-    "titleTemplate": "%s | Yieldge",
+    "title": "AI Consulting",
+    "titleTemplate": "%s | AI Consulting",
     "description": "Leading provider of technology solutions with 15+ years of expertise. Delivering software development, security services, technology consulting and offshore teams across the Americas.",
     "keywords": "offshore development, technology solutions, software engineering, security services, staff augmentation, cloud solutions, technology consulting, QA automation, mobile app development, web development, analytics and insights, tailored software development, nearshore development, digital transformation"
   },
@@ -47,10 +47,10 @@
     "discoverYieldge": "DISCOVER YIELDGE",
     "learnMore": "Learn More",
     "bookConsultation": "Book a Consultation",
-    "heading": "Digital Excellence",
-    "subheading": "More than 15 years of innovation",
-    "description": "With over 15+ years serving the global technology landscape, Yieldge has established itself as a trusted partner in digital transformation. We've empowered countless organizations to streamline operations and achieve measurable results.",
-    "ctaText": "Book a Consultation",
+    "heading": "AI Consulting",
+    "subheading": "We drive your digital growth with AI consulting",
+    "description": "We are consultants who help improve your company's processes with clear advice and the integration of solutions where they have the most impact.",
+    "ctaText": "Learn more",
     "ctaLink": "https://calendly.com/anwar-softwaredev"
   },
   "services": {
@@ -238,12 +238,12 @@
   },
   "company": {
     "aboutUs": "About Us",
-    "buildingFuture": "Building the Future of Technology",
+    "buildingFuture": "We drive your business growth through AI and digital infrastructure",
     "division": "{vertical} Division",
     "aboutYieldge": "About Yieldge",
     "experience": "15+ Years Experience",
     "leadershipTeam": "Leadership Team",
-    "leadershipDescription": "Our leadership team brings decades of combined experience in technology, business, and innovation.",
+    "leadershipDescription": "We help companies optimize their operations with clear strategy, intelligent systems, and AI solutions implemented exactly where they generate the highest impact.",
     "leadershipRoles": {
       "executive": "Executive Team",
       "technical": "Technical Leaders",
