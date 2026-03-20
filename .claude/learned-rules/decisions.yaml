@@ -1,0 +1,192 @@
+# ============================================================================
+# DECISIONES ARQUITECTÓNICAS - ADRs simplificados
+# ============================================================================
+# Registro de decisiones técnicas importantes del proyecto
+# Formato: Lightweight ADR (Architecture Decision Record)
+# ============================================================================
+
+version: "1.0"
+
+decisions:
+
+  # ============================================================================
+  # FRAMEWORK Y RUNTIME
+  # ============================================================================
+
+  - id: "adr-001"
+    title: "Usar Next.js 15 con App Router"
+    date: "2024-01-01"
+    status: "accepted"
+    context: |
+      Necesitamos un framework React moderno con SSR/SSG, optimización
+      de imágenes, y buen soporte para SEO.
+    decision: "Adoptamos Next.js 15 con App Router para todo el proyecto"
+    consequences:
+      positive:
+        - "Server Components por defecto (mejor performance)"
+        - "Streaming y Suspense nativo"
+        - "File-based routing simplificado"
+        - "Optimización automática de imágenes y fuentes"
+      negative:
+        - "Curva de aprendizaje para Server/Client Components"
+        - "Algunas librerías aún no soportan RSC"
+    alternatives_considered:
+      - "Pages Router: Más documentación pero arquitectura legacy"
+      - "Remix: Bueno pero ecosistema más pequeño"
+      - "Astro: Mejor para sitios estáticos pero menos flexible"
+
+  - id: "adr-002"
+    title: "Usar React 19"
+    date: "2024-01-01"
+    status: "accepted"
+    context: "Next.js 15 soporta React 19 con nuevas features"
+    decision: "Adoptamos React 19 para aprovechar las nuevas APIs"
+    consequences:
+      positive:
+        - "Mejores Server Components"
+        - "Actions y Form handling mejorado"
+        - "use() hook para promesas"
+      negative:
+        - "Algunas librerías pueden tener warnings de compatibilidad"
+
+  # ============================================================================
+  # ESTILOS Y UI
+  # ============================================================================
+
+  - id: "adr-003"
+    title: "Tailwind CSS 4 como sistema de diseño"
+    date: "2024-01-01"
+    status: "accepted"
+    context: |
+      Necesitamos un sistema de estilos consistente, rápido de desarrollar,
+      y que produzca bundles pequeños.
+    decision: "Tailwind CSS 4 exclusivamente, sin CSS custom salvo excepciones"
+    consequences:
+      positive:
+        - "Desarrollo rápido con utilities"
+        - "Consistencia visual garantizada"
+        - "Bundle size optimizado (purge automático)"
+        - "Design tokens integrados"
+      negative:
+        - "HTML puede verse verboso"
+        - "Animaciones complejas requieren CSS/Framer"
+    exceptions:
+      - "Framer Motion para animaciones complejas"
+      - "CSS custom para casos muy específicos (documentados)"
+
+  - id: "adr-004"
+    title: "Lucide React para iconografía"
+    date: "2024-01-01"
+    status: "accepted"
+    context: "Necesitamos iconos consistentes y tree-shakeable"
+    decision: "Usar Lucide React para todos los iconos"
+    rationale: |
+      - Tree-shakeable (solo se importan iconos usados)
+      - Estilo consistente
+      - TypeScript nativo
+      - Activamente mantenido
+    usage: |
+      import { IconName } from 'lucide-react'
+      <IconName className="h-5 w-5" />
+
+  - id: "adr-005"
+    title: "Framer Motion para animaciones"
+    date: "2024-01-01"
+    status: "accepted"
+    context: "Tailwind CSS no cubre animaciones complejas"
+    decision: "Usar Framer Motion para animaciones no triviales"
+    scope:
+      - "Transiciones de página"
+      - "Animaciones de entrada/salida"
+      - "Gestos (drag, hover, tap)"
+    not_for:
+      - "Transiciones simples (usar Tailwind transition-*)"
+      - "Hover states simples"
+
+  # ============================================================================
+  # INTERNACIONALIZACIÓN
+  # ============================================================================
+
+  - id: "adr-006"
+    title: "next-intl para internacionalización"
+    date: "2024-01-01"
+    status: "accepted"
+    context: "El sitio debe soportar múltiples idiomas"
+    decision: "Usar next-intl para i18n"
+    rationale: |
+      - Diseñado específicamente para App Router
+      - Type-safe con TypeScript
+      - Server Components support
+      - Formateo de fechas/números incluido
+    structure: |
+      messages/
+        es.json
+        en.json
+      middleware.ts (routing por locale)
+
+  - id: "adr-007"
+    title: "Español para contenido, inglés para código"
+    date: "2024-01-05"
+    status: "accepted"
+    context: "El proyecto es para mercado hispanohablante"
+    decision: |
+      - Variables, funciones, componentes: INGLÉS
+      - Contenido visible al usuario: ESPAÑOL (via next-intl)
+      - Comentarios de código: INGLÉS
+      - Commits y PRs: INGLÉS
+    rationale: |
+      - Código en inglés es estándar de industria
+      - Facilita colaboración internacional
+      - Contenido en español para usuarios finales
+
+  # ============================================================================
+  # ESTRUCTURA DE PROYECTO
+  # ============================================================================
+
+  - id: "adr-008"
+    title: "Estructura de carpetas App Router"
+    date: "2024-01-01"
+    status: "accepted"
+    decision: |
+      app/
+        [locale]/
+          (marketing)/    # Grupo para páginas públicas
+          (app)/          # Grupo para páginas de app
+          layout.tsx
+          page.tsx
+      components/
+        ui/               # Componentes base reutilizables
+        features/         # Componentes específicos de features
+      lib/                # Utilidades y helpers
+      types/              # Tipos TypeScript globales
+
+  # ============================================================================
+  # TOOLING Y DX
+  # ============================================================================
+
+  - id: "adr-009"
+    title: "Claude Code con skills personalizados"
+    date: "2024-03-19"
+    status: "accepted"
+    context: "Mejorar consistencia y velocidad de desarrollo con IA"
+    decision: "Usar estructura .claude/ con skills, hooks, y learned-rules"
+    components:
+      - ".claude/skills/: Conocimiento especializado"
+      - ".claude/scripts/: Utilidades (safe-commit, etc.)"
+      - ".claude/learned-rules/: Reglas del proyecto"
+    rationale: |
+      - Comportamiento más determinístico del modelo
+      - Reutilizable entre proyectos
+      - Documentación viva de decisiones
+
+  - id: "adr-010"
+    title: "Commits seguros con confirmación obligatoria"
+    date: "2024-03-19"
+    status: "accepted"
+    context: "Prevenir commits/pushes accidentales"
+    decision: "Usar safe-commit.sh para todos los commits"
+    rules:
+      - "NUNCA git commit directo"
+      - "NUNCA git push automático"
+      - "Siempre mostrar diff antes de commit"
+      - "Siempre pedir confirmación explícita"

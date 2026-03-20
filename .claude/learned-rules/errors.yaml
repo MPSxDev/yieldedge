@@ -1,0 +1,258 @@
+# ============================================================================
+# ERRORES RECURRENTES - Documentación de errores y soluciones
+# ============================================================================
+# Cada error incluye: descripción, síntomas, causa raíz, y soluciones
+# ============================================================================
+
+version: "1.0"
+
+errors:
+
+  # ============================================================================
+  # NEXT.JS 15 / APP ROUTER
+  # ============================================================================
+
+  - id: "hydration-mismatch"
+    description: "Error de hidratación React/Next.js"
+    frequency: "common"
+    symptoms:
+      - "Hydration failed because the server rendered HTML didn't match the client"
+      - "Text content does not match server-rendered HTML"
+      - "There was an error while hydrating"
+    root_cause: "Contenido diferente entre server render y client render"
+    common_triggers:
+      - "Uso de Date.now() o new Date() sin useEffect"
+      - "Acceso a window/localStorage en render inicial"
+      - "Extensiones del navegador modificando DOM"
+      - "Contenido condicional basado en valores del cliente"
+    solutions:
+      - description: "Mover lógica dinámica a useEffect"
+        code: |
+          const [date, setDate] = useState<string>('')
+          useEffect(() => {
+            setDate(new Date().toLocaleDateString())
+          }, [])
+      - description: "Usar suppressHydrationWarning para casos legítimos"
+        code: |
+          <time suppressHydrationWarning>
+            {new Date().toLocaleDateString()}
+          </time>
+      - description: "Usar dynamic() con ssr: false para componentes client-only"
+        code: |
+          const ClientOnlyComponent = dynamic(
+            () => import('./ClientOnlyComponent'),
+            { ssr: false }
+          )
+
+  - id: "use-client-missing"
+    description: "Falta directiva 'use client' en componente interactivo"
+    frequency: "common"
+    symptoms:
+      - "You're importing a component that needs useState"
+      - "You're importing a component that needs useEffect"
+      - "Event handlers cannot be passed to Client Component props"
+    root_cause: "Componente usa hooks/eventos pero no tiene 'use client'"
+    solutions:
+      - description: "Añadir directiva al inicio del archivo"
+        code: |
+          'use client'
+
+          import { useState } from 'react'
+    prevention: "Si usa useState, useEffect, onClick, etc. → necesita 'use client'"
+
+  - id: "async-client-component"
+    description: "Componente async marcado como 'use client'"
+    frequency: "occasional"
+    symptoms:
+      - "async/await is not yet supported in Client Components"
+      - "Objects are not valid as a React child"
+    root_cause: "Los Client Components no pueden ser async en React 19"
+    solutions:
+      - description: "Mover fetch a Server Component padre"
+        code: |
+          // page.tsx (Server Component)
+          async function Page() {
+            const data = await fetchData()
+            return <ClientComponent data={data} />
+          }
+      - description: "Usar hook de data fetching"
+        code: |
+          'use client'
+          import useSWR from 'swr'
+
+          function Component() {
+            const { data } = useSWR('/api/data', fetcher)
+          }
+
+  - id: "metadata-in-client"
+    description: "Export de metadata en Client Component"
+    frequency: "occasional"
+    symptoms:
+      - "You are attempting to export 'metadata' from a component marked with 'use client'"
+    root_cause: "metadata/generateMetadata solo funcionan en Server Components"
+    solutions:
+      - description: "Separar metadata del componente"
+        code: |
+          // page.tsx (Server Component)
+          export const metadata = { title: '...' }
+
+          import ClientPart from './ClientPart'
+          export default function Page() {
+            return <ClientPart />
+          }
+
+  # ============================================================================
+  # REACT 19
+  # ============================================================================
+
+  - id: "missing-key-prop"
+    description: "Falta prop 'key' en lista renderizada"
+    frequency: "common"
+    symptoms:
+      - "Each child in a list should have a unique 'key' prop"
+    root_cause: "React necesita keys para reconciliación eficiente"
+    solutions:
+      - description: "Añadir key único (preferir ID sobre index)"
+        code: |
+          {items.map((item) => (
+            <Item key={item.id} data={item} />
+          ))}
+    anti_patterns:
+      - "Usar index como key cuando los items pueden reordenarse"
+      - "Usar Math.random() como key"
+
+  - id: "useeffect-missing-deps"
+    description: "Dependencias faltantes en useEffect"
+    frequency: "common"
+    symptoms:
+      - "React Hook useEffect has a missing dependency"
+      - "Stale closure / valor desactualizado"
+    root_cause: "Variables usadas en effect no están en el array de dependencias"
+    solutions:
+      - description: "Añadir todas las dependencias"
+        code: |
+          useEffect(() => {
+            fetchData(userId)
+          }, [userId]) // userId debe estar aquí
+      - description: "Usar useCallback para funciones"
+        code: |
+          const fetchData = useCallback(() => {
+            // ...
+          }, [dependency])
+
+          useEffect(() => {
+            fetchData()
+          }, [fetchData])
+
+  - id: "infinite-loop-useeffect"
+    description: "Loop infinito en useEffect"
+    frequency: "occasional"
+    symptoms:
+      - "Too many re-renders"
+      - "Maximum update depth exceeded"
+      - "Página se congela o crashea"
+    root_cause: "Effect modifica dependencia que lo re-dispara"
+    solutions:
+      - description: "Revisar dependencias y condiciones"
+        code: |
+          // MAL
+          useEffect(() => {
+            setData(transform(data))
+          }, [data]) // Loop infinito
+
+          // BIEN
+          useEffect(() => {
+            setData(transform(initialData))
+          }, []) // Solo al montar
+
+  # ============================================================================
+  # TAILWIND CSS 4
+  # ============================================================================
+
+  - id: "tailwind-class-not-working"
+    description: "Clase de Tailwind no se aplica"
+    frequency: "occasional"
+    symptoms:
+      - "Estilo no se aplica visualmente"
+      - "Clase aparece en HTML pero sin efecto"
+    root_cause: "Clase no está en el build de Tailwind"
+    common_triggers:
+      - "Clase generada dinámicamente con template literals"
+      - "Clase en archivo no escaneado por Tailwind"
+    solutions:
+      - description: "Usar clases completas, no dinámicas"
+        code: |
+          // MAL (no funciona)
+          const color = 'red'
+          <div className={`text-${color}-500`} />
+
+          // BIEN
+          const colorClasses = {
+            red: 'text-red-500',
+            blue: 'text-blue-500'
+          }
+          <div className={colorClasses[color]} />
+      - description: "Verificar content en tailwind.config"
+
+  # ============================================================================
+  # NEXT-INTL
+  # ============================================================================
+
+  - id: "translation-not-found"
+    description: "Traducción no encontrada en next-intl"
+    frequency: "occasional"
+    symptoms:
+      - "MISSING_MESSAGE: Could not resolve..."
+      - "Texto aparece como key en lugar de traducción"
+    root_cause: "Key no existe en archivo de mensajes JSON"
+    solutions:
+      - description: "Verificar que la key existe en todos los locales"
+      - description: "Usar namespace correcto"
+        code: |
+          // messages/es.json
+          {
+            "HomePage": {
+              "title": "Bienvenido"
+            }
+          }
+
+          // En componente
+          const t = useTranslations('HomePage')
+          t('title') // "Bienvenido"
+
+  # ============================================================================
+  # TYPESCRIPT
+  # ============================================================================
+
+  - id: "type-inference-failure"
+    description: "TypeScript no puede inferir tipo"
+    frequency: "common"
+    symptoms:
+      - "Parameter implicitly has an 'any' type"
+      - "Object is of type 'unknown'"
+    solutions:
+      - description: "Añadir tipos explícitos"
+        code: |
+          // MAL
+          const handleClick = (e) => { ... }
+
+          // BIEN
+          const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => { ... }
+
+  - id: "module-not-found"
+    description: "Módulo TypeScript no encontrado"
+    frequency: "occasional"
+    symptoms:
+      - "Cannot find module '...' or its corresponding type declarations"
+    solutions:
+      - description: "Verificar path aliases en tsconfig.json"
+        code: |
+          // tsconfig.json
+          {
+            "compilerOptions": {
+              "paths": {
+                "@/*": ["./src/*"]
+              }
+            }
+          }
+      - description: "Instalar @types/package si es librería JS"

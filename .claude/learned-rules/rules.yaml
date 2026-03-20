@@ -1,0 +1,191 @@
+# ============================================================================
+# LEARNED RULES - Reglas del proyecto YieldEdge
+# ============================================================================
+# Estas reglas se aplican automáticamente en cada sesión de Claude Code
+# Última actualización: 2024-03-19
+# ============================================================================
+
+version: "1.0"
+project: "yieldedge"
+stack:
+  - Next.js 15.5 (App Router)
+  - React 19
+  - TypeScript 5
+  - Tailwind CSS 4
+  - next-intl
+  - Framer Motion
+
+# ============================================================================
+# RESTRICCIONES ABSOLUTAS (NUNCA violar)
+# ============================================================================
+constraints:
+
+  # --- TypeScript ---
+  - id: "no-any-type"
+    rule: "NUNCA usar 'any' como tipo en TypeScript"
+    use_instead: "Tipos específicos, generics, o 'unknown' si es necesario"
+    severity: "error"
+    example_bad: "const data: any = fetch(...)"
+    example_good: "const data: UserResponse = await fetch(...)"
+
+  - id: "no-ts-ignore"
+    rule: "NUNCA usar @ts-ignore sin justificación"
+    use_instead: "@ts-expect-error con comentario explicativo"
+    severity: "error"
+
+  # --- React ---
+  - id: "no-console-log"
+    rule: "NUNCA usar console.log en código de producción"
+    use_instead: "Eliminar o usar logger configurado"
+    severity: "error"
+    exceptions:
+      - "Archivos de desarrollo/debug explícitos"
+      - "console.error para errores reales"
+
+  - id: "no-inline-styles"
+    rule: "NUNCA usar estilos inline en componentes React"
+    use_instead: "Tailwind CSS classes"
+    severity: "warning"
+    example_bad: "<div style={{color: 'red'}}>"
+    example_good: "<div className=\"text-red-500\">"
+
+  - id: "no-dangerous-html"
+    rule: "NUNCA usar dangerouslySetInnerHTML sin sanitización"
+    severity: "critical"
+    context: "Riesgo de XSS"
+
+  # --- Next.js ---
+  - id: "no-img-tag"
+    rule: "NUNCA usar <img> tag nativo"
+    use_instead: "next/image para optimización automática"
+    severity: "error"
+    example_good: "import Image from 'next/image'"
+
+  - id: "no-a-tag-internal"
+    rule: "NUNCA usar <a> para links internos"
+    use_instead: "next/link para client-side navigation"
+    severity: "error"
+
+  # --- Git/Commits ---
+  - id: "no-direct-commit"
+    rule: "NUNCA ejecutar git commit directamente"
+    use_instead: ".claude/scripts/safe-commit.sh"
+    severity: "critical"
+
+  - id: "no-auto-push"
+    rule: "NUNCA ejecutar git push sin confirmación explícita"
+    severity: "critical"
+
+  - id: "no-force-push-main"
+    rule: "NUNCA hacer force push a main/master"
+    severity: "critical"
+
+# ============================================================================
+# PREFERENCIAS DEL PROYECTO
+# ============================================================================
+preferences:
+
+  # --- Arquitectura ---
+  - id: "prefer-server-components"
+    rule: "Preferir Server Components sobre Client Components"
+    context: "Next.js 15 App Router"
+    rationale: "Mejor performance, menor JS al cliente"
+    exceptions:
+      - "Cuando se necesita interactividad (onClick, useState, etc.)"
+      - "Hooks de React (useEffect, useContext, etc.)"
+
+  - id: "prefer-rsc-data-fetching"
+    rule: "Preferir fetch en Server Components sobre useEffect"
+    rationale: "Streaming, caching automático, mejor SEO"
+    example_good: |
+      // app/page.tsx (Server Component)
+      async function Page() {
+        const data = await fetch('...')
+        return <Component data={data} />
+      }
+
+  # --- Estilos ---
+  - id: "prefer-tailwind-utilities"
+    rule: "Preferir utilities de Tailwind sobre CSS custom"
+    rationale: "Consistencia, menor bundle size"
+    exceptions:
+      - "Animaciones complejas con Framer Motion"
+      - "Casos muy específicos documentados"
+
+  - id: "prefer-cn-helper"
+    rule: "Usar cn() helper para clases condicionales"
+    example: "cn('base-class', condition && 'conditional-class')"
+    location: "lib/utils.ts"
+
+  # --- Componentes ---
+  - id: "prefer-composition"
+    rule: "Preferir composición sobre props complejos"
+    example: "<Card><Card.Header /><Card.Body /></Card>"
+
+  - id: "prefer-lucide-icons"
+    rule: "Usar Lucide React para iconos"
+    import: "import { IconName } from 'lucide-react'"
+
+  # --- i18n ---
+  - id: "always-use-translations"
+    rule: "Todo texto visible al usuario debe usar next-intl"
+    example: "const t = useTranslations('namespace')"
+    exceptions:
+      - "Contenido técnico/código"
+      - "Nombres propios"
+
+# ============================================================================
+# PATRONES DEL PROYECTO
+# ============================================================================
+patterns:
+
+  - id: "component-structure"
+    description: "Estructura estándar de componentes React"
+    template: |
+      // 1. 'use client' si es necesario
+      // 2. Imports (React, Next, libs externas, internos)
+      // 3. Types/Interfaces
+      // 4. Component function
+      // 5. Export (preferir named exports)
+
+  - id: "page-structure"
+    description: "Estructura de páginas en App Router"
+    template: |
+      // 1. Imports
+      // 2. Metadata export (si aplica)
+      // 3. generateStaticParams (si aplica)
+      // 4. Page component (async si fetch data)
+      // 5. Export default
+
+  - id: "api-route-structure"
+    description: "Estructura de Route Handlers"
+    template: |
+      // 1. Imports
+      // 2. Type definitions
+      // 3. GET/POST/PUT/DELETE handlers
+      // 4. Named exports
+
+# ============================================================================
+# CONVENCIONES DE NAMING
+# ============================================================================
+naming:
+
+  files:
+    components: "PascalCase.tsx (ej: UserCard.tsx)"
+    pages: "lowercase o kebab-case (ej: page.tsx, [slug]/page.tsx)"
+    utilities: "camelCase.ts (ej: formatDate.ts)"
+    types: "PascalCase.types.ts o en el mismo archivo"
+    hooks: "use*.ts (ej: useAuth.ts)"
+
+  code:
+    components: "PascalCase (ej: UserCard)"
+    functions: "camelCase (ej: getUserById)"
+    constants: "SCREAMING_SNAKE_CASE (ej: MAX_ITEMS)"
+    types: "PascalCase (ej: UserResponse)"
+    interfaces: "PascalCase, sin prefijo I (ej: User, no IUser)"
+
+  content:
+    code: "INGLÉS (variables, funciones, componentes)"
+    ui_text: "ESPAÑOL (contenido visible al usuario)"
+    comments: "INGLÉS (comentarios de código)"
+    commits: "INGLÉS (mensajes de commit)"

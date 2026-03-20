@@ -52,3 +52,9 @@ SEO_SUMMARY.md
 
 # Project README
 README.md
+
+# Claude Code - Local files (not committed)
+.claude/settings.local.json
+.claude/learned-rules/local/
+.claude/docs/local/
+.claude/claude_evals/results/

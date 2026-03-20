@@ -1,0 +1,489 @@
+# ============================================================================
+# SKILL TRIGGERS - Sistema de reinyección determinística
+# ============================================================================
+# Este archivo define patrones para detectar automáticamente qué skill
+# debe ser inyectado basándose en:
+#   1. Errores de compilación/runtime
+#   2. Patrones en código generado (análisis estático)
+#   3. Contexto de archivo (extensión, path)
+#   4. Contenido del prompt del usuario
+#
+# Prioridad de evaluación: critical > error > warning > info
+# ============================================================================
+
+version: "1.0"
+lastUpdated: "2024-03-19"
+
+# ============================================================================
+# CONFIGURACIÓN GLOBAL
+# ============================================================================
+config:
+  enabled: true
+  mode: "suggest"  # suggest | auto | block
+  maxSkillsPerTrigger: 2
+  logMatches: true
+  caseSensitive: false
+
+# ============================================================================
+# PATRONES DE ERROR - Errores de compilación/runtime
+# ============================================================================
+error_patterns:
+
+  # ---------------------------------------------------------------------------
+  # TYPESCRIPT ERRORS
+  # ---------------------------------------------------------------------------
+  - id: "ts-type-error"
+    name: "TypeScript Type Error"
+    patterns:
+      - "Type '.*' is not assignable to type '.*'"
+      - "Property '.*' does not exist on type '.*'"
+      - "Argument of type '.*' is not assignable"
+      - "Cannot find name '.*'"
+      - "Object is of type 'unknown'"
+      - "Parameter '.*' implicitly has an 'any' type"
+    skill: "senior-frontend"
+    severity: "error"
+    contextFile: "references/react_patterns.md"
+    suggestion: "Revisa los tipos TypeScript. Evita usar 'any'."
+
+  - id: "ts-module-error"
+    name: "TypeScript Module Error"
+    patterns:
+      - "Cannot find module '.*'"
+      - "Could not find a declaration file for module"
+      - "Module '.*' has no exported member"
+    skill: "senior-frontend"
+    severity: "error"
+    suggestion: "Verifica imports y path aliases en tsconfig.json"
+
+  # ---------------------------------------------------------------------------
+  # REACT / NEXT.JS ERRORS
+  # ---------------------------------------------------------------------------
+  - id: "react-hook-error"
+    name: "React Hooks Error"
+    patterns:
+      - "Invalid hook call"
+      - "Rules of Hooks"
+      - "Hooks can only be called inside"
+      - "rendered more hooks than during the previous render"
+      - "React Hook .* has a missing dependency"
+      - "React Hook .* has an unnecessary dependency"
+    skill: "senior-frontend"
+    severity: "error"
+    contextFile: "references/react_patterns.md"
+    suggestion: "Revisa las reglas de Hooks de React"
+
+  - id: "hydration-error"
+    name: "Hydration Mismatch"
+    patterns:
+      - "Hydration failed"
+      - "Text content does not match server-rendered HTML"
+      - "There was an error while hydrating"
+      - "Expected server HTML to contain"
+      - "Minified React error #418"
+      - "Minified React error #425"
+    skill: "senior-frontend"
+    severity: "error"
+    contextFile: "references/nextjs_optimization_guide.md"
+    suggestion: |
+      Error de hidratación. Causas comunes:
+      - Uso de Date/Math.random() en render
+      - Acceso a window/localStorage sin useEffect
+      - Extensiones del navegador modificando DOM
+
+  - id: "nextjs-client-component"
+    name: "Next.js Client Component Error"
+    patterns:
+      - "You're importing a component that needs useState"
+      - "You're importing a component that needs useEffect"
+      - "You're importing a component that needs useContext"
+      - "Event handlers cannot be passed to Client Component props"
+      - "async/await is not yet supported in Client Components"
+    skill: "senior-frontend"
+    severity: "error"
+    suggestion: "Añade 'use client' al inicio del archivo"
+
+  - id: "nextjs-metadata-error"
+    name: "Next.js Metadata Error"
+    patterns:
+      - "You are attempting to export .* from a component marked with 'use client'"
+      - "metadata.*client"
+      - "generateMetadata.*'use client'"
+    skill: "senior-frontend"
+    severity: "error"
+    suggestion: "metadata/generateMetadata solo funcionan en Server Components"
+
+  - id: "nextjs-image-error"
+    name: "Next.js Image Error"
+    patterns:
+      - "Image with src .* must use \"width\" and \"height\""
+      - "Invalid src prop"
+      - "Error: Image Optimization"
+    skill: "senior-frontend"
+    severity: "warning"
+    suggestion: "Usa next/image correctamente con width, height, y alt"
+
+  # ---------------------------------------------------------------------------
+  # DATABASE / BACKEND ERRORS
+  # ---------------------------------------------------------------------------
+  - id: "db-connection-error"
+    name: "Database Connection Error"
+    patterns:
+      - "ECONNREFUSED"
+      - "Connection refused"
+      - "connect ETIMEDOUT"
+      - "connection pool exhausted"
+      - "Too many connections"
+      - "Connection terminated unexpectedly"
+    skill: "senior-backend"
+    severity: "error"
+    contextFile: "references/database_optimization_guide.md"
+    suggestion: "Error de conexión a base de datos. Verifica configuración y pool."
+
+  - id: "db-query-error"
+    name: "Database Query Error"
+    patterns:
+      - "relation .* does not exist"
+      - "column .* does not exist"
+      - "duplicate key value"
+      - "violates foreign key constraint"
+      - "deadlock detected"
+      - "syntax error at or near"
+    skill: "senior-backend"
+    severity: "error"
+    contextFile: "references/database_optimization_guide.md"
+
+  - id: "prisma-error"
+    name: "Prisma ORM Error"
+    patterns:
+      - "PrismaClientKnownRequestError"
+      - "PrismaClientValidationError"
+      - "Invalid.*prisma.*query"
+      - "@prisma/client did not initialize"
+      - "prisma migrate"
+    skill: "senior-backend"
+    severity: "error"
+    suggestion: "Error de Prisma. Verifica schema y migraciones."
+
+  - id: "api-error"
+    name: "API/Fetch Error"
+    patterns:
+      - "Failed to fetch"
+      - "NetworkError"
+      - "AbortError"
+      - "TypeError: Failed to fetch"
+      - "net::ERR_"
+      - "status code 4\\d{2}"
+      - "status code 5\\d{2}"
+    skill: "senior-backend"
+    severity: "error"
+    contextFile: "references/api_design_patterns.md"
+
+  # ---------------------------------------------------------------------------
+  # SECURITY ERRORS (CRITICAL - Máxima prioridad)
+  # ---------------------------------------------------------------------------
+  - id: "security-cors"
+    name: "CORS Error"
+    patterns:
+      - "CORS"
+      - "Access-Control-Allow-Origin"
+      - "blocked by CORS policy"
+      - "Cross-Origin Request Blocked"
+    skill: "senior-security"
+    severity: "warning"
+    contextFile: "references/security_architecture_patterns.md"
+
+  - id: "security-auth"
+    name: "Authentication Error"
+    patterns:
+      - "unauthorized"
+      - "Unauthorized"
+      - "401"
+      - "invalid token"
+      - "jwt expired"
+      - "JsonWebTokenError"
+      - "TokenExpiredError"
+    skill: "senior-security"
+    severity: "error"
+    contextFile: "references/security_architecture_patterns.md"
+
+# ============================================================================
+# PATRONES DE CÓDIGO - Análisis estático de código generado
+# ============================================================================
+code_patterns:
+
+  # ---------------------------------------------------------------------------
+  # ANTIPATRONES CRÍTICOS (bloquear)
+  # ---------------------------------------------------------------------------
+  - id: "security-eval"
+    name: "Uso de eval()"
+    patterns:
+      - "eval\\s*\\("
+      - "new\\s+Function\\s*\\("
+    skill: "senior-security"
+    severity: "critical"
+    action: "block"
+    message: "⛔ BLOQUEADO: eval() es un riesgo de seguridad crítico"
+
+  - id: "security-innerhtml"
+    name: "innerHTML sin sanitizar"
+    patterns:
+      - "innerHTML\\s*="
+      - "outerHTML\\s*="
+      - "dangerouslySetInnerHTML"
+    skill: "senior-security"
+    severity: "critical"
+    action: "warn"
+    message: "⚠️ innerHTML/dangerouslySetInnerHTML detectado. Riesgo de XSS."
+
+  - id: "security-hardcoded-secrets"
+    name: "Secretos hardcodeados"
+    patterns:
+      - "password\\s*[=:]\\s*['\"][^'\"]{4,}['\"]"
+      - "api_?key\\s*[=:]\\s*['\"][^'\"]{8,}['\"]"
+      - "secret\\s*[=:]\\s*['\"][^'\"]{8,}['\"]"
+      - "token\\s*[=:]\\s*['\"][^'\"]{8,}['\"]"
+      - "Bearer\\s+[A-Za-z0-9\\-_]+"
+    skill: "senior-security"
+    severity: "critical"
+    action: "block"
+    message: "⛔ BLOQUEADO: Posible secreto hardcodeado detectado"
+
+  - id: "security-sql-injection"
+    name: "Posible SQL Injection"
+    patterns:
+      - "\\$\\{.*\\}.*(?:SELECT|INSERT|UPDATE|DELETE|DROP)"
+      - "`.*\\$\\{.*\\}.*(?:SELECT|INSERT|UPDATE|DELETE)`"
+      - "query\\s*\\(\\s*['\"].*\\+.*['\"]\\s*\\)"
+    skill: "senior-security"
+    severity: "critical"
+    action: "warn"
+    message: "⚠️ Posible SQL injection. Usa queries parametrizadas."
+
+  - id: "security-command-injection"
+    name: "Posible Command Injection"
+    patterns:
+      - "exec\\s*\\(.*\\$\\{.*\\}"
+      - "spawn\\s*\\(.*\\$\\{.*\\}"
+      - "execSync\\s*\\(.*\\$\\{.*\\}"
+    skill: "senior-security"
+    severity: "critical"
+    action: "block"
+    message: "⛔ BLOQUEADO: Posible command injection"
+
+  # ---------------------------------------------------------------------------
+  # ANTIPATRONES DE CÓDIGO (advertir)
+  # ---------------------------------------------------------------------------
+  - id: "code-any-type"
+    name: "Uso de tipo 'any'"
+    patterns:
+      - ":\\s*any\\b"
+      - "as\\s+any\\b"
+      - "<any>"
+    skill: "senior-frontend"
+    severity: "warning"
+    message: "Evita usar 'any'. Usa tipos específicos o 'unknown'."
+
+  - id: "code-console-log"
+    name: "console.log en código"
+    patterns:
+      - "console\\.(log|debug|info)\\s*\\("
+    skill: "senior-frontend"
+    severity: "info"
+    action: "warn"
+    message: "console.log detectado. Eliminar antes de producción."
+
+  - id: "code-useeffect-no-deps"
+    name: "useEffect sin dependencias"
+    patterns:
+      - "useEffect\\s*\\([^,]+\\)\\s*$"
+      - "useEffect\\s*\\(\\s*\\(\\s*\\)\\s*=>\\s*\\{[^}]+\\}\\s*\\)\\s*$"
+    skill: "senior-frontend"
+    severity: "warning"
+    contextFile: "references/react_patterns.md"
+    message: "useEffect sin array de dependencias. ¿Es intencional?"
+
+  - id: "code-nested-ternary"
+    name: "Ternarios anidados"
+    patterns:
+      - "\\?[^:]+\\?[^:]+:"
+      - "\\?.*\\?.*\\?.*:"
+    skill: "senior-frontend"
+    severity: "info"
+    message: "Ternarios anidados dificultan lectura. Considera if/else o switch."
+
+  - id: "code-long-function"
+    name: "Función muy larga"
+    patterns:
+      - "(?:function|const|let|var)\\s+\\w+\\s*=?\\s*(?:async\\s*)?\\([^)]*\\)\\s*(?:=>)?\\s*\\{[^}]{800,}\\}"
+    skill: "senior-backend"
+    severity: "info"
+    message: "Función muy larga. Considera dividirla en funciones más pequeñas."
+
+  - id: "code-promise-hell"
+    name: "Promise/Callback Hell"
+    patterns:
+      - "\\.then\\s*\\([^)]+\\.then"
+      - "\\.then\\([^)]+\\{[^}]+\\.then"
+    skill: "senior-backend"
+    severity: "warning"
+    message: "Múltiples .then anidados. Usa async/await."
+
+  # ---------------------------------------------------------------------------
+  # PATRONES DE FRONTEND
+  # ---------------------------------------------------------------------------
+  - id: "frontend-img-tag"
+    name: "Uso de <img> nativo"
+    patterns:
+      - "<img\\s+[^>]*src="
+      - "<img\\s+[^>]*\\/>"
+    skill: "senior-frontend"
+    severity: "warning"
+    message: "Usa next/image en lugar de <img> para optimización."
+    exceptions:
+      - "emails"
+      - "og-image"
+
+  - id: "frontend-inline-styles"
+    name: "Estilos inline"
+    patterns:
+      - "style\\s*=\\s*\\{\\{[^}]+\\}\\}"
+      - "style=\\{[^}]+\\}"
+    skill: "senior-frontend"
+    severity: "info"
+    message: "Evita estilos inline. Usa Tailwind CSS."
+
+  - id: "frontend-a-tag-internal"
+    name: "Uso de <a> para links internos"
+    patterns:
+      - "<a\\s+[^>]*href=['\"]/"
+      - "<a\\s+[^>]*href=['\"]\\.\\.?/"
+    skill: "senior-frontend"
+    severity: "info"
+    message: "Usa next/link para navegación interna (client-side navigation)."
+
+# ============================================================================
+# CONTEXTO DE ARCHIVO - Basado en extensión y path
+# ============================================================================
+file_context:
+
+  # Por extensión
+  - extensions: [".tsx", ".jsx"]
+    skill: "senior-frontend"
+    autoInject: false
+    priority: 1
+
+  - extensions: [".css", ".scss", ".sass"]
+    skill: "senior-frontend"
+    autoInject: false
+    priority: 2
+
+  - extensions: [".sql", ".prisma"]
+    skill: "senior-backend"
+    autoInject: false
+    priority: 1
+
+  - extensions: [".graphql", ".gql"]
+    skill: "senior-backend"
+    autoInject: false
+    priority: 2
+
+  # Por path
+  - paths:
+      - "**/components/**"
+      - "**/app/**/*.tsx"
+      - "**/pages/**/*.tsx"
+    skill: "senior-frontend"
+    autoInject: false
+
+  - paths:
+      - "**/api/**"
+      - "**/server/**"
+      - "**/lib/db/**"
+      - "**/prisma/**"
+    skill: "senior-backend"
+    autoInject: false
+
+  - paths:
+      - "**/auth/**"
+      - "**/security/**"
+      - "**/middleware.*"
+      - "**/lib/auth/**"
+    skill: "senior-security"
+    autoInject: true
+    priority: 0  # Máxima prioridad
+
+# ============================================================================
+# PATRONES DE PROMPT - Basado en el mensaje del usuario
+# ============================================================================
+prompt_patterns:
+
+  - keywords:
+      - "componente"
+      - "component"
+      - "react"
+      - "hook"
+      - "estado"
+      - "state"
+      - "ui"
+      - "interfaz"
+      - "diseño"
+      - "responsive"
+      - "tailwind"
+      - "css"
+      - "estilo"
+    skill: "senior-frontend"
+
+  - keywords:
+      - "api"
+      - "endpoint"
+      - "base de datos"
+      - "database"
+      - "query"
+      - "prisma"
+      - "graphql"
+      - "rest"
+      - "servidor"
+      - "server"
+      - "backend"
+    skill: "senior-backend"
+
+  - keywords:
+      - "seguridad"
+      - "security"
+      - "autenticación"
+      - "authentication"
+      - "autorización"
+      - "jwt"
+      - "token"
+      - "xss"
+      - "csrf"
+      - "vulnerabilidad"
+      - "penetration"
+      - "audit"
+    skill: "senior-security"
+    priority: 0  # Siempre prioridad máxima
+
+# ============================================================================
+# ACCIONES Y RESPUESTAS
+# ============================================================================
+actions:
+  block:
+    description: "Bloquea la operación y muestra error"
+    exitCode: 1
+    prefix: "⛔ BLOQUEADO"
+
+  warn:
+    description: "Muestra advertencia pero continúa"
+    exitCode: 0
+    prefix: "⚠️  ADVERTENCIA"
+
+  suggest:
+    description: "Sugiere skill sin forzar"
+    exitCode: 0
+    prefix: "💡 SUGERENCIA"
+
+  info:
+    description: "Solo información, sin acción"
+    exitCode: 0
+    prefix: "ℹ️  INFO"

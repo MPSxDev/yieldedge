@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "1.0",
+  "description": "Registry de skills para validación y reinyección automática",
+  "lastUpdated": "2024-03-19",
+
+  "skills": {
+    "senior-frontend": {
+      "path": "./senior-frontend",
+      "required": true,
+      "description": "Frontend development con React, Next.js, TypeScript, Tailwind CSS",
+      "invocation": "/senior-frontend",
+      "triggers": {
+        "keywords": [
+          "react", "nextjs", "next.js", "component", "componente",
+          "ui", "ux", "css", "tailwind", "styling", "estilos",
+          "tsx", "jsx", "hook", "useState", "useEffect",
+          "hydration", "client component", "server component",
+          "responsive", "mobile", "layout", "animation"
+        ],
+        "filePatterns": [
+          "*.tsx", "*.jsx", "*.css", "*.scss",
+          "components/**", "app/**/*.tsx"
+        ],
+        "errorPatterns": [
+          "Type '.*' is not assignable",
+          "Cannot find name",
+          "Invalid hook call",
+          "Hydration failed",
+          "useEffect has a missing dependency"
+        ]
+      },
+      "validates": {
+        "required": ["SKILL.md"],
+        "optional": ["scripts/", "references/"]
+      },
+      "contextFiles": [
+        "references/react_patterns.md",
+        "references/nextjs_optimization_guide.md",
+        "references/frontend_best_practices.md"
+      ]
+    },
+
+    "senior-backend": {
+      "path": "./senior-backend",
+      "required": true,
+      "description": "Backend development con Node.js, APIs, databases, GraphQL",
+      "invocation": "/senior-backend",
+      "triggers": {
+        "keywords": [
+          "api", "endpoint", "rest", "graphql", "database", "db",
+          "prisma", "sql", "postgres", "mongodb", "redis",
+          "authentication", "auth", "jwt", "session",
+          "middleware", "server", "backend", "node",
+          "express", "fetch", "request", "response"
+        ],
+        "filePatterns": [
+          "*.sql", "*.prisma", "*.graphql",
+          "api/**", "server/**", "lib/db/**"
+        ],
+        "errorPatterns": [
+          "ECONNREFUSED",
+          "connection pool exhausted",
+          "deadlock detected",
+          "relation .* does not exist",
+          "duplicate key",
+          "foreign key constraint"
+        ]
+      },
+      "validates": {
+        "required": ["SKILL.md"],
+        "optional": ["scripts/", "references/"]
+      },
+      "contextFiles": [
+        "references/api_design_patterns.md",
+        "references/database_optimization_guide.md",
+        "references/backend_security_practices.md"
+      ]
+    },
+
+    "senior-security": {
+      "path": "./senior-security",
+      "required": false,
+      "description": "Security engineering, penetration testing, vulnerability assessment",
+      "invocation": "/senior-security",
+      "triggers": {
+        "keywords": [
+          "security", "seguridad", "vulnerability", "vulnerabilidad",
+          "xss", "csrf", "sql injection", "injection",
+          "authentication", "authorization", "auth",
+          "encryption", "crypto", "hash", "password",
+          "token", "jwt", "oauth", "cors",
+          "penetration", "pentest", "audit"
+        ],
+        "filePatterns": [
+          "**/auth/**", "**/security/**", "**/crypto/**",
+          "middleware.ts", "**/api/auth/**"
+        ],
+        "errorPatterns": [
+          "CORS",
+          "unauthorized",
+          "forbidden",
+          "invalid token",
+          "authentication failed"
+        ]
+      },
+      "validates": {
+        "required": ["SKILL.md"],
+        "optional": ["scripts/", "references/"]
+      },
+      "contextFiles": [
+        "references/security_architecture_patterns.md",
+        "references/penetration_testing_guide.md",
+        "references/cryptography_implementation.md"
+      ],
+      "autoInject": {
+        "onPatterns": ["eval\\(", "innerHTML", "dangerouslySetInnerHTML"],
+        "severity": "critical",
+        "action": "warn"
+      }
+    }
+  },
+
+  "naming": {
+    "convention": "kebab-case",
+    "prefix": null,
+    "maxLength": 30,
+    "pattern": "^[a-z][a-z0-9-]*$"
+  },
+
+  "validation": {
+    "requireSkillMd": true,
+    "requireDescription": true,
+    "warnOnMissingReferences": true,
+    "warnOnEmptyScripts": true
+  },
+
+  "reinjection": {
+    "enabled": true,
+    "mode": "suggest",
+    "maxSkillsPerContext": 2,
+    "priorityOrder": ["senior-security", "senior-frontend", "senior-backend"]
+  }
+}
