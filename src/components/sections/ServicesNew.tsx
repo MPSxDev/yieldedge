@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Brain, Cloud, Database, Code2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Section from '@/components/ui/Section';
@@ -24,11 +23,16 @@ const staggerContainer = {
   },
 };
 
-const serviceIcons = [Brain, Cloud, Database, Code2];
+const serviceIcons = [
+  { src: '/assets/iconset/minified/Intelligent-Automation.png', alt: 'Intelligent Automation' },
+  { src: '/assets/iconset/minified/Scalable-Infrastructure.png', alt: 'Scalable Infrastructure' },
+  { src: '/assets/iconset/minified/Data-Integration-Visibility.png', alt: 'Data Integration & Visibility' },
+  { src: '/assets/iconset/minified/Custom-Platforms.png', alt: 'Custom Platforms' },
+];
 
 const platforms = [
-  { name: 'AWS', src: '/assets/services/aws.jpg' },
-  { name: 'Microsoft Azure', src: '/assets/services/microsoftazure.webp' },
+  { name: 'AWS', src: '/assets/services/aws.png' },
+  { name: 'Microsoft Azure', src: '/assets/services/azure.png' },
   { name: 'Google Cloud', src: '/assets/services/googlecloud.webp' },
   { name: 'OpenAI', src: '/assets/services/openai.jpeg' },
   { name: 'Salesforce', src: '/assets/services/salesforce.jpg' },
@@ -36,22 +40,29 @@ const platforms = [
 ];
 
 interface ServiceCardProps {
-  icon: typeof Brain;
+  icon: { src: string; alt: string };
   title: string;
   description: string;
   capabilities: string[];
-  index: number;
 }
 
-function ServiceCard({ icon: Icon, title, description, capabilities, index }: ServiceCardProps) {
+function ServiceCard({ icon: image, title, description, capabilities }: ServiceCardProps) {
   return (
     <motion.div
       variants={fadeInUp}
       className="group relative bg-white rounded-2xl p-8 border border-gray-100 hover:border-[#1F5CFF]/30 hover:shadow-xl hover:shadow-[#1F5CFF]/5 transition-all duration-300"
     >
-      {/* Icon */}
-      <div className="w-14 h-14 rounded-xl bg-[#eff4ff] group-hover:bg-[#1F5CFF] flex items-center justify-center mb-6 transition-colors duration-300">
-        <Icon className="w-7 h-7 text-[#1F5CFF] group-hover:text-white transition-colors duration-300" />
+      {/* Service image */}
+      <div className="relative w-full h-32 sm:h-36 mb-6">
+        <div className="absolute inset-0">
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            draggable={false}
+            className="object-contain object-center transition-transform duration-300 group-hover:scale-[1.02]"
+          />
+        </div>
       </div>
 
       {/* Title */}
@@ -74,10 +85,6 @@ function ServiceCard({ icon: Icon, title, description, capabilities, index }: Se
         ))}
       </ul>
 
-      {/* Subtle index number */}
-      <span className="absolute top-6 right-6 text-6xl font-bold text-gray-100 group-hover:text-[#eff4ff] transition-colors pointer-events-none">
-        {String(index + 1).padStart(2, '0')}
-      </span>
     </motion.div>
   );
 }
@@ -158,7 +165,6 @@ export default function ServicesNew() {
             title={service.title}
             description={service.description}
             capabilities={service.capabilities}
-            index={index}
           />
         ))}
       </motion.div>
@@ -188,18 +194,19 @@ export default function ServicesNew() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-center justify-items-center max-w-5xl mx-auto"
+          className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-6 items-center justify-items-center max-w-6xl mx-auto"
         >
           {platforms.map((platform) => (
             <motion.div
               key={platform.name}
               variants={fadeInUp}
-              className="group relative w-full aspect-square bg-white rounded-xl p-2 border border-gray-100 hover:border-[#1F5CFF]/30 hover:shadow-lg transition-all duration-300 flex items-center justify-center"
+              className="group relative w-full max-w-[170px] aspect-square bg-white rounded-xl p-2 border border-gray-100 hover:border-[#1F5CFF]/30 hover:shadow-lg transition-all duration-300 flex items-center justify-center"
             >
               <Image
                 src={platform.src}
                 alt={platform.name}
                 fill
+                draggable={false}
                 className="object-contain p-2 transition-all duration-300"
               />
             </motion.div>
