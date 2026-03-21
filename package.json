@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "kill": "lsof -ti:3000 | xargs kill -9",
-    "dev": "npm run kill 2>/dev/null || true && next dev -p 3000",
+    "kill": "node -e \"require('kill-port')(3000).catch(() => {})\"",
+    "dev": "npm run kill && next dev -p 3000",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
@@ -27,6 +27,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "^16.1.6",
+    "kill-port": "^2.0.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   },
