@@ -1,8 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Zap, Target, Code, Handshake, Shield } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import Section from '@/components/ui/Section';
 import Heading from '@/components/ui/Heading';
 
@@ -23,7 +23,13 @@ const staggerContainer = {
   },
 };
 
-const valueIcons = [Zap, Target, Code, Handshake, Shield];
+const valueIcons = [
+  { src: '/assets/iconset/icons/1.svg', alt: 'Execution with Criteria' },
+  { src: '/assets/iconset/icons/2.svg', alt: 'Measurable Impact' },
+  { src: '/assets/iconset/icons/3.svg', alt: 'Technical Rigor' },
+  { src: '/assets/iconset/icons/4.svg', alt: 'Strategic Vision' },
+  { src: '/assets/iconset/icons/5.svg', alt: 'Operational Stability' },
+];
 
 export default function ValueProps() {
   const t = useTranslations('homepage.valueProps');
@@ -73,23 +79,30 @@ export default function ValueProps() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6"
+        className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7"
       >
         {values.map((value, index) => {
-          const Icon = value.icon;
           return (
             <motion.div
               key={index}
               variants={fadeInUp}
-              className="group text-center p-6 lg:p-8 rounded-2xl bg-gray-50 hover:bg-[#eff4ff] border border-transparent hover:border-[#dbe6ff] transition-all duration-300"
+              className="group text-center p-7 lg:p-9 rounded-2xl bg-gray-50 border border-transparent hover:border-[#cfe0ff] hover:bg-gradient-to-b hover:from-[#f5f8ff] hover:to-[#ecf3ff] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#1F5CFF]/10"
             >
-              <div className="w-12 h-12 rounded-xl bg-white group-hover:bg-[#1F5CFF] flex items-center justify-center mx-auto mb-4 shadow-sm transition-colors duration-300">
-                <Icon className="w-6 h-6 text-[#1F5CFF] group-hover:text-white transition-colors duration-300" />
+              <div className="w-18 h-18 rounded-2xl bg-white group-hover:bg-[#1F5CFF] flex items-center justify-center mx-auto mb-5 shadow-sm group-hover:shadow-md group-hover:shadow-[#1F5CFF]/25 transition-all duration-300">
+                <div className="relative w-14 h-14">
+                  <Image
+                    src={value.icon.src}
+                    alt={value.icon.alt}
+                    fill
+                    draggable={false}
+                    className="object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert"
+                  />
+                </div>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">
                 {value.title}
               </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <p className="text-[15px] text-gray-600 leading-relaxed">
                 {value.description}
               </p>
             </motion.div>
