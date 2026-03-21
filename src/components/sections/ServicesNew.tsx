@@ -50,10 +50,10 @@ function ServiceCard({ icon: image, title, description, capabilities }: ServiceC
   return (
     <motion.div
       variants={fadeInUp}
-      className="group relative bg-white rounded-2xl p-8 border border-gray-100 hover:border-[#1F5CFF]/30 hover:shadow-xl hover:shadow-[#1F5CFF]/5 transition-all duration-300"
+      className="group relative bg-white rounded-2xl p-5 sm:p-8 border border-gray-100 hover:border-[#1F5CFF]/30 hover:shadow-xl hover:shadow-[#1F5CFF]/5 transition-all duration-300"
     >
       {/* Service image */}
-      <div className="relative w-full h-32 sm:h-36 mb-6">
+      <div className="relative w-full h-24 sm:h-36 mb-4 sm:mb-6">
         <div className="absolute inset-0">
           <Image
             src={image.src}
@@ -66,21 +66,21 @@ function ServiceCard({ icon: image, title, description, capabilities }: ServiceC
       </div>
 
       {/* Title */}
-      <h3 className="text-xl font-bold text-gray-900 mb-3">
+      <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight">
         {title}
       </h3>
 
       {/* Description */}
-      <p className="text-gray-600 mb-6 leading-relaxed">
+      <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
         {description}
       </p>
 
       {/* Capabilities */}
-      <ul className="space-y-2">
+      <ul className="space-y-1.5 sm:space-y-2">
         {capabilities.map((capability, i) => (
-          <li key={i} className="flex items-center gap-2 text-sm text-gray-500">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#1F5CFF]" />
-            {capability}
+          <li key={i} className="flex items-start gap-2 text-xs sm:text-sm text-gray-500">
+            <span className="mt-1 w-1.5 h-1.5 rounded-full bg-[#1F5CFF] shrink-0" />
+            <span>{capability}</span>
           </li>
         ))}
       </ul>
@@ -156,7 +156,7 @@ export default function ServicesNew() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="grid md:grid-cols-2 gap-6 lg:gap-8"
+        className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8"
       >
         {services.map((service, index) => (
           <ServiceCard
@@ -175,9 +175,9 @@ export default function ServicesNew() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.3 }}
-        className="mt-20"
+        className="mt-14 sm:mt-20"
       >
-        <div className="text-center mb-10">
+        <div className="text-center mb-8 sm:mb-10">
           <span className="text-sm font-semibold text-[#1F5CFF] tracking-wider uppercase mb-3 block">
             {t('implementations.eyebrow')}
           </span>
@@ -194,13 +194,13 @@ export default function ServicesNew() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-6 items-center justify-items-center max-w-6xl mx-auto"
+          className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-3 sm:gap-6 items-center justify-items-center max-w-6xl mx-auto"
         >
           {platforms.map((platform) => (
             <motion.div
               key={platform.name}
               variants={fadeInUp}
-              className="group relative w-full max-w-[170px] aspect-square bg-white rounded-xl p-2 border border-gray-100 hover:border-[#1F5CFF]/30 hover:shadow-lg transition-all duration-300 flex items-center justify-center"
+              className="group relative w-full max-w-[140px] sm:max-w-[170px] aspect-square bg-white rounded-xl p-2 border border-gray-100 hover:border-[#1F5CFF]/30 hover:shadow-lg transition-all duration-300 flex items-center justify-center"
             >
               <Image
                 src={platform.src}
