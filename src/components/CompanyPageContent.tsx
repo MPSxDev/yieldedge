@@ -59,12 +59,11 @@ export default function CompanyPageContent({ verticalName }: CompanyPageContentP
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 bg-gradient-to-br from-[#eff4ff] via-white to-white">
         <Container>
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
-              className="max-w-4xl"
             >
               <motion.p
                 variants={fadeInUp}
@@ -89,21 +88,6 @@ export default function CompanyPageContent({ verticalName }: CompanyPageContentP
               >
                 {t('leadershipDescription')}
               </motion.p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, delay: 0.3 }}
-              className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl"
-            >
-              <Image
-                src="/assets/sales/dr/clinica.png"
-                alt={t('buildingFuture')}
-                fill
-                className="object-cover"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#1F5CFF]/10 to-transparent" />
             </motion.div>
           </div>
         </Container>

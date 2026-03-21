@@ -48,15 +48,10 @@ export default function Footer({ description, minimal = false, ctaText, ctaLink 
   }
 
   const solutionsLinks = [
-    { text: tLinks('qaAutomation'), href: '/solutions#qa-automation' },
-    { text: tLinks('security'), href: '/solutions#security' },
-    { text: tLinks('consulting'), href: '/solutions#consulting' },
-    { text: tLinks('mobileWeb'), href: '/solutions#mobile-web' },
-    { text: tLinks('staffAugmentation'), href: '/solutions#staff-augmentation' },
-    { text: tLinks('analytics'), href: '/solutions#analytics' },
-    { text: tLinks('cloud'), href: '/solutions#cloud' },
-    { text: tLinks('offshore'), href: '/solutions#offshore' },
-    { text: tLinks('tailoredSoftware'), href: '/solutions#tailored-software' },
+    { text: t('aiAutomation'), href: '/#services' },
+    { text: tLinks('cloud'), href: '/#services' },
+    { text: t('dataIntegration'), href: '/#services' },
+    { text: t('customPlatforms'), href: '/#services' },
   ];
 
   const legalLinks = [

@@ -103,7 +103,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // Vertical industry pages
-  const verticals = ['real-estate', 'beauty', 'construction', 'professional-services', 'viberescue'];
+  const verticals = ['real-estate', 'beauty', 'construction'];
   const verticalPages = verticals.flatMap(vertical => [
     {
       url: `${baseUrl}/${vertical}`,

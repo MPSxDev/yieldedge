@@ -17,13 +17,6 @@
   --gradient-primary: linear-gradient(135deg, #1F5CFF 0%, #1a4edb 100%);
   --gradient-secondary: linear-gradient(135deg, #4d7aff 0%, #1F5CFF 100%);
   
-  /* VibeRescue Dark Theme Colors */
-  --viberescue-bg: hsl(224, 71%, 4%);
-  --viberescue-teal: hsl(173, 80%, 40%);
-  --viberescue-orange: hsl(25, 95%, 53%);
-  --viberescue-text: hsl(0, 0%, 95%);
-  --viberescue-text-muted: hsl(0, 0%, 70%);
-
   /* Premium Typography System - Apple/Linear/Vercel Inspired */
   --font-size-h1: clamp(3.5rem, 8vw, 4.5rem);    /* 56-72px */
   --font-size-h2: clamp(2.75rem, 6vw, 3.5rem);   /* 44-56px */
@@ -160,36 +153,6 @@ body {
   50% { opacity: 0.5; }
 }
 
-/* VibeRescue Glow Animations */
-.glow-primary {
-  box-shadow: 0 0 20px rgba(6, 182, 212, 0.5), 0 0 40px rgba(6, 182, 212, 0.3);
-  animation: glow-pulse 2s ease-in-out infinite;
-}
-
-.glow-urgent {
-  box-shadow: 0 0 20px rgba(251, 146, 60, 0.5), 0 0 40px rgba(251, 146, 60, 0.3);
-  animation: glow-pulse 2s ease-in-out infinite;
-}
-
-@keyframes glow-pulse {
-  0%, 100% { 
-    box-shadow: 0 0 20px rgba(6, 182, 212, 0.5), 0 0 40px rgba(6, 182, 212, 0.3);
-  }
-  50% { 
-    box-shadow: 0 0 30px rgba(6, 182, 212, 0.7), 0 0 60px rgba(6, 182, 212, 0.5);
-  }
-}
-
-/* Countdown Pulse Animation */
-.countdown-pulse {
-  animation: countdown-pulse 1s ease-in-out infinite;
-}
-
-@keyframes countdown-pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-
 /* Smooth transitions for interactive elements */
 a, button {
   transition: all 0.3s ease;
@@ -203,14 +166,39 @@ a, button {
   }
 }
 
-/* Focus states for accessibility */
-a:focus-visible, 
+/* Focus states for accessibility - Enhanced */
+a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid var(--sky-blue);
-  outline-offset: 2px;
+  outline: 3px solid var(--primary-blue);
+  outline-offset: 3px;
+  border-radius: 4px;
+  box-shadow: 0 0 0 4px rgba(31, 92, 255, 0.15);
+}
+
+/* Safe area support for iOS notch/home indicator */
+@supports (padding: max(0px)) {
+  .safe-area-inset-top {
+    padding-top: max(env(safe-area-inset-top), 1rem);
+  }
+
+  .safe-area-inset-bottom {
+    padding-bottom: max(env(safe-area-inset-bottom), 1rem);
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Container utilities - Perfect centering system */
@@ -347,47 +335,4 @@ img, video {
   background: #555;
 }
 
-/* VibeRescue Theme - White Background */
-[data-theme="viberescue"] .text-blue-600 {
-  color: hsl(173, 80%, 40%) !important;
-}
-
-[data-theme="viberescue"] .bg-blue-600 {
-  background-color: hsl(25, 95%, 53%) !important;
-}
-
-[data-theme="viberescue"] .border-2.border-gray-200,
-[data-theme="viberescue"] a.border-2 {
-  border-color: hsl(173, 80%, 40%) !important;
-  background-color: transparent !important;
-  color: hsl(173, 80%, 40%) !important;
-}
-
-[data-theme="viberescue"] a.border-2:hover {
-  border-color: hsl(173, 80%, 50%) !important;
-  background-color: transparent !important;
-  color: hsl(173, 80%, 50%) !important;
-}
-
-[data-theme="viberescue"] .text-teal-400 {
-  color: hsl(173, 80%, 40%) !important;
-}
-
-[data-theme="viberescue"] .bg-orange-500 {
-  background-color: hsl(25, 95%, 53%) !important;
-}
-
-[data-theme="viberescue"] .bg-teal-500 {
-  background-color: hsl(173, 80%, 40%) !important;
-}
-
-[data-theme="viberescue"] #servicios .grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-}
-
-@media (max-width: 768px) {
-  [data-theme="viberescue"] #servicios .grid {
-    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
-  }
-}
 

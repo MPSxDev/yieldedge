@@ -2,26 +2,19 @@
 
 import dynamic from 'next/dynamic';
 import Navbar from '@/components/Navbar';
-import { HeroVariantSwitch } from '@/components/heroes';
+import Hero from '@/components/sections/Hero';
+import StickyCTA from '@/components/StickyCTA';
 
 // Lazy load below-the-fold components
-const Services = dynamic(() => import('@/components/Services'), {
+const ServicesNew = dynamic(() => import('@/components/sections/ServicesNew'), {
   loading: () => <div className="min-h-screen" />,
 });
 
-const WhyChooseUs = dynamic(() => import('@/components/WhyChooseUs'), {
-  loading: () => <div className="min-h-screen" />,
-});
-
-const Process = dynamic(() => import('@/components/Process'), {
-  loading: () => <div className="min-h-screen" />,
-});
-
-const FinalCTA = dynamic(() => import('@/components/FinalCTA'), {
+const ValueProps = dynamic(() => import('@/components/sections/ValueProps'), {
   loading: () => <div className="min-h-[400px]" />,
 });
 
-const FAQ = dynamic(() => import('@/components/FAQ'), {
+const Results = dynamic(() => import('@/components/sections/Results'), {
   loading: () => <div className="min-h-[400px]" />,
 });
 
@@ -32,16 +25,30 @@ const Footer = dynamic(() => import('@/components/Footer'), {
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
-      <HeroVariantSwitch defaultVariant="default" />
+      {/* Skip to content link for accessibility */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-6 focus:py-3 focus:bg-[#1F5CFF] focus:text-white focus:rounded-full focus:shadow-lg focus:outline-none"
+      >
+        Skip to main content
+      </a>
 
-      {/* Main content sections with spacing */}
-      <main className="space-y-12 sm:space-y-16 lg:space-y-20">
-        <Services />
-        <WhyChooseUs />
-        <Process />
-        <FAQ />
-        <FinalCTA />
+      <Navbar />
+      <StickyCTA />
+
+      {/* Hero - Above the fold */}
+      <Hero />
+
+      {/* Main content sections */}
+      <main id="main-content">
+        {/* Services (Core Capabilities) */}
+        <ServicesNew />
+
+        {/* Value Proposition */}
+        <ValueProps />
+
+        {/* Results (Transformation Statements) */}
+        <Results />
       </main>
 
       <Footer />

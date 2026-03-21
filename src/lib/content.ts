@@ -2224,7 +2224,7 @@ export const defaultHeroSlide: EnhancedHeroSlide = {
   description: 'We help companies optimize their operations with clear strategy, intelligent systems, and AI solutions implemented exactly where they generate the highest impact.',
   ctaText: 'GET STARTED',
   ctaLink: '/get-in-touch',
-  backgroundImage: '/assets/img2.jpg',
+  backgroundImage: '/assets/img1.jpg',
 };
 
 // FOMO Crusher Hero
@@ -2270,7 +2270,7 @@ export const socialProofHeroSlide: EnhancedHeroSlide = {
   description: 'Join the founders who\'ve transformed their businesses with our proven automation systems. Real results, real testimonials, real growth.',
   ctaText: 'Start Your Transformation',
   ctaLink: '/get-in-touch',
-  backgroundImage: '/assets/img2.jpg',
+  backgroundImage: '/assets/img1.jpg',
   testimonialQuote: 'They turned our chaos into a machine. We went from struggling to scale to having a waitlist.',
   testimonialAuthor: 'Sarah K.',
   testimonialRole: 'Startup Founder',

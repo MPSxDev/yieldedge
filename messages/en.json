@@ -27,7 +27,10 @@
     "copyright": "© {year} Yieldge. All rights reserved.",
     "backToTop": "Back to top",
     "privacyPolicy": "Privacy Policy",
-    "termsAndConditions": "Terms and Conditions"
+    "termsAndConditions": "Terms and Conditions",
+    "aiAutomation": "Intelligent Automation",
+    "dataIntegration": "Data Integration",
+    "customPlatforms": "Custom Platforms"
   },
   "solutionsLinks": {
     "qaAutomation": "QA and Test Automation",
@@ -498,6 +501,196 @@
         "title": "Contact",
         "description": "If you have questions about these terms and conditions, you can contact us at:"
       }
+    }
+  },
+  "diagnosisForm": {
+    "title": "Request your initial diagnosis",
+    "subtitle": "Complete the form and our team will contact you to schedule a strategic assessment of your operation.",
+    "fields": {
+      "name": "Your name",
+      "email": "Email",
+      "phone": "Phone number",
+      "company": "Your company",
+      "companySize": "Company size",
+      "employees": "employees",
+      "country": "Country",
+      "role": "Role",
+      "source": "How did you hear about Yieldge?",
+      "sourceOther": "Please specify",
+      "message": "Describe your main challenge"
+    },
+    "placeholders": {
+      "name": "Full name",
+      "email": "email@company.com",
+      "company": "Company name",
+      "country": "Country",
+      "role": "CEO, CTO, Director...",
+      "select": "Select an option",
+      "sourceOther": "Please specify how you found us",
+      "message": "What operational friction or technology challenge would you like to address?"
+    },
+    "sources": {
+      "referral": "Referral",
+      "event": "Event",
+      "other": "Other"
+    },
+    "submit": "Request Diagnosis",
+    "submitting": "Sending...",
+    "privacy": "Your information is confidential and will only be used to contact you.",
+    "success": {
+      "title": "Request received",
+      "message": "Our team will contact you within 24-48 business hours to schedule your initial diagnosis."
+    }
+  },
+  "homepage": {
+    "hero": {
+      "eyebrow": "AI CONSULTING",
+      "headline": "We turn AI into practical business growth.",
+      "subheadline": "We advise companies on how to streamline operations, strengthen decision-making, and integrate solutions where they generate the greatest impact.",
+      "primaryCta": "Request Initial Diagnosis",
+      "secondaryCta": "Learn more..."
+    },
+    "problemSolution": {
+      "problemLabel": "The Hidden Cost",
+      "problemTitle": "Operating without a solid technology foundation has cumulative consequences",
+      "solutionLabel": "Our Approach",
+      "solutionTitle": "Structural intervention, not technology patches",
+      "problems": {
+        "manual": "Manual processes that consume decision-making time",
+        "disconnected": "Disconnected systems that generate duplication and errors",
+        "noData": "Lack of traceability that limits operational control",
+        "cantScale": "Infrastructure that cannot support the pace of growth"
+      },
+      "solutions": {
+        "automation": "Automation that eliminates operational burden without adding complexity",
+        "infrastructure": "Cloud architecture designed to sustain real growth",
+        "intelligence": "Data integration that improves visibility and control",
+        "scale": "Systems built with business criteria, not by trend"
+      },
+      "transition": "We don't implement technology for fashion. We solve structural problems that affect operations.",
+      "cta": "See our approach"
+    },
+    "services": {
+      "eyebrow": "Capabilities",
+      "title": "Four pillars of technology intervention",
+      "subtitle": "Each capability is designed to solve a specific type of operational friction and strengthen the foundation for scaling.",
+      "ai": {
+        "title": "Intelligent Automation",
+        "description": "We eliminate repetitive tasks, reduce human error, and free operational capacity through automated workflows with process criteria.",
+        "capabilities": {
+          "automation": "High-volume operations automation",
+          "workflows": "Intelligent flows integrated with existing systems",
+          "roi": "AI implementation where it generates measurable impact",
+          "overhead": "Manual operational burden reduction"
+        }
+      },
+      "cloud": {
+        "title": "Scalable Infrastructure",
+        "description": "We design and migrate cloud infrastructure with architecture built to support growth without degrading performance or multiplying costs.",
+        "capabilities": {
+          "architecture": "Cloud architecture with long-term vision",
+          "migration": "Migration and optimization of existing environments",
+          "devops": "Integrated DevOps and SRE practices",
+          "iac": "Infrastructure as code for control and replicability"
+        }
+      },
+      "data": {
+        "title": "Data Integration & Visibility",
+        "description": "We connect dispersed sources, structure pipelines, and build dashboards that enable decisions with reliable and timely information.",
+        "capabilities": {
+          "analytics": "Management dashboards with real-time data",
+          "bi": "Integration of internal and external sources",
+          "pipelines": "Robust and maintainable data pipelines",
+          "decisions": "Analytical infrastructure for informed decisions"
+        }
+      },
+      "platforms": {
+        "title": "Custom Platforms",
+        "description": "We develop applications and modernize legacy systems so that technology adapts to the business, not the other way around.",
+        "capabilities": {
+          "apps": "Web and mobile applications with solid architecture",
+          "api": "APIs and integrations with critical systems",
+          "modernization": "Legacy system modernization",
+          "performance": "High-performance digital experiences"
+        }
+      },
+      "implementations": {
+        "eyebrow": "Technologies",
+        "title": "Platforms We Implement",
+        "subtitle": "We work with industry-leading technologies to deliver enterprise-grade solutions."
+      }
+    },
+    "valueProps": {
+      "eyebrow": "Why It Matters",
+      "title": "Technology with business criteria",
+      "subtitle": "Every intervention is designed to generate measurable operational impact, not just technical deliverables.",
+      "speed": {
+        "title": "Execution with Criteria",
+        "description": "We implement with architectural vision, not just delivery urgency."
+      },
+      "impact": {
+        "title": "Measurable Impact",
+        "description": "Every project is linked to business indicators, not vanity metrics."
+      },
+      "excellence": {
+        "title": "Technical Rigor",
+        "description": "Senior teams, production-grade code, enterprise standards."
+      },
+      "partnership": {
+        "title": "Strategic Vision",
+        "description": "We think as part of your operation, not as an external vendor."
+      },
+      "proven": {
+        "title": "Operational Stability",
+        "description": "We prioritize proven solutions that reduce risk, not experimental technology."
+      }
+    },
+    "results": {
+      "eyebrow": "Impact",
+      "title": "Results from previous interventions",
+      "subtitle": "Examples of structural transformations in operations across different sectors.",
+      "items": {
+        "dataEntry": "80% reduction in manual data entry through automation of critical processes",
+        "infrastructure": "40% decrease in infrastructure costs with availability improvement to 99.9%",
+        "analytics": "Decision cycles reduced from days to hours through real-time management dashboards",
+        "migration": "Migration from monolithic architecture to microservices without operational interruption",
+        "onboarding": "Automated customer onboarding: from 2 weeks to 48 hours",
+        "api": "Scalable API infrastructure supporting millions of daily transactions",
+        "ai": "Identification of operational inefficiencies with significant annual savings",
+        "modernization": "Technology stack modernization that tripled development velocity"
+      }
+    },
+    "whyUs": {
+      "title": "We are not a conventional consulting firm",
+      "diff": {
+        "hours": {
+          "others": "Others sell hours",
+          "us": "We solve structural problems"
+        },
+        "features": {
+          "others": "Others deliver features",
+          "us": "We generate operational impact"
+        },
+        "staff": {
+          "others": "Others staff projects",
+          "us": "We build internal capacity"
+        },
+        "tools": {
+          "others": "Others recommend tools",
+          "us": "We design architecture"
+        },
+        "docs": {
+          "others": "Others deliver documentation",
+          "us": "We ensure adoption and results"
+        }
+      },
+      "closing": "We are a strategic technology partner. Not an agency, not a software factory, not a tactical vendor."
+    },
+    "finalCta": {
+      "title": "Ready to fix the friction that slows your operation?",
+      "description": "Request an initial diagnosis. We analyze your current situation, identify structural bottlenecks, and propose an intervention plan with measurable impact.",
+      "cta": "Request Diagnosis",
+      "trustLine": "No commitment. No sales pressure. Just clarity."
     }
   }
 }

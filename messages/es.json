@@ -27,7 +27,10 @@
     "copyright": "© {year} Yieldge. Todos los derechos reservados.",
     "backToTop": "Volver arriba",
     "privacyPolicy": "Política de Privacidad",
-    "termsAndConditions": "Términos y Condiciones"
+    "termsAndConditions": "Términos y Condiciones",
+    "aiAutomation": "Automatización Inteligente",
+    "dataIntegration": "Integración de Datos",
+    "customPlatforms": "Plataformas Personalizadas"
   },
   "solutionsLinks": {
     "qaAutomation": "QA y Automatización de Pruebas",
@@ -498,6 +501,196 @@
         "title": "Contacto",
         "description": "Si tienes preguntas sobre estos términos y condiciones, puedes contactarnos en:"
       }
+    }
+  },
+  "diagnosisForm": {
+    "title": "Solicite su diagnóstico inicial",
+    "subtitle": "Complete el formulario y nuestro equipo lo contactará para agendar una evaluación estratégica de su operación.",
+    "fields": {
+      "name": "Su nombre",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "company": "Su empresa",
+      "companySize": "Tamaño de empresa",
+      "employees": "empleados",
+      "country": "País",
+      "role": "Cargo",
+      "source": "¿Cómo conoció Yieldge?",
+      "sourceOther": "Por favor especifique",
+      "message": "Describa su principal desafío"
+    },
+    "placeholders": {
+      "name": "Nombre completo",
+      "email": "correo@empresa.com",
+      "company": "Nombre de la empresa",
+      "country": "País",
+      "role": "CEO, CTO, Director...",
+      "select": "Seleccione una opción",
+      "sourceOther": "Por favor indique cómo nos encontró",
+      "message": "¿Qué fricción operativa o desafío tecnológico desea abordar?"
+    },
+    "sources": {
+      "referral": "Referido",
+      "event": "Evento",
+      "other": "Otro"
+    },
+    "submit": "Solicitar Diagnóstico",
+    "submitting": "Enviando...",
+    "privacy": "Su información es confidencial y solo será utilizada para contactarlo.",
+    "success": {
+      "title": "Solicitud recibida",
+      "message": "Nuestro equipo lo contactará en las próximas 24-48 horas hábiles para agendar su diagnóstico inicial."
+    }
+  },
+  "homepage": {
+    "hero": {
+      "eyebrow": "CONSULTORÍA IA",
+      "headline": "Convertimos la IA en crecimiento empresarial práctico.",
+      "subheadline": "Asesoramos a empresas sobre cómo optimizar operaciones, fortalecer la toma de decisiones e integrar soluciones donde generan el mayor impacto.",
+      "primaryCta": "Solicitar Diagnóstico Inicial",
+      "secondaryCta": "Saber más..."
+    },
+    "problemSolution": {
+      "problemLabel": "El Costo Oculto",
+      "problemTitle": "Operar sin base tecnológica sólida tiene consecuencias acumulativas",
+      "solutionLabel": "Nuestro Enfoque",
+      "solutionTitle": "Intervención estructural, no parches tecnológicos",
+      "problems": {
+        "manual": "Procesos manuales que consumen tiempo de decisión",
+        "disconnected": "Sistemas desconectados que generan duplicidad y errores",
+        "noData": "Falta de trazabilidad que limita el control operativo",
+        "cantScale": "Infraestructura que no soporta el ritmo de crecimiento"
+      },
+      "solutions": {
+        "automation": "Automatización que elimina carga operativa sin agregar complejidad",
+        "infrastructure": "Arquitectura cloud diseñada para sostener crecimiento real",
+        "intelligence": "Integración de datos que mejora visibilidad y control",
+        "scale": "Sistemas construidos con criterio de negocio, no por tendencia"
+      },
+      "transition": "No implementamos tecnología por moda. Resolvemos problemas estructurales que afectan la operación.",
+      "cta": "Ver enfoque de trabajo"
+    },
+    "services": {
+      "eyebrow": "Capacidades",
+      "title": "Cuatro pilares de intervención tecnológica",
+      "subtitle": "Cada capacidad está orientada a resolver un tipo específico de fricción operativa y fortalecer la base para escalar.",
+      "ai": {
+        "title": "Automatización Inteligente",
+        "description": "Eliminamos tareas repetitivas, reducimos errores humanos y liberamos capacidad operativa mediante flujos automatizados con criterio de proceso.",
+        "capabilities": {
+          "automation": "Automatización de operaciones de alto volumen",
+          "workflows": "Flujos inteligentes integrados a sistemas existentes",
+          "roi": "Implementación de IA donde genera impacto medible",
+          "overhead": "Reducción de carga operativa manual"
+        }
+      },
+      "cloud": {
+        "title": "Infraestructura Escalable",
+        "description": "Diseñamos y migramos infraestructura cloud con arquitectura pensada para soportar crecimiento sin degradar rendimiento ni multiplicar costos.",
+        "capabilities": {
+          "architecture": "Arquitectura cloud con visión de largo plazo",
+          "migration": "Migración y optimización de entornos existentes",
+          "devops": "Prácticas DevOps y SRE integradas",
+          "iac": "Infraestructura como código para control y replicabilidad"
+        }
+      },
+      "data": {
+        "title": "Integración y Visibilidad de Datos",
+        "description": "Conectamos fuentes dispersas, estructuramos pipelines y construimos dashboards que permiten tomar decisiones con información confiable y oportuna.",
+        "capabilities": {
+          "analytics": "Dashboards de gestión con datos en tiempo real",
+          "bi": "Integración de fuentes internas y externas",
+          "pipelines": "Pipelines de datos robustos y mantenibles",
+          "decisions": "Infraestructura analítica para decisiones informadas"
+        }
+      },
+      "platforms": {
+        "title": "Plataformas a Medida",
+        "description": "Desarrollamos aplicaciones y modernizamos sistemas legacy para que la tecnología se adapte al negocio, no al revés.",
+        "capabilities": {
+          "apps": "Aplicaciones web y móviles con arquitectura sólida",
+          "api": "APIs e integraciones con sistemas críticos",
+          "modernization": "Modernización de sistemas heredados",
+          "performance": "Experiencias digitales de alto rendimiento"
+        }
+      },
+      "implementations": {
+        "eyebrow": "Tecnologías",
+        "title": "Plataformas que Implementamos",
+        "subtitle": "Trabajamos con tecnologías líderes en la industria para entregar soluciones de nivel empresarial."
+      }
+    },
+    "valueProps": {
+      "eyebrow": "Por Qué Importa",
+      "title": "Tecnología con criterio de negocio",
+      "subtitle": "Cada intervención está diseñada para generar impacto operativo medible, no solo entregables técnicos.",
+      "speed": {
+        "title": "Ejecución con Criterio",
+        "description": "Implementamos con visión de arquitectura, no solo con urgencia de entrega."
+      },
+      "impact": {
+        "title": "Impacto Medible",
+        "description": "Cada proyecto está vinculado a indicadores de negocio, no a métricas de vanidad."
+      },
+      "excellence": {
+        "title": "Rigor Técnico",
+        "description": "Equipos senior, código production-grade, estándares enterprise."
+      },
+      "partnership": {
+        "title": "Visión Estratégica",
+        "description": "Pensamos como parte de su operación, no como proveedor externo."
+      },
+      "proven": {
+        "title": "Estabilidad Operativa",
+        "description": "Priorizamos soluciones probadas que reducen riesgo, no tecnología experimental."
+      }
+    },
+    "results": {
+      "eyebrow": "Impacto",
+      "title": "Resultados de intervenciones anteriores",
+      "subtitle": "Ejemplos de transformaciones estructurales en operaciones de distintos sectores.",
+      "items": {
+        "dataEntry": "Reducción del 80% en entrada manual de datos mediante automatización de procesos críticos",
+        "infrastructure": "Disminución del 40% en costos de infraestructura con mejora de disponibilidad a 99.9%",
+        "analytics": "Ciclos de decisión reducidos de días a horas mediante dashboards de gestión en tiempo real",
+        "migration": "Migración de arquitectura monolítica a microservicios sin interrupción operativa",
+        "onboarding": "Onboarding de clientes automatizado: de 2 semanas a 48 horas",
+        "api": "Infraestructura API escalable soportando millones de transacciones diarias",
+        "ai": "Identificación de ineficiencias operativas con ahorros anuales significativos",
+        "modernization": "Modernización de stack tecnológico que triplicó velocidad de desarrollo"
+      }
+    },
+    "whyUs": {
+      "title": "No somos una consultora convencional",
+      "diff": {
+        "hours": {
+          "others": "Otros venden horas",
+          "us": "Nosotros resolvemos problemas estructurales"
+        },
+        "features": {
+          "others": "Otros entregan features",
+          "us": "Nosotros generamos impacto operativo"
+        },
+        "staff": {
+          "others": "Otros staffean proyectos",
+          "us": "Nosotros construimos capacidad interna"
+        },
+        "tools": {
+          "others": "Otros recomiendan herramientas",
+          "us": "Nosotros diseñamos arquitectura"
+        },
+        "docs": {
+          "others": "Otros entregan documentación",
+          "us": "Nosotros aseguramos adopción y resultado"
+        }
+      },
+      "closing": "Somos un socio tecnológico estratégico. No una agencia, no una fábrica de software, no un proveedor táctico."
+    },
+    "finalCta": {
+      "title": "¿Listo para corregir la fricción que frena su operación?",
+      "description": "Solicite un diagnóstico inicial. Analizamos su situación actual, identificamos cuellos de botella estructurales y proponemos un plan de intervención con impacto medible.",
+      "cta": "Solicitar Diagnóstico",
+      "trustLine": "Sin compromiso. Sin presión comercial. Solo claridad."
     }
   }
 }

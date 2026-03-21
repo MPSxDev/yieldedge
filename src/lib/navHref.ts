@@ -10,9 +10,7 @@
 export const VERTICAL_ROOTS = [
   '/beauty',
   '/construction',
-  '/professional-services',
   '/real-estate',
-  '/viberescue',
   '/cr',
 ] as const;
 
