@@ -32,7 +32,6 @@ const platforms = [
   { name: 'Google Cloud', src: '/assets/services/googlecloud.webp' },
   { name: 'OpenAI', src: '/assets/services/openai.jpeg' },
   { name: 'Salesforce', src: '/assets/services/salesforce.jpg' },
-  { name: 'IBM', src: '/assets/services/ibm.jpg' },
   { name: 'Cloudflare', src: '/assets/services/cloudflare.jpg' },
 ];
 
@@ -189,7 +188,7 @@ export default function ServicesNew() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-center justify-items-center max-w-4xl mx-auto"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-center justify-items-center max-w-5xl mx-auto"
         >
           {platforms.map((platform) => (
             <motion.div
