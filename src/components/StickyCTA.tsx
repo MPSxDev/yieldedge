@@ -30,7 +30,7 @@ export default function StickyCTA() {
           className="fixed bottom-0 left-0 right-0 z-40 p-4 bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-2xl md:hidden safe-area-inset-bottom"
         >
           <a
-            href="https://calendly.com/anwar-softwaredev"
+            href="https://wa.me/50670724236?text=Hola%2C%20me%20interesa%20agendar%20una%20conversaci%C3%B3n"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Schedule a free consultation"

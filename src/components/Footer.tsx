@@ -157,7 +157,7 @@ export default function Footer({ description, minimal = false, ctaText, ctaLink 
                   {t('readyToStreamline')}
                 </p>
                 <motion.a
-                  href="https://calendly.com/anwar-softwaredev"
+                  href="https://wa.me/50670724236?text=Hola%2C%20me%20interesa%20agendar%20una%20conversaci%C3%B3n"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
@@ -205,7 +205,7 @@ export default function Footer({ description, minimal = false, ctaText, ctaLink 
           <div className="md:hidden mb-6 text-center">
             <p className="text-gray-600 mb-3 text-sm">{t('readyToStreamline')}</p>
             <motion.a
-              href="https://calendly.com/anwar-softwaredev"
+              href="https://wa.me/50670724236?text=Hola%2C%20me%20interesa%20agendar%20una%20conversaci%C3%B3n"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}

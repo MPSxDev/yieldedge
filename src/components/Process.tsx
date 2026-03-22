@@ -183,7 +183,7 @@ export default function Process({ content = homepageContent.process, useContentD
         {/* CTA */}
         <div className="mt-12 lg:mt-16 text-center">
           <motion.a
-            href="https://calendly.com/anwar-softwaredev"
+            href="https://wa.me/50670724236?text=Hola%2C%20me%20interesa%20agendar%20una%20conversaci%C3%B3n"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.02 }}

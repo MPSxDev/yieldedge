@@ -118,7 +118,7 @@ export default function Navbar({ hideNavLinks = false }: NavbarProps) {
       }
     : {
         text: t('getInTouch'),
-        href: 'https://calendly.com/anwar-softwaredev',
+        href: 'https://wa.me/50670724236?text=Hola%2C%20me%20interesa%20agendar%20una%20conversaci%C3%B3n',
       };
 
   return (

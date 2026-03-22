@@ -70,10 +70,10 @@ export default function CareersPageContent({ verticalName }: CareersPageContentP
             variants={fadeInUp}
             className="max-w-2xl mx-auto text-center"
           >
-            <p className="text-xl text-gray-700">
+            <p className="text-xl text-gray-600">
               {t('noPositions')}
             </p>
-            <p className="text-gray-500 mt-4">
+            <p className="text-gray-600 mt-4">
               {t('checkBack')}
             </p>
           </motion.div>

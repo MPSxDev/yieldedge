@@ -81,7 +81,7 @@ interface FAQProps {
   ctaLink?: string;
 }
 
-export default function FAQ({ content, ctaLink = 'https://calendly.com/anwar-softwaredev' }: FAQProps) {
+export default function FAQ({ content, ctaLink = 'https://wa.me/50670724236?text=Hola%2C%20me%20interesa%20agendar%20una%20conversaci%C3%B3n' }: FAQProps) {
   const t = useTranslations('faq');
 
   // Build FAQ content from translations if not provided
