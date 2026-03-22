@@ -866,7 +866,6 @@ export const crCompanyContent: CRCompanyContent = {
       },
       images: [
         '/assets/charity/1cha.jpeg',
-        '/assets/charity/2char.jpeg',
         '/assets/charity/3cha.jpeg',
       ],
     },
