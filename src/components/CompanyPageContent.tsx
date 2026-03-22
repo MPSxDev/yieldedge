@@ -10,7 +10,6 @@ import ValueProps from '@/components/sections/ValueProps';
 
 const charityImages = [
   '/assets/charity/1cha.jpeg',
-  '/assets/charity/3cha.jpeg',
 ];
 
 const fadeInUp = {
@@ -164,22 +163,26 @@ export default function CompanyPageContent({ verticalName }: CompanyPageContentP
 
                 {/* Navigation Controls */}
                 {charityImages.length > 1 && (
-                  <div className="flex items-center justify-center gap-4 mt-4">
-                    <button
+                  <div className="flex items-center justify-center gap-4 mt-6">
+                    <motion.button
                       onClick={prevImage}
-                      className="w-10 h-10 rounded-full bg-white border-2 border-gray-200 hover:border-[#1F5CFF] shadow-md flex items-center justify-center transition-all hover:scale-110"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="w-11 h-11 rounded-full bg-[#1F5CFF] flex items-center justify-center transition-all shadow-md hover:bg-[#1a4fdb] hover:shadow-lg"
                       aria-label={t('mission.donation.prevImage')}
                     >
-                      <ChevronLeft className="w-5 h-5 text-[#1F5CFF]" />
-                    </button>
+                      <ChevronLeft className="w-5 h-5 text-white" strokeWidth={2.5} />
+                    </motion.button>
 
                     {/* Dots Indicator */}
-                    <div className="flex gap-2">
+                    <div className="flex items-center gap-2 px-2">
                       {charityImages.map((_, index) => (
-                        <button
+                        <motion.button
                           key={index}
                           onClick={() => setCurrentImageIndex(index)}
-                          className={`h-2.5 rounded-full transition-all ${
+                          whileHover={{ scale: 1.2 }}
+                          whileTap={{ scale: 0.9 }}
+                          className={`h-2.5 rounded-full transition-all duration-300 ${
                             index === currentImageIndex
                               ? 'bg-[#1F5CFF] w-8'
                               : 'bg-gray-300 hover:bg-gray-400 w-2.5'
@@ -189,13 +192,15 @@ export default function CompanyPageContent({ verticalName }: CompanyPageContentP
                       ))}
                     </div>
 
-                    <button
+                    <motion.button
                       onClick={nextImage}
-                      className="w-10 h-10 rounded-full bg-white border-2 border-gray-200 hover:border-[#1F5CFF] shadow-md flex items-center justify-center transition-all hover:scale-110"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="w-11 h-11 rounded-full bg-[#1F5CFF] flex items-center justify-center transition-all shadow-md hover:bg-[#1a4fdb] hover:shadow-lg"
                       aria-label={t('mission.donation.nextImage')}
                     >
-                      <ChevronRight className="w-5 h-5 text-[#1F5CFF]" />
-                    </button>
+                      <ChevronRight className="w-5 h-5 text-white" strokeWidth={2.5} />
+                    </motion.button>
                   </div>
                 )}
               </div>
