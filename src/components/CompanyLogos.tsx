@@ -65,8 +65,6 @@ export default function CompanyLogos({
     const updateVisibleCount = () => {
       if (window.innerWidth < 640) {
         setVisibleCount(1);
-      } else if (window.innerWidth < 1024) {
-        setVisibleCount(2);
       } else {
         setVisibleCount(3);
       }
@@ -109,9 +107,9 @@ export default function CompanyLogos({
     return null;
   }
 
-  const logoHeightClass = 'max-h-64 sm:max-h-56 lg:max-h-64';
-  const logoSize = 480;
-  const logoSizeLarge = 600;
+  const logoHeightClass = 'max-h-80 sm:max-h-72 lg:max-h-80';
+  const logoSize = 576;
+  const logoSizeLarge = 720;
 
   // Triple the logos for seamless infinite scroll
   const extendedLogos = [...logos, ...logos, ...logos];
@@ -203,15 +201,15 @@ export default function CompanyLogos({
                           className={`block ${company.url ? 'cursor-pointer' : 'cursor-default'}`}
                         >
                           <div
-                            className="relative w-full h-72 sm:h-60 lg:h-72 flex items-center justify-center transition-transform duration-300 ease-out group-hover/logo:scale-105 motion-reduce:transition-none motion-reduce:group-hover/logo:scale-100"
+                            className="relative w-full h-86 sm:h-72 lg:h-86 flex items-center justify-center transition-transform duration-300 ease-out group-hover/logo:scale-105 motion-reduce:transition-none motion-reduce:group-hover/logo:scale-100"
                           >
                             <Image
                               src={company.logo}
                               alt={`${company.name} logo`}
                               width={isLarge ? logoSizeLarge : logoSize}
-                              height={isLarge ? 288 : 224}
+                              height={isLarge ? 346 : 269}
                               className={`${logoHeightClass} max-w-full object-contain`}
-                              sizes={isLarge ? '600px' : '480px'}
+                              sizes={isLarge ? '720px' : '576px'}
                             />
                           </div>
                         </LogoWrapper>

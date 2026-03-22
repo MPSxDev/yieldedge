@@ -2,10 +2,11 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Users, Target, Award, Briefcase, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Briefcase, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Container from '@/components/ui/Container';
+import ValueProps from '@/components/sections/ValueProps';
 
 const charityImages = [
   '/assets/charity/1cha.jpeg',
@@ -47,12 +48,6 @@ export default function CompanyPageContent({ verticalName }: CompanyPageContentP
       prev === 0 ? charityImages.length - 1 : prev - 1
     );
   };
-
-  const leadershipItems = [
-    { nameKey: 'executive' as const, icon: Users, descKey: 'vision' as const },
-    { nameKey: 'technical' as const, icon: Target, descKey: 'innovation' as const },
-    { nameKey: 'clients' as const, icon: Award, descKey: 'quality' as const },
-  ];
 
   return (
     <>
@@ -252,41 +247,8 @@ export default function CompanyPageContent({ verticalName }: CompanyPageContentP
         </Container>
       </section>
 
-      {/* Leadership Section */}
-      <section id="leadership" className="py-16 sm:py-24 bg-gray-50 scroll-mt-24">
-        <Container>
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={staggerContainer}
-          >
-            <motion.div variants={fadeInUp} className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                {t('leadershipTeam')}
-              </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                {t('leadershipDescription')}
-              </p>
-            </motion.div>
-            <div className="grid md:grid-cols-3 gap-8">
-              {leadershipItems.map((item, index) => (
-                <motion.div
-                  key={index}
-                  variants={fadeInUp}
-                  className="bg-white rounded-2xl p-8 text-center border border-gray-200"
-                >
-                  <div className="w-16 h-16 bg-[#dbe6ff] rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <item.icon className="w-8 h-8 text-[#1F5CFF]" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{t(`leadershipRoles.${item.nameKey}`)}</h3>
-                  <p className="text-gray-600">{t(`roles.${item.descKey}`)}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </Container>
-      </section>
+      {/* Value Props Section */}
+      <ValueProps />
 
       {/* Development Program Section */}
       <section id="development-program" className="py-16 sm:py-24 scroll-mt-24">
