@@ -8,9 +8,6 @@
  * These are the industry-specific landing pages that have their own careers pages.
  */
 export const VERTICAL_ROOTS = [
-  '/beauty',
-  '/construction',
-  '/real-estate',
   '/cr',
 ] as const;
 

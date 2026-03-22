@@ -102,59 +102,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Vertical industry pages
-  const verticals = ['real-estate', 'beauty', 'construction'];
-  const verticalPages = verticals.flatMap(vertical => [
-    {
-      url: `${baseUrl}/${vertical}`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-      alternates: {
-        languages: {
-          es: `${baseUrl}/${vertical}`,
-          en: `${baseUrl}/en/${vertical}`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/${vertical}/solutions`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-      alternates: {
-        languages: {
-          es: `${baseUrl}/${vertical}/solutions`,
-          en: `${baseUrl}/en/${vertical}/solutions`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/${vertical}/company`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.5,
-      alternates: {
-        languages: {
-          es: `${baseUrl}/${vertical}/company`,
-          en: `${baseUrl}/en/${vertical}/company`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/${vertical}/careers`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.5,
-      alternates: {
-        languages: {
-          es: `${baseUrl}/${vertical}/careers`,
-          en: `${baseUrl}/en/${vertical}/careers`,
-        },
-      },
-    },
-  ]);
-
   // Legal pages
   const legalPages = [
     {
@@ -183,6 +130,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  return [...mainPages, ...crPages, ...verticalPages, ...legalPages];
+  return [...mainPages, ...crPages, ...legalPages];
 }
 

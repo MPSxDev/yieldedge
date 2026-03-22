@@ -10,7 +10,7 @@ import LanguageSwitcher from './LanguageSwitcher';
 
 // Helper function to get the vertical prefix from the current pathname
 function getVerticalPrefix(pathname: string): string {
-  const verticals = ['real-estate', 'construction', 'cr', 'beauty'];
+  const verticals = ['cr'];
   for (const vertical of verticals) {
     if (pathname.startsWith(`/${vertical}`)) {
       return `/${vertical}`;
