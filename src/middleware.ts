@@ -19,7 +19,9 @@ const intlMiddleware = createMiddleware({
 
 /**
  * Detects the preferred locale from the request
- * Priority: cookie -> country -> Accept-Language -> default
+ * Priority: cookie -> country -> default (Spanish)
+ * Accept-Language is intentionally not used - Spanish is the default for all visitors
+ * except those from the US who get English
  */
 function detectLocale(request: NextRequest): Locale | null {
   // 1. Check for existing locale cookie (user's explicit choice)
@@ -38,30 +40,7 @@ function detectLocale(request: NextRequest): Locale | null {
     return countryToLocale[country];
   }
 
-  // 3. Parse Accept-Language header
-  const acceptLanguage = request.headers.get('accept-language');
-  if (acceptLanguage) {
-    // Parse language preferences (e.g., "es-CR,es;q=0.9,en;q=0.8")
-    const languages = acceptLanguage
-      .split(',')
-      .map((lang) => {
-        const [code, qValue] = lang.trim().split(';q=');
-        return {
-          code: code.split('-')[0].toLowerCase(), // Extract base language
-          q: qValue ? parseFloat(qValue) : 1,
-        };
-      })
-      .sort((a, b) => b.q - a.q);
-
-    // Find first matching supported locale
-    for (const { code } of languages) {
-      if (locales.includes(code as Locale)) {
-        return code as Locale;
-      }
-    }
-  }
-
-  // 4. No preference found - return null to use default
+  // 3. Default to Spanish for all other visitors
   return null;
 }
 
