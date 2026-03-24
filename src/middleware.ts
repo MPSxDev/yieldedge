@@ -1,20 +1,92 @@
 import createMiddleware from 'next-intl/middleware';
 import { NextRequest, NextResponse } from 'next/server';
-import { locales, defaultLocale } from './i18n/config';
+import {
+  locales,
+  defaultLocale,
+  LOCALE_COOKIE,
+  countryToLocale,
+  type Locale,
+} from './i18n/config';
 
-// Create the next-intl middleware
+// Create the next-intl middleware with locale detection disabled
+// We handle detection ourselves with custom priority logic
 const intlMiddleware = createMiddleware({
   locales,
   defaultLocale,
-  // 'as-needed' hides the default locale (es) from URLs
-  // This means `/` serves Spanish, `/en` serves English
   localePrefix: 'as-needed',
-  // Detect locale from browser Accept-Language header
-  // If detected locale is not Spanish, redirect to that locale
-  localeDetection: true,
+  localeDetection: false, // Disabled - we handle detection manually
 });
 
-// Custom middleware that handles CR routes (always Spanish) before next-intl
+/**
+ * Detects the preferred locale from the request
+ * Priority: cookie -> country -> Accept-Language -> default
+ */
+function detectLocale(request: NextRequest): Locale | null {
+  // 1. Check for existing locale cookie (user's explicit choice)
+  const cookieLocale = request.cookies.get(LOCALE_COOKIE)?.value;
+  if (cookieLocale && locales.includes(cookieLocale as Locale)) {
+    return cookieLocale as Locale;
+  }
+
+  // 2. Check country from geolocation headers
+  // Vercel Edge: x-vercel-ip-country, Cloudflare: cf-ipcountry
+  const country =
+    request.headers.get('x-vercel-ip-country') ||
+    request.headers.get('cf-ipcountry');
+
+  if (country && country in countryToLocale) {
+    return countryToLocale[country];
+  }
+
+  // 3. Parse Accept-Language header
+  const acceptLanguage = request.headers.get('accept-language');
+  if (acceptLanguage) {
+    // Parse language preferences (e.g., "es-CR,es;q=0.9,en;q=0.8")
+    const languages = acceptLanguage
+      .split(',')
+      .map((lang) => {
+        const [code, qValue] = lang.trim().split(';q=');
+        return {
+          code: code.split('-')[0].toLowerCase(), // Extract base language
+          q: qValue ? parseFloat(qValue) : 1,
+        };
+      })
+      .sort((a, b) => b.q - a.q);
+
+    // Find first matching supported locale
+    for (const { code } of languages) {
+      if (locales.includes(code as Locale)) {
+        return code as Locale;
+      }
+    }
+  }
+
+  // 4. No preference found - return null to use default
+  return null;
+}
+
+/**
+ * Extracts the current locale from the URL pathname
+ */
+function getLocaleFromPathname(pathname: string): Locale | null {
+  for (const locale of locales) {
+    if (
+      pathname.startsWith(`/${locale}/`) ||
+      pathname === `/${locale}`
+    ) {
+      return locale;
+    }
+  }
+  return null;
+}
+
+/**
+ * Checks if this is a first visit (no locale cookie)
+ */
+function isFirstVisit(request: NextRequest): boolean {
+  return !request.cookies.has(LOCALE_COOKIE);
+}
+
 export default function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
@@ -24,15 +96,60 @@ export default function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL(newPathname, request.url));
   }
 
-  // For /cr routes without locale prefix, rewrite internally to /es/cr (Spanish)
-  // This prevents redirecting /cr to /en/cr based on browser language
+  // For /cr routes without locale prefix, rewrite internally to /es/cr
   if (pathname.startsWith('/cr')) {
     const newUrl = new URL(request.url);
     newUrl.pathname = `/es${pathname}`;
     return NextResponse.rewrite(newUrl);
   }
 
-  // For all other routes, use the standard next-intl middleware
+  // Handle locale detection for first-time visitors
+  if (isFirstVisit(request)) {
+    const detectedLocale = detectLocale(request);
+    const urlLocale = getLocaleFromPathname(pathname);
+
+    // Determine if we need to redirect
+    // Default locale (es) has no prefix, others need prefix
+    const effectiveUrlLocale = urlLocale ?? defaultLocale;
+
+    if (detectedLocale && detectedLocale !== effectiveUrlLocale) {
+      // Build redirect URL
+      let newPathname = pathname;
+
+      // Remove current locale prefix if present
+      if (urlLocale) {
+        newPathname = pathname.replace(`/${urlLocale}`, '') || '/';
+      }
+
+      // Add new locale prefix if not default
+      if (detectedLocale !== defaultLocale) {
+        newPathname = `/${detectedLocale}${newPathname === '/' ? '' : newPathname}`;
+      }
+
+      const redirectUrl = new URL(newPathname, request.url);
+      const response = NextResponse.redirect(redirectUrl);
+
+      // Set the locale cookie to persist detected preference
+      response.cookies.set(LOCALE_COOKIE, detectedLocale, {
+        path: '/',
+        maxAge: 60 * 60 * 24 * 365, // 1 year
+        sameSite: 'lax',
+      });
+
+      return response;
+    }
+
+    // No redirect needed, but set cookie with current locale
+    const response = intlMiddleware(request);
+    response.cookies.set(LOCALE_COOKIE, effectiveUrlLocale, {
+      path: '/',
+      maxAge: 60 * 60 * 24 * 365,
+      sameSite: 'lax',
+    });
+    return response;
+  }
+
+  // Returning visitor - next-intl handles routing, cookie already exists
   return intlMiddleware(request);
 }
 

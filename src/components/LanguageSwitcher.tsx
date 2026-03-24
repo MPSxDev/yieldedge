@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useLocale } from 'next-intl';
-import { locales, type Locale } from '@/i18n/config';
+import { locales, LOCALE_COOKIE, type Locale } from '@/i18n/config';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import Image from 'next/image';
@@ -79,9 +79,8 @@ export default function LanguageSwitcher({
       newPath = `/en${cleanPath}`;
     }
 
-    // Set the NEXT_LOCALE cookie so the middleware respects user's explicit choice
-    // This prevents localeDetection from overriding the user's selection
-    document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000; SameSite=Lax`;
+    // Set the locale cookie so the middleware respects user's explicit choice
+    document.cookie = `${LOCALE_COOKIE}=${newLocale}; path=/; max-age=31536000; SameSite=Lax`;
 
     // Navigate
     window.location.href = newPath;
