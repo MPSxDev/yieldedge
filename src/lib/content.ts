@@ -184,7 +184,7 @@ export const homepageContent: PageContent = {
   hero: {
     slides: [
       {
-        heading: 'AI Consulting',
+        heading: 'Yieldge - Software Development Company',
         subheading: 'We drive your digital growth with AI consulting',
         description: 'We are consultants who help improve your company\'s processes with clear advice and the integration of solutions where they have the most impact.',
         ctaText: 'Learn more',
