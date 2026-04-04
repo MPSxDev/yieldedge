@@ -53,7 +53,7 @@ export default function TechPlatforms({
           transition={{ duration: 0.6 }}
         >
           <div className="text-center mb-10">
-            <span className="text-sm font-semibold text-[#1F5CFF] tracking-wider uppercase mb-3 block">
+            <span className="inline-block text-[#1F5CFF] font-bold text-xs sm:text-sm uppercase tracking-[0.15em] mb-4 sm:mb-6 px-4 py-1.5 rounded-full bg-[#eff4ff] border border-[#dbe6ff]">
               {eyebrow}
             </span>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">

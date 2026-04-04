@@ -66,12 +66,12 @@ export default function Services({ content = homepageContent.services, useConten
           >
             {/* Compact Section Header */}
             <div className="max-w-2xl mb-8 lg:mb-10">
-              <motion.p
+              <motion.span
                 variants={fadeInUp}
-                className="text-[#1F5CFF] font-medium mb-2 text-xs uppercase tracking-wide"
+                className="inline-block text-[#1F5CFF] font-bold text-xs sm:text-sm uppercase tracking-[0.15em] mb-4 sm:mb-6 px-4 py-1.5 rounded-full bg-[#eff4ff] border border-[#dbe6ff]"
               >
                 {t('sectionLabel')}
-              </motion.p>
+              </motion.span>
               <motion.h2
                 variants={fadeInUp}
                 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 mb-3 leading-tight"
@@ -155,12 +155,12 @@ export default function Services({ content = homepageContent.services, useConten
         >
           {/* Section Header */}
           <div className="max-w-3xl mb-12 sm:mb-16 lg:mb-20">
-            <motion.p
+            <motion.span
               variants={fadeInUp}
-              className="text-[#1F5CFF] font-medium mb-4 sm:mb-5 text-xs uppercase tracking-wide"
+              className="inline-block text-[#1F5CFF] font-bold text-xs sm:text-sm uppercase tracking-[0.15em] mb-4 sm:mb-6 px-4 py-1.5 rounded-full bg-[#eff4ff] border border-[#dbe6ff]"
             >
               {useContentDirectly && content.sectionLabel ? content.sectionLabel : t('sectionLabel')}
-            </motion.p>
+            </motion.span>
             <motion.h2
               variants={fadeInUp}
               className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-gray-900 mb-5 sm:mb-6 leading-[1.15]"

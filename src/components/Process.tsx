@@ -84,12 +84,12 @@ export default function Process({ content = homepageContent.process, useContentD
           viewport={{ once: true, amount: 0.2 }}
           className="max-w-3xl mx-auto text-center mb-12 lg:mb-16"
         >
-          <motion.p
+          <motion.span
             variants={fadeInUp}
-            className="text-[#1F5CFF] font-semibold mb-3 text-xs sm:text-sm uppercase tracking-wide"
+            className="inline-block text-[#1F5CFF] font-bold text-xs sm:text-sm uppercase tracking-[0.15em] mb-4 sm:mb-6 px-4 py-1.5 rounded-full bg-[#eff4ff] border border-[#dbe6ff]"
           >
             {sectionLabel}
-          </motion.p>
+          </motion.span>
           <motion.h2
             variants={fadeInUp}
             className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-4"

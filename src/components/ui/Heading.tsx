@@ -31,7 +31,7 @@ export default function Heading({
   return (
     <div className={cn(centered && 'text-center', 'mb-8 lg:mb-12')}>
       {eyebrow && (
-        <span className="inline-block text-[#1F5CFF] font-semibold text-sm uppercase tracking-wide mb-4">
+        <span className="inline-block text-[#1F5CFF] font-bold text-xs sm:text-sm uppercase tracking-[0.15em] mb-4 sm:mb-6 px-4 py-1.5 rounded-full bg-[#eff4ff] border border-[#dbe6ff]">
           {eyebrow}
         </span>
       )}

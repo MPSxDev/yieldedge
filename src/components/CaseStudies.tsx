@@ -199,9 +199,9 @@ export default function CaseStudies({ content = homepageContent.caseStudies }: C
         >
           {/* Header */}
           <motion.div variants={fadeInUp} className="text-center mb-10 sm:mb-16 lg:mb-20">
-            <p className="text-[#1F5CFF] font-semibold mb-3 sm:mb-4 text-xs sm:text-sm uppercase tracking-wide">
+            <span className="inline-block text-[#1F5CFF] font-bold text-xs sm:text-sm uppercase tracking-[0.15em] mb-4 sm:mb-6 px-4 py-1.5 rounded-full bg-[#eff4ff] border border-[#dbe6ff]">
               {content.sectionLabel}
-            </p>
+            </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-4 sm:mb-6 px-2">
               {content.title}{' '}
               <span className="text-[#1F5CFF]">{content.titleHighlight}</span>
