@@ -45,7 +45,7 @@ export default function Hero() {
             variants={fadeInUp}
             className="inline-block text-[#1F5CFF] font-bold text-xs sm:text-sm uppercase tracking-[0.15em] mb-4 sm:mb-6 px-4 py-1.5 rounded-full bg-[#eff4ff] border border-[#dbe6ff]"
           >
-            {t('eyebrow')}
+            Build Faster. Scale Smarter.
           </motion.span>
 
           {/* Headline */}
