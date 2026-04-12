@@ -164,9 +164,9 @@ export default function TestimonialsCR() {
           >
             {/* Header */}
             <motion.div variants={fadeInUp} className="text-center mb-12">
-              <p className="text-[#1F5CFF] font-semibold mb-3 text-sm uppercase tracking-wide">
+              <span className="inline-block text-[#1F5CFF] font-bold text-xs sm:text-sm uppercase tracking-[0.15em] mb-4 sm:mb-6 px-4 py-1.5 rounded-full bg-[#eff4ff] border border-[#dbe6ff]">
                 Testimonios
-              </p>
+              </span>
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                 Empresas en Costa Rica{' '}
                 <span className="text-[#1F5CFF]">creciendo con Yieldge</span>
