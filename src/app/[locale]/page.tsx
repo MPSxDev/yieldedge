@@ -18,6 +18,10 @@ const Results = dynamic(() => import('@/components/sections/Results'), {
   loading: () => <div className="min-h-[400px]" />,
 });
 
+const Collaborations = dynamic(() => import('@/components/sections/Collaborations'), {
+  loading: () => <div className="min-h-[400px]" />,
+});
+
 const Footer = dynamic(() => import('@/components/Footer'), {
   loading: () => <div className="min-h-[400px]" />,
 });
@@ -49,6 +53,9 @@ export default function Home() {
 
         {/* Results (Transformation Statements) */}
         <Results />
+
+        {/* Collaborations (Company Logos) */}
+        <Collaborations />
       </main>
 
       <Footer />

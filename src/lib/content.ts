@@ -750,10 +750,6 @@ export const crContent: PageContent = {
         name: 'HS',
         logo: '/assets/logos/hslogo.png',
       },
-      {
-        name: 'Stellar',
-        logo: '/assets/logos/stellar.avif',
-      },
     ],
   },
 };
