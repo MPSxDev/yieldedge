@@ -106,7 +106,6 @@ export default function Navbar({ hideNavLinks = false }: NavbarProps) {
       ]
     : [
         { label: t('solutions'), href: solutionsHref(pathname) },
-        { label: t('infrastructure'), href: '/testmain' },
         { label: t('company'), href: companyHref(pathname) },
         { label: t('careers'), href: careersHref(pathname) },
       ];
