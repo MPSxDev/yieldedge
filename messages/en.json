@@ -7,6 +7,7 @@
   },
   "nav": {
     "solutions": "Solutions",
+    "infrastructure": "Digital Infrastructure",
     "company": "Company",
     "careers": "Careers",
     "getInTouch": "Get in Touch",
@@ -544,11 +545,11 @@
   },
   "homepage": {
     "hero": {
-      "eyebrow": "SOFTWARE DEVELOPMENT COMPANY",
-      "headline": "Yieldge - Software Development Company",
-      "subheadline": "We build custom software and engineering teams that scale your business.",
-      "primaryCta": "Request Initial Diagnosis",
-      "secondaryCta": "Learn more..."
+      "eyebrow": "TECHNOLOGY INFRASTRUCTURE",
+      "headline": "We reduce operational costs by optimizing your company with software and artificial intelligence.",
+      "subheadline": "We align systems, processes, and data to eliminate inefficiencies, improve control, and operate with fewer resources.",
+      "primaryCta": "Learn more",
+      "secondaryCta": "Learn more"
     },
     "problemSolution": {
       "problemLabel": "The Hidden Cost",
@@ -572,46 +573,46 @@
     },
     "services": {
       "eyebrow": "Capabilities",
-      "title": "Four pillars of technology intervention",
-      "subtitle": "Each capability is designed to solve a specific type of operational friction and strengthen the foundation for scaling.",
+      "title": "What we do",
+      "subtitle": "We work with companies that already have multiple systems but need greater integration, visibility, and control over their technology operations.",
       "ai": {
-        "title": "Intelligent Automation",
-        "description": "We eliminate repetitive tasks, reduce human error, and free operational capacity through automated workflows with process criteria.",
+        "title": "Infrastructure Diagnosis",
+        "description": "We analyze the current state of systems and their impact on operations.",
         "capabilities": {
-          "automation": "High-volume operations automation",
-          "workflows": "Intelligent flows integrated with existing systems",
-          "roi": "AI implementation where it generates measurable impact",
-          "overhead": "Manual operational burden reduction"
+          "automation": "Current architecture evaluation",
+          "workflows": "Bottleneck identification",
+          "roi": "Existing integrations mapping",
+          "overhead": "Optimization plan aligned to objectives"
         }
       },
       "cloud": {
-        "title": "Scalable Infrastructure",
-        "description": "We design and migrate cloud infrastructure with architecture built to support growth without degrading performance or multiplying costs.",
+        "title": "Architecture & Integration",
+        "description": "We design coherent and scalable technology structures.",
         "capabilities": {
-          "architecture": "Cloud architecture with long-term vision",
-          "migration": "Migration and optimization of existing environments",
-          "devops": "Integrated DevOps and SRE practices",
-          "iac": "Infrastructure as code for control and replicability"
+          "architecture": "Enterprise architecture design",
+          "migration": "Systems and APIs integration",
+          "devops": "Unified technology ecosystem",
+          "iac": "Growth preparation"
         }
       },
       "data": {
-        "title": "Data Integration & Visibility",
-        "description": "We connect dispersed sources, structure pipelines, and build dashboards that enable decisions with reliable and timely information.",
+        "title": "Operational Automation",
+        "description": "We reduce dependency on manual processes.",
         "capabilities": {
-          "analytics": "Management dashboards with real-time data",
-          "bi": "Integration of internal and external sources",
-          "pipelines": "Robust and maintainable data pipelines",
-          "decisions": "Analytical infrastructure for informed decisions"
+          "analytics": "Elimination of repetitive tasks",
+          "bi": "Intelligent automated workflows",
+          "pipelines": "Reduction of human errors",
+          "decisions": "Operational capacity release"
         }
       },
       "platforms": {
-        "title": "Custom Platforms",
-        "description": "We develop applications and modernize legacy systems so that technology adapts to the business, not the other way around.",
+        "title": "Data Management",
+        "description": "We centralize information for clear decisions.",
         "capabilities": {
-          "apps": "Web and mobile applications with solid architecture",
-          "api": "APIs and integrations with critical systems",
-          "modernization": "Legacy system modernization",
-          "performance": "High-performance digital experiences"
+          "apps": "Data source unification",
+          "api": "Robust data pipelines",
+          "modernization": "Real-time management dashboards",
+          "performance": "Reliable analytical infrastructure"
         }
       },
       "implementations": {
@@ -621,43 +622,43 @@
       }
     },
     "valueProps": {
-      "eyebrow": "Why It Matters",
-      "title": "Technology with business criteria",
-      "subtitle": "Every intervention is designed to generate measurable operational impact, not just technical deliverables.",
+      "eyebrow": "Our Approach",
+      "title": "We don't implement tools in isolation",
+      "subtitle": "We work on the complete structure of technology operations.",
       "speed": {
-        "title": "Execution with Criteria",
-        "description": "We implement with architectural vision, not just delivery urgency."
+        "title": "Complete Integration",
+        "description": "Each solution connects with existing systems to create a coherent ecosystem."
       },
       "impact": {
-        "title": "Measurable Impact",
-        "description": "Every project is linked to business indicators, not vanity metrics."
+        "title": "Robust Architecture",
+        "description": "We design technology structures prepared to scale without friction."
       },
       "excellence": {
-        "title": "Technical Rigor",
-        "description": "Senior teams, production-grade code, enterprise standards."
+        "title": "Measurable Results",
+        "description": "Each intervention is linked to concrete business indicators."
       },
       "partnership": {
-        "title": "Strategic Vision",
-        "description": "We think as part of your operation, not as an external vendor."
+        "title": "Dedicated Team",
+        "description": "We work as an extension of your operation, not as an external vendor."
       },
       "proven": {
-        "title": "Operational Stability",
-        "description": "We prioritize proven solutions that reduce risk, not experimental technology."
+        "title": "Continuous Support",
+        "description": "We ensure operational stability in growth environments."
       }
     },
     "results": {
-      "eyebrow": "Impact",
-      "title": "Results from previous interventions",
-      "subtitle": "Examples of structural transformations in operations across different sectors.",
+      "eyebrow": "Results",
+      "title": "What our clients achieve",
+      "subtitle": "Measurable impact on business operations.",
       "items": {
-        "dataEntry": "80% reduction in manual data entry through automation of critical processes",
-        "infrastructure": "40% decrease in infrastructure costs with availability improvement to 99.9%",
-        "analytics": "Decision cycles reduced from days to hours through real-time management dashboards",
-        "migration": "Migration from monolithic architecture to microservices without operational interruption",
-        "onboarding": "Automated customer onboarding: from 2 weeks to 48 hours",
-        "api": "Scalable API infrastructure supporting millions of daily transactions",
-        "ai": "Identification of operational inefficiencies with significant annual savings",
-        "modernization": "Technology stack modernization that tripled development velocity"
+        "dataEntry": "Improved operational efficiency: optimized processes that reduce time and costs",
+        "infrastructure": "Reduction of manual processes: automation that frees your team for strategic tasks",
+        "analytics": "Greater visibility: unified data for informed real-time decisions",
+        "migration": "Preparation for growth: scalable infrastructure that grows with your business",
+        "onboarding": "Centralized control: a single source of truth for all operations",
+        "api": "Robust integrations: connected systems that work in coordination",
+        "ai": "Complete traceability: tracking of key metrics across the entire operational chain",
+        "modernization": "Operational stability: lower incidence of errors and system failures"
       }
     },
     "whyUs": {
@@ -691,6 +692,89 @@
       "description": "Request an initial diagnosis. We analyze your current situation, identify structural bottlenecks, and propose an intervention plan with measurable impact.",
       "cta": "Request Diagnosis",
       "trustLine": "No commitment. No sales pressure. Just clarity."
+    },
+    "collaborations": {
+      "eyebrow": "COLLABORATIONS",
+      "title": "Organizations we have worked with",
+      "description": "We have collaborated with companies across various sectors and industries, from startups to established organizations."
+    }
+  },
+  "infrastructure": {
+    "hero": {
+      "eyebrow": "DIGITAL INFRASTRUCTURE",
+      "title": "We structure and optimize",
+      "titleHighlight": "technology infrastructure",
+      "titleEnd": "for enterprises",
+      "subtitle": "We align systems, processes, and data to create efficient, scalable operations ready for growth.",
+      "cta": "Request Technical Assessment"
+    },
+    "capabilities": {
+      "eyebrow": "CAPABILITIES",
+      "title": "What we do",
+      "subtitle": "Comprehensive solutions for every layer of your technology infrastructure.",
+      "items": {
+        "diagnosis": {
+          "title": "Infrastructure Diagnosis",
+          "description": "We evaluate your current architecture, identify bottlenecks, and design an optimization plan aligned with your objectives."
+        },
+        "integration": {
+          "title": "Integration & Development",
+          "description": "We connect systems, APIs, and platforms to create a coherent and efficient technology ecosystem."
+        },
+        "automation": {
+          "title": "Operational Automation",
+          "description": "We eliminate repetitive manual tasks, reduce errors, and free up operational capacity with automated workflows."
+        },
+        "data": {
+          "title": "Data Management",
+          "description": "We structure data pipelines, unify sources, and build dashboards for informed decision-making."
+        },
+        "performance": {
+          "title": "Performance & Support",
+          "description": "We monitor, optimize, and maintain your infrastructure to ensure availability and performance."
+        }
+      }
+    },
+    "approach": {
+      "eyebrow": "OUR APPROACH",
+      "title": "We don't implement",
+      "titleHighlight": "isolated tools",
+      "description": "We work on the complete structure of technological operations. Each solution integrates with your existing systems to create a coherent and efficient ecosystem.",
+      "features": {
+        "integration": "Complete integration",
+        "architecture": "Robust architecture",
+        "results": "Measurable results",
+        "team": "Dedicated team"
+      }
+    },
+    "results": {
+      "eyebrow": "RESULTS",
+      "title": "What our clients achieve",
+      "subtitle": "Measurable impact on business operations.",
+      "items": {
+        "efficiency": {
+          "title": "Operational efficiency",
+          "description": "Optimized processes that reduce time and operational costs."
+        },
+        "manual": {
+          "title": "Reduction of manual processes",
+          "description": "Automation that frees your team for strategic tasks."
+        },
+        "visibility": {
+          "title": "Greater visibility",
+          "description": "Unified data for informed real-time decisions."
+        },
+        "growth": {
+          "title": "Preparation for growth",
+          "description": "Scalable infrastructure that grows with your business."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to optimize your infrastructure?",
+      "description": "Request a technical assessment. We analyze your current situation and propose an action plan with measurable impact.",
+      "button": "Request Assessment",
+      "trustLine": "No commitment. No sales pressure."
     }
   }
 }
