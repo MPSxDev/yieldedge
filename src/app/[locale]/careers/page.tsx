@@ -1,15 +1,21 @@
-'use client';
+import type { Metadata } from 'next';
+import { generatePageMetadata, pageMetadata } from '@/lib/seo';
+import CareersPageClient from './CareersPageClient';
 
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import CareersPageContent from '@/components/CareersPageContent';
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return generatePageMetadata({
+    locale,
+    ...pageMetadata.careers,
+    path: '/careers',
+  });
+}
 
 export default function CareersPage() {
-  return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
-      <CareersPageContent />
-      <Footer />
-    </div>
-  );
+  return <CareersPageClient />;
 }

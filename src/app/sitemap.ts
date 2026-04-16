@@ -68,37 +68,67 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Costa Rica specific pages (high priority for local SEO)
-  const crPages = [
+  // English versions of main pages
+  const englishPages = [
     {
-      url: `${baseUrl}/cr`,
+      url: `${baseUrl}/en`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 1,
+      alternates: {
+        languages: {
+          es: baseUrl,
+          en: `${baseUrl}/en`,
+        },
+      },
     },
     {
-      url: `${baseUrl}/cr/solutions`,
+      url: `${baseUrl}/en/solutions`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
       priority: 0.9,
+      alternates: {
+        languages: {
+          es: `${baseUrl}/solutions`,
+          en: `${baseUrl}/en/solutions`,
+        },
+      },
     },
     {
-      url: `${baseUrl}/cr/company`,
+      url: `${baseUrl}/en/company`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
+      alternates: {
+        languages: {
+          es: `${baseUrl}/company`,
+          en: `${baseUrl}/en/company`,
+        },
+      },
     },
     {
-      url: `${baseUrl}/cr/careers`,
+      url: `${baseUrl}/en/careers`,
       lastModified: currentDate,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
+      alternates: {
+        languages: {
+          es: `${baseUrl}/careers`,
+          en: `${baseUrl}/en/careers`,
+        },
+      },
     },
     {
-      url: `${baseUrl}/cr/mision`,
+      url: `${baseUrl}/en/get-in-touch`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
-      priority: 0.7,
+      priority: 0.9,
+      alternates: {
+        languages: {
+          es: `${baseUrl}/get-in-touch`,
+          en: `${baseUrl}/en/get-in-touch`,
+        },
+      },
     },
   ];
 
@@ -128,8 +158,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       },
     },
+    {
+      url: `${baseUrl}/en/privacy-policy`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly' as const,
+      priority: 0.3,
+      alternates: {
+        languages: {
+          es: `${baseUrl}/privacy-policy`,
+          en: `${baseUrl}/en/privacy-policy`,
+        },
+      },
+    },
+    {
+      url: `${baseUrl}/en/terms`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly' as const,
+      priority: 0.3,
+      alternates: {
+        languages: {
+          es: `${baseUrl}/terms`,
+          en: `${baseUrl}/en/terms`,
+        },
+      },
+    },
   ];
 
-  return [...mainPages, ...crPages, ...legalPages];
+  return [...mainPages, ...englishPages, ...legalPages];
 }
 
