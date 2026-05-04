@@ -40,18 +40,18 @@ export default function Hero() {
           animate="visible"
           className="max-w-4xl mx-auto text-center"
         >
-          {/* Eyebrow */}
+          {/* Eyebrow - Institutional style */}
           <motion.span
             variants={fadeInUp}
-            className="inline-block text-[#1F5CFF] font-bold text-xs sm:text-sm uppercase tracking-[0.15em] mb-4 sm:mb-6 px-4 py-1.5 rounded-full bg-[#eff4ff] border border-[#dbe6ff]"
+            className="block text-gray-500 font-medium text-xs uppercase tracking-[0.2em] mb-6 sm:mb-8"
           >
-            Build Faster. Scale Smarter.
+            {t('eyebrow')}
           </motion.span>
 
-          {/* Headline */}
+          {/* Headline - Institutional restraint */}
           <motion.h1
             variants={fadeInUp}
-            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-[-0.02em] text-gray-900 leading-[1.05] mb-6"
+            className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold tracking-[-0.03em] text-gray-900 leading-[1.1] mb-8"
           >
             {t('headline')}
           </motion.h1>
@@ -64,15 +64,15 @@ export default function Hero() {
             {t('subheadline')}
           </motion.p>
 
-          {/* CTA */}
+          {/* CTA - Institutional style */}
           <motion.div
             variants={fadeInUp}
             className="flex justify-center"
           >
             <a
               href="#services"
-              aria-label="Learn more about our AI consulting services"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#1F5CFF] text-white font-bold rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#1F5CFF]/30 hover:-translate-y-0.5"
+              aria-label="Ver capacidades de integracion de sistemas"
+              className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-gray-900 text-white font-medium rounded-lg border border-gray-900 hover:bg-gray-800 transition-colors duration-200"
             >
               {t('secondaryCta')}
               <ArrowRight className="w-5 h-5" />

@@ -16,12 +16,12 @@
     "emergencyHelp": "Emergency Help"
   },
   "footer": {
-    "description": "Strategic technology partner delivering web services, cloud infrastructure, and AI automation for modern organizations.",
+    "description": "Technology firm specialized in systems integration, intelligent automation, and data architecture for complex operations.",
     "solutions": "Solutions",
     "contact": "Contact",
     "legal": "Legal",
-    "readyToStreamline": "Ready to streamline your business?",
-    "scheduleConsultation": "Schedule a Consultation",
+    "readyToStreamline": "For inquiries about institutional projects:",
+    "scheduleConsultation": "Request Information",
     "email": "Email",
     "phone": "Phone",
     "location": "Location",
@@ -545,11 +545,11 @@
   },
   "homepage": {
     "hero": {
-      "eyebrow": "TECHNOLOGY INFRASTRUCTURE",
-      "headline": "We reduce operational costs by optimizing your company with software and artificial intelligence.",
-      "subheadline": "We align systems, processes, and data to eliminate inefficiencies, improve control, and operate with fewer resources.",
-      "primaryCta": "Learn more",
-      "secondaryCta": "Learn more"
+      "eyebrow": "DIGITAL SYSTEMS INTEGRATOR",
+      "headline": "Intelligent digital infrastructure for organizations requiring traceability, integration, and operational control.",
+      "subheadline": "We design connected information systems through software, data, and artificial intelligence to improve decision-making capacity, visibility, and structural efficiency.",
+      "primaryCta": "Request assessment",
+      "secondaryCta": "View capabilities"
     },
     "problemSolution": {
       "problemLabel": "The Hidden Cost",
@@ -572,47 +572,47 @@
       "cta": "See our approach"
     },
     "services": {
-      "eyebrow": "Capabilities",
-      "title": "What we do",
-      "subtitle": "We work with companies that already have multiple systems but need greater integration, visibility, and control over their technology operations.",
+      "eyebrow": "Practice Areas",
+      "title": "Intervention Domains",
+      "subtitle": "We intervene in the structural layer of institutional technology operations. Each project follows proven methodologies with defined deliverables.",
       "ai": {
-        "title": "Infrastructure Diagnosis",
-        "description": "We analyze the current state of systems and their impact on operations.",
+        "title": "Digital Ecosystem Diagnosis",
+        "description": "Comprehensive audit of current systems state, integrations, and data flows with gap analysis and modernization roadmap.",
         "capabilities": {
-          "automation": "Current architecture evaluation",
-          "workflows": "Bottleneck identification",
-          "roi": "Existing integrations mapping",
-          "overhead": "Optimization plan aligned to objectives"
+          "automation": "Existing architecture mapping",
+          "workflows": "Technical debt and friction point analysis",
+          "roi": "Critical integrations and dependencies evaluation",
+          "overhead": "Impact-prioritized intervention plan"
         }
       },
       "cloud": {
-        "title": "Architecture & Integration",
-        "description": "We design coherent and scalable technology structures.",
+        "title": "Interoperability Architecture",
+        "description": "System design that unifies data sources, applications, and processes into a coherent and governable platform.",
         "capabilities": {
-          "architecture": "Enterprise architecture design",
-          "migration": "Systems and APIs integration",
-          "devops": "Unified technology ecosystem",
-          "iac": "Growth preparation"
+          "architecture": "End-to-end enterprise architecture design",
+          "migration": "Legacy and modern systems integration",
+          "devops": "APIs and data flows orchestration",
+          "iac": "Scale and operational continuity preparation"
         }
       },
       "data": {
-        "title": "Operational Automation",
-        "description": "We reduce dependency on manual processes.",
+        "title": "Process Orchestration and Automation",
+        "description": "Elimination of manual operational burden through automated flows designed for compliance and traceability.",
         "capabilities": {
-          "analytics": "Elimination of repetitive tasks",
-          "bi": "Intelligent automated workflows",
-          "pipelines": "Reduction of human errors",
-          "decisions": "Operational capacity release"
+          "analytics": "Automatable process identification",
+          "bi": "Flow design with integrated business rules",
+          "pipelines": "Implementation with audit and rollback",
+          "decisions": "Documented adoption and ROI metrics"
         }
       },
       "platforms": {
-        "title": "Data Management",
-        "description": "We centralize information for clear decisions.",
+        "title": "Data Governance and Traceability",
+        "description": "Unified data structures that enable reporting, regulatory compliance, and informed decision-making.",
         "capabilities": {
-          "apps": "Data source unification",
-          "api": "Robust data pipelines",
-          "modernization": "Real-time management dashboards",
-          "performance": "Reliable analytical infrastructure"
+          "apps": "Source of truth consolidation",
+          "api": "Quality-guaranteed data pipelines",
+          "modernization": "Executive dashboards with key metrics",
+          "performance": "Retention and access policy compliance"
         }
       },
       "implementations": {
@@ -622,43 +622,43 @@
       }
     },
     "valueProps": {
-      "eyebrow": "Our Approach",
-      "title": "We don't implement tools in isolation",
-      "subtitle": "We work on the complete structure of technology operations.",
+      "eyebrow": "Institutional Approach",
+      "title": "Coherent digital ecosystems",
+      "subtitle": "We design digital ecosystems where systems, data, and processes operate as a single coordinated entity.",
       "speed": {
-        "title": "Complete Integration",
-        "description": "Each solution connects with existing systems to create a coherent ecosystem."
+        "title": "Structured Methodology",
+        "description": "Projects with defined phases, clear governance, and documented deliverables."
       },
       "impact": {
-        "title": "Robust Architecture",
-        "description": "We design technology structures prepared to scale without friction."
+        "title": "Complete Integration",
+        "description": "We connect legacy systems with modern platforms without disrupting operations."
       },
       "excellence": {
         "title": "Measurable Results",
-        "description": "Each intervention is linked to concrete business indicators."
+        "description": "Each intervention is linked to concrete operational indicators."
       },
       "partnership": {
-        "title": "Dedicated Team",
-        "description": "We work as an extension of your operation, not as an external vendor."
+        "title": "Knowledge Transfer",
+        "description": "Training and documentation for client operational independence."
       },
       "proven": {
-        "title": "Continuous Support",
-        "description": "We ensure operational stability in growth environments."
+        "title": "Operational Continuity",
+        "description": "Post-implementation support with defined SLAs and continuous monitoring."
       }
     },
     "results": {
-      "eyebrow": "Results",
-      "title": "What our clients achieve",
-      "subtitle": "Measurable impact on business operations.",
+      "eyebrow": "Capabilities",
+      "title": "Capabilities we enable",
+      "subtitle": "Structural impact on institutional operations.",
       "items": {
-        "dataEntry": "Improved operational efficiency: optimized processes that reduce time and costs",
-        "infrastructure": "Reduction of manual processes: automation that frees your team for strategic tasks",
-        "analytics": "Greater visibility: unified data for informed real-time decisions",
-        "migration": "Preparation for growth: scalable infrastructure that grows with your business",
-        "onboarding": "Centralized control: a single source of truth for all operations",
-        "api": "Robust integrations: connected systems that work in coordination",
-        "ai": "Complete traceability: tracking of key metrics across the entire operational chain",
-        "modernization": "Operational stability: lower incidence of errors and system failures"
+        "dataEntry": "Greater traceability over critical processes",
+        "infrastructure": "Connected information for decision-making",
+        "analytics": "Reduction of manual review and operational duplication",
+        "migration": "Cross-visibility over dispersed systems",
+        "onboarding": "Automated validation of document flows",
+        "api": "Digital evidence for audit and tracking",
+        "ai": "Institutional information centralization",
+        "modernization": "Operational intelligence over large information volumes"
       }
     },
     "whyUs": {
@@ -697,6 +697,19 @@
       "eyebrow": "COLLABORATIONS",
       "title": "Organizations we have worked with",
       "description": "We have collaborated with companies across various sectors and industries, from startups to established organizations."
+    },
+    "applications": {
+      "eyebrow": "Applications",
+      "title": "Applications in High-Demand Operational Environments",
+      "subtitle": "Solutions designed for organizations requiring control, traceability, and efficiency at scale.",
+      "items": {
+        "documents": "Integration of multiple document sources",
+        "validation": "Automation of validations and controls",
+        "evidence": "Digital evidence centralization",
+        "monitoring": "Process monitoring and traceability",
+        "dashboards": "Executive tracking dashboards",
+        "intelligence": "Operational intelligence over large information volumes"
+      }
     }
   },
   "infrastructure": {

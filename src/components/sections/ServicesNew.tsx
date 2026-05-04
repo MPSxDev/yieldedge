@@ -30,14 +30,6 @@ const serviceIcons = [
   { src: '/assets/iconset/minified/Custom-Platforms.png', alt: 'Custom Platforms' },
 ];
 
-const platforms = [
-  { name: 'AWS', src: '/assets/services/aws.png' },
-  { name: 'Microsoft Azure', src: '/assets/services/azure.png' },
-  { name: 'Google Cloud', src: '/assets/services/googlecloud.webp' },
-  { name: 'OpenAI', src: '/assets/services/openai.jpeg' },
-  { name: 'Salesforce', src: '/assets/services/salesforce.jpg' },
-  { name: 'Cloudflare', src: '/assets/services/cloudflare.jpg' },
-];
 
 interface ServiceCardProps {
   icon: { src: string; alt: string };
@@ -50,23 +42,23 @@ function ServiceCard({ icon: image, title, description, capabilities }: ServiceC
   return (
     <motion.div
       variants={fadeInUp}
-      className="group relative bg-white rounded-2xl p-5 sm:p-8 border border-gray-100 hover:border-[#1F5CFF]/30 hover:shadow-xl hover:shadow-[#1F5CFF]/5 transition-all duration-300"
+      className="group relative bg-white rounded-lg p-6 sm:p-8 border border-gray-200 hover:border-gray-400 transition-colors duration-200"
     >
       {/* Service image */}
-      <div className="relative w-full h-24 sm:h-36 mb-4 sm:mb-6">
+      <div className="relative w-full h-24 sm:h-32 mb-4 sm:mb-6">
         <div className="absolute inset-0">
           <Image
             src={image.src}
             alt={image.alt}
             fill
             draggable={false}
-            className="object-contain object-center transition-transform duration-300 group-hover:scale-[1.02]"
+            className="object-contain object-center"
           />
         </div>
       </div>
 
       {/* Title */}
-      <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight">
+      <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3 leading-tight">
         {title}
       </h3>
 
@@ -75,11 +67,11 @@ function ServiceCard({ icon: image, title, description, capabilities }: ServiceC
         {description}
       </p>
 
-      {/* Capabilities */}
-      <ul className="space-y-1.5 sm:space-y-2">
+      {/* Capabilities - Numbered institutional style */}
+      <ul className="space-y-2 sm:space-y-2.5">
         {capabilities.map((capability, i) => (
-          <li key={i} className="flex items-start gap-2 text-xs sm:text-sm text-gray-500">
-            <span className="mt-1 w-1.5 h-1.5 rounded-full bg-[#1F5CFF] shrink-0" />
+          <li key={i} className="flex items-start gap-3 text-xs sm:text-sm text-gray-600">
+            <span className="text-gray-400 font-mono text-xs mt-0.5">{String(i + 1).padStart(2, '0')}</span>
             <span>{capability}</span>
           </li>
         ))}
@@ -169,50 +161,6 @@ export default function ServicesNew() {
         ))}
       </motion.div>
 
-      {/* Implementations / Platforms Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        className="mt-14 sm:mt-20"
-      >
-        <div className="text-center mb-8 sm:mb-10">
-          <span className="inline-block text-[#1F5CFF] font-bold text-xs sm:text-sm uppercase tracking-[0.15em] mb-4 sm:mb-6 px-4 py-1.5 rounded-full bg-[#eff4ff] border border-[#dbe6ff]">
-            {t('implementations.eyebrow')}
-          </span>
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
-            {t('implementations.title')}
-          </h3>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            {t('implementations.subtitle')}
-          </p>
-        </div>
-
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-3 sm:gap-6 items-center justify-items-center max-w-6xl mx-auto"
-        >
-          {platforms.map((platform) => (
-            <motion.div
-              key={platform.name}
-              variants={fadeInUp}
-              className="group relative w-full max-w-[140px] sm:max-w-[170px] aspect-square bg-white rounded-xl p-2 border border-gray-100 hover:border-[#1F5CFF]/30 hover:shadow-lg transition-all duration-300 flex items-center justify-center"
-            >
-              <Image
-                src={platform.src}
-                alt={platform.name}
-                fill
-                draggable={false}
-                className="object-contain p-2 transition-all duration-300"
-              />
-            </motion.div>
-          ))}
-        </motion.div>
-      </motion.div>
     </Section>
   );
 }

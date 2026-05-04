@@ -164,17 +164,15 @@ export default function Navbar({ hideNavLinks = false }: NavbarProps) {
             {/* Language Switcher - hidden for CR route */}
             {!isCRRoute && <LanguageSwitcher variant="compact" />}
 
-            {/* CTA Button */}
-            <motion.a
+            {/* CTA Button - Institutional style */}
+            <a
               href={ctaConfig.href}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ y: -1 }}
-              whileTap={{ scale: 0.98 }}
-              className="px-5 py-2.5 bg-[#1F5CFF] text-white font-medium rounded-full hover:bg-[#1a4edb] transition-all duration-300 text-sm shadow-md hover:shadow-lg hover:shadow-[#1F5CFF]/25"
+              className="px-5 py-2.5 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors duration-200 text-sm"
             >
               {ctaConfig.text}
-            </motion.a>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}

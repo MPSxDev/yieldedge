@@ -79,30 +79,30 @@ export default function ValueProps() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7"
+        className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
       >
         {values.map((value, index) => {
           return (
             <motion.div
               key={index}
               variants={fadeInUp}
-              className="group text-center p-7 lg:p-9 rounded-2xl bg-gray-50 border border-transparent hover:border-[#cfe0ff] hover:bg-gradient-to-b hover:from-[#f5f8ff] hover:to-[#ecf3ff] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#1F5CFF]/10"
+              className="group text-left p-6 lg:p-8 rounded-lg bg-white border border-gray-200 hover:border-gray-300 transition-colors duration-200"
             >
-              <div className="w-18 h-18 rounded-2xl bg-white group-hover:bg-[#1F5CFF] flex items-center justify-center mx-auto mb-5 shadow-sm group-hover:shadow-md group-hover:shadow-[#1F5CFF]/25 transition-all duration-300">
-                <div className="relative w-14 h-14">
+              <div className="w-14 h-14 rounded-lg bg-gray-100 flex items-center justify-center mb-5">
+                <div className="relative w-8 h-8">
                   <Image
                     src={value.icon.src}
                     alt={value.icon.alt}
                     fill
                     draggable={false}
-                    className="object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert"
+                    className="object-contain opacity-70"
                   />
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 {value.title}
               </h3>
-              <p className="text-[15px] text-gray-600 leading-relaxed">
+              <p className="text-sm text-gray-600 leading-relaxed">
                 {value.description}
               </p>
             </motion.div>

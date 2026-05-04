@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { TrendingDown, TrendingUp, Clock, Zap, Users, Server, Brain, Rocket } from 'lucide-react';
+import { TrendingDown, Clock, Users, Server, Brain, Rocket } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Section from '@/components/ui/Section';
 import Heading from '@/components/ui/Heading';
@@ -64,10 +64,10 @@ export default function Results() {
             <motion.div
               key={index}
               variants={fadeInUp}
-              className="group p-6 rounded-xl bg-gray-50 hover:bg-[#1F5CFF] border border-gray-100 hover:border-[#1F5CFF] transition-all duration-300"
+              className="p-6 rounded-lg bg-white border border-gray-200"
             >
-              <Icon className="w-6 h-6 text-[#1F5CFF] group-hover:text-white mb-4 transition-colors duration-300" />
-              <p className="text-gray-700 group-hover:text-white font-medium leading-relaxed transition-colors duration-300">
+              <Icon className="w-5 h-5 text-gray-400 mb-4" />
+              <p className="text-gray-700 font-medium leading-relaxed text-sm">
                 {result.text}
               </p>
             </motion.div>

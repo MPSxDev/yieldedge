@@ -16,12 +16,12 @@
     "emergencyHelp": "Ayuda de Emergencia"
   },
   "footer": {
-    "description": "Socio tecnológico especializado en servicios web, infraestructura en la nube y automatización con IA para tu negocio.",
+    "description": "Firma tecnológica especializada en integración de sistemas, automatización inteligente y arquitectura de datos para operaciones complejas.",
     "solutions": "Soluciones",
     "contact": "Contacto",
     "legal": "Legal",
-    "readyToStreamline": "¿Listo para optimizar tu negocio?",
-    "scheduleConsultation": "Agenda una Consulta",
+    "readyToStreamline": "Para consultas sobre proyectos institucionales:",
+    "scheduleConsultation": "Solicitar Información",
     "email": "Correo",
     "phone": "Teléfono",
     "location": "Ubicación",
@@ -545,11 +545,11 @@
   },
   "homepage": {
     "hero": {
-      "eyebrow": "INFRAESTRUCTURA TECNOLÓGICA",
-      "headline": "Reducimos costos operativos optimizando tu empresa con software e inteligencia artificial.",
-      "subheadline": "Alineamos sistemas, procesos y datos para eliminar ineficiencias, mejorar el control y operar con menos recursos.",
-      "primaryCta": "Ver más",
-      "secondaryCta": "Ver más"
+      "eyebrow": "INTEGRADOR DE SISTEMAS DIGITALES",
+      "headline": "Infraestructura digital inteligente para organizaciones que requieren trazabilidad, integración y control operativo.",
+      "subheadline": "Diseñamos sistemas de información conectados mediante software, datos e inteligencia artificial para mejorar capacidad de decisión, visibilidad y eficiencia estructural.",
+      "primaryCta": "Solicitar evaluación",
+      "secondaryCta": "Ver capacidades"
     },
     "problemSolution": {
       "problemLabel": "El Costo Oculto",
@@ -572,47 +572,47 @@
       "cta": "Ver enfoque de trabajo"
     },
     "services": {
-      "eyebrow": "Capacidades",
-      "title": "Qué hacemos",
-      "subtitle": "Trabajamos con empresas que ya cuentan con múltiples sistemas, pero necesitan mayor integración, visibilidad y control sobre su operación tecnológica.",
+      "eyebrow": "Áreas de Práctica",
+      "title": "Dominios de Intervención",
+      "subtitle": "Intervenimos en la capa estructural de operaciones tecnológicas institucionales. Cada proyecto sigue metodologías probadas con entregables definidos.",
       "ai": {
-        "title": "Diagnóstico de Infraestructura",
-        "description": "Analizamos el estado actual de los sistemas y su impacto en la operación.",
+        "title": "Diagnóstico de Ecosistemas Digitales",
+        "description": "Auditoría integral del estado actual de sistemas, integraciones y flujos de datos con análisis de brechas y hoja de ruta de modernización.",
         "capabilities": {
-          "automation": "Evaluación de arquitectura actual",
-          "workflows": "Identificación de cuellos de botella",
-          "roi": "Mapeo de integraciones existentes",
-          "overhead": "Plan de optimización alineado a objetivos"
+          "automation": "Mapeo de arquitectura existente",
+          "workflows": "Análisis de deuda técnica y puntos de fricción",
+          "roi": "Evaluación de integraciones y dependencias críticas",
+          "overhead": "Plan de intervención priorizado por impacto"
         }
       },
       "cloud": {
-        "title": "Arquitectura e Integración",
-        "description": "Diseñamos estructuras tecnológicas coherentes y escalables.",
+        "title": "Arquitectura de Interoperabilidad",
+        "description": "Diseño de sistemas que unifican fuentes de datos, aplicaciones y procesos en una plataforma coherente y gobernable.",
         "capabilities": {
-          "architecture": "Diseño de arquitectura empresarial",
-          "migration": "Integración de sistemas y APIs",
-          "devops": "Ecosistema tecnológico unificado",
-          "iac": "Preparación para crecimiento"
+          "architecture": "Diseño de arquitectura empresarial end-to-end",
+          "migration": "Integración de sistemas heredados y modernos",
+          "devops": "Orquestación de APIs y flujos de datos",
+          "iac": "Preparación para escala y continuidad operativa"
         }
       },
       "data": {
-        "title": "Automatización Operativa",
-        "description": "Reducimos dependencia de procesos manuales.",
+        "title": "Orquestación y Automatización de Procesos",
+        "description": "Eliminación de carga operativa manual mediante flujos automatizados diseñados para cumplimiento y trazabilidad.",
         "capabilities": {
-          "analytics": "Eliminación de tareas repetitivas",
-          "bi": "Flujos automatizados inteligentes",
-          "pipelines": "Reducción de errores humanos",
-          "decisions": "Liberación de capacidad operativa"
+          "analytics": "Identificación de procesos automatizables",
+          "bi": "Diseño de flujos con reglas de negocio integradas",
+          "pipelines": "Implementación con auditoría y rollback",
+          "decisions": "Métricas de adopción y ROI documentado"
         }
       },
       "platforms": {
-        "title": "Gestión de Datos",
-        "description": "Centralizamos información para decisiones claras.",
+        "title": "Gobernanza y Trazabilidad de Datos",
+        "description": "Estructuras de datos unificadas que habilitan reportería, cumplimiento regulatorio y toma de decisiones informada.",
         "capabilities": {
-          "apps": "Unificación de fuentes de datos",
-          "api": "Pipelines de datos robustos",
-          "modernization": "Dashboards de gestión en tiempo real",
-          "performance": "Infraestructura analítica confiable"
+          "apps": "Consolidación de fuentes de verdad",
+          "api": "Pipelines de datos con calidad garantizada",
+          "modernization": "Tableros ejecutivos con métricas clave",
+          "performance": "Cumplimiento de políticas de retención y acceso"
         }
       },
       "implementations": {
@@ -622,43 +622,43 @@
       }
     },
     "valueProps": {
-      "eyebrow": "Nuestro Enfoque",
-      "title": "No implementamos herramientas de forma aislada",
-      "subtitle": "Trabajamos sobre la estructura completa de la operación tecnológica.",
+      "eyebrow": "Enfoque Institucional",
+      "title": "Ecosistemas digitales coherentes",
+      "subtitle": "Diseñamos ecosistemas digitales donde sistemas, datos y procesos operan como una sola entidad coordinada.",
       "speed": {
-        "title": "Integración Completa",
-        "description": "Cada solución se conecta con sistemas existentes para crear un ecosistema coherente."
+        "title": "Metodología Estructurada",
+        "description": "Proyectos con fases definidas, gobernanza clara y entregables documentados."
       },
       "impact": {
-        "title": "Arquitectura Robusta",
-        "description": "Diseñamos estructuras tecnológicas preparadas para escalar sin fricción."
+        "title": "Integración Completa",
+        "description": "Conectamos sistemas heredados con plataformas modernas sin disrumpir operaciones."
       },
       "excellence": {
         "title": "Resultados Medibles",
-        "description": "Cada intervención está vinculada a indicadores de negocio concretos."
+        "description": "Cada intervención está vinculada a indicadores operativos concretos."
       },
       "partnership": {
-        "title": "Equipo Dedicado",
-        "description": "Trabajamos como una extensión de su operación, no como proveedor externo."
+        "title": "Transferencia de Conocimiento",
+        "description": "Capacitación y documentación para independencia operativa del cliente."
       },
       "proven": {
-        "title": "Soporte Continuo",
-        "description": "Aseguramos estabilidad operativa en entornos de crecimiento."
+        "title": "Continuidad Operativa",
+        "description": "Soporte post-implementación con SLAs definidos y monitoreo continuo."
       }
     },
     "results": {
-      "eyebrow": "Resultados",
-      "title": "Lo que nuestros clientes logran",
-      "subtitle": "Impacto medible en operaciones empresariales.",
+      "eyebrow": "Capacidades",
+      "title": "Capacidades que habilitamos",
+      "subtitle": "Impacto estructural en operaciones institucionales.",
       "items": {
-        "dataEntry": "Mejora en eficiencia operativa: procesos optimizados que reducen tiempos y costos",
-        "infrastructure": "Reducción de procesos manuales: automatización que libera a su equipo para tareas estratégicas",
-        "analytics": "Mayor visibilidad: datos unificados para decisiones informadas en tiempo real",
-        "migration": "Preparación para crecimiento: infraestructura escalable que crece con su negocio",
-        "onboarding": "Control centralizado: un solo punto de verdad para toda la operación",
-        "api": "Integraciones robustas: sistemas conectados que trabajan de forma coordinada",
-        "ai": "Trazabilidad completa: seguimiento de métricas clave en toda la cadena operativa",
-        "modernization": "Estabilidad operativa: menor incidencia de errores y caídas del sistema"
+        "dataEntry": "Mayor trazabilidad sobre procesos críticos",
+        "infrastructure": "Información conectada para toma de decisiones",
+        "analytics": "Reducción de revisión manual y duplicidad operativa",
+        "migration": "Visibilidad transversal sobre sistemas dispersos",
+        "onboarding": "Validación automatizada de flujos documentales",
+        "api": "Evidencia digital para auditoría y seguimiento",
+        "ai": "Centralización de información institucional",
+        "modernization": "Inteligencia operativa sobre grandes volúmenes de información"
       }
     },
     "whyUs": {
@@ -697,6 +697,19 @@
       "eyebrow": "COLABORACIONES",
       "title": "Organizaciones con las que hemos trabajado",
       "description": "Hemos colaborado con empresas de diversos sectores e industrias, desde startups hasta organizaciones establecidas."
+    },
+    "applications": {
+      "eyebrow": "Aplicaciones",
+      "title": "Aplicaciones en Entornos de Alta Exigencia Operativa",
+      "subtitle": "Soluciones diseñadas para organizaciones que requieren control, trazabilidad y eficiencia a escala.",
+      "items": {
+        "documents": "Integración de múltiples fuentes documentales",
+        "validation": "Automatización de validaciones y controles",
+        "evidence": "Centralización de evidencia digital",
+        "monitoring": "Monitoreo y trazabilidad de procesos",
+        "dashboards": "Dashboards de seguimiento ejecutivo",
+        "intelligence": "Inteligencia operativa sobre grandes volúmenes de información"
+      }
     }
   },
   "infrastructure": {

@@ -128,7 +128,7 @@ export default function Collaborations() {
           <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
             <motion.span
               variants={fadeInUp}
-              className="inline-block text-[#1F5CFF] font-bold text-xs sm:text-sm uppercase tracking-[0.15em] mb-4 sm:mb-6 px-4 py-1.5 rounded-full bg-[#eff4ff] border border-[#dbe6ff]"
+              className="block text-gray-500 font-medium text-xs uppercase tracking-[0.2em] mb-4 sm:mb-5"
             >
               {t('eyebrow')}
             </motion.span>
@@ -188,7 +188,7 @@ export default function Collaborations() {
                           className={`block ${company.url ? 'cursor-pointer' : 'cursor-default'}`}
                         >
                           <div
-                            className="relative w-full h-86 sm:h-72 lg:h-86 flex items-center justify-center transition-transform duration-300 ease-out group-hover/logo:scale-105 motion-reduce:transition-none motion-reduce:group-hover/logo:scale-100"
+                            className="relative w-full h-86 sm:h-72 lg:h-86 flex items-center justify-center"
                           >
                             <Image
                               src={company.logo}

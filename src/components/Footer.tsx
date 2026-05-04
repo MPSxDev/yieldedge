@@ -92,18 +92,16 @@ export default function Footer({ description, minimal = false, ctaText, ctaLink 
             {/* Social Links */}
             <div className="flex gap-3 sm:gap-4">
               {socialLinks.map((social) => (
-                <motion.a
+                <a
                   key={social.label}
                   href={social.href}
                   target={social.href.startsWith('http') ? '_blank' : undefined}
                   rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-white border border-gray-200 hover:border-[#1F5CFF] hover:bg-[#eff4ff] flex items-center justify-center transition-all text-gray-600 hover:text-[#1F5CFF]"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-white border border-gray-200 hover:border-gray-400 flex items-center justify-center transition-colors duration-200 text-gray-500 hover:text-gray-700"
                   aria-label={social.label}
                 >
                   <social.icon className="w-4 h-4 sm:w-5 sm:h-5" />
-                </motion.a>
+                </a>
               ))}
             </div>
           </div>
@@ -156,16 +154,12 @@ export default function Footer({ description, minimal = false, ctaText, ctaLink 
                 <p className="text-gray-600 mb-3 sm:mb-4 leading-relaxed text-xs sm:text-sm">
                   {t('readyToStreamline')}
                 </p>
-                <motion.a
-                  href="https://wa.me/50670724236?text=Hola%2C%20me%20interesa%20agendar%20una%20conversaci%C3%B3n"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="inline-block px-5 py-2 sm:px-6 sm:py-2.5 bg-[#1F5CFF] text-white font-semibold rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-md text-xs sm:text-sm mb-4 sm:mb-5"
+                <a
+                  href="mailto:info@yieldge.com"
+                  className="inline-block px-5 py-2 sm:px-6 sm:py-2.5 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors duration-200 text-xs sm:text-sm mb-4 sm:mb-5"
                 >
                   {t('scheduleConsultation')}
-                </motion.a>
+                </a>
 
                 {/* Legal Links */}
                 <div className="mt-4 sm:mt-5">
@@ -177,7 +171,7 @@ export default function Footer({ description, minimal = false, ctaText, ctaLink 
                       <li key={link.text}>
                         <Link
                           href={link.href}
-                          className="text-gray-600 hover:text-[#1F5CFF] transition-colors text-xs sm:text-sm block py-0.5"
+                          className="text-gray-600 hover:text-gray-900 transition-colors text-xs sm:text-sm block py-0.5"
                         >
                           {link.text}
                         </Link>
@@ -190,7 +184,7 @@ export default function Footer({ description, minimal = false, ctaText, ctaLink 
                 <div className="mt-4 sm:mt-5 space-y-1.5 text-xs sm:text-sm text-gray-600">
                   <p>
                     <strong>{t('email')}:</strong>{' '}
-                    <a href="mailto:info@yieldge.com" className="hover:text-[#1F5CFF]">
+                    <a href="mailto:info@yieldge.com" className="hover:text-gray-900">
                       info@yieldge.com
                     </a>
                   </p>
@@ -204,18 +198,14 @@ export default function Footer({ description, minimal = false, ctaText, ctaLink 
         {!minimal && (
           <div className="md:hidden mb-6 text-center">
             <p className="text-gray-600 mb-3 text-sm">{t('readyToStreamline')}</p>
-            <motion.a
-              href="https://wa.me/50670724236?text=Hola%2C%20me%20interesa%20agendar%20una%20conversaci%C3%B3n"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-block w-full px-6 py-3 bg-[#1F5CFF] text-white font-semibold rounded-xl hover:bg-[#1a4edb] transition-all duration-300 shadow-md text-sm"
+            <a
+              href="mailto:info@yieldge.com"
+              className="inline-block w-full px-6 py-3 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors duration-200 text-sm"
             >
               {t('scheduleConsultation')}
-            </motion.a>
+            </a>
             <div className="mt-3 text-xs text-gray-600">
-              <a href="mailto:info@yieldge.com" className="hover:text-[#1F5CFF]">
+              <a href="mailto:info@yieldge.com" className="hover:text-gray-900">
                 info@yieldge.com
               </a>
             </div>
@@ -229,15 +219,13 @@ export default function Footer({ description, minimal = false, ctaText, ctaLink 
           </p>
 
           {/* Back to top */}
-          <motion.button
+          <button
             onClick={scrollToTop}
-            whileHover={{ scale: 1.1, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-            className="p-2 rounded-lg bg-white border border-gray-200 hover:border-[#1F5CFF] hover:bg-[#eff4ff] text-gray-600 hover:text-[#1F5CFF] transition-all"
+            className="p-2 rounded-lg bg-white border border-gray-200 hover:border-gray-400 text-gray-500 hover:text-gray-700 transition-colors duration-200"
             aria-label={t('backToTop')}
           >
             <ArrowUp className="w-5 h-5" />
-          </motion.button>
+          </button>
         </div>
       </div>
     </footer>
