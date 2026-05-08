@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CompanyPageContent from '@/components/CompanyPageContent';
+import StickyCTA from '@/components/StickyCTA';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yieldge.com';
 
@@ -69,8 +70,17 @@ export async function generateMetadata({
 export default function CompanyPage() {
   return (
     <div className="min-h-screen bg-white">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-6 focus:py-3 focus:bg-[#1F5CFF] focus:text-white focus:rounded-full focus:shadow-lg focus:outline-none"
+      >
+        Skip to main content
+      </a>
       <Navbar />
-      <CompanyPageContent />
+      <StickyCTA />
+      <main id="main-content">
+        <CompanyPageContent />
+      </main>
       <Footer />
     </div>
   );
