@@ -31,13 +31,13 @@ export default function Heading({
   return (
     <div className={cn(centered && 'text-center', 'mb-8 lg:mb-12')}>
       {eyebrow && (
-        <span className="block text-gray-500 font-medium text-xs uppercase tracking-[0.2em] mb-4 sm:mb-5">
+        <span className="block text-gray-500 font-medium text-xs uppercase tracking-[0.2em] mb-6 sm:mb-8">
           {eyebrow}
         </span>
       )}
       <Tag
         className={cn(
-          'font-bold tracking-tight text-gray-900 leading-[1.1]',
+          'font-semibold tracking-[-0.03em] text-gray-900 leading-[1.1]',
           sizeClasses[size],
           className
         )}

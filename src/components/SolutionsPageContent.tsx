@@ -61,7 +61,7 @@ export default function SolutionsPageContent({ verticalName }: SolutionsPageCont
           >
             <motion.span
               variants={fadeInUp}
-              className="block text-gray-500 font-medium text-xs uppercase tracking-[0.2em] mb-4 sm:mb-5"
+              className="block text-gray-500 font-medium text-xs uppercase tracking-[0.2em] mb-6 sm:mb-8"
             >
               {t('sectionLabel')}
             </motion.span>
@@ -163,7 +163,7 @@ export default function SolutionsPageContent({ verticalName }: SolutionsPageCont
 
                 {/* Content */}
                 <div className="p-6 sm:p-8">
-                  <h3 className="text-xl font-bold tracking-tight text-gray-900 mb-2">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3 leading-tight">
                     {service.title}
                   </h3>
                   {service.subtitle && (
