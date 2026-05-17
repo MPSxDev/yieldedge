@@ -110,17 +110,6 @@ export default function Navbar({ hideNavLinks = false }: NavbarProps) {
         { label: t('careers'), href: careersHref(pathname) },
       ];
 
-  // CTA configuration based on route
-  const ctaConfig = isCRRoute
-    ? {
-        text: t('getInTouch'),
-        href: 'mailto:contacto@yieldge.com',
-      }
-    : {
-        text: t('getInTouch'),
-        href: 'mailto:contacto@yieldge.com',
-      };
-
   return (
     <motion.nav
       initial={{ opacity: 0, y: -20 }}
@@ -163,16 +152,6 @@ export default function Navbar({ hideNavLinks = false }: NavbarProps) {
 
             {/* Language Switcher - hidden for CR route */}
             {!isCRRoute && <LanguageSwitcher variant="compact" />}
-
-            {/* CTA Button - Institutional style */}
-            <a
-              href={ctaConfig.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-5 py-2.5 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors duration-200 text-sm"
-            >
-              {ctaConfig.text}
-            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -239,19 +218,6 @@ export default function Navbar({ hideNavLinks = false }: NavbarProps) {
                     </Link>
                   </motion.div>
                 ))}
-
-                <motion.a
-                  href={ctaConfig.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setMobileMenuOpen(false)}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                  className="block w-full px-6 py-3.5 bg-[#1F5CFF] text-white font-medium rounded-full hover:bg-[#1a4edb] active:scale-[0.98] transition-all duration-300 text-center shadow-lg hover:shadow-xl mt-4 text-base"
-                >
-                  {ctaConfig.text}
-                </motion.a>
               </div>
             </motion.div>
           </>
