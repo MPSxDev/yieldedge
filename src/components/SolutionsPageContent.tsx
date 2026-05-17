@@ -189,9 +189,7 @@ export default function SolutionsPageContent({ verticalName }: SolutionsPageCont
                   </ul>
 
                   <a
-                    href="https://wa.me/50670724236?text=Hola%2C%20me%20interesa%20agendar%20una%20conversaci%C3%B3n"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="mailto:contacto@yieldge.com"
                     className="inline-flex items-center gap-2 text-[#1F5CFF] font-semibold hover:gap-3 transition-all"
                   >
                     {tCommon('learnMore')}

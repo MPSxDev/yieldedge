@@ -27,7 +27,7 @@ interface FinalCTAProps {
 export default function FinalCTA({
   content = homepageContent.finalCTA,
   useContentDirectly = false,
-  ctaLink = 'https://wa.me/50670724236?text=Hola%2C%20me%20interesa%20agendar%20una%20conversaci%C3%B3n',
+  ctaLink = 'mailto:contacto@yieldge.com',
   phoneNumber,
   schedule,
 }: FinalCTAProps) {

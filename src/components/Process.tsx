@@ -183,9 +183,7 @@ export default function Process({ content = homepageContent.process, useContentD
         {/* CTA */}
         <div className="mt-12 lg:mt-16 text-center">
           <motion.a
-            href="https://wa.me/50670724236?text=Hola%2C%20me%20interesa%20agendar%20una%20conversaci%C3%B3n"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:contacto@yieldge.com"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className="inline-flex items-center gap-2 px-6 py-3 bg-[#1F5CFF] text-white text-sm font-semibold rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-lg shadow-[#1F5CFF]/25"

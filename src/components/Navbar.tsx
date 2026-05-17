@@ -113,12 +113,12 @@ export default function Navbar({ hideNavLinks = false }: NavbarProps) {
   // CTA configuration based on route
   const ctaConfig = isCRRoute
     ? {
-        text: 'Hablemos por WhatsApp',
-        href: 'https://wa.me/50688888888?text=Hola%2C%20quiero%20información%20sobre%20sus%20servicios',
+        text: t('getInTouch'),
+        href: 'mailto:contacto@yieldge.com',
       }
     : {
         text: t('getInTouch'),
-        href: 'https://wa.me/50670724236?text=Hola%2C%20me%20interesa%20agendar%20una%20conversaci%C3%B3n',
+        href: 'mailto:contacto@yieldge.com',
       };
 
   return (
