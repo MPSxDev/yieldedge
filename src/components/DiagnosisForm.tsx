@@ -318,6 +318,16 @@ export default function DiagnosisForm() {
         <p className="text-white/60 text-sm text-center">
           {t('privacy')}
         </p>
+
+        <p className="text-white/70 text-sm text-center mt-4">
+          {t('alternativeContact')}{' '}
+          <a
+            href="mailto:contacto@yieldge.com"
+            className="text-white underline hover:text-white/90 transition-colors"
+          >
+            contacto@yieldge.com
+          </a>
+        </p>
       </form>
     </motion.div>
   );

@@ -238,6 +238,7 @@
     "benefits": ["Free no-obligation consultation", "Customized solutions for your business", "Dedicated team of experts"],
     "ctaText": "Schedule Your Consultation",
     "ctaSubtext": "No commitment - Just possibilities",
+    "businessInquiries": "For business inquiries:",
     "imageAlt": "Business consultation"
   },
   "company": {
@@ -538,6 +539,7 @@
     "submit": "Request Diagnosis",
     "submitting": "Sending...",
     "privacy": "Your information is confidential and will only be used to contact you.",
+    "alternativeContact": "You can also reach us directly at",
     "success": {
       "title": "Request received",
       "message": "Our team will contact you within 24-48 business hours to schedule your initial diagnosis."

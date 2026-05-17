@@ -91,12 +91,10 @@ export default function GetInTouchPageClient() {
                 {t('consultationDescription')}
               </p>
               <a
-                href="https://wa.me/50670724236?text=Hola%2C%20me%20interesa%20agendar%20una%20conversaci%C3%B3n"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:contacto@yieldge.com"
                 className="inline-flex items-center gap-3 px-8 py-4 bg-[#1F5CFF] text-white text-lg font-semibold rounded-full hover:bg-[#1a4edb] transition-all duration-300 shadow-lg"
               >
-                {t('bookMeeting')}
+                {t('contactUs')}
                 <ArrowRight className="w-5 h-5" />
               </a>
             </motion.div>
@@ -113,8 +111,8 @@ export default function GetInTouchPageClient() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">{tFooter('email')}</h3>
-                    <a href="mailto:contact@yieldge.com" className="text-[#1F5CFF] hover:underline">
-                      contact@yieldge.com
+                    <a href="mailto:contacto@yieldge.com" className="text-[#1F5CFF] hover:underline">
+                      contacto@yieldge.com
                     </a>
                   </div>
                 </div>

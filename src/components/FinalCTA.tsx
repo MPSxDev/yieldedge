@@ -115,6 +115,15 @@ export default function FinalCTA({
 
                   <div className="text-xs sm:text-sm text-[#dbe6ff]">
                     <p>{ctaSubtext}</p>
+                    <p className="mt-2">
+                      {t('businessInquiries')}{' '}
+                      <a
+                        href="mailto:ventas@yieldge.com"
+                        className="text-white underline hover:text-[#eff4ff] transition-colors"
+                      >
+                        ventas@yieldge.com
+                      </a>
+                    </p>
                   </div>
                 </motion.div>
               </div>

@@ -238,6 +238,7 @@
     "benefits": ["Consulta gratuita sin compromiso", "Soluciones personalizadas para tu negocio", "Equipo de expertos dedicado"],
     "ctaText": "Agenda tu Consulta",
     "ctaSubtext": "Sin compromiso - Solo posibilidades",
+    "businessInquiries": "Para consultas comerciales:",
     "imageAlt": "Consulta de negocios"
   },
   "company": {
@@ -538,6 +539,7 @@
     "submit": "Solicitar Diagnóstico",
     "submitting": "Enviando...",
     "privacy": "Su información es confidencial y solo será utilizada para contactarlo.",
+    "alternativeContact": "También puede escribirnos directamente a",
     "success": {
       "title": "Solicitud recibida",
       "message": "Nuestro equipo lo contactará en las próximas 24-48 horas hábiles para agendar su diagnóstico inicial."
