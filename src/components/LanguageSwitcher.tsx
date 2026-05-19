@@ -14,7 +14,7 @@ interface LanguageSwitcherProps {
 
 const flagImages: Record<Locale, { src: string; alt: string }> = {
   en: { src: '/assets/flags/us.svg', alt: 'English' },
-  es: { src: '/assets/flags/es.svg', alt: 'Español' },
+  es: { src: '/assets/flags/cr.svg', alt: 'Español' },
 };
 
 export default function LanguageSwitcher({
