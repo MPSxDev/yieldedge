@@ -842,28 +842,28 @@
         "description": "Nos enfocamos en resultados que importan a su organización, no solo en entregables tecnológicos.",
         "items": {
           "bottlenecks": {
-            "title": "Reducción de Cuellos de Botella",
-            "description": "Elimine la fricción de procesos que ralentiza la toma de decisiones y ejecución."
+            "title": "Eliminación de Fricción Operativa",
+            "description": "Reduzca bloqueos administrativos y acelere la ejecución mediante flujos operativos más eficientes."
           },
           "visibility": {
-            "title": "Visibilidad Institucional",
-            "description": "Vista de 360 grados a través de todos los sistemas, procesos y puntos de datos."
+            "title": "Visibilidad Operacional Integral",
+            "description": "Obtenga una visión unificada de procesos, sistemas y datos críticos en tiempo real."
           },
           "traceability": {
-            "title": "Trazabilidad de Procesos",
-            "description": "Pistas de auditoría completas para requisitos de cumplimiento y gobernanza."
+            "title": "Trazabilidad y Auditoría Total",
+            "description": "Cada acción, documento y decisión con seguimiento verificable y cumplimiento integrado."
           },
           "centralization": {
-            "title": "Inteligencia Centralizada",
-            "description": "Plataforma única para todos los datos operativos e insights."
+            "title": "Fuente Única de Inteligencia Operativa",
+            "description": "Centralice información crítica, métricas y contexto operacional en una sola plataforma."
           },
           "decisions": {
-            "title": "Decisiones Más Rápidas",
-            "description": "El acceso a datos en tiempo real reduce significativamente los ciclos de decisión."
+            "title": "Aceleración en la Toma de Decisiones",
+            "description": "Acceso inmediato a información estratégica para reducir tiempos de análisis y respuesta."
           },
           "governance": {
-            "title": "Cumplimiento Empresarial",
-            "description": "Cumplimiento integrado con requisitos regulatorios y de políticas internas."
+            "title": "Cumplimiento y Control Operativo",
+            "description": "Operación alineada con requisitos regulatorios, estándares internos y controles empresariales."
           }
         },
         "stats": {
