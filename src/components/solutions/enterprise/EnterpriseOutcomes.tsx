@@ -34,16 +34,15 @@ const staggerContainer = {
 interface Outcome {
   key: string;
   icon: LucideIcon;
-  metric?: string;
 }
 
 const outcomes: Outcome[] = [
-  { key: 'bottlenecks', icon: Gauge, metric: '40%' },
-  { key: 'visibility', icon: Eye, metric: '360' },
-  { key: 'traceability', icon: FileSearch, metric: '100%' },
-  { key: 'centralization', icon: Database, metric: '1' },
-  { key: 'decisions', icon: Zap, metric: '3x' },
-  { key: 'governance', icon: ShieldCheck, metric: 'A+' },
+  { key: 'bottlenecks', icon: Gauge },
+  { key: 'visibility', icon: Eye },
+  { key: 'traceability', icon: FileSearch },
+  { key: 'centralization', icon: Database },
+  { key: 'decisions', icon: Zap },
+  { key: 'governance', icon: ShieldCheck },
 ];
 
 interface OutcomeCardProps {
@@ -73,14 +72,7 @@ const OutcomeCard = memo(function OutcomeCard({ outcome }: OutcomeCardProps) {
 
           {/* Content */}
           <div className="flex-1">
-            {outcome.metric && (
-              <div className="mb-2">
-                <span className="text-2xl font-bold bg-gradient-to-r from-[#1F5CFF] to-blue-500 bg-clip-text text-transparent">
-                  {outcome.metric}
-                </span>
-              </div>
-            )}
-            <h4 className="text-gray-900 font-semibold mb-2">
+            <h4 className="text-xl font-bold bg-gradient-to-r from-[#1F5CFF] to-blue-500 bg-clip-text text-transparent mb-3">
               {t(`${outcome.key}.title`)}
             </h4>
             <p className="text-gray-500 text-sm leading-relaxed">
