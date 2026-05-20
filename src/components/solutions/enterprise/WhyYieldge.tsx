@@ -58,11 +58,6 @@ const TrustSignalCard = memo(function TrustSignalCard({ signal, index }: TrustSi
       className="group relative"
     >
       <div className="relative h-full p-6 lg:p-8">
-        {/* Connector line for desktop */}
-        {index < trustSignals.length - 1 && (
-          <div className="hidden lg:block absolute top-1/2 right-0 w-full h-px bg-gradient-to-r from-gray-200 to-transparent" />
-        )}
-
         {/* Number indicator */}
         <div className="mb-6">
           <span className="text-4xl font-bold text-gray-200 group-hover:text-gray-300 transition-colors">
