@@ -1,30 +1,42 @@
 'use client';
 
-import Section from '@/components/ui/Section';
-import HeroSection from '@/components/solutions/HeroSection';
-import QuickNavigation from '@/components/solutions/QuickNavigation';
-import ServicesGrid from '@/components/solutions/ServicesGrid';
-
-interface SolutionsPageContentProps {
-  verticalName?: string;
-}
+import {
+  EnterpriseHero,
+  OperationalIntelligence,
+  EnterpriseSolutionsGrid,
+  HowYieldgeWorks,
+  EnterpriseOutcomes,
+  WhyYieldge,
+  EnterpriseContactForm,
+} from '@/components/solutions/enterprise';
 
 /**
- * SolutionsPageContent - Solutions page content with i18n support
+ * SolutionsPageContent - Enterprise-grade solutions page
+ * Premium dark theme with Palantir/Stripe/IBM-inspired design
  */
-export default function SolutionsPageContent({ verticalName }: SolutionsPageContentProps) {
+export default function SolutionsPageContent() {
   return (
-    <>
-      {/* Hero Section */}
-      <HeroSection verticalName={verticalName} />
+    <div className="bg-white">
+      {/* Enterprise Hero Section */}
+      <EnterpriseHero />
 
-      {/* Quick Navigation */}
-      <QuickNavigation />
+      {/* Operational Intelligence Visualization */}
+      <OperationalIntelligence />
 
-      {/* Services Grid */}
-      <Section background="white">
-        <ServicesGrid />
-      </Section>
-    </>
+      {/* Solutions Grid with Flagship */}
+      <EnterpriseSolutionsGrid />
+
+      {/* How Yieldge Works - Implementation Flow */}
+      <HowYieldgeWorks />
+
+      {/* Enterprise Outcomes */}
+      <EnterpriseOutcomes />
+
+      {/* Why Yieldge - Trust Signals */}
+      <WhyYieldge />
+
+      {/* Enterprise Contact Form */}
+      <EnterpriseContactForm />
+    </div>
   );
 }

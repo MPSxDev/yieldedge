@@ -722,6 +722,229 @@
       "description": "Yieldge delivers cutting-edge technology solutions designed to accelerate your business growth and operational excellence. Our certified experts leverage advanced methodologies and tools to create transformative outcomes. From modernizing legacy systems to implementing scalable cloud architectures, we provide end-to-end solutions tailored to your strategic objectives."
     },
     "skipToContent": "Skip to main content",
+    "enterprise": {
+      "eyebrow": "ENTERPRISE TECHNOLOGY PARTNER",
+      "headline": "Operational Intelligence for",
+      "headlineHighlight": "Mission-Critical Systems",
+      "subheadline": "We design and implement enterprise-grade technology infrastructure that transforms institutional operations. From data governance to AI-powered automation, we deliver systems that scale with your organization's ambitions.",
+      "primaryCta": "Request Strategic Consultation",
+      "secondaryCta": "Explore Solutions",
+      "trustIndicator1": "Enterprise-ready architecture",
+      "trustIndicator2": "Compliance-first approach",
+      "trustIndicator3": "24/7 operational support",
+      "intelligence": {
+        "eyebrow": "CONNECTED OPERATIONS",
+        "title": "Unified Operational Intelligence",
+        "description": "We build connected ecosystems where your data, systems, and processes work as a single coordinated entity. Real-time visibility. Automated workflows. AI-driven insights.",
+        "visualLabel": "AI Orchestration Hub",
+        "features": {
+          "dataFlow": {
+            "title": "Institutional Data Flows",
+            "description": "Seamless data movement across all systems with guaranteed integrity and audit trails."
+          },
+          "aiOrchestration": {
+            "title": "AI-Powered Orchestration",
+            "description": "Intelligent automation that learns from patterns and optimizes processes continuously."
+          },
+          "realTimeVisibility": {
+            "title": "Real-Time Operational Visibility",
+            "description": "Executive dashboards with live metrics, alerts, and predictive insights."
+          }
+        }
+      },
+      "grid": {
+        "eyebrow": "SOLUTION DOMAINS",
+        "title": "Enterprise Solution Architecture",
+        "description": "Strategic technology interventions designed for organizations requiring institutional-grade reliability, security, and scalability."
+      },
+      "solutions": {
+        "flagshipLabel": "Flagship Solution",
+        "learnMore": "Learn More",
+        "dataGovernance": {
+          "title": "Data Governance & Traceability",
+          "description": "Unified data structures that enable compliance, reporting, and informed decision-making across your entire organization.",
+          "features": {
+            "0": "Single source of truth consolidation",
+            "1": "Quality-guaranteed data pipelines",
+            "2": "Executive dashboards with key metrics",
+            "3": "Retention and access policy compliance"
+          }
+        },
+        "processOrchestration": {
+          "title": "Process Orchestration",
+          "description": "Automated workflows designed for compliance and traceability, eliminating manual operational burden."
+        },
+        "systemsIntegration": {
+          "title": "Systems Integration",
+          "description": "Connect legacy systems with modern platforms without disrupting ongoing operations."
+        },
+        "cloudArchitecture": {
+          "title": "Cloud Architecture",
+          "description": "Scalable infrastructure designed to sustain real growth on AWS, Azure, or GCP."
+        },
+        "securityCompliance": {
+          "title": "Security & Compliance",
+          "description": "Enterprise-grade cybersecurity with SOC, ISO, and regulatory compliance support."
+        },
+        "analyticsIntelligence": {
+          "title": "Analytics & Intelligence",
+          "description": "Transform raw data into competitive advantages with BI, ML, and real-time dashboards."
+        },
+        "customDevelopment": {
+          "title": "Custom Development",
+          "description": "End-to-end software development tailored to your unique operational requirements."
+        },
+        "aiAutomation": {
+          "title": "AI & Automation",
+          "description": "Intelligent systems that learn, adapt, and optimize your operations continuously."
+        },
+        "technicalTeams": {
+          "title": "Technical Teams",
+          "description": "Access certified senior engineers to scale your team with compatible timezone coverage."
+        }
+      },
+      "process": {
+        "eyebrow": "IMPLEMENTATION METHODOLOGY",
+        "title": "How Yieldge Works",
+        "description": "A structured, proven approach that ensures successful outcomes for enterprise implementations.",
+        "ctaText": "Ready to start your transformation?",
+        "ctaButton": "Schedule Discovery Call",
+        "steps": {
+          "discovery": {
+            "title": "Discovery",
+            "description": "Deep-dive analysis of your current systems and strategic objectives."
+          },
+          "mapping": {
+            "title": "Operational Mapping",
+            "description": "Document processes, data flows, and integration points."
+          },
+          "integration": {
+            "title": "Integration",
+            "description": "Connect systems with minimal disruption to operations."
+          },
+          "intelligence": {
+            "title": "Intelligence Layer",
+            "description": "Deploy analytics, dashboards, and AI capabilities."
+          },
+          "monitoring": {
+            "title": "Monitoring",
+            "description": "24/7 observability with proactive alerting."
+          },
+          "optimization": {
+            "title": "Optimization",
+            "description": "Continuous improvement based on operational data."
+          }
+        }
+      },
+      "outcomes": {
+        "eyebrow": "ENTERPRISE OUTCOMES",
+        "title": "Measurable Operational Impact",
+        "description": "We focus on outcomes that matter to your organization, not just technology deliverables.",
+        "items": {
+          "bottlenecks": {
+            "title": "Reduced Operational Bottlenecks",
+            "description": "Eliminate process friction that slows decision-making and execution."
+          },
+          "visibility": {
+            "title": "Institutional Visibility",
+            "description": "360-degree view across all systems, processes, and data points."
+          },
+          "traceability": {
+            "title": "Process Traceability",
+            "description": "Complete audit trails for compliance and governance requirements."
+          },
+          "centralization": {
+            "title": "Centralized Intelligence",
+            "description": "Single platform for all operational data and insights."
+          },
+          "decisions": {
+            "title": "Faster Decision-Making",
+            "description": "Real-time data access reduces decision cycles significantly."
+          },
+          "governance": {
+            "title": "Governance Support",
+            "description": "Built-in compliance with regulatory and internal policy requirements."
+          }
+        },
+        "stats": {
+          "projects": {
+            "value": "150+",
+            "label": "Enterprise Projects"
+          },
+          "institutions": {
+            "value": "50+",
+            "label": "Institutions Served"
+          },
+          "uptime": {
+            "value": "99.9%",
+            "label": "System Uptime"
+          },
+          "satisfaction": {
+            "value": "98%",
+            "label": "Client Satisfaction"
+          }
+        }
+      },
+      "whyYieldge": {
+        "eyebrow": "WHY YIELDGE",
+        "title": "Enterprise-Grade Thinking",
+        "description": "We approach technology with the rigor and strategic mindset that institutional operations demand.",
+        "quote": "We don't implement technology for fashion. We solve structural problems that affect operations.",
+        "learnMore": "Start a conversation",
+        "signals": {
+          "enterpriseThinking": {
+            "title": "Enterprise-Grade Thinking",
+            "description": "Architecture decisions made with institutional scale and governance in mind."
+          },
+          "scalableArchitecture": {
+            "title": "Scalable Architecture",
+            "description": "Systems designed to grow with your organization without technical debt."
+          },
+          "operationalFirst": {
+            "title": "Operational-First Design",
+            "description": "Every solution optimized for day-to-day operational excellence."
+          },
+          "strategicImplementation": {
+            "title": "Strategic Implementation",
+            "description": "Phased rollouts that minimize risk and maximize adoption."
+          },
+          "aiGovernance": {
+            "title": "AI Aligned with Governance",
+            "description": "Intelligent automation that respects compliance and policy constraints."
+          }
+        }
+      },
+      "contact": {
+        "eyebrow": "GET STARTED",
+        "title": "Let's Discuss Your Operation",
+        "description": "Tell us about your operational challenges. We'll analyze your situation and propose a strategic intervention plan.",
+        "trust": {
+          "confidentiality": "Complete confidentiality guaranteed",
+          "noObligation": "No commitment required",
+          "response": "Response within 24 business hours"
+        },
+        "alternative": "You can also reach us directly:",
+        "fields": {
+          "name": "Your Name",
+          "institution": "Institution / Organization",
+          "email": "Work Email",
+          "challenge": "Operational Challenge"
+        },
+        "placeholders": {
+          "name": "Full name",
+          "institution": "Organization name",
+          "email": "work@institution.com",
+          "challenge": "Describe the operational friction or technology challenge you need to address..."
+        },
+        "submitting": "Sending...",
+        "submitPilot": "Discuss a Pilot",
+        "submitConsultation": "Executive Consultation",
+        "success": {
+          "title": "Request Received",
+          "message": "Our enterprise team will contact you within 24 business hours to schedule your strategic consultation."
+        }
+      }
+    },
     "services": {
       "qaAutomation": {
         "title": "QA & Test Automation",

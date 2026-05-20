@@ -722,6 +722,229 @@
       "description": "Yieldge ofrece soluciones tecnológicas de vanguardia diseñadas para acelerar el crecimiento de tu negocio y la excelencia operativa. Nuestros expertos certificados aprovechan metodologías y herramientas avanzadas para crear resultados transformadores. Desde la modernización de sistemas heredados hasta la implementación de arquitecturas cloud escalables, proporcionamos soluciones integrales adaptadas a tus objetivos estratégicos."
     },
     "skipToContent": "Saltar al contenido principal",
+    "enterprise": {
+      "eyebrow": "SOCIO TECNOLÓGICO EMPRESARIAL",
+      "headline": "Inteligencia Operativa para",
+      "headlineHighlight": "Sistemas de Misión Crítica",
+      "subheadline": "Diseñamos e implementamos infraestructura tecnológica de grado empresarial que transforma las operaciones institucionales. Desde gobernanza de datos hasta automatización impulsada por IA, entregamos sistemas que escalan con las ambiciones de su organización.",
+      "primaryCta": "Solicitar Consulta Estratégica",
+      "secondaryCta": "Explorar Soluciones",
+      "trustIndicator1": "Arquitectura lista para empresas",
+      "trustIndicator2": "Enfoque de cumplimiento primero",
+      "trustIndicator3": "Soporte operativo 24/7",
+      "intelligence": {
+        "eyebrow": "OPERACIONES CONECTADAS",
+        "title": "Inteligencia Operativa Unificada",
+        "description": "Construimos ecosistemas conectados donde sus datos, sistemas y procesos funcionan como una sola entidad coordinada. Visibilidad en tiempo real. Flujos de trabajo automatizados. Insights impulsados por IA.",
+        "visualLabel": "Hub de Orquestación IA",
+        "features": {
+          "dataFlow": {
+            "title": "Flujos de Datos Institucionales",
+            "description": "Movimiento de datos sin fricciones a través de todos los sistemas con integridad garantizada y pistas de auditoría."
+          },
+          "aiOrchestration": {
+            "title": "Orquestación Impulsada por IA",
+            "description": "Automatización inteligente que aprende de patrones y optimiza procesos continuamente."
+          },
+          "realTimeVisibility": {
+            "title": "Visibilidad Operativa en Tiempo Real",
+            "description": "Dashboards ejecutivos con métricas en vivo, alertas e insights predictivos."
+          }
+        }
+      },
+      "grid": {
+        "eyebrow": "DOMINIOS DE SOLUCIÓN",
+        "title": "Arquitectura de Soluciones Empresariales",
+        "description": "Intervenciones tecnológicas estratégicas diseñadas para organizaciones que requieren confiabilidad, seguridad y escalabilidad de grado institucional."
+      },
+      "solutions": {
+        "flagshipLabel": "Solución Principal",
+        "learnMore": "Más Información",
+        "dataGovernance": {
+          "title": "Gobernanza y Trazabilidad de Datos",
+          "description": "Estructuras de datos unificadas que permiten cumplimiento, reportería y toma de decisiones informada en toda su organización.",
+          "features": {
+            "0": "Consolidación de fuente única de verdad",
+            "1": "Pipelines de datos con calidad garantizada",
+            "2": "Dashboards ejecutivos con métricas clave",
+            "3": "Cumplimiento de políticas de retención y acceso"
+          }
+        },
+        "processOrchestration": {
+          "title": "Orquestación de Procesos",
+          "description": "Flujos de trabajo automatizados diseñados para cumplimiento y trazabilidad, eliminando la carga operativa manual."
+        },
+        "systemsIntegration": {
+          "title": "Integración de Sistemas",
+          "description": "Conecte sistemas heredados con plataformas modernas sin interrumpir las operaciones en curso."
+        },
+        "cloudArchitecture": {
+          "title": "Arquitectura Cloud",
+          "description": "Infraestructura escalable diseñada para sostener crecimiento real en AWS, Azure o GCP."
+        },
+        "securityCompliance": {
+          "title": "Seguridad y Cumplimiento",
+          "description": "Ciberseguridad de grado empresarial con soporte de cumplimiento SOC, ISO y regulatorio."
+        },
+        "analyticsIntelligence": {
+          "title": "Analytics e Inteligencia",
+          "description": "Transforme datos crudos en ventajas competitivas con BI, ML y dashboards en tiempo real."
+        },
+        "customDevelopment": {
+          "title": "Desarrollo Personalizado",
+          "description": "Desarrollo de software end-to-end adaptado a sus requisitos operativos únicos."
+        },
+        "aiAutomation": {
+          "title": "IA y Automatización",
+          "description": "Sistemas inteligentes que aprenden, se adaptan y optimizan sus operaciones continuamente."
+        },
+        "technicalTeams": {
+          "title": "Equipos Técnicos",
+          "description": "Acceda a ingenieros senior certificados para escalar su equipo con cobertura de zona horaria compatible."
+        }
+      },
+      "process": {
+        "eyebrow": "METODOLOGÍA DE IMPLEMENTACIÓN",
+        "title": "Cómo Trabaja Yieldge",
+        "description": "Un enfoque estructurado y probado que asegura resultados exitosos para implementaciones empresariales.",
+        "ctaText": "¿Listo para iniciar su transformación?",
+        "ctaButton": "Agendar Llamada de Descubrimiento",
+        "steps": {
+          "discovery": {
+            "title": "Descubrimiento",
+            "description": "Análisis profundo de sus sistemas actuales y objetivos estratégicos."
+          },
+          "mapping": {
+            "title": "Mapeo Operativo",
+            "description": "Documentar procesos, flujos de datos y puntos de integración."
+          },
+          "integration": {
+            "title": "Integración",
+            "description": "Conectar sistemas con mínima interrupción a las operaciones."
+          },
+          "intelligence": {
+            "title": "Capa de Inteligencia",
+            "description": "Desplegar analytics, dashboards y capacidades de IA."
+          },
+          "monitoring": {
+            "title": "Monitoreo",
+            "description": "Observabilidad 24/7 con alertas proactivas."
+          },
+          "optimization": {
+            "title": "Optimización",
+            "description": "Mejora continua basada en datos operativos."
+          }
+        }
+      },
+      "outcomes": {
+        "eyebrow": "RESULTADOS EMPRESARIALES",
+        "title": "Impacto Operativo Medible",
+        "description": "Nos enfocamos en resultados que importan a su organización, no solo en entregables tecnológicos.",
+        "items": {
+          "bottlenecks": {
+            "title": "Reducción de Cuellos de Botella",
+            "description": "Elimine la fricción de procesos que ralentiza la toma de decisiones y ejecución."
+          },
+          "visibility": {
+            "title": "Visibilidad Institucional",
+            "description": "Vista de 360 grados a través de todos los sistemas, procesos y puntos de datos."
+          },
+          "traceability": {
+            "title": "Trazabilidad de Procesos",
+            "description": "Pistas de auditoría completas para requisitos de cumplimiento y gobernanza."
+          },
+          "centralization": {
+            "title": "Inteligencia Centralizada",
+            "description": "Plataforma única para todos los datos operativos e insights."
+          },
+          "decisions": {
+            "title": "Decisiones Más Rápidas",
+            "description": "El acceso a datos en tiempo real reduce significativamente los ciclos de decisión."
+          },
+          "governance": {
+            "title": "Soporte de Gobernanza",
+            "description": "Cumplimiento integrado con requisitos regulatorios y de políticas internas."
+          }
+        },
+        "stats": {
+          "projects": {
+            "value": "150+",
+            "label": "Proyectos Empresariales"
+          },
+          "institutions": {
+            "value": "50+",
+            "label": "Instituciones Atendidas"
+          },
+          "uptime": {
+            "value": "99.9%",
+            "label": "Tiempo de Actividad"
+          },
+          "satisfaction": {
+            "value": "98%",
+            "label": "Satisfacción del Cliente"
+          }
+        }
+      },
+      "whyYieldge": {
+        "eyebrow": "POR QUÉ YIELDGE",
+        "title": "Pensamiento de Grado Empresarial",
+        "description": "Abordamos la tecnología con el rigor y la mentalidad estratégica que las operaciones institucionales demandan.",
+        "quote": "No implementamos tecnología por moda. Resolvemos problemas estructurales que afectan la operación.",
+        "learnMore": "Iniciar conversación",
+        "signals": {
+          "enterpriseThinking": {
+            "title": "Pensamiento Empresarial",
+            "description": "Decisiones de arquitectura tomadas con escala institucional y gobernanza en mente."
+          },
+          "scalableArchitecture": {
+            "title": "Arquitectura Escalable",
+            "description": "Sistemas diseñados para crecer con su organización sin deuda técnica."
+          },
+          "operationalFirst": {
+            "title": "Diseño Operativo Primero",
+            "description": "Cada solución optimizada para la excelencia operativa del día a día."
+          },
+          "strategicImplementation": {
+            "title": "Implementación Estratégica",
+            "description": "Despliegues por fases que minimizan el riesgo y maximizan la adopción."
+          },
+          "aiGovernance": {
+            "title": "IA Alineada con Gobernanza",
+            "description": "Automatización inteligente que respeta las restricciones de cumplimiento y políticas."
+          }
+        }
+      },
+      "contact": {
+        "eyebrow": "COMENCEMOS",
+        "title": "Hablemos de Su Operación",
+        "description": "Cuéntenos sobre sus desafíos operativos. Analizaremos su situación y propondremos un plan de intervención estratégico.",
+        "trust": {
+          "confidentiality": "Confidencialidad completa garantizada",
+          "noObligation": "Sin compromiso requerido",
+          "response": "Respuesta en 24 horas hábiles"
+        },
+        "alternative": "También puede contactarnos directamente:",
+        "fields": {
+          "name": "Su Nombre",
+          "institution": "Institución / Organización",
+          "email": "Correo Corporativo",
+          "challenge": "Desafío Operativo"
+        },
+        "placeholders": {
+          "name": "Nombre completo",
+          "institution": "Nombre de la organización",
+          "email": "trabajo@institucion.com",
+          "challenge": "Describa la fricción operativa o desafío tecnológico que necesita abordar..."
+        },
+        "submitting": "Enviando...",
+        "submitPilot": "Discutir un Piloto",
+        "submitConsultation": "Consulta Ejecutiva",
+        "success": {
+          "title": "Solicitud Recibida",
+          "message": "Nuestro equipo empresarial lo contactará en 24 horas hábiles para agendar su consulta estratégica."
+        }
+      }
+    },
     "services": {
       "qaAutomation": {
         "title": "QA y Automatización de Pruebas",
