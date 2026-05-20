@@ -69,7 +69,7 @@ const EnterpriseHero = memo(function EnterpriseHero() {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.03em] text-gray-900 mb-8 leading-[1.1]"
           >
             {t('headline')}
-            <span className="block mt-2 bg-gradient-to-r from-[#1F5CFF] to-blue-500 bg-clip-text text-transparent">
+            <span className="block mt-2 text-gray-900">
               {t('headlineHighlight')}
             </span>
           </motion.h1>

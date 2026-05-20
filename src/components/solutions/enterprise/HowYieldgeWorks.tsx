@@ -91,7 +91,7 @@ const DesktopStepCard = memo(function DesktopStepCard({
   return (
     <motion.div
       variants={fadeInUp}
-      className="group relative flex flex-col items-center"
+      className="group relative flex flex-col items-center h-full"
     >
       {/* Connector: line + arrow between steps */}
       {!isLast && (
@@ -317,7 +317,7 @@ const HowYieldgeWorks = memo(function HowYieldgeWorks() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={staggerContainer}
-          className="hidden lg:grid lg:grid-cols-6 gap-3 overflow-visible"
+          className="hidden lg:grid lg:grid-cols-6 gap-3 overflow-visible items-stretch"
         >
             {processSteps.map((step, index) => (
               <DesktopStepCard

@@ -5,14 +5,15 @@ import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { ArrowRight, Shield, Cloud, BarChart3, Code, Users, Cpu, Layers, Workflow, Settings } from 'lucide-react';
 import Container from '@/components/ui/Container';
+import { cn } from '@/lib/utils';
 import type { LucideIcon } from 'lucide-react';
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as const },
+    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const },
   },
 };
 
@@ -20,18 +21,17 @@ const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.08, delayChildren: 0.2 },
+    transition: { staggerChildren: 0.06, delayChildren: 0.1 },
   },
 };
 
 interface Solution {
   key: string;
   icon: LucideIcon;
-  isFlagship?: boolean;
 }
 
 const solutions: Solution[] = [
-  { key: 'dataGovernance', icon: Layers, isFlagship: true },
+  { key: 'dataGovernance', icon: Layers },
   { key: 'processOrchestration', icon: Workflow },
   { key: 'systemsIntegration', icon: Settings },
   { key: 'cloudArchitecture', icon: Cloud },
@@ -44,107 +44,114 @@ const solutions: Solution[] = [
 
 interface SolutionCardProps {
   solution: Solution;
-  index: number;
 }
 
-const SolutionCard = memo(function SolutionCard({ solution, index }: SolutionCardProps) {
+const SolutionCard = memo(function SolutionCard({ solution }: SolutionCardProps) {
   const t = useTranslations('solutionsPage.enterprise.solutions');
   const Icon = solution.icon;
-
-  if (solution.isFlagship) {
-    return (
-      <motion.div
-        variants={fadeInUp}
-        className="lg:col-span-2 lg:row-span-2 group relative"
-      >
-        <div className="relative h-full bg-white rounded-2xl border border-gray-200 p-8 lg:p-12 overflow-hidden hover:border-[#1F5CFF]/50 transition-all duration-500 shadow-sm">
-          {/* Glow effect */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#1F5CFF]/5 via-transparent to-blue-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-          {/* Icon with gradient background */}
-          <div className="relative mb-8">
-            <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-2xl bg-gradient-to-br from-[#1F5CFF] to-blue-500 flex items-center justify-center shadow-lg">
-              <Icon className="w-8 h-8 lg:w-10 lg:h-10 text-white" />
-            </div>
-          </div>
-
-          {/* Flagship badge */}
-          <div className="mb-4">
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#1F5CFF]/10 text-[#1F5CFF] border border-[#1F5CFF]/20">
-              {t('flagshipLabel')}
-            </span>
-          </div>
-
-          {/* Content */}
-          <h3 className="text-2xl lg:text-3xl font-semibold text-gray-900 mb-4 tracking-[-0.02em]">
-            {t(`${solution.key}.title`)}
-          </h3>
-          <p className="text-gray-600 leading-relaxed mb-8 text-lg">
-            {t(`${solution.key}.description`)}
-          </p>
-
-          {/* Features */}
-          <ul className="space-y-3 mb-8">
-            {[0, 1, 2, 3].map((idx) => (
-              <li key={idx} className="flex items-start gap-3 text-gray-700">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#1F5CFF] mt-2 flex-shrink-0" />
-                <span className="text-sm">{t(`${solution.key}.features.${idx}`)}</span>
-              </li>
-            ))}
-          </ul>
-
-          {/* CTA */}
-          <a
-            href="#contact-form"
-            className="inline-flex items-center gap-2 text-[#1F5CFF] font-semibold group-hover:text-blue-600 transition-colors"
-          >
-            {t('learnMore')}
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
-        </div>
-      </motion.div>
-    );
-  }
 
   return (
     <motion.div
       variants={fadeInUp}
       className="group relative"
     >
-      <div className="relative h-full bg-white rounded-xl border border-gray-200 p-6 lg:p-8 overflow-hidden hover:border-gray-300 hover:shadow-md transition-all duration-300">
-        {/* Subtle glow on hover */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1F5CFF]/0 to-blue-400/0 group-hover:from-[#1F5CFF]/5 group-hover:to-blue-400/5 transition-all duration-500" />
+      <a
+        href="#contact-form"
+        className={cn(
+          'relative flex flex-col h-full bg-white',
+          'rounded-lg border border-gray-200/80',
+          'p-5 lg:p-6',
+          'transition-all duration-300 ease-out',
+          'hover:border-blue-200 hover:shadow-[0_4px_20px_-4px_rgba(31,92,255,0.12)]',
+          'focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-300'
+        )}
+      >
+        {/* Subtle gradient overlay on hover */}
+        <div
+          className={cn(
+            'absolute inset-0 rounded-lg opacity-0 transition-opacity duration-300',
+            'bg-gradient-to-br from-blue-50/50 via-transparent to-indigo-50/30',
+            'group-hover:opacity-100'
+          )}
+          aria-hidden="true"
+        />
 
-        {/* Icon */}
-        <div className="relative mb-6">
-          <div className="w-12 h-12 rounded-xl bg-gray-100 border border-gray-200 flex items-center justify-center group-hover:border-[#1F5CFF]/30 transition-colors">
-            <Icon className="w-6 h-6 text-gray-500 group-hover:text-[#1F5CFF] transition-colors" />
+        {/* Content wrapper */}
+        <div className="relative z-10 flex flex-col h-full">
+          {/* Icon */}
+          <div className="mb-4">
+            <div
+              className={cn(
+                'w-9 h-9 rounded-md',
+                'bg-gray-50 border border-gray-100',
+                'flex items-center justify-center',
+                'transition-all duration-300',
+                'group-hover:bg-blue-50 group-hover:border-blue-100'
+              )}
+            >
+              <Icon
+                className={cn(
+                  'w-[18px] h-[18px] text-gray-500',
+                  'transition-colors duration-300',
+                  'group-hover:text-[#1F5CFF]'
+                )}
+              />
+            </div>
+          </div>
+
+          {/* Title */}
+          <h3
+            className={cn(
+              'text-[15px] font-semibold text-gray-900 mb-2',
+              'tracking-[-0.01em] leading-tight'
+            )}
+          >
+            {t(`${solution.key}.title`)}
+          </h3>
+
+          {/* Description */}
+          <p
+            className={cn(
+              'text-[13px] text-gray-500 leading-relaxed',
+              'mb-4 flex-grow'
+            )}
+          >
+            {t(`${solution.key}.description`)}
+          </p>
+
+          {/* CTA link */}
+          <div
+            className={cn(
+              'flex items-center gap-1.5',
+              'text-[13px] font-medium text-gray-400',
+              'transition-colors duration-300',
+              'group-hover:text-[#1F5CFF]'
+            )}
+          >
+            <span>{t('learnMore')}</span>
+            <ArrowRight
+              className={cn(
+                'w-3.5 h-3.5',
+                'transition-all duration-300',
+                'opacity-0 -translate-x-1',
+                'group-hover:opacity-100 group-hover:translate-x-0'
+              )}
+            />
           </div>
         </div>
-
-        {/* Content */}
-        <h3 className="text-lg font-semibold text-gray-900 mb-3 tracking-[-0.01em]">
-          {t(`${solution.key}.title`)}
-        </h3>
-        <p className="text-gray-500 text-sm leading-relaxed mb-6">
-          {t(`${solution.key}.description`)}
-        </p>
-
-        {/* CTA */}
-        <a
-          href="#contact-form"
-          className="inline-flex items-center gap-2 text-sm text-gray-500 group-hover:text-[#1F5CFF] transition-colors"
-        >
-          {t('learnMore')}
-          <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-        </a>
-      </div>
+      </a>
     </motion.div>
   );
 });
 
 /**
- * EnterpriseSolutionsGrid - Premium solutions grid with flagship solution
+ * EnterpriseSolutionsGrid - Enterprise-grade uniform solutions grid
+ *
+ * Design principles:
+ * - Uniform 3-column grid (no featured cards)
+ * - Compact, premium card design
+ * - Subtle enterprise-style borders and shadows
+ * - Responsive: 3 cols desktop, 2 cols tablet, 1 col mobile
  */
 const EnterpriseSolutionsGrid = memo(function EnterpriseSolutionsGrid() {
   const t = useTranslations('solutionsPage.enterprise');
@@ -152,54 +159,68 @@ const EnterpriseSolutionsGrid = memo(function EnterpriseSolutionsGrid() {
   return (
     <section
       id="solutions-grid"
-      className="relative py-24 lg:py-32 bg-white"
+      className="relative py-20 lg:py-24 bg-white"
     >
-      {/* Background accent */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-white to-white" />
+      {/* Subtle background gradient */}
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-gray-50/50 via-white to-white"
+        aria-hidden="true"
+      />
 
       <Container className="relative z-10">
-        {/* Header */}
+        {/* Section Header */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={staggerContainer}
-          className="text-center mb-16 lg:mb-20"
+          className="text-center mb-12 lg:mb-16"
         >
           <motion.span
             variants={fadeInUp}
-            className="inline-flex items-center gap-3 text-gray-500 font-medium text-xs uppercase tracking-[0.2em] mb-6"
+            className={cn(
+              'inline-flex items-center gap-3',
+              'text-gray-500 font-medium text-[11px] uppercase tracking-[0.15em]',
+              'mb-5'
+            )}
           >
-            <span className="w-8 h-px bg-gray-400" />
+            <span className="w-6 h-px bg-gray-300" aria-hidden="true" />
             {t('grid.eyebrow')}
-            <span className="w-8 h-px bg-gray-400" />
+            <span className="w-6 h-px bg-gray-300" aria-hidden="true" />
           </motion.span>
 
           <motion.h2
             variants={fadeInUp}
-            className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.02em] text-gray-900 mb-6"
+            className={cn(
+              'text-2xl sm:text-3xl lg:text-4xl',
+              'font-semibold tracking-[-0.02em] text-gray-900',
+              'mb-4'
+            )}
           >
             {t('grid.title')}
           </motion.h2>
 
           <motion.p
             variants={fadeInUp}
-            className="text-lg text-gray-600 max-w-3xl mx-auto"
+            className="text-base text-gray-600 max-w-2xl mx-auto leading-relaxed"
           >
             {t('grid.description')}
           </motion.p>
         </motion.div>
 
-        {/* Solutions grid */}
+        {/* Solutions Grid - Uniform 3x3 */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
           variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className={cn(
+            'grid gap-4 lg:gap-5',
+            'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
+          )}
         >
-          {solutions.map((solution, index) => (
-            <SolutionCard key={solution.key} solution={solution} index={index} />
+          {solutions.map((solution) => (
+            <SolutionCard key={solution.key} solution={solution} />
           ))}
         </motion.div>
       </Container>
