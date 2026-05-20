@@ -1,23 +1,40 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, memo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
-export default function StickyCTA() {
+/**
+ * StickyCTA - Optimized sticky call-to-action component
+ *
+ * Performance optimizations:
+ * 1. Memoized with React.memo
+ * 2. useCallback for scroll handler
+ * 3. Passive scroll listener
+ * 4. RequestAnimationFrame for scroll updates (debounced)
+ */
+const StickyCTA = memo(function StickyCTA() {
   const [isVisible, setIsVisible] = useState(false);
   const t = useTranslations('homepage.hero');
 
-  useEffect(() => {
-    const handleScroll = () => {
-      // Show after scrolling past hero (approximately 600px)
+  // Optimized scroll handler with requestAnimationFrame
+  const handleScroll = useCallback(() => {
+    // Using requestAnimationFrame for smoother updates
+    requestAnimationFrame(() => {
       setIsVisible(window.scrollY > 600);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    });
   }, []);
+
+  useEffect(() => {
+    // Passive listener for better scroll performance
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Check initial position
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [handleScroll]);
 
   return (
     <AnimatePresence>
@@ -41,4 +58,6 @@ export default function StickyCTA() {
       )}
     </AnimatePresence>
   );
-}
+});
+
+export default StickyCTA;

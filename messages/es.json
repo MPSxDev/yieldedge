@@ -714,6 +714,71 @@
       }
     }
   },
+  "solutionsPage": {
+    "hero": {
+      "eyebrow": "NUESTRAS SOLUCIONES",
+      "title": "Soluciones",
+      "titleHighlight": "Tecnológicas",
+      "description": "Yieldge ofrece soluciones tecnológicas de vanguardia diseñadas para acelerar el crecimiento de tu negocio y la excelencia operativa. Nuestros expertos certificados aprovechan metodologías y herramientas avanzadas para crear resultados transformadores. Desde la modernización de sistemas heredados hasta la implementación de arquitecturas cloud escalables, proporcionamos soluciones integrales adaptadas a tus objetivos estratégicos."
+    },
+    "skipToContent": "Saltar al contenido principal",
+    "services": {
+      "qaAutomation": {
+        "title": "QA y Automatización de Pruebas",
+        "subtitle": "Entrega más rápido con confianza a través de aseguramiento de calidad automatizado integrado en tu pipeline de entrega.",
+        "description": "Aseguramos que tu software funcione perfectamente antes de llegar a los usuarios. Nuestros servicios de QA y automatización de pruebas reducen errores, mejoran la estabilidad y protegen tus plazos de entrega sin ralentizar el desarrollo.",
+        "features": ["Suites de pruebas automatizadas (unitarias, integración, E2E)", "Pruebas manuales y exploratorias", "Pruebas de rendimiento y carga", "Integración de pruebas CI/CD"]
+      },
+      "security": {
+        "title": "Servicios de Seguridad",
+        "subtitle": "Protege tus sistemas, datos y reputación con ciberseguridad de nivel empresarial.",
+        "description": "Ayudamos a las organizaciones a identificar vulnerabilidades, prevenir ataques y cumplir con normativas en un panorama digital cada vez más hostil. La seguridad se integra en cada capa antes de que las amenazas se conviertan en incidentes.",
+        "features": ["Evaluaciones de ciberseguridad y hardening", "Detección y prevención de amenazas", "Auditorías de seguridad y análisis de riesgos", "Soporte de cumplimiento (SOC, ISO, mejores prácticas)"]
+      },
+      "consulting": {
+        "title": "Consultoría Tecnológica",
+        "subtitle": "Convierte las decisiones tecnológicas en ventajas comerciales a largo plazo.",
+        "description": "Trabajamos junto a tu equipo de liderazgo para diseñar arquitecturas escalables, modernizar sistemas y alinear la tecnología con los objetivos del negocio sin complejidad innecesaria.",
+        "features": ["Planificación tecnológica estratégica", "Iniciativas de transformación digital", "Diseño de sistemas y arquitectura", "Mejores prácticas de ingeniería"]
+      },
+      "mobileWeb": {
+        "title": "Apps Móviles y Web",
+        "subtitle": "Desarrollo de aplicaciones móviles y web personalizadas para experiencias de usuario excepcionales.",
+        "description": "Desarrollo de aplicaciones móviles y web personalizadas para experiencias de usuario excepcionales",
+        "features": ["Apps móviles", "Desarrollo web", "Experiencia de usuario", "Diseño responsive"]
+      },
+      "staffAugmentation": {
+        "title": "Staff Augmentation",
+        "subtitle": "Accede a talento técnico de primer nivel para escalar tu equipo.",
+        "description": "Accede a talento técnico de primer nivel para escalar tu equipo de forma rápida y eficiente",
+        "features": ["Talento técnico", "Escalado de equipos", "Recursos expertos", "Modelo flexible"]
+      },
+      "analytics": {
+        "title": "Analytics e Insights",
+        "subtitle": "Insights basados en datos y soluciones de analytics para potenciar decisiones empresariales informadas.",
+        "description": "Insights basados en datos y soluciones de analytics para potenciar decisiones empresariales informadas",
+        "features": ["Inteligencia de negocios", "Análisis de datos", "Reportería", "Insights"]
+      },
+      "cloud": {
+        "title": "Soluciones Cloud",
+        "subtitle": "Infraestructura cloud escalable y servicios de migración para empresas modernas.",
+        "description": "Infraestructura cloud escalable y servicios de migración para empresas modernas",
+        "features": ["Migración cloud", "Infraestructura", "Escalabilidad", "DevOps"]
+      },
+      "offshore": {
+        "title": "Desarrollo Offshore",
+        "subtitle": "Equipos de desarrollo nearshore que entregan calidad y valor.",
+        "description": "Equipos de desarrollo de software nearshore que entregan calidad y valor",
+        "features": ["Equipos nearshore", "Entrega de calidad", "Costo-efectivo", "Desarrolladores expertos"]
+      },
+      "tailoredSoftware": {
+        "title": "Software a Medida",
+        "subtitle": "Soluciones de software personalizadas diseñadas específicamente para las necesidades únicas de tu negocio.",
+        "description": "Soluciones de software personalizadas diseñadas específicamente para las necesidades únicas de tu negocio",
+        "features": ["Desarrollo personalizado", "Específico para tu negocio", "Soluciones escalables", "Ciclo de vida completo"]
+      }
+    }
+  },
   "infrastructure": {
     "hero": {
       "eyebrow": "INFRAESTRUCTURA DIGITAL",

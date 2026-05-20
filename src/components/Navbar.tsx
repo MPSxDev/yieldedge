@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, memo } from 'react';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
@@ -44,15 +44,6 @@ function careersHref(pathname: string): string {
   return prefix ? `${prefix}/careers` : '/careers';
 }
 
-function projectsHref(pathname: string): string {
-  const prefix = getVerticalPrefix(pathname);
-  // For CR route, scroll to case studies section
-  if (prefix === '/cr') {
-    return '/cr#proyectos';
-  }
-  return '';
-}
-
 function testimonialsHref(pathname: string): string {
   const prefix = getVerticalPrefix(pathname);
   if (prefix === '/cr') {
@@ -65,21 +56,32 @@ interface NavbarProps {
   hideNavLinks?: boolean;
 }
 
-export default function Navbar({ hideNavLinks = false }: NavbarProps) {
+/**
+ * Navbar - Optimized navigation component
+ *
+ * Performance optimizations:
+ * 1. Memoized with React.memo
+ * 2. useCallback for event handlers
+ * 3. Passive scroll listener
+ * 4. Optimized re-render prevention
+ */
+const Navbar = memo(function Navbar({ hideNavLinks = false }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const t = useTranslations('nav');
   const tCommon = useTranslations('common');
 
+  // Optimized scroll handler with useCallback
+  const handleScroll = useCallback(() => {
+    setScrolled(window.scrollY > 10);
+  }, []);
+
   // Track scroll for enhanced navbar styling
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [handleScroll]);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -93,16 +95,26 @@ export default function Navbar({ hideNavLinks = false }: NavbarProps) {
     };
   }, [mobileMenuOpen]);
 
+  // Memoized toggle handler
+  const toggleMobileMenu = useCallback(() => {
+    setMobileMenuOpen(prev => !prev);
+  }, []);
+
+  // Memoized close handler
+  const closeMobileMenu = useCallback(() => {
+    setMobileMenuOpen(false);
+  }, []);
+
   // Build nav links with dynamic hrefs based on current route context
   const isCRRoute = getVerticalPrefix(pathname) === '/cr';
 
-  // CR-specific navigation: Soluciones, Empresa, Testimonios, Trabajá con nosotros
+  // CR-specific navigation: Soluciones, Empresa, Testimonios, Trabaja con nosotros
   const navLinks = isCRRoute
     ? [
         { label: 'Soluciones', href: solutionsHref(pathname) },
         { label: 'Empresa', href: companyHref(pathname) },
         { label: 'Testimonios', href: testimonialsHref(pathname) },
-        { label: 'Trabajá con nosotros', href: careersHref(pathname) },
+        { label: 'Trabaja con nosotros', href: careersHref(pathname) },
       ]
     : [
         { label: t('solutions'), href: solutionsHref(pathname) },
@@ -158,7 +170,7 @@ export default function Navbar({ hideNavLinks = false }: NavbarProps) {
           <div className="lg:hidden flex items-center gap-3">
             {!isCRRoute && <LanguageSwitcher variant="compact" />}
             <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              onClick={toggleMobileMenu}
               className="p-2 -mr-2 rounded-xl hover:bg-gray-100 active:bg-gray-200 transition-colors"
               aria-label={mobileMenuOpen ? t('closeMenu') : t('openMenu')}
               aria-expanded={mobileMenuOpen}
@@ -190,7 +202,7 @@ export default function Navbar({ hideNavLinks = false }: NavbarProps) {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               className="lg:hidden fixed inset-0 top-16 sm:top-18 bg-black/20 backdrop-blur-sm z-40"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={closeMobileMenu}
             />
 
             {/* Menu Panel */}
@@ -211,7 +223,7 @@ export default function Navbar({ hideNavLinks = false }: NavbarProps) {
                   >
                     <Link
                       href={link.href}
-                      onClick={() => setMobileMenuOpen(false)}
+                      onClick={closeMobileMenu}
                       className="block text-gray-700 hover:text-[#1F5CFF] hover:bg-[#eff4ff] rounded-xl transition-all text-base font-medium py-3.5 px-4 active:scale-[0.98]"
                     >
                       {link.label}
@@ -225,4 +237,6 @@ export default function Navbar({ hideNavLinks = false }: NavbarProps) {
       </AnimatePresence>
     </motion.nav>
   );
-}
+});
+
+export default Navbar;

@@ -1,10 +1,12 @@
 'use client';
 
+import { memo } from 'react';
 import { motion } from 'framer-motion';
-import { Instagram, ArrowUp } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
+import FooterBackToTop from './FooterBackToTop';
 
 interface FooterProps {
   description?: string;
@@ -13,7 +15,11 @@ interface FooterProps {
   ctaLink?: string;
 }
 
-export default function Footer({ description, minimal = false, ctaText, ctaLink }: FooterProps) {
+/**
+ * Footer - Memoized footer component
+ * Uses React.memo to prevent unnecessary re-renders
+ */
+const Footer = memo(function Footer({ description, minimal = false, ctaText, ctaLink }: FooterProps) {
   const currentYear = new Date().getFullYear();
   const t = useTranslations('footer');
   const tLinks = useTranslations('solutionsLinks');
@@ -63,10 +69,6 @@ export default function Footer({ description, minimal = false, ctaText, ctaLink 
     { icon: Instagram, href: 'https://www.instagram.com/yieldge.software/', label: 'Instagram' },
   ];
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <footer className="relative bg-gray-50 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8 sm:py-10 lg:py-12">
@@ -82,6 +84,7 @@ export default function Footer({ description, minimal = false, ctaText, ctaLink 
                   width={120}
                   height={32}
                   className="object-contain h-full w-auto"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -218,16 +221,12 @@ export default function Footer({ description, minimal = false, ctaText, ctaLink 
             {t('copyright', { year: currentYear })}
           </p>
 
-          {/* Back to top */}
-          <button
-            onClick={scrollToTop}
-            className="p-2 rounded-lg bg-white border border-gray-200 hover:border-gray-400 text-gray-500 hover:text-gray-700 transition-colors duration-200"
-            aria-label={t('backToTop')}
-          >
-            <ArrowUp className="w-5 h-5" />
-          </button>
+          {/* Back to top - Client component */}
+          <FooterBackToTop />
         </div>
       </div>
     </footer>
   );
-}
+});
+
+export default Footer;

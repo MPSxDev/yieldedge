@@ -714,6 +714,71 @@
       }
     }
   },
+  "solutionsPage": {
+    "hero": {
+      "eyebrow": "OUR SOLUTIONS",
+      "title": "Technology",
+      "titleHighlight": "Solutions",
+      "description": "Yieldge delivers cutting-edge technology solutions designed to accelerate your business growth and operational excellence. Our certified experts leverage advanced methodologies and tools to create transformative outcomes. From modernizing legacy systems to implementing scalable cloud architectures, we provide end-to-end solutions tailored to your strategic objectives."
+    },
+    "skipToContent": "Skip to main content",
+    "services": {
+      "qaAutomation": {
+        "title": "QA & Test Automation",
+        "subtitle": "Ship faster with confidence through automated quality assurance built into your delivery pipeline.",
+        "description": "We ensure your software performs flawlessly before it reaches users. Our QA and test automation services reduce bugs, improve stability, and protect your release timelines without slowing development.",
+        "features": ["Automated test suites (unit, integration, E2E)", "Manual and exploratory testing", "Performance and load testing", "CI/CD testing integration"]
+      },
+      "security": {
+        "title": "Security Services",
+        "subtitle": "Protect your systems, data, and reputation with enterprise-grade cybersecurity.",
+        "description": "We help organizations identify vulnerabilities, prevent attacks, and stay compliant in an increasingly hostile digital landscape. Security is built into every layer before threats become incidents.",
+        "features": ["Cybersecurity assessments and hardening", "Threat detection and prevention", "Security audits and risk analysis", "Compliance support (SOC, ISO, best practices)"]
+      },
+      "consulting": {
+        "title": "Technology Consulting",
+        "subtitle": "Turn technology decisions into long-term business advantages.",
+        "description": "We work alongside your leadership team to design scalable architectures, modernize systems, and align technology with business goals without unnecessary complexity.",
+        "features": ["Strategic technology planning", "Digital transformation initiatives", "System and architecture design", "Engineering best practices"]
+      },
+      "mobileWeb": {
+        "title": "Mobile & Web Apps",
+        "subtitle": "Custom mobile and web application development for exceptional user experiences.",
+        "description": "Custom mobile and web application development for exceptional user experiences",
+        "features": ["Mobile apps", "Web development", "User experience", "Responsive design"]
+      },
+      "staffAugmentation": {
+        "title": "Staff Augmentation",
+        "subtitle": "Access top technical talent to scale your team.",
+        "description": "Access top technical talent to scale your team quickly and efficiently",
+        "features": ["Technical talent", "Team scaling", "Expert resources", "Flexible model"]
+      },
+      "analytics": {
+        "title": "Analytics and Insights",
+        "subtitle": "Data-driven insights and analytics solutions to power informed business decisions.",
+        "description": "Data-driven insights and analytics solutions to power informed business decisions",
+        "features": ["Business intelligence", "Data analytics", "Reporting", "Insights"]
+      },
+      "cloud": {
+        "title": "Cloud Solutions",
+        "subtitle": "Scalable cloud infrastructure and migration services for modern businesses.",
+        "description": "Scalable cloud infrastructure and migration services for modern businesses",
+        "features": ["Cloud migration", "Infrastructure", "Scalability", "DevOps"]
+      },
+      "offshore": {
+        "title": "Offshore Development",
+        "subtitle": "Nearshore software development teams delivering quality and value.",
+        "description": "Nearshore software development teams delivering quality and value",
+        "features": ["Nearshore teams", "Quality delivery", "Cost-effective", "Expert developers"]
+      },
+      "tailoredSoftware": {
+        "title": "Tailored Software",
+        "subtitle": "Custom software solutions designed specifically for your unique business needs.",
+        "description": "Custom software solutions designed specifically for your unique business needs",
+        "features": ["Custom development", "Business-specific", "Scalable solutions", "Full lifecycle"]
+      }
+    }
+  },
   "infrastructure": {
     "hero": {
       "eyebrow": "DIGITAL INFRASTRUCTURE",
