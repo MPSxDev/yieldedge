@@ -887,30 +887,30 @@
       },
       "whyYieldge": {
         "eyebrow": "POR QUÉ YIELDGE",
-        "title": "Pensamiento de Grado Empresarial",
-        "description": "Abordamos la tecnología con el rigor y la mentalidad estratégica que las operaciones institucionales demandan.",
-        "quote": "No implementamos tecnología por moda. Resolvemos problemas estructurales que afectan la operación.",
-        "learnMore": "Iniciar conversación",
+        "title": "Tecnología Diseñada para Operaciones Críticas",
+        "description": "Construimos infraestructura tecnológica con enfoque operativo, visión estratégica y estándares de ejecución empresarial. Diseñamos sistemas preparados para soportar crecimiento, complejidad organizacional y entornos donde la estabilidad, trazabilidad y eficiencia no son opcionales.",
+        "quote": "No desarrollamos software para verse moderno. Construimos sistemas que fortalecen la operación, reducen fricción y mejoran la capacidad de ejecución institucional.",
+        "learnMore": "Iniciar Conversación",
         "signals": {
           "enterpriseThinking": {
-            "title": "Pensamiento Empresarial",
-            "description": "Decisiones de arquitectura tomadas con escala institucional y gobernanza en mente."
+            "title": "Arquitectura Orientada a Escalabilidad",
+            "description": "Sistemas diseñados para evolucionar con la organización, integrarse con infraestructura existente y soportar operaciones de alta exigencia."
           },
           "scalableArchitecture": {
-            "title": "Arquitectura Escalable",
-            "description": "Sistemas diseñados para crecer con su organización sin deuda técnica."
+            "title": "Integración y Continuidad Operativa",
+            "description": "Conectamos procesos, datos y plataformas para reducir fragmentación tecnológica y mejorar la coordinación operativa."
           },
           "operationalFirst": {
-            "title": "Diseño Operativo Primero",
-            "description": "Cada solución optimizada para la excelencia operativa del día a día."
+            "title": "Diseño Basado en Operación Real",
+            "description": "Cada solución se construye entendiendo cómo funciona realmente la organización, no únicamente desde la teoría."
           },
           "strategicImplementation": {
-            "title": "Implementación Estratégica",
-            "description": "Despliegues por fases que minimizan el riesgo y maximizan la adopción."
+            "title": "Implementación Controlada y Estratégica",
+            "description": "Despliegues estructurados para minimizar riesgo operativo, acelerar adopción y garantizar estabilidad durante la transición."
           },
           "aiGovernance": {
-            "title": "IA con Cumplimiento Integrado",
-            "description": "Automatización inteligente que respeta las restricciones de cumplimiento y políticas."
+            "title": "Automatización Inteligente con Gobernanza",
+            "description": "Capacidades impulsadas por IA alineadas con trazabilidad, cumplimiento, control operativo y políticas institucionales."
           }
         }
       },
