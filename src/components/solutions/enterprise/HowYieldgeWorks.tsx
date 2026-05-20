@@ -148,7 +148,7 @@ const DesktopStepCard = memo(function DesktopStepCard({
       {/* Content card */}
       <div
         className={cn(
-          'w-full text-center rounded-xl border border-gray-100 bg-white/70 backdrop-blur-sm px-3 py-4',
+          'w-full flex-1 text-center rounded-xl border border-gray-100 bg-white/70 backdrop-blur-sm px-3 py-4',
           'shadow-sm transition-all duration-300',
           'group-hover:-translate-y-1 group-hover:shadow-md group-hover:bg-white'
         )}
