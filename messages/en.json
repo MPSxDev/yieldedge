@@ -942,6 +942,10 @@
         "success": {
           "title": "Request Received",
           "message": "Our enterprise team will contact you within 24 business hours to schedule your strategic consultation."
+        },
+        "error": {
+          "title": "Could not send",
+          "message": "Something went wrong while sending your request. Please try again or email us at contacto@yieldge.com."
         }
       }
     },

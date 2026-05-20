@@ -1,6 +1,6 @@
 'use client';
 
-import { memo, useState } from 'react';
+import { memo, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import {
@@ -11,6 +11,7 @@ import {
   User,
   MessageSquare,
   ArrowRight,
+  AlertCircle,
 } from 'lucide-react';
 import Container from '@/components/ui/Container';
 
@@ -38,6 +39,8 @@ interface FormData {
   challenge: string;
 }
 
+type FormType = 'pilot' | 'consultation';
+
 /**
  * EnterpriseContactForm - Premium enterprise contact section
  */
@@ -51,6 +54,8 @@ const EnterpriseContactForm = memo(function EnterpriseContactForm() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [hasError, setHasError] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -59,21 +64,46 @@ const EnterpriseContactForm = memo(function EnterpriseContactForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const submitForm = async (formType: FormType) => {
+    const form = formRef.current;
+    if (form && !form.reportValidity()) {
+      return;
+    }
+
     setIsSubmitting(true);
+    setHasError(false);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, formType }),
+      });
 
-    setIsSubmitting(false);
-    setIsSuccess(true);
+      if (!res.ok) {
+        throw new Error('submit_failed');
+      }
 
-    // Reset after showing success
-    setTimeout(() => {
-      setIsSuccess(false);
-      setFormData({ name: '', institution: '', email: '', challenge: '' });
-    }, 5000);
+      setIsSuccess(true);
+      setTimeout(() => {
+        setIsSuccess(false);
+        setFormData({ name: '', institution: '', email: '', challenge: '' });
+      }, 5000);
+    } catch {
+      setHasError(true);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    void submitForm('pilot');
+  };
+
+  const handleConsultationClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    void submitForm('consultation');
   };
 
   return (
@@ -186,9 +216,22 @@ const EnterpriseContactForm = memo(function EnterpriseContactForm() {
                   ) : (
                     <motion.form
                       key="form"
+                      ref={formRef}
                       onSubmit={handleSubmit}
                       className="space-y-6"
                     >
+                      {hasError && (
+                        <div
+                          role="alert"
+                          className="flex gap-3 p-4 rounded-lg bg-red-50 border border-red-200 text-red-800"
+                        >
+                          <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                          <div>
+                            <p className="font-semibold text-sm">{t('error.title')}</p>
+                            <p className="text-sm mt-1 text-red-700">{t('error.message')}</p>
+                          </div>
+                        </div>
+                      )}
                       {/* Name field */}
                       <div>
                         <label
@@ -302,7 +345,7 @@ const EnterpriseContactForm = memo(function EnterpriseContactForm() {
                         </button>
                         <button
                           type="button"
-                          onClick={handleSubmit}
+                          onClick={handleConsultationClick}
                           disabled={isSubmitting}
                           className="flex-1 inline-flex items-center justify-center gap-3 px-6 py-4 bg-gray-100 text-gray-700 font-semibold rounded-lg border border-gray-200 hover:bg-gray-200 hover:border-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
                         >

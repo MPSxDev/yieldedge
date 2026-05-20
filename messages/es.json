@@ -942,6 +942,10 @@
         "success": {
           "title": "Solicitud Recibida",
           "message": "Nuestro equipo empresarial lo contactará en 24 horas hábiles para agendar su consulta estratégica."
+        },
+        "error": {
+          "title": "No se pudo enviar",
+          "message": "Ocurrió un error al enviar su solicitud. Intente nuevamente o escríbanos a contacto@yieldge.com."
         }
       }
     },
