@@ -608,7 +608,7 @@
         }
       },
       "platforms": {
-        "title": "Gobernanza y Trazabilidad de Datos",
+        "title": "Inteligencia y Gestión de Datos",
         "description": "Estructuras de datos unificadas que habilitan reportería, cumplimiento regulatorio y toma de decisiones informada.",
         "capabilities": {
           "apps": "Consolidación de fuentes de verdad",
@@ -761,7 +761,7 @@
         "flagshipLabel": "Solución Principal",
         "learnMore": "Más Información",
         "dataGovernance": {
-          "title": "Gobernanza y Trazabilidad de Datos",
+          "title": "Inteligencia y Gestión de Datos",
           "description": "Estructuras de datos unificadas que permiten cumplimiento, reportería y toma de decisiones informada en toda su organización.",
           "features": {
             "0": "Consolidación de fuente única de verdad",
@@ -862,7 +862,7 @@
             "description": "El acceso a datos en tiempo real reduce significativamente los ciclos de decisión."
           },
           "governance": {
-            "title": "Soporte de Gobernanza",
+            "title": "Cumplimiento Empresarial",
             "description": "Cumplimiento integrado con requisitos regulatorios y de políticas internas."
           }
         },
@@ -909,7 +909,7 @@
             "description": "Despliegues por fases que minimizan el riesgo y maximizan la adopción."
           },
           "aiGovernance": {
-            "title": "IA Alineada con Gobernanza",
+            "title": "IA con Cumplimiento Integrado",
             "description": "Automatización inteligente que respeta las restricciones de cumplimiento y políticas."
           }
         }
@@ -937,7 +937,7 @@
           "challenge": "Describa la fricción operativa o desafío tecnológico que necesita abordar..."
         },
         "submitting": "Enviando...",
-        "submitPilot": "Discutir un Piloto",
+        "submitPilot": "Hablar con un Especialista",
         "submitConsultation": "Consulta Ejecutiva",
         "success": {
           "title": "Solicitud Recibida",

@@ -153,28 +153,6 @@ const EnterpriseOutcomes = memo(function EnterpriseOutcomes() {
             <OutcomeCard key={outcome.key} outcome={outcome} />
           ))}
         </motion.div>
-
-        {/* Bottom stats bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="mt-16 lg:mt-20 p-8 lg:p-10 bg-gradient-to-r from-gray-50 via-white to-gray-50 rounded-2xl border border-gray-200"
-        >
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            {(['projects', 'institutions', 'uptime', 'satisfaction'] as const).map((stat) => (
-              <div key={stat}>
-                <div className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
-                  {t(`stats.${stat}.value`)}
-                </div>
-                <div className="text-gray-500 text-sm">
-                  {t(`stats.${stat}.label`)}
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </Container>
     </section>
   );

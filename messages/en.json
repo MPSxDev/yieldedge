@@ -608,7 +608,7 @@
         }
       },
       "platforms": {
-        "title": "Data Governance and Traceability",
+        "title": "Data Intelligence & Management",
         "description": "Unified data structures that enable reporting, regulatory compliance, and informed decision-making.",
         "capabilities": {
           "apps": "Source of truth consolidation",
@@ -761,7 +761,7 @@
         "flagshipLabel": "Flagship Solution",
         "learnMore": "Learn More",
         "dataGovernance": {
-          "title": "Data Governance & Traceability",
+          "title": "Data Intelligence & Management",
           "description": "Unified data structures that enable compliance, reporting, and informed decision-making across your entire organization.",
           "features": {
             "0": "Single source of truth consolidation",
@@ -862,7 +862,7 @@
             "description": "Real-time data access reduces decision cycles significantly."
           },
           "governance": {
-            "title": "Governance Support",
+            "title": "Enterprise Compliance",
             "description": "Built-in compliance with regulatory and internal policy requirements."
           }
         },
@@ -909,7 +909,7 @@
             "description": "Phased rollouts that minimize risk and maximize adoption."
           },
           "aiGovernance": {
-            "title": "AI Aligned with Governance",
+            "title": "AI with Integrated Compliance",
             "description": "Intelligent automation that respects compliance and policy constraints."
           }
         }
@@ -937,7 +937,7 @@
           "challenge": "Describe the operational friction or technology challenge you need to address..."
         },
         "submitting": "Sending...",
-        "submitPilot": "Discuss a Pilot",
+        "submitPilot": "Talk to a Specialist",
         "submitConsultation": "Executive Consultation",
         "success": {
           "title": "Request Received",
