@@ -909,7 +909,7 @@
             "description": "Despliegues estructurados para minimizar riesgo operativo, acelerar adopción y garantizar estabilidad durante la transición."
           },
           "aiGovernance": {
-            "title": "Automatización Inteligente con Gobernanza",
+            "title": "Automatización Inteligente",
             "description": "Capacidades impulsadas por IA alineadas con trazabilidad, cumplimiento, control operativo y políticas institucionales."
           }
         }
